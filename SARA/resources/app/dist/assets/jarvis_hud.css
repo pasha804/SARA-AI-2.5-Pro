@@ -1,0 +1,870 @@
+/* ==========================================================================
+   SARA AI 2.5 PRO — ULTRA LUXURY CYBERNETIC VISUAL SYSTEM & HUD
+   Theme Baseline:
+   --bg-main: #101722
+   --bg-secondary: #182333
+   --accent-primary: #9DDCFF
+   --accent-secondary: #B8C8FF
+   --highlight: #E8F5FF
+   --text-primary: #EDF5FF
+   --text-secondary: #A9B9CC
+   --status-active: #75D9E8
+   ========================================================================== */
+
+:root {
+  --sara-bg: #101722;
+  --sara-bg-card: rgba(12, 19, 34, 0.88);
+  --sara-border: rgba(157, 220, 255, 0.28);
+  --sara-border-glow: rgba(157, 220, 255, 0.55);
+  --sara-accent: #9DDCFF;
+  --sara-accent-sec: #B8C8FF;
+  --sara-text: #EDF5FF;
+  --sara-text-white: #FFFFFF;
+  --sara-text-muted: #A9B9CC;
+  --sara-active: #75D9E8;
+}
+
+/* --------------------------------------------------------------------------
+   0. ZERO-SCROLLPORT CLAMPING: STRICTLY 100VH (Sab Kuch Bina Scroll Show Hoga)
+   -------------------------------------------------------------------------- */
+html, body, #root {
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: fixed !important;
+  inset: 0 !important;
+  background-color: #0c1220 !important;
+  user-select: none !important;
+}
+
+#sara-holographic-desktop {
+  width: 100% !important;
+  height: 100vh !important;
+  max-height: 100vh !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+/* --------------------------------------------------------------------------
+   1. 8K ULTRA-HD CRISP BACKGROUND (Zero Blur, No Carousel)
+   -------------------------------------------------------------------------- */
+.bg-cover {
+  background-image: url('/assets/sara_room_bg.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  opacity: 1 !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. TOP NAVIGATION BAR (Fixed at Top, Dynamic & Interactive)
+   -------------------------------------------------------------------------- */
+header {
+  position: fixed !important;
+  top: 14px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: calc(100% - 48px) !important;
+  max-width: 1100px !important;
+  z-index: 45 !important;
+  margin: 0 !important;
+  padding: 8px 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background: rgba(10, 16, 30, 0.88) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border: 1.5px solid rgba(157, 220, 255, 0.45) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.65), 0 0 25px rgba(117, 217, 232, 0.2) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+header:hover {
+  border-color: rgba(157, 220, 255, 0.7) !important;
+  box-shadow: 0 12px 42px rgba(0, 0, 0, 0.75), 0 0 32px rgba(117, 217, 232, 0.3) !important;
+}
+
+/* SARA Brand Text */
+header > div:first-child {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+header > div:first-child span {
+  color: #FFFFFF !important;
+}
+
+header > div:first-child span:first-child {
+  font-size: 18px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.28em !important;
+  text-shadow: 0 0 16px rgba(157, 220, 255, 0.9), 0 0 30px rgba(117, 217, 232, 0.5) !important;
+}
+
+header > div:first-child span:last-child {
+  font-size: 10px !important;
+  font-family: monospace !important;
+  letter-spacing: 0.14em !important;
+  color: #75D9E8 !important;
+  background: rgba(117, 217, 232, 0.14) !important;
+  border: 1px solid rgba(117, 217, 232, 0.4) !important;
+  padding: 2.5px 8px !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 0 10px rgba(117, 217, 232, 0.2) !important;
+}
+
+/* Right Navigation Action Buttons */
+header > div:last-child {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+header button {
+  display: flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  padding: 7px 15px !important;
+  border-radius: 12px !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  color: #EDF5FF !important;
+  background: rgba(22, 33, 54, 0.85) !important;
+  border: 1.2px solid rgba(157, 220, 255, 0.3) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+  cursor: pointer !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+header button:hover {
+  background: rgba(157, 220, 255, 0.22) !important;
+  border-color: #75D9E8 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 0 18px rgba(117, 217, 232, 0.45) !important;
+  transform: translateY(-2px) !important;
+}
+
+header button:active {
+  transform: translateY(0) scale(0.97) !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. BOTTOM CONTROLS PINNED (Text Box & Voice Orb NEVER Move Down)
+   -------------------------------------------------------------------------- */
+/* Main container non-expanding so it cannot push the footer down */
+main {
+  flex: none !important;
+  height: 0 !important;
+  overflow: visible !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: static !important;
+}
+
+/* Footer: Permanently Pinned at the Bottom */
+footer,
+footer.relative {
+  position: fixed !important;
+  bottom: 16px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 100% !important;
+  max-width: 580px !important;
+  z-index: 40 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 8px !important;
+  pointer-events: auto !important;
+}
+
+/* Cinematic Subtitles: Pinned right above footer, with internal scroll on long output */
+#cinematic-subtitles {
+  position: fixed !important;
+  bottom: 182px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 90% !important;
+  max-width: 740px !important;
+  max-height: 130px !important;
+  overflow-y: auto !important;
+  z-index: 35 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  text-align: center !important;
+  pointer-events: auto !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(117, 217, 232, 0.4) transparent !important;
+}
+
+#cinematic-subtitles::-webkit-scrollbar {
+  width: 4px;
+}
+
+#cinematic-subtitles::-webkit-scrollbar-thumb {
+  background: rgba(117, 217, 232, 0.4);
+  border-radius: 4px;
+}
+
+/* Bottom Message Form Styling */
+form.max-w-xl {
+  background: rgba(12, 19, 34, 0.90) !important;
+  border: 1.5px solid rgba(157, 220, 255, 0.42) !important;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.65), 0 0 25px rgba(117, 217, 232, 0.22) !important;
+  border-radius: 9999px !important;
+  padding: 6px 14px !important;
+  width: 100% !important;
+}
+
+form.max-w-xl input {
+  color: #FFFFFF !important;
+  font-size: 14px !important;
+}
+
+form.max-w-xl input::placeholder {
+  color: rgba(237, 245, 255, 0.45) !important;
+}
+
+form.max-w-xl button[type="submit"] {
+  border-radius: 9999px !important;
+  background: rgba(157, 220, 255, 0.22) !important;
+  border: 1px solid rgba(157, 220, 255, 0.45) !important;
+  color: #FFFFFF !important;
+  transition: all 0.2s ease !important;
+}
+
+form.max-w-xl button[type="submit"]:hover {
+  background: rgba(157, 220, 255, 0.4) !important;
+  border-color: #75D9E8 !important;
+  box-shadow: 0 0 15px rgba(117, 217, 232, 0.5) !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. COMPANION CARDS (Left & Right Side Panels)
+   -------------------------------------------------------------------------- */
+.sara-glass-card {
+  background: var(--sara-bg-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1.5px solid var(--sara-border);
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.55), 0 0 20px rgba(157, 220, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--sara-text) !important;
+  user-select: none;
+}
+
+.sara-glass-card:hover {
+  border-color: var(--sara-border-glow);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65), 0 0 25px rgba(157, 220, 255, 0.16);
+}
+
+/* Left Panel */
+#sara-left-panel {
+  position: fixed;
+  left: 20px;
+  top: 80px;
+  width: 235px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+  pointer-events: auto;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sara-greeting-card {
+  padding: 14px 16px;
+}
+
+.sara-greeting-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.sara-lotus-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: radial-gradient(circle, rgba(157, 220, 255, 0.28) 0%, rgba(117, 217, 232, 0.12) 100%);
+  border: 1px solid rgba(157, 220, 255, 0.45);
+  box-shadow: 0 0 12px rgba(157, 220, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sara-lotus-badge img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.sara-greeting-text h4 {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #FFFFFF !important;
+  letter-spacing: 0.3px;
+}
+
+.sara-greeting-text p {
+  margin: 2px 0 0 0;
+  font-size: 10px;
+  color: var(--sara-accent) !important;
+}
+
+.sara-clock-display {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sara-time-digits {
+  font-size: 26px;
+  font-weight: 800;
+  color: #FFFFFF !important;
+  font-family: 'Segoe UI', system-ui, monospace;
+  letter-spacing: 1px;
+  text-shadow: 0 0 16px rgba(157, 220, 255, 0.5);
+}
+
+.sara-time-ampm {
+  font-size: 11.5px;
+  color: var(--sara-accent) !important;
+  margin-left: 4px;
+  font-weight: 700;
+}
+
+.sara-date-str {
+  font-size: 10.5px;
+  color: var(--sara-text-muted) !important;
+  margin-top: 2px;
+}
+
+/* Quick Actions Dock */
+.sara-dock-card {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sara-dock-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 11px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid transparent;
+  color: var(--sara-text) !important;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sara-dock-btn:hover {
+  background: rgba(157, 220, 255, 0.12);
+  border-color: rgba(157, 220, 255, 0.35);
+  transform: translateX(4px);
+}
+
+.sara-dock-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: rgba(157, 220, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sara-accent) !important;
+  flex-shrink: 0;
+}
+
+.sara-dock-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.sara-dock-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #FFFFFF !important;
+}
+
+.sara-dock-sub {
+  font-size: 9px;
+  color: var(--sara-text-muted) !important;
+}
+
+/* Right Panel */
+#sara-right-panel {
+  position: fixed;
+  right: 20px;
+  top: 80px;
+  width: 235px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+  pointer-events: auto;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sara-panel-header {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #FFFFFF !important;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sara-status-card {
+  padding: 14px 16px;
+}
+
+.sara-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 11px;
+}
+
+.sara-status-row-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--sara-text-muted) !important;
+}
+
+.sara-status-val {
+  font-family: monospace;
+  font-weight: 700;
+  color: var(--sara-active) !important;
+}
+
+/* Activity Card */
+.sara-activity-card {
+  padding: 14px 16px;
+}
+
+.sara-activity-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sara-activity-item:last-child {
+  border-bottom: none;
+}
+
+.sara-activity-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(184, 200, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sara-accent-sec) !important;
+  flex-shrink: 0;
+}
+
+.sara-activity-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sara-activity-title {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #FFFFFF !important;
+}
+
+.sara-activity-sub {
+  font-size: 8.5px;
+  color: var(--sara-text-muted) !important;
+}
+
+.sara-activity-time {
+  font-size: 8.5px;
+  color: var(--sara-text-muted) !important;
+  font-family: monospace;
+}
+
+/* Ambient Footers */
+#sara-footer-left {
+  position: fixed;
+  bottom: 18px;
+  left: 24px;
+  z-index: 20;
+  pointer-events: none;
+  font-size: 11px;
+  color: var(--sara-text-muted) !important;
+  user-select: none;
+}
+
+#sara-footer-left .sara-quote-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 13px;
+  color: #FFFFFF !important;
+  margin-bottom: 2px;
+}
+
+#sara-footer-right {
+  position: fixed;
+  bottom: 18px;
+  right: 24px;
+  z-index: 20;
+  pointer-events: none;
+  text-align: right;
+  font-size: 11px;
+  color: var(--sara-text-muted) !important;
+  user-select: none;
+}
+
+#sara-footer-right .sara-quote-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 12px;
+  color: #FFFFFF !important;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   5. RESPONSIVE SCALING (Screens below 1350px scale cleanly, below 960px hide side panels)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1350px) {
+  #sara-left-panel {
+    transform: scale(0.85);
+    transform-origin: top left;
+    left: 12px;
+    top: 74px;
+  }
+  #sara-right-panel {
+    transform: scale(0.85);
+    transform-origin: top right;
+    right: 12px;
+    top: 74px;
+  }
+}
+
+@media (max-width: 1100px) {
+  #sara-left-panel {
+    transform: scale(0.75);
+    transform-origin: top left;
+    left: 8px;
+    top: 68px;
+  }
+  #sara-right-panel {
+    transform: scale(0.75);
+    transform-origin: top right;
+    right: 8px;
+    top: 68px;
+  }
+}
+
+@media (max-width: 960px) {
+  #sara-left-panel,
+  #sara-right-panel,
+  #sara-footer-left,
+  #sara-footer-right {
+    display: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. JARVIS HUD INTELLIGENCE & TASK MODAL
+   -------------------------------------------------------------------------- */
+#jarvis-hud-overlay {
+  position: fixed;
+  top: 75px;
+  right: 25px;
+  width: 450px;
+  max-width: 92vw;
+  max-height: 84vh;
+  z-index: 999999;
+  background: rgba(6, 12, 28, 0.94);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1.5px solid rgba(0, 240, 255, 0.75);
+  border-radius: 16px;
+  box-shadow: 0 0 35px rgba(0, 240, 255, 0.35);
+  color: #f1f5f9;
+  font-family: system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#jarvis-hud-overlay.hidden {
+  opacity: 0;
+  transform: translateY(-25px) scale(0.95);
+  pointer-events: none;
+}
+
+.jarvis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  background: rgba(10, 22, 45, 0.85);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.4);
+}
+
+.jarvis-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #00f0ff;
+  text-transform: uppercase;
+}
+
+.jarvis-beacon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00f0ff;
+  box-shadow: 0 0 10px #00f0ff;
+  animation: pulseBeacon 1.5s infinite;
+}
+
+@keyframes pulseBeacon {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 16px #00f0ff; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+.jarvis-close-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #94a3b8;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 600;
+}
+
+.jarvis-close-btn:hover {
+  background: rgba(239, 68, 68, 0.25);
+  border-color: #ef4444;
+  color: #fca5a5;
+}
+
+.jarvis-body {
+  padding: 18px;
+  overflow-y: auto;
+  max-height: calc(84vh - 70px);
+}
+
+.jarvis-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
+}
+
+.jarvis-highlights-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 0;
+}
+
+.jarvis-highlight-item {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #e2e8f0;
+}
+
+.jarvis-highlight-item strong {
+  color: #38bdf8;
+}
+
+.jarvis-summary-box {
+  background: rgba(30, 41, 59, 0.6);
+  border-left: 3px solid #00f0ff;
+  border-radius: 0 10px 10px 0;
+  padding: 10px 14px;
+  font-size: 12.5px;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+/* Task Dashboard Modal */
+#sara-task-dashboard-modal {
+  position: fixed;
+  top: 65px;
+  right: 20px;
+  width: 480px;
+  max-width: 92vw;
+  max-height: 82vh;
+  z-index: 999998;
+  background: rgba(5, 10, 24, 0.94);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1.5px solid rgba(0, 240, 255, 0.6);
+  border-radius: 18px;
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.25), 0 10px 30px rgba(0, 0, 0, 0.7);
+  color: #f8fafc;
+  font-family: system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+#sara-task-dashboard-modal.hidden {
+  opacity: 0;
+  transform: translateY(-20px) scale(0.96);
+  pointer-events: none;
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: rgba(8, 18, 40, 0.9);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+.dash-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #00f0ff;
+  letter-spacing: 1px;
+}
+
+.dash-body {
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.dash-card {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dash-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.dash-score-badge {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid #10b981;
+  color: #34d399;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.dash-desc {
+  font-size: 11.5px;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+.dash-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.dash-btn {
+  flex: 1;
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  color: #38bdf8;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dash-btn:hover {
+  background: rgba(0, 240, 255, 0.25);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+/* Auto-hide Right HUD when Settings or Modals are open */
+body.sara-settings-open #sara-right-panel,
+body.sara-modal-open #sara-right-panel,
+.sara-settings-open #sara-right-panel {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateX(60px) scale(0.95) !important;
+  display: none !important;
+}
+
+/* ULTIMATE MODAL & SETTINGS SAFETY GUARD */
+body.sara-settings-open #sara-right-panel,
+body.sara-modal-open #sara-right-panel,
+.sara-settings-open #sara-right-panel {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateX(120px) scale(0.9) !important;
+  z-index: -10 !important;
+}

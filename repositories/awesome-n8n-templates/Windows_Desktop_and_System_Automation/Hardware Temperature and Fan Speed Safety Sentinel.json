@@ -1,0 +1,26 @@
+{
+  "name": "Hardware Temperature and Fan Speed Safety Sentinel",
+  "nodes": [
+    {
+      "name": "Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger"
+    },
+    {
+      "name": "Data Processor",
+      "type": "n8n-nodes-base.code"
+    },
+    {
+      "name": "AI Inference Core",
+      "type": "n8n-nodes-base.openAi"
+    },
+    {
+      "name": "Action Dispatcher",
+      "type": "n8n-nodes-base.httpRequest"
+    }
+  ],
+  "connections": {},
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

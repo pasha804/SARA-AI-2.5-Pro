@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasha Nexus — Autonomous AI & SaaS Command Center</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cyber-glow-bg"></div>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="top-nav">
+            <div class="brand">
+                <div class="brand-badge">SARA AI 2.5 PRO</div>
+                <h1>PASHA NEXUS <span class="accent-text">INTELLIGENCE</span></h1>
+            </div>
+            <div class="system-status-pill">
+                <span class="live-dot"></span>
+                <span>SYSTEM ONLINE • ZERO REGRESSIONS</span>
+            </div>
+        </header>
+
+        <!-- KPI Grid -->
+        <section class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-title">TOTAL REVENUE (ARR)</div>
+                <div class="kpi-value">$148,500 <span class="trend-up">+24.8%</span></div>
+                <div class="kpi-sub">Target: $200k / month</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">ACTIVE USERS</div>
+                <div class="kpi-value">14,290 <span class="trend-up">+18.2%</span></div>
+                <div class="kpi-sub">Across 4 SaaS Nodes</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">AI COPILOT LATENCY</div>
+                <div class="kpi-value">180ms <span class="trend-optimal">OPTIMAL</span></div>
+                <div class="kpi-sub">Gemini 3.8 / Live Voice</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">DISCORD ENGAGEMENT</div>
+                <div class="kpi-value">99.8% <span class="trend-up">LIVELY</span></div>
+                <div class="kpi-sub">Autonomous Driver Active</div>
+            </div>
+        </section>
+
+        <!-- Main Workspace -->
+        <div class="main-layout">
+            <!-- Left: Real-time Analytics Canvas -->
+            <div class="panel analytics-panel">
+                <div class="panel-header">
+                    <h2>Traffic & Revenue Telemetry</h2>
+                    <span class="badge-tag">LIVE CANVAS 60FPS</span>
+                </div>
+                <canvas id="telemetryCanvas" width="640" height="260"></canvas>
+            </div>
+
+            <!-- Right: SARA Interactive AI & Task Management -->
+            <div class="panel assistant-panel">
+                <div class="panel-header">
+                    <h2>SARA Neural Copilot</h2>
+                    <span class="badge-tag status-active">CONNECTED</span>
+                </div>
+                <div class="chat-bubble-sara">
+                    <p><strong>SARA:</strong> Salam Pasha Jan! Aapka naya full-stack SaaS platform successfully deploy ho chuka hai. Antigravity IDE integration ready hai aur zero syntax errors hain!</p>
+                </div>
+                <div class="quick-actions">
+                    <button class="btn btn-primary" onclick="triggerWorkflow('Discord Broadcast')">🚀 Post Discord Tip</button>
+                    <button class="btn btn-secondary" onclick="triggerWorkflow('Audit Disk Space')">🧹 Clean C: Drive</button>
+                    <button class="btn btn-secondary" onclick="triggerWorkflow('Qualify Lead')">💬 Sync WhatsApp</button>
+                </div>
+                <div class="task-list-section">
+                    <h3>Sprint Milestone Deliverables</h3>
+                    <ul class="task-list" id="taskList">
+                        <li class="task-item completed">
+                            <span class="chk">&#10003;</span>
+                            <span>Scaffold Full-Stack SaaS Architecture</span>
+                        </li>
+                        <li class="task-item completed">
+                            <span class="chk">&#10003;</span>
+                            <span>Embed 360+ Awesome-n8n Workflow Catalog</span>
+                        </li>
+                        <li class="task-item completed">
+                            <span class="chk">&#10003;</span>
+                            <span>Bridge with Google Antigravity IDE</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="src/app.js"></script>
+</body>
+</html>

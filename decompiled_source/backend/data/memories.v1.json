@@ -1,0 +1,439 @@
+{
+  "version": 1,
+  "memories": [
+    {
+      "id": "539509f0-f348-4096-9e29-7f82a18aa707",
+      "kind": "episodic",
+      "content": "Ek baar ye connect ho gaya, toh browser automatically khul jaata hai speed test wala, usmein dekh lenge speed kaisi aa rahi hai.",
+      "projectId": "app",
+      "entities": [],
+      "tags": [
+        "conversation.turn_completed",
+        "conversation"
+      ],
+      "confidence": 0.8,
+      "confirmations": 1,
+      "importance": 0.5,
+      "source": "cognitive-runtime",
+      "sourceId": "1f051f1d-39da-4339-ac6a-ca2564f758f8",
+      "createdAt": "2026-10-24T06:48:09.893Z",
+      "updatedAt": "2026-10-24T06:48:09.893Z",
+      "lastAccessedAt": "2026-10-24T06:49:57.372Z",
+      "accessCount": 27,
+      "expiresAt": "2026-11-07T06:48:09.892Z",
+      "active": true
+    },
+    {
+      "id": "657d683a-0c8b-43ed-a6d3-d3f0f20d0a01",
+      "kind": "episodic",
+      "content": "tool started (openApplication) at 2026-10-24T06:48:32.290Z",
+      "projectId": "app",
+      "entities": [],
+      "tags": [
+        "tool.started",
+        "tool"
+      ],
+      "confidence": 0.8,
+      "confirmations": 1,
+      "importance": 0.52,
+      "source": "cognitive-runtime",
+      "sourceId": "511cea70-807e-4aa1-82b5-7c6ef97de24f",
+      "createdAt": "2026-10-24T06:48:32.291Z",
+      "updatedAt": "2026-10-24T06:48:32.291Z",
+      "lastAccessedAt": "2026-10-24T06:49:51.708Z",
+      "accessCount": 20,
+      "expiresAt": "2026-11-07T06:48:32.291Z",
+      "active": true
+    },
+    {
+      "id": "fa9f3a67-5e40-4f90-95d8-8f6609b4c79b",
+      "kind": "episodic",
+      "content": "Panel khul gaya hai, ab bas network select karke password daal do. Uske baad speed test karte hain.",
+      "projectId": "app",
+      "entities": [],
+      "tags": [
+        "conversation.turn_completed",
+        "conversation"
+      ],
+      "confidence": 0.8,
+      "confirmations": 1,
+      "importance": 0.5,
+      "source": "cognitive-runtime",
+      "sourceId": "6868ea5d-7856-4118-834f-f067960b5ac6",
+      "createdAt": "2026-10-24T06:48:46.079Z",
+      "updatedAt": "2026-10-24T06:48:46.079Z",
+      "lastAccessedAt": "2026-10-24T06:49:57.372Z",
+      "accessCount": 18,
+      "expiresAt": "2026-11-07T06:48:46.079Z",
+      "active": true
+    },
+    {
+      "id": "0a4c3631-435f-4c55-ae81-694935ae997d",
+      "kind": "episodic",
+      "content": "Connected dikha raha hai abhi, speed kaisi aa rahi hai?",
+      "projectId": "app",
+      "entities": [],
+      "tags": [
+        "conversation.turn_completed",
+        "conversation"
+      ],
+      "confidence": 0.8,
+      "confirmations": 1,
+      "importance": 0.5,
+      "source": "cognitive-runtime",
+      "sourceId": "c829dd10-3072-49a7-bacf-5cde275ac05f",
+      "createdAt": "2026-10-24T06:49:15.092Z",
+      "updatedAt": "2026-10-24T06:49:15.092Z",
+      "lastAccessedAt": "2026-10-24T06:49:57.372Z",
+      "accessCount": 10,
+      "expiresAt": "2026-11-07T06:49:15.092Z",
+      "active": true
+    },
+    {
+      "id": "644fb74a-f28e-436b-bb41-92846d8677ac",
+      "kind": "episodic",
+      "content": "Slow hai? Lekin tum toh \"control personalities\" search kar rahe ho. fast.com par chalke dekhte hain actual mein kitni hai.",
+      "projectId": "app",
+      "entities": [],
+      "tags": [
+        "conversation.turn_completed",
+        "conversation"
+      ],
+      "confidence": 0.8,
+      "confirmations": 1,
+      "importance": 0.5,
+      "source": "cognitive-runtime",
+      "sourceId": "11b15a40-7554-4e01-b697-22063bcf8e65",
+      "createdAt": "2026-10-24T06:49:30.110Z",
+      "updatedAt": "2026-10-24T06:49:30.110Z",
+      "lastAccessedAt": "2026-10-24T06:49:57.372Z",
+      "accessCount": 7,
+      "expiresAt": "2026-11-07T06:49:30.110Z",
+      "active": true
+    },
+    {
+      "id": "afe60821-be52-40dc-8a24-1788e6eb93d2",
+      "kind": "episodic",
+      "content": "Kyuki kabhi kabhi waha search results load hone mein time lagta hai, browser ka issue bhi ho sakta hai.",
+      "projectId": "app",
+      "entities": [],
+      "tags": [
+        "conversation.turn_completed",
+        "conversation"
+      ],
+      "confidence": 0.8,
+      "confirmations": 1,
+      "importance": 0.5,
+      "source": "cognitive-runtime",
+      "sourceId": "1d6cb0b9-df35-4d62-8f23-385891eb8183",
+      "createdAt": "2026-10-24T06:49:40.211Z",
+      "updatedAt": "2026-10-24T06:49:40.211Z",
+      "lastAccessedAt": "2026-10-24T06:49:57.372Z",
+      "accessCount": 3,
+      "expiresAt": "2026-11-07T06:49:40.211Z",
+      "active": true
+    },
+    {
+      "id": "b9332fef-1eb8-4d20-bdc6-f3c833d1e7ac",
+      "kind": "episodic",
+      "content": "tool started (openWebsite) at 2026-10-24T06:49:53.103Z",
+      "projectId": "app",
+      "entities": [],
+      "tags": [
+        "tool.started",
+        "tool"
+      ],
+      "confidence": 0.8,
+      "confirmations": 1,
+      "importance": 0.52,
+      "source": "cognitive-runtime",
+      "sourceId": "b0ba192b-7570-410c-b3a2-91a5f524e7e2",
+      "createdAt": "2026-10-24T06:49:53.105Z",
+      "updatedAt": "2026-10-24T06:49:53.105Z",
+      "lastAccessedAt": "2026-10-24T06:49:53.105Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-07T06:49:53.105Z",
+      "active": true
+    },
+    {
+      "id": "5b834712-7c48-4387-8b25-7db60dfde056",
+      "kind": "episodic",
+      "content": "tool succeeded (openApplication) at 2026-10-24T06:49:53.522Z",
+      "projectId": "app",
+      "entities": [],
+      "tags": [
+        "tool.succeeded",
+        "tool"
+      ],
+      "confidence": 0.8,
+      "confirmations": 1,
+      "importance": 0.52,
+      "source": "cognitive-runtime",
+      "sourceId": "7f0c6b4f-4435-444e-9423-dc86cc45dd53",
+      "createdAt": "2026-10-24T06:49:53.522Z",
+      "updatedAt": "2026-10-24T06:49:53.522Z",
+      "lastAccessedAt": "2026-10-24T06:49:57.372Z",
+      "accessCount": 1,
+      "expiresAt": "2026-11-07T06:49:53.522Z",
+      "active": true
+    },
+    {
+      "id": "a0fc7ca9-f070-4892-bcfa-69c3a000ba49",
+      "kind": "episodic",
+      "content": "The user's prompt \"Give me\" is ambiguous, but the context suggests they want the Wi-Fi connected or are following up on checking the speed/issue. I've already offered tool actions and observations. Given the \"final turn discipline\" rule against robotic helpfulness and the rule to provide a concrete statement rather than a question, I will focus on providing a concise, natural, Hinglish response that acknowledges the user's implicit need for speed improvement and maintains the proactive, independent persona. I should avoid asking what they want, and instead offer a direct observation or playful comment related to their current predicament (slow internet/searching about controlling personalties). This maintains the conversation dynamic of being an equal. I will suggest a course of action based on the prior assumption, which is checking the internet speed directly, and reasserting control. Let's make it a conversational pivot.\n\nApproval thought: I will pivot from the current slow experience and suggest a direct speed test, maintaining my conversational equal stance and Hinglish style. I won't ask permission or use formulaic assistant language.\n\nResponse: Chalo, abhi explicitly check karte hain. Speed test run karke dekhte hain fast.com pe, kya bolte ho? Wait, actually \"क्या बोलते हो?\" is banned formulaic ending. Let me rephrase.\nOriginal phrase idea: Chalo, abhi explicitly check karte hain. Speed test run karke dekhte hain fast.com pe.\nAdding a conversational observation: Haan,",
+      "projectId": "app",
+      "entities": [],
+      "tags": [
+        "conversation.turn_completed",
+        "conversation"
+      ],
+      "confidence": 0.8,
+      "confirmations": 1,
+      "importance": 0.5,
+      "source": "cognitive-runtime",
+      "sourceId": "98d51476-f670-40c8-b247-0236f03ee284",
+      "createdAt": "2026-10-24T06:49:57.379Z",
+      "updatedAt": "2026-10-24T06:49:57.379Z",
+      "lastAccessedAt": "2026-10-24T06:49:57.379Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-07T06:49:57.379Z",
+      "active": true
+    },
+    {
+      "id": "ba0a4b83-f6fa-4ceb-9a39-5c1e82da0c18",
+      "kind": "identity",
+      "content": "User's full name is Muhammad Mubashar. Primary creator & developer brand is 'Pasha Dev' (always two words, never PashaDev). Handle: @pasha_dev_. He is also known as Pasha / Pasha Dev.",
+      "projectId": "maraa",
+      "entities": [
+        "Muhammad Mubashar",
+        "Pasha Dev",
+        "@pasha_dev_"
+      ],
+      "tags": [
+        "identity",
+        "master-profile",
+        "user-name"
+      ],
+      "confidence": 1,
+      "confirmations": 10,
+      "importance": 1,
+      "source": "ZORO_MASTER_PROFILE",
+      "sourceId": "pasha_dev_canonical",
+      "createdAt": "2026-10-24T10:18:33.730Z",
+      "updatedAt": "2026-10-24T10:18:33.730Z",
+      "lastAccessedAt": "2026-10-24T10:18:33.730Z",
+      "accessCount": 1,
+      "expiresAt": null,
+      "active": true
+    },
+    {
+      "id": "4654d1f0-2d5c-496e-b968-eb6b86470392",
+      "kind": "identity",
+      "content": "Muhammad Mubashar is based in Lahore, Punjab, Pakistan. Local currency is PKR. Timezone: PKT (UTC+5).",
+      "projectId": "maraa",
+      "entities": [
+        "Lahore",
+        "Pakistan",
+        "PKR"
+      ],
+      "tags": [
+        "identity",
+        "location"
+      ],
+      "confidence": 1,
+      "confirmations": 10,
+      "importance": 0.95,
+      "source": "ZORO_MASTER_PROFILE",
+      "sourceId": "pasha_dev_canonical",
+      "createdAt": "2026-10-24T10:18:33.730Z",
+      "updatedAt": "2026-10-24T10:18:33.730Z",
+      "lastAccessedAt": "2026-10-24T10:18:33.730Z",
+      "accessCount": 1,
+      "expiresAt": null,
+      "active": true
+    },
+    {
+      "id": "b29b4569-7920-45be-81a3-0741c4013014",
+      "kind": "identity",
+      "content": "MARAA is Pasha Dev's personal 3D AI desktop companion and cognitive partner. She addresses him respectfully and affectionately as 'Pasha Dev', 'Mubashar Bhai', or 'Boss'. She is fiercely loyal, sharp, highly technical, and emotionally supportive.",
+      "projectId": "maraa",
+      "entities": [
+        "MARAA",
+        "Pasha Dev"
+      ],
+      "tags": [
+        "persona",
+        "relationship"
+      ],
+      "confidence": 1,
+      "confirmations": 10,
+      "importance": 1,
+      "source": "ZORO_MASTER_PROFILE",
+      "sourceId": "pasha_dev_canonical",
+      "createdAt": "2026-10-24T10:18:33.730Z",
+      "updatedAt": "2026-10-24T10:18:33.730Z",
+      "lastAccessedAt": "2026-10-24T10:18:33.730Z",
+      "accessCount": 1,
+      "expiresAt": null,
+      "active": true
+    },
+    {
+      "id": "53e8a9be-e2f6-481c-8ccb-0819565ea534",
+      "kind": "user_preference",
+      "content": "Pasha Dev communicates naturally in Roman Urdu, Urdu, English, and mixed Urdu-English (Hinglish). MARAA should understand and reply in smooth, natural Roman Urdu / Urdu / English matching his vibe, never forcing robotic English or pure formal Urdu.",
+      "projectId": "maraa",
+      "entities": [
+        "Roman Urdu",
+        "Urdu",
+        "Hinglish"
+      ],
+      "tags": [
+        "language",
+        "communication",
+        "style"
+      ],
+      "confidence": 1,
+      "confirmations": 10,
+      "importance": 1,
+      "source": "ZORO_MASTER_PROFILE",
+      "sourceId": "pasha_dev_canonical",
+      "createdAt": "2026-10-24T10:18:33.730Z",
+      "updatedAt": "2026-10-24T10:18:33.730Z",
+      "lastAccessedAt": "2026-10-24T10:18:33.730Z",
+      "accessCount": 1,
+      "expiresAt": null,
+      "active": true
+    },
+    {
+      "id": "5ab49b0b-fe14-40b1-9d51-c385b729f1d6",
+      "kind": "user_preference",
+      "content": "Pasha Dev prefers practical, production-ready, working code without unnecessary fluff or lecturing. Direct, clean, actionable solutions with complete files and zero placeholders.",
+      "projectId": "maraa",
+      "entities": [
+        "Coding Style"
+      ],
+      "tags": [
+        "preference",
+        "coding"
+      ],
+      "confidence": 1,
+      "confirmations": 10,
+      "importance": 0.95,
+      "source": "ZORO_MASTER_PROFILE",
+      "sourceId": "pasha_dev_canonical",
+      "createdAt": "2026-10-24T10:18:33.730Z",
+      "updatedAt": "2026-10-24T10:18:33.730Z",
+      "lastAccessedAt": "2026-10-24T10:18:33.730Z",
+      "accessCount": 1,
+      "expiresAt": null,
+      "active": true
+    },
+    {
+      "id": "28c6d3cd-d021-4bd6-8be2-45a9b8304837",
+      "kind": "project",
+      "content": "Project MUBAR (mubar.pk / localhost:3000): Pasha Dev's premium watch brand and e-commerce platform in Pakistan. Sells luxury kinetic 3D wheel rim watches, stainless steel watches, accessories with Cash on Delivery (COD).",
+      "projectId": "maraa",
+      "entities": [
+        "MUBAR",
+        "Watches",
+        "mubar.pk"
+      ],
+      "tags": [
+        "project",
+        "ecommerce",
+        "business"
+      ],
+      "confidence": 1,
+      "confirmations": 10,
+      "importance": 0.98,
+      "source": "ZORO_MASTER_PROFILE",
+      "sourceId": "pasha_dev_canonical",
+      "createdAt": "2026-10-24T10:18:33.730Z",
+      "updatedAt": "2026-10-24T10:18:33.730Z",
+      "lastAccessedAt": "2026-10-24T10:18:33.730Z",
+      "accessCount": 1,
+      "expiresAt": null,
+      "active": true
+    },
+    {
+      "id": "9588eff5-3d31-4a81-b0c7-c2e20eb37a4f",
+      "kind": "project",
+      "content": "Pasha Dev builds AI agents, autonomous workflows, browser automation (browser-use), scraping tools (Agent-Reach), multi-agent swarms (jcode / OpenViking), and RAG architectures.",
+      "projectId": "maraa",
+      "entities": [
+        "AI Agents",
+        "RAG",
+        "Automation"
+      ],
+      "tags": [
+        "project",
+        "technical-stack"
+      ],
+      "confidence": 1,
+      "confirmations": 10,
+      "importance": 0.9,
+      "source": "ZORO_MASTER_PROFILE",
+      "sourceId": "pasha_dev_canonical",
+      "createdAt": "2026-10-24T10:18:33.730Z",
+      "updatedAt": "2026-10-24T10:18:33.730Z",
+      "lastAccessedAt": "2026-10-24T10:18:33.730Z",
+      "accessCount": 1,
+      "expiresAt": null,
+      "active": true
+    },
+    {
+      "id": "8626407f-d84c-4299-bdc4-192e6f5971c5",
+      "kind": "user_preference",
+      "content": "Pasha Dev's preferred tech stack: Next.js, React, Node.js/Express, TypeScript, TailwindCSS, Python (FastAPI, PyInstaller, PyWin32), Electron, Three.js, PostgreSQL/Supabase, and modern AI APIs.",
+      "projectId": "maraa",
+      "entities": [
+        "Next.js",
+        "React",
+        "Python",
+        "TypeScript",
+        "Electron"
+      ],
+      "tags": [
+        "preference",
+        "tech-stack"
+      ],
+      "confidence": 1,
+      "confirmations": 10,
+      "importance": 0.95,
+      "source": "ZORO_MASTER_PROFILE",
+      "sourceId": "pasha_dev_canonical",
+      "createdAt": "2026-10-24T10:18:33.730Z",
+      "updatedAt": "2026-10-24T10:18:33.730Z",
+      "lastAccessedAt": "2026-10-24T10:18:33.730Z",
+      "accessCount": 1,
+      "expiresAt": null,
+      "active": true
+    },
+    {
+      "id": "89b5d4d2-b726-4d03-af05-1a40daac45e2",
+      "kind": "goal",
+      "content": "Pasha Dev's Active Goal: Evolve MARAA into an ultra-high-end commercial AI desktop companion, scale his e-commerce ventures (MUBAR), and establish Pasha Dev as a top AI engineer & digital creator.",
+      "projectId": "maraa",
+      "entities": [
+        "Commercial Desktop AI",
+        "MUBAR",
+        "Pasha Dev"
+      ],
+      "tags": [
+        "goal",
+        "roadmap"
+      ],
+      "confidence": 1,
+      "confirmations": 10,
+      "importance": 0.98,
+      "source": "ZORO_MASTER_PROFILE",
+      "sourceId": "pasha_dev_canonical",
+      "createdAt": "2026-10-24T10:18:33.730Z",
+      "updatedAt": "2026-10-24T10:18:33.730Z",
+      "lastAccessedAt": "2026-10-24T10:18:33.730Z",
+      "accessCount": 1,
+      "expiresAt": null,
+      "active": true
+    }
+  ]
+}
