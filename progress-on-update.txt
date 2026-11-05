@@ -1,0 +1,34 @@
+4. 📦 12 Repositories & Real-Time Engineering Progress Update
+Pasha Dev (Mubashar Bhai), yeh raha 100% exact actual hisaab-kitaab aur latest live status:
+
+#	Repository / Module	Status	Reality & Installed Code Location
+1	OpenViking (ByteDance)	✅ Installed	D:\MARAA AI\repositories\OpenViking (Hierarchical Context OS L0/L1 integrated into sara_neural_brain.py)
+2	agentmemory	✅ Custom Built	D:\MARAA AI\SARA\resources\app\memories.json (18 core facts & persistent consolidation)
+3	browser-use	✅ Installed & Active	D:\MARAA AI\repositories\browser-use (Foreground activation, Ctrl+L focus, Unicode paste & Enter)
+4	TalkingHead	✅ Installed & Adopted	D:\MARAA AI\repositories\TalkingHead (Web Audio FFT binning, viseme morphs, blendshapes)
+5	Agent-Reach	📋 Planned	Zero-fee scraping module integrated in brain.
+6	Cybersecurity Skills	📋 Planned	800+ MITRE/OWASP vulnerability checks design phase me hain.
+7	diagram-design	📋 Planned	SVG architecture visual generator roadmap me hai.
+8	FreeLLMAPI	🟡 Partial	Clean APIs failover router active in backend.
+9	OmniRoute	📋 Planned	RTK prompt compression algorithm blueprint me hai.
+10	jcode	📋 Planned	Rust subagent engine architecture me documented hai.
+11	deer-flow (ByteDance)	📋 Planned	SuperAgent step-by-step checkpointing & self-healing design me hai.
+12	harness	📋 Planned	Docker CI/CD automated test verification.
+
+---
+
+### Avatar & System Features Live Status:
+- 🌟 **SARA Multi-Model 3D Engine**: Live model switcher integrated into SARA HUD panel with persistent `localStorage` memory:
+  1. **🌟 Cyber SARA**: Custom Cyber PMX model with Platinum Silver-Lilac hair, Electric Sapphire eyes, Obsidian Cyber Jacket, and MMD physics.
+  2. **🎀 Anime VRoid**: Modern 3D Anime VRoid humanoid (`vroid.glb`, 244 bones, 124 blendshapes, spring hair physics, full ARKit & VRM visemes).
+  3. **💎 3D Brunette**: Photorealistic ReadyPlayerMe companion (`brunette.glb`, 67 humanoid bones, 72 Oculus ARKit blendshapes).
+- 🎙️ **Hardcore Audio-Reactive Lip-Sync Engine**: Patched root cause where lips were frozen shut during AI speaking. Now dynamically monitors Web Audio FFT energy (`outputAnalyser.getByteFrequencyData`), audio state (`talking`, `speaking`), and speech authority with smooth jaw/formant blendshapes.
+- ⚙️ **Avatar Control & Diagnostics HUD**: Live bottom-right panel with FPS telemetry, 1-click model switching, expressions (happy, excited, thinking, curious, surprised, playful), gestures (wave, nod, tilt, smile, touch head, stretch), camera presets, and live lip-sync test button.
+- 🎨 **MS Paint AI Tutor**: Upgraded with foreground activation (`AppActivate('Paint')`), auto-maximization (`Alt+Space, X`), and interactive concept drawing (`draw_in_paint`).
+- 🌐 **Windows Browser Automation**: Integrated foreground browser launcher + active address-bar typing (`Ctrl+L` + `clip` + `Ctrl+V` + `Enter`).
+- 🔍 **Reverse Engineering Audits Completed**:
+  - `Dokk75 Desktop AI Companion`: Transparent Electron overlay, VRM + Live2D, Web Audio FFT frequency binning to visemes.
+  - `heshanthenura DesktopCompanion`: Java 2D sprite desk-pet architecture.
+  - `Desktop Maid (Steam / DesktopMate)`: Unity layered transparent window (`DwmExtendFrameIntoClientArea`), VRM spring-bone hair & skirt physics.
+  - `TalkingHead`: Three.js GLTFLoader + MeshoptDecoder + Oculus blendshape retargeting.
+- 🗣️ **Pronunciation Rule**: Pasha Dev is strictly `/dɛv/` (developer wala Dev, rhymes with rev, never "Dave").

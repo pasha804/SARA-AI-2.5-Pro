@@ -1,0 +1,5 @@
+Parallel Equivalent Resistance Formula (for 2 resistors):
+Req = (R1 * R2) / (R1 + R2)
+
+General Formula (any number of resistors):
+1/Req = 1/R1 + 1/R2 + 1/R3 + ...

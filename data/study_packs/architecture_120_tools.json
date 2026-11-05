@@ -1,0 +1,48 @@
+{
+  "id": "study_1793697786",
+  "title": "Architecture 120 Tools",
+  "source": "D:\\MARAA AI\\architecture.md",
+  "concepts": [
+    {
+      "concept": "SARA AI 2.5 PRO — Master Autonomous Architecture & Engineering Blueprint",
+      "explanation": "# SARA AI 2.5 PRO — Master Autonomous Architecture & Engineering Blueprint..."
+    },
+    {
+      "concept": "1. High-Level System Architecture",
+      "explanation": "## 1. High-Level System Architecture..."
+    },
+    {
+      "concept": "2. Awesome-n8n 360+ Automations Integration Topology",
+      "explanation": "## 2. Awesome-n8n 360+ Automations Integration Topology..."
+    },
+    {
+      "concept": "C1[\"AI & RAG (41)\"]",
+      "explanation": "```mermaid\ngraph LR\n    subgraph Catalog [\"Awesome-n8n Master Repository (360 Workflows)\"]\n        C1[\"AI & RAG (41)\"]\n        C2[\"OpenAI & LLMs (92)\"]\n        C3[\"Other Integrations (52)\"]\n        C4..."
+    }
+  ],
+  "quiz_questions": [
+    {
+      "question": "What is the primary role of 'SARA AI 2.5 PRO — Master Autonomous Architecture & Engineering Blueprint' in this topic?",
+      "options": [
+        "(Recommended) Regulates core functionality and system flow",
+        "Provides static decoration without functional role",
+        "Acts as a legacy fallback only",
+        "Disables memory allocation entirely"
+      ],
+      "correct": 0,
+      "explanation": "SARA AI 2.5 PRO — Master Autonomous Architecture & Engineering Blueprint establishes the essential logic boundary and process execution."
+    },
+    {
+      "question": "Which algorithmic complexity or behavior typically governs this architecture?",
+      "options": [
+        "O(1) direct deterministic lookup",
+        "Unbounded exponential recurrence",
+        "Arbitrary randomized non-termination",
+        "Manual iterative clock cycling"
+      ],
+      "correct": 0,
+      "explanation": "Optimized state machines and lookup tables achieve near O(1) deterministic performance."
+    }
+  ],
+  "created_at": "2026-11-03 14:23:06"
+}

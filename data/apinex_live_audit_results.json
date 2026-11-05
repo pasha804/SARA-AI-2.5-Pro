@@ -1,0 +1,210 @@
+[
+  {
+    "model": "free/mimo-v2.6-pro",
+    "status": "ERROR",
+    "code": 402,
+    "latency_ms": 868.03,
+    "reply": null,
+    "error": "This model is currently available only with a subscription. Buy a subscription at https://apinex.bond/subscriptions to use it."
+  },
+  {
+    "model": "free/deepseek-v4.1-flash",
+    "status": "WORKING",
+    "code": 200,
+    "latency_ms": 2060.19,
+    "reply": "OK",
+    "error": null
+  },
+  {
+    "model": "free/deepseek-v4-pro-0813",
+    "status": "WORKING",
+    "code": 200,
+    "latency_ms": 1369.42,
+    "reply": "OK",
+    "error": null
+  },
+  {
+    "model": "free/muse-spark-1.3",
+    "status": "ERROR",
+    "code": 402,
+    "latency_ms": 365.22,
+    "reply": null,
+    "error": "This model is currently available only with a subscription. Buy a subscription at https://apinex.bond/subscriptions to use it."
+  },
+  {
+    "model": "free/kimi-k3",
+    "status": "WORKING",
+    "code": 200,
+    "latency_ms": 1750.41,
+    "reply": "OK",
+    "error": null
+  },
+  {
+    "model": "free/gemini-3.8-flash",
+    "status": "WORKING",
+    "code": 200,
+    "latency_ms": 1320.48,
+    "reply": "OK",
+    "error": null
+  },
+  {
+    "model": "free/glm-5.3-flashx",
+    "status": "WORKING",
+    "code": 200,
+    "latency_ms": 1216.37,
+    "reply": "OK",
+    "error": null
+  },
+  {
+    "model": "free/claude-opus-4.6",
+    "status": "ERROR",
+    "code": 402,
+    "latency_ms": 370.93,
+    "reply": null,
+    "error": "This model is currently available only with a subscription. Buy a subscription at https://apinex.bond/subscriptions to use it."
+  },
+  {
+    "model": "free/claude-sonnet-4.6",
+    "status": "ERROR",
+    "code": 402,
+    "latency_ms": 587.97,
+    "reply": null,
+    "error": "This model is currently available only with a subscription. Buy a subscription at https://apinex.bond/subscriptions to use it."
+  },
+  {
+    "model": "free/deepseek-v4-flash-0731",
+    "status": "ERROR",
+    "code": 402,
+    "latency_ms": 323.82,
+    "reply": null,
+    "error": "This model is currently available only with a subscription. Buy a subscription at https://apinex.bond/subscriptions to use it."
+  },
+  {
+    "model": "free/glm-5.3",
+    "status": "WORKING",
+    "code": 200,
+    "latency_ms": 2704.69,
+    "reply": "OK",
+    "error": null
+  },
+  {
+    "model": "free/glm-5.3-flash",
+    "status": "WORKING",
+    "code": 200,
+    "latency_ms": 3294.1,
+    "reply": "OK",
+    "error": null
+  },
+  {
+    "model": "free/gemini-3.1-pro",
+    "status": "ERROR",
+    "code": 402,
+    "latency_ms": 1371.35,
+    "reply": null,
+    "error": "This model is currently available only with a subscription. Buy a subscription at https://apinex.bond/subscriptions to use it."
+  },
+  {
+    "model": "free/gpt-6-luna",
+    "status": "WORKING",
+    "code": 200,
+    "latency_ms": 1417.63,
+    "reply": "OK",
+    "error": null
+  },
+  {
+    "model": "free/hy4",
+    "status": "ERROR",
+    "code": 402,
+    "latency_ms": 1521.05,
+    "reply": null,
+    "error": "This model is currently available only with a subscription. Buy a subscription at https://apinex.bond/subscriptions to use it."
+  },
+  {
+    "model": "free/jev-1.13",
+    "status": "ERROR",
+    "code": 400,
+    "latency_ms": 1303.6,
+    "reply": null,
+    "error": "Model 'free/jev-1.13' is a Jev Group Decision model and cannot be called on /v1/chat/completions. Please use POST /v1/decisions instead (docs: https://apinex.bond/developers/models/decisions)."
+  },
+  {
+    "model": "free/kimi-k2.8",
+    "status": "ERROR",
+    "code": 402,
+    "latency_ms": 1544.77,
+    "reply": null,
+    "error": "This model is currently available only with a subscription. Buy a subscription at https://apinex.bond/subscriptions to use it."
+  },
+  {
+    "model": "free/mimo-v2.6-flash",
+    "status": "ERROR",
+    "code": 402,
+    "latency_ms": 1418.15,
+    "reply": null,
+    "error": "This model is currently available only with a subscription. Buy a subscription at https://apinex.bond/subscriptions to use it."
+  },
+  {
+    "model": "free/minimax-m3",
+    "status": "ERROR",
+    "code": 402,
+    "latency_ms": 3262.82,
+    "reply": null,
+    "error": "This model is currently available only with a subscription. Buy a subscription at https://apinex.bond/subscriptions to use it."
+  },
+  {
+    "model": "free/minimax-m3.1-flash",
+    "status": "WORKING",
+    "code": 200,
+    "latency_ms": 1598.55,
+    "reply": "OK",
+    "error": null
+  },
+  {
+    "model": "free/qwen-3.8-max",
+    "status": "FAILED",
+    "code": 0,
+    "latency_ms": 15896.76,
+    "reply": null,
+    "error": "The read operation timed out"
+  },
+  {
+    "model": "deepseek-v4.1-flash",
+    "status": "ERROR",
+    "code": 402,
+    "latency_ms": 1931.35,
+    "reply": null,
+    "error": "Insufficient balance. Top up your balance to continue: https://apinex.bond/billing"
+  },
+  {
+    "model": "deepseek-v4-flash",
+    "status": "ERROR",
+    "code": 402,
+    "latency_ms": 509.7,
+    "reply": null,
+    "error": "Insufficient balance. Top up your balance to continue: https://apinex.bond/billing"
+  },
+  {
+    "model": "gemini-3.8-flash",
+    "status": "ERROR",
+    "code": 402,
+    "latency_ms": 706.1,
+    "reply": null,
+    "error": "Insufficient balance. Top up your balance to continue: https://apinex.bond/billing"
+  },
+  {
+    "model": "claude-sonnet-5.5",
+    "status": "ERROR",
+    "code": 402,
+    "latency_ms": 2059.54,
+    "reply": null,
+    "error": "Anthropic models (Claude) are only available to accounts with at least one balance top-up. Please top up your balance to use Claude models: https://apinex.bond/billing"
+  },
+  {
+    "model": "gpt-6-luna",
+    "status": "ERROR",
+    "code": 402,
+    "latency_ms": 2218.24,
+    "reply": null,
+    "error": "Insufficient balance. Top up your balance to continue: https://apinex.bond/billing"
+  }
+]

@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SARA AI — Interactive Neural Brain Graph</title>
+  <style>
+    :root {
+      --bg: #0a0a12;
+      --panel-bg: rgba(16, 16, 28, 0.85);
+      --border: rgba(255, 255, 255, 0.1);
+      --text: #e2e8f0;
+      --text-dim: #94a3b8;
+      --primary: #c084fc;
+      --cyan: #38bdf8;
+      --emerald: #34d399;
+      --amber: #fbbf24;
+      --rose: #fb7185;
+      --indigo: #818cf8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 50%, #131124 0%, #07070c 100%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      user-select: none;
+    }
+    #canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: grab;
+    }
+    #canvas:active { cursor: grabbing; }
+
+    /* Top Navigation HUD */
+    .header {
+      position: absolute;
+      top: 20px;
+      left: 24px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--panel-bg);
+      backdrop-filter: blur(16px);
+      padding: 10px 20px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #c084fc, #38bdf8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      color: #000;
+      font-size: 16px;
+      box-shadow: 0 0 16px rgba(192, 132, 252, 0.5);
+    }
+    .brand-text h1 {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #fff;
+    }
+    .brand-text span {
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+    .search-box {
+      margin-left: 20px;
+      position: relative;
+    }
+    .search-input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 8px 14px 8px 32px;
+      border-radius: 8px;
+      font-size: 13px;
+      width: 220px;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 12px rgba(192, 132, 252, 0.3);
+      width: 260px;
+    }
+    .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    /* Filters Bar */
+    .filter-bar {
+      position: absolute;
+      top: 85px;
+      left: 24px;
+      z-index: 10;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      max-width: 800px;
+    }
+    .filter-chip {
+      background: rgba(16, 16, 28, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+      color: var(--text-dim);
+    }
+    .filter-chip.active {
+      border-color: currentColor;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+    }
+    .chip-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    /* Side Inspector Panel */
+    .inspector {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      width: 380px;
+      max-height: calc(100vh - 40px);
+      background: var(--panel-bg);
+      backdrop-filter: blur(20px);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.7);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      overflow-y: auto;
+      z-index: 10;
+      transform: translateX(420px);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .inspector.open {
+      transform: translateX(0);
+    }
+    .inspector-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .inspector-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .inspector-tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 4px;
+    }
+    .close-btn {
+      background: none;
+      border: none;
+      color: var(--text-dim);
+      font-size: 20px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+    }
+    .close-btn:hover { color: #fff; }
+    .inspector-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+    .inspector-meta {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+    }
+    .meta-label { color: var(--text-dim); }
+    .meta-val { color: #fff; font-family: monospace; }
+    .connections-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .connection-item {
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+    .connection-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Stats HUD (Bottom Left) */
+    .hud-bottom {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      z-index: 10;
+      background: var(--panel-bg);
+      backdrop-filter: blur(16px);
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      display: flex;
+      gap: 20px;
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+    .hud-stat strong {
+      color: #fff;
+      font-size: 14px;
+      margin-right: 4px;
+    }
+
+    /* Controls (Bottom Right) */
+    .controls {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      z-index: 10;
+      display: flex;
+      gap: 8px;
+    }
+    .ctrl-btn {
+      background: var(--panel-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      color: var(--text);
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .ctrl-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="header">
+    <div class="brand">
+      <div class="brand-icon">S</div>
+      <div class="brand-text">
+        <h1>SARA NEURAL BRAIN</h1>
+        <span>OBSIDIAN KNOWLEDGE GRAPH v2.0 • PASHA DEV</span>
+      </div>
+    </div>
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Search neural nodes..." />
+    </div>
+  </div>
+
+  <!-- Filter Chips -->
+  <div class="filter-bar" id="filterBar"></div>
+
+  <!-- Inspector Side Panel -->
+  <div class="inspector" id="inspector">
+    <div class="inspector-header">
+      <div>
+        <h2 class="inspector-title" id="nodeTitle">Node Title</h2>
+        <span class="inspector-tag" id="nodeTag">Category</span>
+      </div>
+      <button class="close-btn" id="closeInspector">&times;</button>
+    </div>
+    <p class="inspector-desc" id="nodeDesc">Node description will appear here.</p>
+    <div class="inspector-meta" id="nodeMeta">
+      <div class="meta-row"><span class="meta-label">Code Module:</span><span class="meta-val" id="metaCode">server.ts</span></div>
+      <div class="meta-row"><span class="meta-label">Latency / Impact:</span><span class="meta-val" id="metaLatency">< 15ms</span></div>
+      <div class="meta-row"><span class="meta-label">Status:</span><span class="meta-val" id="metaStatus">Online</span></div>
+    </div>
+    <div style="font-size: 13px; font-weight: 600; color: #fff;">Connected Synapses:</div>
+    <div class="connections-list" id="connectionsList"></div>
+  </div>
+
+  <!-- Bottom Stats HUD -->
+  <div class="hud-bottom">
+    <div class="hud-stat"><strong id="nodeCount">0</strong> Nodes</div>
+    <div class="hud-stat"><strong id="edgeCount">0</strong> Synaptic Edges</div>
+    <div class="hud-stat">Owner: <strong style="color: #c084fc;">Pasha Dev</strong></div>
+    <div class="hud-stat">Status: <strong style="color: #34d399;">Active • Full-Duplex</strong></div>
+  </div>
+
+  <!-- Bottom Right Zoom Controls -->
+  <div class="controls">
+    <button class="ctrl-btn" id="zoomInBtn">+</button>
+    <button class="ctrl-btn" id="zoomOutBtn">&minus;</button>
+    <button class="ctrl-btn" id="resetZoomBtn">⟲</button>
+  </div>
+
+  <!-- Canvas -->
+  <canvas id="canvas"></canvas>
+
+  <script>
+    // --- GRAPH DATA SPECIFICATION ---
+    const CATEGORIES = {
+      core:       { name: "SARA Core",       color: "#f43f5e" },
+      pasha:      { name: "Pasha Dev Memory", color: "#c084fc" },
+      cognition:  { name: "Cognitive Mind",  color: "#38bdf8" },
+      memory:     { name: "3-Tier Storage",  color: "#34d399" },
+      models:     { name: "Multi-Model AI",  color: "#fbbf24" },
+      sensory:    { name: "Voice & Vision",  color: "#f97316" },
+      tools:      { name: "Desktop Tools",   color: "#60a5fa" },
+      plugins:    { name: "Advanced Repos",  color: "#a855f7" }
+    };
+
+    const NODES = [
+      // SARA Central Core
+      { id: "sara_core", label: "SARA Core Brain", category: "core", radius: 24, desc: "Central autonomous orchestrator. Coordinates voice, vision, memory, thought loops and desktop tools for Pasha Dev.", code: "server.ts:startServer()", status: "Active" },
+
+      // Pasha Dev Profile & Memory
+      { id: "pasha_dev", label: "Muhammad Mubashar (Pasha Dev)", category: "pasha", radius: 18, desc: "Creator, owner, and developer. Full-Stack developer & AI engineer based in Lahore, Pakistan.", code: "ZORO_PERSONAL_MEMORY_MASTER_v1.md", status: "Permanent" },
+      { id: "mubar_brand", label: "MUBAR Watches (mubar.pk)", category: "pasha", radius: 14, desc: "Pasha Dev's luxury e-commerce watch brand. Sells 3D kinetic wheel rim & solid steel watches with COD in Pakistan.", code: "localhost:3000 / mubar.pk", status: "Active Business" },
+      { id: "roman_urdu", label: "Roman Urdu & Hinglish Vibe", category: "pasha", radius: 12, desc: "Preferred communication style. Natural, sweet, affectionate, and technical without robotic corporate phrases.", code: "server.ts:baseInstructions", status: "Active" },
+      { id: "academic_bcs", label: "BS Computer Science (Lahore)", category: "pasha", radius: 10, desc: "Pasha Dev's academic journey balancing college with high-end digital products and SaaS development.", code: "Memory: Academic", status: "Active" },
+
+      // Cognitive Mind
+      { id: "cog_runtime", label: "Cognitive Runtime", category: "cognition", radius: 16, desc: "Event-driven autonomous loop evaluating world state every 4 seconds.", code: "cognition/runtime.ts", status: "Running" },
+      { id: "auto_mind", label: "Autonomous Mind", category: "cognition", radius: 14, desc: "Endogenous thought generator driving curiosity, reflection, and proactive speech.", code: "cognition/autonomousMind.ts", status: "Running" },
+      { id: "goal_planner", label: "Goal Planner & Critic", category: "cognition", radius: 13, desc: "Breaks high-level user commands into validated sequential tool plans.", code: "cognition/planner.ts", status: "Active" },
+      { id: "attention_engine", label: "Attention Engine", category: "cognition", radius: 11, desc: "Dynamic thresholding for when to remember, when to speak, and when to stay quiet.", code: "cognition/attentionEngine.ts", status: "Active" },
+      { id: "desktop_perception", label: "Desktop Perception", category: "cognition", radius: 12, desc: "Monitors active foreground window, mouse movement, and user idle duration.", code: "cognition/desktopPerception.ts", status: "Active" },
+
+      // 3-Tier Memory
+      { id: "mem_l0", label: "L0: Working Context Card", category: "memory", radius: 12, desc: "Compact working memory card injected into active model turns.", code: "server_memory.ts", status: "Instant (<2ms)" },
+      { id: "mem_l1", label: "L1: Structured Semantic Store", category: "memory", radius: 14, desc: "Persistent JSON / SQLite semantic store with tags, categories, and confidence weights.", code: "memories.v1.json", status: "Permanent" },
+      { id: "mem_l2", label: "L2: Deep History & Vectors", category: "memory", radius: 12, desc: "Long-term archive storing deep conversations, project notes, and coding habits.", code: "ZORO_MEMORY_BRAIN_V3", status: "Offline Ready" },
+
+      // Multi-Model Routing
+      { id: "gemini_live", label: "Gemini 3.1 Live Preview", category: "models", radius: 16, desc: "Realtime full-duplex multimodal audio/vision engine. ~300ms latency, native audio in/out.", code: "server.ts:ai.live.connect", status: "Streaming" },
+      { id: "deepseek_r1", label: "DeepSeek-V4 Pro-Max (Clean APIs)", category: "models", radius: 15, desc: "Elite reasoning & coding engine for goal planning, complex scripts, and desktop automation.", code: "modelRouter.ts:CleanAPIs", status: "Integrated" },
+      { id: "claude_sonnet", label: "Claude Sonnet 5 (Clean APIs)", category: "models", radius: 14, desc: "Empathetic companion persona model for deeply natural and witty companion dialogue.", code: "modelRouter.ts:CleanAPIs", status: "Integrated" },
+      { id: "local_slm", label: "Local Offline SLM (Qwen-2.5)", category: "models", radius: 13, desc: "Zero-internet offline fallback engine running locally via Ollama / llama.cpp.", code: "Local :11434", status: "Standby" },
+      { id: "freellm_api", label: "FreeLLMAPI Auto-Failover", category: "models", radius: 12, desc: "34 free provider gateway with automatic failover on rate limits (429).", code: "Local :3001", status: "Auto-Switch" },
+
+      // Sensory & Voice
+      { id: "voice_in", label: "16kHz Linear PCM Audio In", category: "sensory", radius: 12, desc: "Microphone stream sent via WebSocket directly into the Gemini multimodal session.", code: "navigator.mediaDevices", status: "Live" },
+      { id: "voice_out", label: "24kHz Studio PCM Audio Out", category: "sensory", radius: 13, desc: "High-fidelity voice chunk stream returned from model to Web Audio API.", code: "AudioContext:24kHz", status: "Live" },
+      { id: "screen_vision", label: "Desktop Capturer (1440p IPC)", category: "sensory", radius: 14, desc: "Electron native display capture injecting real-time visual frames into the AI's eyes.", code: "desktopCapturer IPC", status: "On-Demand" },
+      { id: "lip_sync", label: "3D Anime Lip-Sync (A, E, I, O, U)", category: "sensory", radius: 13, desc: "Real-time frequency & formant analyzer moving 3D character mouth blendshapes.", code: "Three.js / MMD / VRM", status: "Active" },
+      { id: "barge_in", label: "Full-Duplex Interruption", category: "sensory", radius: 11, desc: "Instantly mutes SARA's voice if Pasha Dev starts speaking while she is talking.", code: "server.ts:interrupted", status: "Active" },
+
+      // Desktop Tools (73 Tools)
+      { id: "tool_agent", label: "Python Desktop Agent (:8765)", category: "tools", radius: 15, desc: "FastAPI Windows automation worker executing 73 native desktop tools.", code: "resources/agent/myraa-agent.exe", status: "Running (PID 23000)" },
+      { id: "tool_mouse_kb", label: "Mouse & Keyboard Control", category: "tools", radius: 11, desc: "Click, doubleClick, drag, scroll, typeText, hotkey, and coordinate targeting.", code: "tools_input.pyc", status: "Verified" },
+      { id: "tool_window_mgmt", label: "Window & App Management", category: "tools", radius: 11, desc: "Launch apps, close apps, minimize, maximize, and switch foreground tasks.", code: "tools_applications.pyc", status: "Verified" },
+      { id: "tool_files", label: "File System Operations", category: "tools", radius: 11, desc: "Create, read, write, rename, move, delete (Recycle Bin safe) and search files.", code: "tools_files.pyc", status: "Verified" },
+      { id: "tool_code_exec", label: "Python & Shell Runner", category: "tools", radius: 11, desc: "Writes code files, creates project structures, and executes Python scripts with stdout capture.", code: "tools_coding.pyc", status: "Verified" },
+      { id: "tool_pc_ctrl", label: "PC Hardware & Power", category: "tools", radius: 11, desc: "Volume, brightness, mute, auto-start, and token-gated shutdown/restart.", code: "tools_pc.pyc", status: "Gated" },
+
+      // 12 Advanced Repositories
+      { id: "repo_openviking", label: "OpenViking (ByteDance)", category: "plugins", radius: 13, desc: "Hierarchical Virtual Context OS saving 90% tokens when exploring large codebases.", code: "volcengine/OpenViking", status: "Tier 1 Priority" },
+      { id: "repo_agentmemory", label: "agentmemory Daemon", category: "plugins", radius: 13, desc: "Zero-amnesia developer memory daemon maintaining episodic, semantic & procedural recall.", code: "rohitg00/agentmemory", status: "Tier 1 Priority" },
+      { id: "repo_browseruse", label: "browser-use (Visual Click)", category: "plugins", radius: 13, desc: "Autonomous web navigator with numbered interactive element tagging (click(14)).", code: "browser-use/browser-use", status: "High Priority" },
+      { id: "repo_agentreach", label: "Agent-Reach Scraper", category: "plugins", radius: 12, desc: "Zero-fee internet harvester for YouTube transcripts, Reddit threads, and GitHub issues.", code: "Panniantong/Agent-Reach", status: "High Priority" },
+      { id: "repo_omniroute", label: "OmniRoute (Token Optimizer)", category: "plugins", radius: 12, desc: "Compresses prompts by 35-45% using RTK/Caveman algorithms to slash latency.", code: "diegosouzapw/OmniRoute", status: "Optimization" },
+      { id: "repo_deerflow", label: "deer-flow Self-Healing", category: "plugins", radius: 12, desc: "ByteDance super-agent harness with persistent checkpoints and automated self-healing.", code: "bytedance/deer-flow", status: "Resilience" }
+    ];
+
+    const EDGES = [
+      // SARA Core Connections
+      { from: "sara_core", to: "pasha_dev" },
+      { from: "sara_core", to: "cog_runtime" },
+      { from: "sara_core", to: "gemini_live" },
+      { id: "e4", from: "sara_core", to: "tool_agent" },
+      { from: "sara_core", to: "mem_l0" },
+      { from: "sara_core", to: "lip_sync" },
+
+      // Pasha Dev Connections
+      { from: "pasha_dev", to: "mubar_brand" },
+      { from: "pasha_dev", to: "roman_urdu" },
+      { from: "pasha_dev", to: "academic_bcs" },
+      { from: "pasha_dev", to: "mem_l1" },
+
+      // Cognition Loop Connections
+      { from: "cog_runtime", to: "auto_mind" },
+      { from: "cog_runtime", to: "goal_planner" },
+      { from: "cog_runtime", to: "attention_engine" },
+      { from: "cog_runtime", to: "desktop_perception" },
+      { from: "goal_planner", to: "deepseek_r1" },
+      { from: "auto_mind", to: "claude_sonnet" },
+
+      // Memory Hierarchy
+      { from: "mem_l0", to: "mem_l1" },
+      { from: "mem_l1", to: "mem_l2" },
+      { from: "mem_l1", to: "repo_agentmemory" },
+      { from: "mem_l2", to: "repo_openviking" },
+
+      // Models Routing
+      { from: "gemini_live", to: "voice_out" },
+      { from: "gemini_live", to: "screen_vision" },
+      { from: "gemini_live", to: "barge_in" },
+      { from: "gemini_live", to: "freellm_api" },
+      { from: "freellm_api", to: "local_slm" },
+
+      // Sensory Connections
+      { from: "voice_in", to: "gemini_live" },
+      { from: "voice_out", to: "lip_sync" },
+      { from: "screen_vision", to: "gemini_live" },
+      { from: "barge_in", to: "voice_out" },
+
+      // Desktop Tools
+      { from: "tool_agent", to: "tool_mouse_kb" },
+      { from: "tool_agent", to: "tool_window_mgmt" },
+      { from: "tool_agent", to: "tool_files" },
+      { from: "tool_agent", to: "tool_code_exec" },
+      { from: "tool_agent", to: "tool_pc_ctrl" },
+      { from: "tool_agent", to: "desktop_perception" },
+
+      // Plugin Integrations
+      { from: "tool_agent", to: "repo_browseruse" },
+      { from: "tool_agent", to: "repo_agentreach" },
+      { from: "goal_planner", to: "repo_deerflow" },
+      { from: "deepseek_r1", to: "repo_omniroute" }
+    ];
+
+    // --- SETUP SIMULATION & RENDERING ---
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    window.addEventListener("resize", () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    // Node positioning initialize
+    const nodeMap = new Map();
+    NODES.forEach((n, i) => {
+      const angle = (i / NODES.length) * Math.PI * 2;
+      const dist = n.id === "sara_core" ? 0 : 180 + Math.random() * 260;
+      n.x = width / 2 + Math.cos(angle) * dist;
+      n.y = height / 2 + Math.sin(angle) * dist;
+      n.vx = 0;
+      n.vy = 0;
+      n.visible = true;
+      nodeMap.set(n.id, n);
+    });
+
+    // Populate Filters
+    const filterBar = document.getElementById("filterBar");
+    Object.entries(CATEGORIES).forEach(([key, cat]) => {
+      const chip = document.createElement("div");
+      chip.className = "filter-chip active";
+      chip.dataset.cat = key;
+      chip.innerHTML = `<span class="chip-dot" style="background: ${cat.color};"></span>${cat.name}`;
+      chip.addEventListener("click", () => {
+        chip.classList.toggle("active");
+        updateVisibility();
+      });
+      filterBar.appendChild(chip);
+    });
+
+    function updateVisibility() {
+      const activeCats = new Set(
+        Array.from(document.querySelectorAll(".filter-chip.active")).map(c => c.dataset.cat)
+      );
+      const query = document.getElementById("searchInput").value.toLowerCase();
+
+      NODES.forEach(n => {
+        const matchesCat = activeCats.has(n.category);
+        const matchesQuery = !query || n.label.toLowerCase().includes(query) || n.desc.toLowerCase().includes(query);
+        n.visible = matchesCat && matchesQuery;
+      });
+    }
+
+    document.getElementById("searchInput").addEventListener("input", updateVisibility);
+
+    // Camera Transform (Pan & Zoom)
+    let zoom = 1;
+    let panX = 0;
+    let panY = 0;
+    let isDragging = false;
+    let dragStart = { x: 0, y: 0 };
+    let draggedNode = null;
+    let selectedNode = null;
+
+    canvas.addEventListener("mousedown", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = (e.clientX - rect.left - panX) / zoom;
+      const mouseY = (e.clientY - rect.top - panY) / zoom;
+
+      // Check node hit
+      draggedNode = null;
+      for (const n of NODES) {
+        if (!n.visible) continue;
+        const dx = mouseX - n.x;
+        const dy = mouseY - n.y;
+        if (Math.sqrt(dx * dx + dy * dy) <= n.radius + 6) {
+          draggedNode = n;
+          selectNode(n);
+          break;
+        }
+      }
+
+      if (!draggedNode) {
+        isDragging = true;
+        dragStart = { x: e.clientX - panX, y: e.clientY - panY };
+      }
+    });
+
+    window.addEventListener("mousemove", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = (e.clientX - rect.left - panX) / zoom;
+      const mouseY = (e.clientY - rect.top - panY) / zoom;
+
+      if (draggedNode) {
+        draggedNode.x = mouseX;
+        draggedNode.y = mouseY;
+        draggedNode.vx = 0;
+        draggedNode.vy = 0;
+      } else if (isDragging) {
+        panX = e.clientX - dragStart.x;
+        panY = e.clientY - dragStart.y;
+      }
+    });
+
+    window.addEventListener("mouseup", () => {
+      isDragging = false;
+      draggedNode = null;
+    });
+
+    canvas.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      const zoomFactor = e.deltaY < 0 ? 1.1 : 0.9;
+      zoom = Math.max(0.2, Math.min(3.5, zoom * zoomFactor));
+    });
+
+    document.getElementById("zoomInBtn").addEventListener("click", () => zoom = Math.min(3.5, zoom * 1.2));
+    document.getElementById("zoomOutBtn").addEventListener("click", () => zoom = Math.max(0.2, zoom * 0.8));
+    document.getElementById("resetZoomBtn").addEventListener("click", () => {
+      zoom = 1; panX = 0; panY = 0;
+    });
+
+    // Inspector Selection
+    function selectNode(n) {
+      selectedNode = n;
+      document.getElementById("nodeTitle").innerText = n.label;
+      document.getElementById("nodeTag").innerText = CATEGORIES[n.category].name;
+      document.getElementById("nodeTag").style.color = CATEGORIES[n.category].color;
+      document.getElementById("nodeDesc").innerText = n.desc;
+      document.getElementById("metaCode").innerText = n.code;
+      document.getElementById("metaStatus").innerText = n.status;
+
+      // Find connections
+      const list = document.getElementById("connectionsList");
+      list.innerHTML = "";
+      EDGES.forEach(e => {
+        let other = null;
+        if (e.from === n.id) other = nodeMap.get(e.to);
+        if (e.to === n.id) other = nodeMap.get(e.from);
+        if (other && other.visible) {
+          const item = document.createElement("div");
+          item.className = "connection-item";
+          item.innerHTML = `<span>${other.label}</span><span style="color: ${CATEGORIES[other.category].color}; font-size: 10px;">${CATEGORIES[other.category].name}</span>`;
+          item.addEventListener("click", (ev) => {
+            ev.stopPropagation();
+            selectNode(other);
+          });
+          list.appendChild(item);
+        }
+      });
+
+      document.getElementById("inspector").classList.add("open");
+    }
+
+    document.getElementById("closeInspector").addEventListener("click", () => {
+      document.getElementById("inspector").classList.remove("open");
+      selectedNode = null;
+    });
+
+    document.getElementById("nodeCount").innerText = NODES.length;
+    document.getElementById("edgeCount").innerText = EDGES.length;
+
+    // Physics Simulation Loop
+    let pulseTime = 0;
+    function simulate() {
+      pulseTime += 0.02;
+
+      // 1. Center attraction
+      const cx = width / 2;
+      const cy = height / 2;
+
+      // 2. Repulsion between nodes
+      for (let i = 0; i < NODES.length; i++) {
+        const a = NODES[i];
+        if (!a.visible) continue;
+
+        // Soft center gravity
+        a.vx += (cx - a.x) * 0.0004;
+        a.vy += (cy - a.y) * 0.0004;
+
+        for (let j = i + 1; j < NODES.length; j++) {
+          const b = NODES[j];
+          if (!b.visible) continue;
+          const dx = b.x - a.x;
+          const dy = b.y - a.y;
+          const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+          const minDist = a.radius + b.radius + 70;
+          if (dist < minDist) {
+            const force = (minDist - dist) / dist * 0.12;
+            a.vx -= dx * force;
+            a.vy -= dy * force;
+            b.vx += dx * force;
+            b.vy += dy * force;
+          }
+        }
+      }
+
+      // 3. Edge spring attraction
+      EDGES.forEach(e => {
+        const from = nodeMap.get(e.from);
+        const to = nodeMap.get(e.to);
+        if (!from || !to || !from.visible || !to.visible) return;
+
+        const dx = to.x - from.x;
+        const dy = to.y - from.y;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        const targetDist = 110;
+        const force = (dist - targetDist) * 0.0018;
+
+        from.vx += dx * force;
+        from.vy += dy * force;
+        to.vx -= dx * force;
+        to.vy -= dy * force;
+      });
+
+      // 4. Dampen & Integrate
+      NODES.forEach(n => {
+        if (n !== draggedNode) {
+          n.vx *= 0.88;
+          n.vy *= 0.88;
+          n.x += n.vx;
+          n.y += n.vy;
+        }
+      });
+    }
+
+    // Render Loop
+    function render() {
+      simulate();
+
+      ctx.save();
+      ctx.clearRect(0, 0, width, height);
+
+      // Apply Pan & Zoom
+      ctx.translate(panX, panY);
+      ctx.scale(zoom, zoom);
+
+      // Draw Edges
+      EDGES.forEach(e => {
+        const from = nodeMap.get(e.from);
+        const to = nodeMap.get(e.to);
+        if (!from || !to || !from.visible || !to.visible) return;
+
+        const isHighlighted = selectedNode && (selectedNode.id === from.id || selectedNode.id === to.id);
+
+        ctx.beginPath();
+        ctx.moveTo(from.x, from.y);
+        ctx.lineTo(to.x, to.y);
+        ctx.strokeStyle = isHighlighted ? "rgba(255, 255, 255, 0.7)" : "rgba(255, 255, 255, 0.12)";
+        ctx.lineWidth = isHighlighted ? 2.5 : 1.2;
+        ctx.stroke();
+
+        // Animated Synaptic Pulses
+        const t = (pulseTime + (from.x % 10)) % 1;
+        const px = from.x + (to.x - from.x) * t;
+        const py = from.y + (to.y - from.y) * t;
+        ctx.beginPath();
+        ctx.arc(px, py, isHighlighted ? 3 : 1.8, 0, Math.PI * 2);
+        ctx.fillStyle = CATEGORIES[from.category].color;
+        ctx.shadowColor = CATEGORIES[from.category].color;
+        ctx.shadowBlur = 6;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      });
+
+      // Draw Nodes
+      NODES.forEach(n => {
+        if (!n.visible) return;
+
+        const isSelected = selectedNode && selectedNode.id === n.id;
+        const color = CATEGORIES[n.category].color;
+
+        // Outer Glow
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.radius + (isSelected ? 10 : 4), 0, Math.PI * 2);
+        ctx.fillStyle = isSelected ? `${color}44` : `${color}22`;
+        ctx.fill();
+
+        // Main Node Body
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+        ctx.fillStyle = isSelected ? "#ffffff" : color;
+        ctx.shadowColor = color;
+        ctx.shadowBlur = isSelected ? 24 : 12;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        // Inner Core Ring
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, Math.max(3, n.radius * 0.45), 0, Math.PI * 2);
+        ctx.fillStyle = "#0a0a12";
+        ctx.fill();
+
+        // Node Label
+        ctx.font = `${isSelected ? "bold 13px" : "11px"} -apple-system, BlinkMacSystemFont, sans-serif`;
+        ctx.fillStyle = isSelected ? "#ffffff" : "#cbd5e1";
+        ctx.textAlign = "center";
+        ctx.fillText(n.label, n.x, n.y + n.radius + 16);
+      });
+
+      ctx.restore();
+      requestAnimationFrame(render);
+    }
+
+    requestAnimationFrame(render);
+  </script>
+</body>
+</html>

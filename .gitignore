@@ -1,0 +1,71 @@
+# ==============================================================================
+# SARA AI 2.5 PRO - MASTER .GITIGNORE
+# Protects secrets, excludes binary installer runtimes, caches, and logs.
+# ==============================================================================
+
+# Secrets & Environment Configurations
+.env
+.env.*
+!.env.example
+secrets.json
+**/secrets.json
+
+# Large Binary Executables, Libraries & Installers (>40MB)
+*.exe
+*.dll
+*.pak
+*.bin
+*.dat
+*.iso
+*.msi
+
+# Packaged Electron Runtimes
+SARA/MYRAA-runtime.exe
+SARA/SARA-runtime.exe
+MYRAA-Setup-1.0.1.exe
+SARA-Setup-1.0.1.exe
+SARA/locales/
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Python Virtual Environments & Bytecode
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Local Runtime Data, Databases & Logs
+logs/
+*.log
+.myraa-data/
+.sara-data/
+data/sara_persistent_memory.db*
+data/backups/
+data/dialogue_history.json
+data/background_tasks.json
+data/discord_activity_log.json
+data/social_history.json
+data/test_tasks_*.json
+data/antigravity_tasks/task_*.json
+
+# Backups & Temporary Extracts
+sara_app_backup/
+myraa-agent.exe_extracted/
+*.bak
+*.bak*
+*.orig
+*.orig*
+
+# OS & Editor Junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

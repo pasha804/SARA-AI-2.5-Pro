@@ -1,0 +1,354 @@
+[
+  {
+    "model": "claude-sonnet-5.5",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 415.65,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 14s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "deepseek-v4-pro",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 341.66,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 14s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "deepseek-v4-flash",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 893.75,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 14s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "claude-opus-5.5",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 900.12,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 14s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "claude-fable-5.1",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 901.48,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 14s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "deepseek-v4.1-flash",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 316.43,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 14s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/claude-opus-4.6",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 304.95,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 13s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/deepseek-v4-flash-0731",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 331.36,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 13s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/claude-sonnet-4.6",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 357.87,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 13s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/deepseek-v4-pro-0813",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 361.63,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 13s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/glm-5.3",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 330.4,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 13s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/deepseek-v4.1-flash",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 363.24,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 13s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/glm-5.3-flashx",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 393.88,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 13s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/glm-5.3-flash",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 372.49,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 13s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/gemini-3.1-pro",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 514.06,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 13s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/gemini-3.8-flash",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 514.28,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 13s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/gpt-6-luna",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 502.62,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 13s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/hy4",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 363.18,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 13s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/kimi-k2.8",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 771.42,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 12s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/jev-1.13",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 772.25,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 12s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/kimi-k3",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 777.14,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 12s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/mimo-v2.6-flash",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 996.11,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 12s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/minimax-m3",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 357.08,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 11s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/mimo-v2.6-pro",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 382.07,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 11s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/minimax-m3.1-flash",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 514.11,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 11s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/muse-spark-1.3",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 330.83,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 11s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "free/qwen-3.8-max",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 764.21,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 11s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "glm-5.3",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 742.23,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 11s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "gpt-6-astra",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 534.5,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 11s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "glm-5.3-flash",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 727.32,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 11s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "gpt-6.1-sol",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 424.39,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 10s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "gpt-6-luna",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 430.36,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 10s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "gpt-6.1-terra",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 383.0,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 10s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "gemini-3.1-pro",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 330.58,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 10s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "gemini-3.8-flash",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 336.19,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 10s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "gemini-4-argon",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 358.54,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 10s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "grok-4.7",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 304.55,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 10s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "drex-v2.0",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 304.15,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 10s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "gpt-6-luna-decisions",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 439.57,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 10s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "jev-1.13",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 418.26,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 9s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "subq-snap-preview",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 392.16,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 9s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "kimi-k3.1-pro",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 386.97,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 9s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "muse-spark-1.3",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 512.47,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 9s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  },
+  {
+    "model": "hy4-preview",
+    "status": "ERROR",
+    "code": 429,
+    "latency_ms": 550.24,
+    "response": null,
+    "error": "Rate limit exceeded. Max 15 requests per minute for this account. Retry in 9s. Upgrade to 30\u2013200 RPM: https://apinex.bond/subscriptions"
+  }
+]

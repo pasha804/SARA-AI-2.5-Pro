@@ -1,0 +1,934 @@
+[
+  {
+    "id": "lead_1793436456",
+    "contact_name": "Ali Raza",
+    "phone": "+923332656733",
+    "message": "Salam Pasha bro, can you build an ecommerce store for me? What is the price?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 13:47:36"
+  },
+  {
+    "id": "lead_1793436636",
+    "contact_name": "Tariq Sahib",
+    "phone": "+923219988776",
+    "message": "Please send pricing for web design",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-10-31 13:50:36"
+  },
+  {
+    "id": "lead_1793436817",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-10-31 13:53:37"
+  },
+  {
+    "id": "lead_1793436860",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 13:54:20"
+  },
+  {
+    "id": "lead_1793436872",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 13:54:32"
+  },
+  {
+    "id": "lead_1793437501",
+    "contact_name": "Pasha Jan",
+    "phone": "+923332656733",
+    "message": "Salam SARA, test message for WhatsApp lead qualification on +923332656733",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 14:05:01"
+  },
+  {
+    "id": "lead_1793437510",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 14:05:10"
+  },
+  {
+    "id": "lead_1793437545",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 14:05:45"
+  },
+  {
+    "id": "lead_1793447938",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 16:58:58"
+  },
+  {
+    "id": "lead_1793451721",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 18:02:01"
+  },
+  {
+    "id": "lead_1793461241",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 20:40:41"
+  },
+  {
+    "id": "lead_1793462395",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 20:59:55"
+  },
+  {
+    "id": "lead_1793462656",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 21:04:16"
+  },
+  {
+    "id": "lead_1793465838",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 21:57:18"
+  },
+  {
+    "id": "lead_1793466002",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 22:00:02"
+  },
+  {
+    "id": "lead_1793466350",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 22:05:50"
+  },
+  {
+    "id": "lead_1793466593",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 22:09:53"
+  },
+  {
+    "id": "lead_1793466593",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-10-31 22:09:53"
+  },
+  {
+    "id": "lead_1793466872",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 22:14:32"
+  },
+  {
+    "id": "lead_1793466872",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-10-31 22:14:32"
+  },
+  {
+    "id": "lead_1793467314",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 22:21:54"
+  },
+  {
+    "id": "lead_1793467314",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-10-31 22:21:54"
+  },
+  {
+    "id": "lead_1793467571",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 22:26:11"
+  },
+  {
+    "id": "lead_1793467571",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-10-31 22:26:11"
+  },
+  {
+    "id": "lead_1793467699",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 22:28:19"
+  },
+  {
+    "id": "lead_1793467699",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-10-31 22:28:19"
+  },
+  {
+    "id": "lead_1793467752",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 22:29:12"
+  },
+  {
+    "id": "lead_1793467752",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-10-31 22:29:12"
+  },
+  {
+    "id": "lead_1793467798",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 22:29:58"
+  },
+  {
+    "id": "lead_1793467798",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-10-31 22:29:58"
+  },
+  {
+    "id": "lead_1793467822",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 22:30:22"
+  },
+  {
+    "id": "lead_1793468245",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 22:37:25"
+  },
+  {
+    "id": "lead_1793468245",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-10-31 22:37:25"
+  },
+  {
+    "id": "lead_1793468332",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 22:38:52"
+  },
+  {
+    "id": "lead_1793468332",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-10-31 22:38:52"
+  },
+  {
+    "id": "lead_1793468803",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 22:46:43"
+  },
+  {
+    "id": "lead_1793468803",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-10-31 22:46:43"
+  },
+  {
+    "id": "lead_1793468858",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 22:47:38"
+  },
+  {
+    "id": "lead_1793468858",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-10-31 22:47:38"
+  },
+  {
+    "id": "lead_1793468880",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-10-31 22:48:00"
+  },
+  {
+    "id": "lead_1793629083",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-02 19:18:03"
+  },
+  {
+    "id": "lead_1793629083",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-11-02 19:18:03"
+  },
+  {
+    "id": "lead_1793629109",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-02 19:18:29"
+  },
+  {
+    "id": "lead_1793629186",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-02 19:19:46"
+  },
+  {
+    "id": "lead_1793629186",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-11-02 19:19:46"
+  },
+  {
+    "id": "lead_1793629209",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-02 19:20:09"
+  },
+  {
+    "id": "lead_1793629544",
+    "contact_name": "Client Farhan",
+    "phone": "+923332656733",
+    "message": "We need a custom dashboard built this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-02 19:25:44"
+  },
+  {
+    "id": "lead_1793629544",
+    "contact_name": "Tech Support",
+    "phone": "+923332656733",
+    "message": "How do I configure API keys?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-11-02 19:25:44"
+  },
+  {
+    "id": "lead_1793631248",
+    "contact_name": "Client Farhan",
+    "phone": "+923332656733",
+    "message": "We need a custom dashboard built this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-02 19:54:08"
+  },
+  {
+    "id": "lead_1793631248",
+    "contact_name": "Tech Support",
+    "phone": "+923332656733",
+    "message": "How do I configure API keys?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-11-02 19:54:08"
+  },
+  {
+    "id": "lead_1793631346",
+    "contact_name": "Client Farhan",
+    "phone": "+923332656733",
+    "message": "We need a custom dashboard built this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-02 19:55:46"
+  },
+  {
+    "id": "lead_1793631346",
+    "contact_name": "Tech Support",
+    "phone": "+923332656733",
+    "message": "How do I configure API keys?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-11-02 19:55:46"
+  },
+  {
+    "id": "lead_1793631467",
+    "contact_name": "Client Farhan",
+    "phone": "+923332656733",
+    "message": "We need a custom dashboard built this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-02 19:57:46"
+  },
+  {
+    "id": "lead_1793631467",
+    "contact_name": "Tech Support",
+    "phone": "+923332656733",
+    "message": "How do I configure API keys?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-11-02 19:57:47"
+  },
+  {
+    "id": "lead_1793631492",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-02 19:58:12"
+  },
+  {
+    "id": "lead_1793631492",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-11-02 19:58:12"
+  },
+  {
+    "id": "lead_1793631512",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-02 19:58:32"
+  },
+  {
+    "id": "lead_1793634465",
+    "contact_name": "Client Farhan",
+    "phone": "+923332656733",
+    "message": "We need a custom dashboard built this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-02 20:47:45"
+  },
+  {
+    "id": "lead_1793634465",
+    "contact_name": "Tech Support",
+    "phone": "+923332656733",
+    "message": "How do I configure API keys?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-11-02 20:47:45"
+  },
+  {
+    "id": "lead_1793634490",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-02 20:48:10"
+  },
+  {
+    "id": "lead_1793634490",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-11-02 20:48:10"
+  },
+  {
+    "id": "lead_1793634507",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-02 20:48:27"
+  },
+  {
+    "id": "lead_1793634614",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-02 20:50:14"
+  },
+  {
+    "id": "lead_1793634614",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-11-02 20:50:14"
+  },
+  {
+    "id": "lead_1793634635",
+    "contact_name": "Client Farhan",
+    "phone": "+923332656733",
+    "message": "We need a custom dashboard built this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-02 20:50:35"
+  },
+  {
+    "id": "lead_1793634635",
+    "contact_name": "Tech Support",
+    "phone": "+923332656733",
+    "message": "How do I configure API keys?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-11-02 20:50:35"
+  },
+  {
+    "id": "lead_1793634679",
+    "contact_name": "Client Farhan",
+    "phone": "+923332656733",
+    "message": "We need a custom dashboard built this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-02 20:51:19"
+  },
+  {
+    "id": "lead_1793634679",
+    "contact_name": "Tech Support",
+    "phone": "+923332656733",
+    "message": "How do I configure API keys?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-11-02 20:51:19"
+  },
+  {
+    "id": "lead_1793634702",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-02 20:51:42"
+  },
+  {
+    "id": "lead_1793634702",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-11-02 20:51:42"
+  },
+  {
+    "id": "lead_1793634718",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-02 20:51:58"
+  },
+  {
+    "id": "lead_1793697746",
+    "contact_name": "Client Farhan",
+    "phone": "+923332656733",
+    "message": "We need a custom dashboard built this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-03 14:22:26"
+  },
+  {
+    "id": "lead_1793697746",
+    "contact_name": "Tech Support",
+    "phone": "+923332656733",
+    "message": "How do I configure API keys?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-11-03 14:22:26"
+  },
+  {
+    "id": "lead_1793697791",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-03 14:23:11"
+  },
+  {
+    "id": "lead_1793697791",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-11-03 14:23:11"
+  },
+  {
+    "id": "lead_1793697815",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-03 14:23:35"
+  }
+]
