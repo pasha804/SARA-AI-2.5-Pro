@@ -1,12 +1,26 @@
 {
-  "name": "sara",
-  "productName": "SARA",
-  "description": "SARA — a playful, highly intelligent 3D AI desktop companion for Muhammad Mubashar (Pasha Dev).",
-  "author": "Pasha Dev",
-  "private": true,
-  "version": "1.0.1",
+  "name": "sara-ai-2.5-pro",
+  "productName": "SARA AI 2.5 Pro",
+  "description": "SARA AI 2.5 Pro — Neural Living Companion, Three.js 3D Avatar, Autonomous Discord Community Operator & 415+ n8n Automations",
+  "author": "Pasha Dev (Mubashar Jan) <pashadev804@gmail.com>",
+  "version": "2.5.0",
   "type": "module",
   "main": "electron/main.cjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pasha804/SARA-AI-2.5-Pro.git"
+  },
+  "keywords": [
+    "ai-assistant",
+    "threejs",
+    "3d-avatar",
+    "discord-automation",
+    "n8n",
+    "electron",
+    "python",
+    "gemini-api"
+  ],
+  "license": "MIT",
   "dependencies": {
     "@google/genai": "^2.4.0",
     "@tailwindcss/vite": "^4.1.14",

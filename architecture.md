@@ -30,8 +30,8 @@ flowchart TD
     end
 
     subgraph NativePipelines ["SARA Native Autonomous Execution Suite"]
-        PythonBrain --> N8nRouter["⚡ 360+ Awesome-n8n Catalog<br/>21 Categories / Instant Execution"]
-        PythonBrain --> DiscordDriver["🎮 Autonomous Discord Manager<br/>#general, #announcements, #dev-chat"]
+        PythonBrain --> N8nRouter["⚡ 415+ Awesome-n8n Catalog<br/>25 Categories / Instant Execution"]
+        PythonBrain --> DiscordDriver["🎮 Autonomous Discord Manager<br/>Strictly NEXORA: 8 Categories / 48+ Channels"]
         PythonBrain --> DiskCleaner["🧹 C: Drive Storage Cleaner<br/>5.26 GB Reclaimable Space"]
         PythonBrain --> ProjectScaffold["🚀 Autonomous Project Manager<br/>Scaffolds to Desktop + Tests"]
         PythonBrain --> AntigravityBridge["🌉 Google Antigravity IDE Bridge<br/>agy.exe --add-dir with Prompts"]
@@ -45,11 +45,11 @@ flowchart TD
 
 ---
 
-## 2. Awesome-n8n 360+ Automations Integration Topology
+## 2. Awesome-n8n 415+ Automations Integration Topology
 
 ```mermaid
 graph LR
-    subgraph Catalog ["Awesome-n8n Master Repository (360 Workflows)"]
+    subgraph Catalog ["Awesome-n8n Master Repository (415 Workflows)"]
         C1["AI & RAG (41)"]
         C2["OpenAI & LLMs (92)"]
         C3["Other Integrations (52)"]
@@ -58,19 +58,19 @@ graph LR
         C6["Google Sheets/Drive (22)"]
         C7["PDF & Docs (20)"]
         C8["Social Media (15)"]
-        C9["Notion (9)"]
-        C10["DevOps (9)"]
-        C11["Slack (9)"]
-        C12["WhatsApp (9)"]
+        C9["WhatsApp & Enterprise (14)"]
+        C10["Notion (9)"]
+        C11["DevOps (9)"]
+        C12["Slack (9)"]
         C13["WordPress (6)"]
         C14["Airtable & CRM (5)"]
         C15["Databases (5)"]
-        C16["Discord (4)"]
+        C16["Discord & Voice (6)"]
         C17["Forms & Surveys (5)"]
         C18["HR & Recruiting (4)"]
     end
 
-    Catalog -->|Ingested & Schema Validated| Index["📂 data/n8n_catalog_index.json<br/>360 Items Ingested in 7s"]
+    Catalog -->|Ingested & Schema Validated| Index["📂 data/n8n_catalog_index.json<br/>415 Items Ingested in Sub-Seconds"]
     Index -->|Instant Sub-Millisecond Search| Engine["⚡ N8nTemplateCatalog Engine<br/>sara_automation_suite.py"]
     Engine -->|Voice Tool| SARA["🎙️ SARA Gemini Live Session<br/>searchN8nAutomations / executeN8nAutomation"]
 ```
@@ -122,18 +122,19 @@ flowchart TD
 
 ---
 
-## 5. Autonomous Discord Server Activity Driver
+## 5. Autonomous Discord Server Activity Driver (NEXORA Locked)
 
 ```mermaid
 flowchart LR
-    DiscordDetect["🔍 Window Detection<br/>FindWindowW / HWND 132904"] --> Focus["🪟 Win32 Restore & Focus<br/>ShowWindow(hwnd, 9)"]
+    DiscordDetect["🔍 Window Detection<br/>FindWindowW / HWND Active"] --> Focus["🪟 Win32 Restore & Focus<br/>ShowWindow(hwnd, 9) + AttachThreadInput"]
     Focus --> QS["⌨️ Quick Switcher<br/>Ctrl + K Hotkey"]
     
-    QS --> Gen["#general<br/>Daily Dev Motivation"]
-    QS --> Ann["#announcements<br/>System Milestone Updates"]
-    QS --> Dev["#dev-chat<br/>Daily Architecture & Async Tips"]
+    QS --> Gen["-general-chat<br/>Daily Dev Motivation"]
+    QS --> Ann["-announcements<br/>System Milestone Updates"]
+    QS --> Dev["-python / -ai-ml<br/>Daily Architecture & Async Tips"]
+    QS --> Voice["General VC / Coding VC<br/>Voice Presence Navigation"]
     
-    Gen & Ann & Dev --> Type["📋 Clipboard Copy & Paste<br/>Ctrl + V -> Enter"]
+    Gen & Ann & Dev & Voice --> Type["📋 Clipboard Copy & Paste<br/>Ctrl + V -> Enter"]
     Type --> Log["📝 Persistence<br/>data/discord_activity_log.json"]
 ```
 
@@ -179,6 +180,6 @@ flowchart TD
 - `sara_antigravity_bridge.py` — Google Antigravity IDE CLI launcher with interactive prompts.
 - `sara_self_improvement.py` — Autonomous self-evolution engine with loop prevention.
 - `detailed.txt` — Exhaustive 2,000+ line technical reference manual.
-- `auto.txt` — 4,800+ line specification of all 360+ integrated n8n automations.
+- `auto.txt` — 4,800+ line specification of all 415+ integrated n8n automations.
 - `automations_report.txt` — 3,600+ line A-to-Z audit report of all workflows.
 - `architecture.md` — Master system architecture document with Mermaid diagrams.

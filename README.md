@@ -56,12 +56,25 @@ Benchmarked across 26 candidate models with automated failover:
 - **Win32 Thread Input Trick**: Reliable foreground window activation bypassing Windows foreground lock timeout restrictions.
 - **Autonomous Engagement**: Broadcasts daily developer tips, motivational wins, and coding challenges without manual interaction.
 
+#### 🗺️ NEXORA Server Channel Architecture Matrix
+| Category | Type | Mapped Channels |
+| :--- | :--- | :--- |
+| **VOICE CHANNELS** | Voice / Stage | `General VC`, `-study-room`, `Coding VC`, `Pair Programming`, `Events Stage` |
+| **INFORMATION** | Text / Rules | `-rules`, `-announcements`, `-introductions`, `-server-goals` |
+| **COMMUNITY** | Text / Social | `-general-chat`, `-random-chat`, `-daily-wins`, `-help-and-support` |
+| **DEVELOPMENT** | Text / Code | `-python`, `-java`, `-javascript`, `-typescript`, `-react`, `-nodejs`, `-web-development`, `-app-development`, `-ai-ml`, `-data-science`, `-database`, `-backend`, `-frontend`, `-devops`, `-linux`, `-cybersecurity`, `-game-development`, `-c-language`, `-cpp`, `-csharp`, `-swift-ios`, `-android-development`, `-cloud-computing`, `-api-development`, `-testing-qa`, `-tools-and-tech` |
+| **PROJECTS** | Text / Showcase | `-project-showcase`, `-portfolio-review`, `-open-source`, `-build-in-public` |
+| **COLLABORATION** | Text / Team | `-find-teammates`, `-freelancing`, `-hackathons`, `-looking-for-help` |
+| **LEARNING HUB** | Text / Resources | `-study-resources`, `-learning-roadmaps`, `-coding-challenges`, `-interview-prep`, `-certifications`, `-ask-a-mentor` |
+| **CAREERS** | Text / Jobs | `-job-opportunities`, `-remote-jobs`, `-internships`, `-resume-review`, `-mock-interviews`, `-freelancing-tips` |
+
 ### 4. 🔄 415+ Integrated n8n Automation Workflows
-Indexed from `awesome-n8n-templates` across 25 production categories:
+Indexed from [`repositories/awesome-n8n-templates`](repositories/awesome-n8n-templates) across 25 production categories:
 - **AI & RAG Agents**: LangChain agents, Vector store retrieval, OpenAI function calling.
 - **Communication & Social**: Automated WhatsApp messaging, Discord notifications, Telegram bots, Slack alerts.
 - **Data & Productivity**: Google Sheets sync, Gmail parsing, CRM lead management, Notion pipelines.
-- **DevOps**: GitHub commit webhooks, server health monitors, Docker deploy hooks.
+- **DevOps & Microservices**: GitHub commit webhooks, server health monitors, Docker deploy hooks.
+- **Full Catalog Index**: See [`auto.txt`](auto.txt) (4,800+ lines) and [`automations_report.txt`](automations_report.txt) (3,600+ lines).
 
 ### 5. 🛠️ 120 Core Tools Live-Tested Suite
 - **System Telemetry**: Real-time CPU, RAM, GPU fallback, battery, and temperature telemetry.
@@ -137,6 +150,22 @@ OK (0 failures, 0 errors)
 
 ---
 
+## ❓ Troubleshooting & Frequently Asked Questions (FAQ)
+
+### Q: Why does Discord automation require Win32 foreground activation?
+**A:** On Windows 10/11, OS-level foreground lock timeouts prevent background applications from stealing focus. SARA implements the Win32 `AttachThreadInput` + `SetForegroundWindow` API technique, seamlessly focusing the official Discord desktop client before executing channel quick-switching hotkeys (`Ctrl + K`).
+
+### Q: How does SARA guarantee Discord server isolation?
+**A:** SARA's `DiscordCommunityManager` contains a strict security whitelist: `AUTHORIZED_SERVER = "NEXORA"`. If the active Discord window title or quick-switcher context does not match `NEXORA`, navigation and message-posting commands are immediately aborted with an alert.
+
+### Q: What should I do if APInex returns HTTP 429 (Rate Limit)?
+**A:** The free APInex tier enforces a 15 RPM limit. SARA features automatic failover and request spacing. If 429 occurs, SARA automatically falls back to secondary models (`free/gemini-3.8-flash`, `free/deepseek-v4-pro-0813`, or local Gemini API).
+
+### Q: How does the C: Drive Space Reclamation pipeline work safely?
+**A:** SARA never performs silent deletions on system drives. It scans 8 strictly defined expendable temporary caches (`%TEMP%`, CrashDumps, browser shader caches), calculates exact reclaimable bytes, and requires explicit confirmation before executing unlinks.
+
+---
+
 ## 📄 Documentation Manifest
 
 - [`architecture.md`](architecture.md) — Comprehensive technical architecture specification and dataflows.
@@ -144,6 +173,16 @@ OK (0 failures, 0 errors)
 - [`auto.txt`](auto.txt) — 4,800+ line itemized breakdown of all 415 n8n automations.
 - [`automations_report.txt`](automations_report.txt) — 3,600+ line audit of all workflow templates.
 - [`tools_test_live_report.txt`](tools_test_live_report.txt) — Audit report of all 120 core tools.
+
+---
+
+## 👨‍💻 Author & Maintainer
+
+- **Developer**: Muhammad Mubashar (Pasha Dev / Pasha Jan)
+- **Email**: [pashadev804@gmail.com](mailto:pashadev804@gmail.com)
+- **Phone**: `+923332656733`
+- **GitHub**: [@pasha804](https://github.com/pasha804)
+- **Repository**: [https://github.com/pasha804/SARA-AI-2.5-Pro](https://github.com/pasha804/SARA-AI-2.5-Pro)
 
 ---
 

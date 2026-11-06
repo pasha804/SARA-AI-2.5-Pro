@@ -12,7 +12,7 @@
       "has_python": true,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-03T14:23:54.013892"
+      "discovered_at": "2026-11-06T12:56:14.058381"
     },
     "game": {
       "name": "game",
@@ -42,7 +42,7 @@
       "skills": [
         "live-avatar-3d-video"
       ],
-      "discovered_at": "2026-11-03T14:23:54.001558",
+      "discovered_at": "2026-11-06T12:56:14.052932",
       "last_audit": {
         "success": true,
         "project_name": "MARAA AI",
@@ -52,11 +52,12 @@
         "status": "HEALTHY",
         "checks_passed": [
           "Entry points verified: add_halo_to_pmx.py, analyze_tex_masks.py, build_full_detailed_txt.py",
+          "Uncommitted changes: 10 files",
           "Antigravity skills active (1): live-avatar-3d-video"
         ],
         "issues": [],
         "available_scripts": [],
-        "audited_at": "2026-11-03T14:23:54.018583"
+        "audited_at": "2026-11-06T12:56:14.177052"
       }
     },
     "tests": {
@@ -73,7 +74,7 @@
       "has_python": true,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-03T14:23:54.015768"
+      "discovered_at": "2026-11-06T12:56:14.059635"
     },
     "data": {
       "name": "data",
@@ -89,7 +90,7 @@
       "has_python": true,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-03T14:23:54.002915"
+      "discovered_at": "2026-11-06T12:56:14.053804"
     },
     "birthday cook 13": {
       "name": "birthday cook 13",
@@ -680,7 +681,7 @@
         "warm-hug-react-engineering",
         "warm-hug-svg-assets"
       ],
-      "discovered_at": "2026-11-03T14:23:37.658849"
+      "discovered_at": "2026-11-06T12:56:00.825785"
     },
     "only study": {
       "name": "only study",
@@ -730,7 +731,7 @@
       "has_python": false,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-03T14:23:37.661885"
+      "discovered_at": "2026-11-06T12:56:00.827258"
     },
     "Pasha-devpolit": {
       "name": "Pasha-devpolit",
@@ -757,7 +758,7 @@
       "skills": [
         "railway-config"
       ],
-      "discovered_at": "2026-11-03T14:23:37.663787"
+      "discovered_at": "2026-11-06T12:56:00.828939"
     },
     "Projects-2": {
       "name": "Projects-2",
@@ -799,7 +800,7 @@
       "has_python": false,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-03T14:23:37.676668"
+      "discovered_at": "2026-11-06T12:56:00.841243"
     },
     "template-weaver-main": {
       "name": "template-weaver-main",
@@ -834,7 +835,7 @@
       "has_python": true,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-03T14:23:37.683016"
+      "discovered_at": "2026-11-06T12:56:00.843379"
     },
     "Trading": {
       "name": "Trading",
@@ -854,7 +855,7 @@
         "market-analyzer",
         "trend-and-structure"
       ],
-      "discovered_at": "2026-11-03T14:23:37.684402"
+      "discovered_at": "2026-11-06T12:56:00.844634"
     },
     "weadding template1": {
       "name": "weadding template1",
@@ -939,7 +940,7 @@
       "has_python": true,
       "has_agents": true,
       "skills": [],
-      "discovered_at": "2026-11-03T14:23:37.616225"
+      "discovered_at": "2026-11-06T12:56:00.805678"
     },
     "pasha_unit_test_proj": {
       "name": "pasha_unit_test_proj",
@@ -958,7 +959,7 @@
       "has_python": true,
       "has_agents": true,
       "skills": [],
-      "discovered_at": "2026-11-03T14:23:37.617742"
+      "discovered_at": "2026-11-06T12:56:00.807986"
     },
     "pasha_tool_unit_test": {
       "name": "pasha_tool_unit_test",
@@ -977,7 +978,7 @@
       "has_python": true,
       "has_agents": true,
       "skills": [],
-      "discovered_at": "2026-11-03T14:23:29.415067"
+      "discovered_at": "2026-11-06T12:55:57.187048"
     },
     "Hisab-app": {
       "name": "Hisab-app",
@@ -1002,7 +1003,7 @@
       "has_python": true,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-03T14:23:37.651542"
+      "discovered_at": "2026-11-06T12:56:00.822813"
     },
     "pasha_unit_live_120": {
       "name": "pasha_unit_live_120",
@@ -1021,7 +1022,7 @@
       "has_python": true,
       "has_agents": true,
       "skills": [],
-      "discovered_at": "2026-11-03T14:23:00.803409"
+      "discovered_at": "2026-11-06T12:55:30.704020"
     },
     "Postmotam": {
       "name": "Postmotam",
@@ -1042,9 +1043,55 @@
       "has_python": false,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-03T14:23:37.664689"
+      "discovered_at": "2026-11-06T12:56:00.833863"
+    },
+    "3D-birthday": {
+      "name": "3D-birthday",
+      "path": "E:\\3D-birthday",
+      "type": "React / Vite Web App",
+      "entry_points": [
+        "index.html",
+        "src/main.tsx"
+      ],
+      "scripts": {
+        "dev": "vite dev",
+        "build": "vite build --config vite.static.config.ts && node -e \"const fs = require('fs'); fs.mkdirSync('dist/galaxy', { recursive: true }); fs.copyFileSync('dist/index.html', 'dist/galaxy/index.html');\"",
+        "build:dev": "vite build --mode development",
+        "build:netlify": "npm install && npm run build",
+        "preview": "vite preview",
+        "lint": "eslint .",
+        "format": "prettier --write ."
+      },
+      "has_package_json": true,
+      "has_python": false,
+      "has_agents": false,
+      "skills": [],
+      "discovered_at": "2026-11-06T12:56:00.811993"
+    },
+    "cooking": {
+      "name": "cooking",
+      "path": "E:\\cooking",
+      "type": "React / Vite Web App",
+      "entry_points": [
+        "index.html",
+        "src/main.tsx",
+        "src/App.tsx"
+      ],
+      "scripts": {
+        "dev": "vite dev",
+        "build": "vite build --config vite.config.client.ts && powershell -Command \"Copy-Item -Path 'public/_redirects' -Destination 'dist/_redirects' -Force; Copy-Item -Path 'public/robots.txt' -Destination 'dist/robots.txt' -Force\"",
+        "build:ssr": "vite build",
+        "preview": "vite preview --config vite.config.client.ts",
+        "lint": "eslint .",
+        "format": "prettier --write ."
+      },
+      "has_package_json": true,
+      "has_python": false,
+      "has_agents": false,
+      "skills": [],
+      "discovered_at": "2026-11-06T12:56:00.816392"
     }
   },
-  "last_scanned_at": "2026-11-03T14:23:54.018595",
-  "total_projects": 34
+  "last_scanned_at": "2026-11-06T12:56:14.177064",
+  "total_projects": 36
 }
