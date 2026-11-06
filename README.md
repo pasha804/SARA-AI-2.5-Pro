@@ -7,7 +7,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Version-2.5_Pro-blueviolet?style=for-the-badge&logo=electron" alt="Version 2.5 Pro" />
   <img src="https://img.shields.io/badge/Python-3.12%20%7C%203.14-blue?style=for-the-badge&logo=python" alt="Python 3.12+" />
-  <img src="https://img.shields.io/badge/Unit%20Tests-244%20Passing%20(100%25)-success?style=for-the-badge&logo=checkmarx" alt="244 Tests Passing" />
+  <img src="https://img.shields.io/badge/Unit%20Tests-250%20Passing%20(100%25)-success?style=for-the-badge&logo=checkmarx" alt="250 Tests Passing" />
   <img src="https://img.shields.io/badge/Core%20Tools-120%20Verified-cyan?style=for-the-badge" alt="120 Tools Verified" />
   <img src="https://img.shields.io/badge/n8n%20Automations-415%20Workflows-orange?style=for-the-badge&logo=n8n" alt="415 Workflows" />
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License" />
@@ -37,13 +37,15 @@ graph TD
     Tools <--> Antigravity[🚀 Google Antigravity IDE Bridge agy.exe]
 ```
 
-### 1. 🌸 3D Live Avatar & Audio-Reactive Lip-Sync
+### 1. 🌸 3D Live Avatar, Audio Synthesizer & Autonomous Cockpit
 - **Interactive Three.js Viewport**: Real-time rendering of Evelyn PMX / GLB 3D model with customized holographic shader room background.
-- **Web Audio FFT (60 FPS)**: High-resolution frequency analysis extracting real-time phonemes (`v_aa`, `v_ih`, `v_ou`, `v_ee`, `v_oh`) for natural lip-sync.
+- **Web Audio FFT (60 FPS) & Neural Waveform Equalizer**: Real-time phoneme extraction (`v_aa`, `v_ih`, `v_ou`, `v_ee`, `v_oh`) and 12-bar glowing cybernetic audio visualizer.
+- **Micro-Interaction Web Audio Synthesizer**: Native zero-asset audio synthesis delivering sleek cybernetic sound feedback on hover and actions.
+- **4-in-1 Command Cockpit Modal**: Interactive management covering Workspaces, 415+ n8n automations, NEXORA Discord controls, and APInex neural model telemetry.
 - **Bi-Directional Voice Stream**: Sub-250ms voice latency with intelligent barge-in interruption detection.
 
-### 2. ⚡ Live-Benchmarked APInex Multi-Model Routing
-Benchmarked across 26 candidate models with automated failover:
+### 2. ⚡ Live-Benchmarked APInex Multi-Model Neural Provider
+Powered by dedicated `sara_apinex_provider.py` with 15 RPM auto-throttling and sub-2s automated cascade failover:
 - **Fast Chat**: `free/glm-5.3-flashx` (*1,216ms latency*) — instantaneous witty banter and daily conversation.
 - **Urdu & Multimodal Knowledge**: `free/gemini-3.8-flash` (*1,320ms latency*) — expressive Urdu nuance and cultural context.
 - **Deep Logic & Architecture**: `free/deepseek-v4-pro-0813` (*1,369ms latency*) — structural programming and system design.
@@ -93,14 +95,14 @@ Indexed from [`repositories/awesome-n8n-templates`](repositories/awesome-n8n-tem
 
 ## 🧪 Testing & Verification
 
-SARA AI 2.5 Pro enforces strict Test-Driven Development (TDD) with **244 passing unit tests**:
+SARA AI 2.5 Pro enforces strict Test-Driven Development (TDD) with **250 passing unit tests**:
 
 ```bash
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
 ```text
-Ran 244 tests in 100.419s
+Ran 250 tests in 89.364s
 
 OK (0 failures, 0 errors)
 [Tools Audit] Report written to: D:\MARAA AI\tools_test_live_report.txt (120 tools verified)

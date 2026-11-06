@@ -6134,6 +6134,28 @@ if __name__ == "__main__":
 
 
 
+        elif cmd == "apinex":
+
+            try:
+
+                from sara_apinex_provider import apinex_provider
+
+                p = sys.argv[2] if len(sys.argv) > 2 else "Hello SARA"
+
+                task_t = sys.argv[3] if len(sys.argv) > 3 else "fast_chat"
+
+                m_override = sys.argv[4] if len(sys.argv) > 4 else None
+
+                res = apinex_provider.generate_chat(p, task_type=task_t, model_override=m_override)
+
+                print(json.dumps(res, indent=2))
+
+            except Exception as e:
+
+                print(json.dumps({"success": False, "error": str(e)}))
+
+
+
         elif cmd == "browser_use":
 
 

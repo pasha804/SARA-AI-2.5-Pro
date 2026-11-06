@@ -868,3 +868,229 @@ body.sara-modal-open #sara-right-panel,
   transform: translateX(120px) scale(0.9) !important;
   z-index: -10 !important;
 }
+
+/* ==========================================================================
+   HIGH-END CYBERNETIC COCKPIT EXTENSIONS (LEVEL KA SYSTEM)
+   ========================================================================== */
+
+/* 1. Audio-Reactive Neural Waveform Equalizer */
+.sara-audio-wave-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 24px;
+  margin-top: 10px;
+  padding: 4px 8px;
+  background: rgba(10, 18, 32, 0.6);
+  border: 1px solid rgba(157, 220, 255, 0.25);
+  border-radius: 8px;
+}
+
+.sara-wave-bar {
+  width: 3px;
+  height: 6px;
+  background: linear-gradient(180deg, #75D9E8 0%, #9DDCFF 100%);
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(117, 217, 232, 0.4);
+  animation: saraWavePulse 1.4s ease-in-out infinite alternate;
+}
+
+.sara-wave-bar:nth-child(2) { animation-delay: 0.15s; height: 10px; }
+.sara-wave-bar:nth-child(3) { animation-delay: 0.3s; height: 16px; }
+.sara-wave-bar:nth-child(4) { animation-delay: 0.45s; height: 8px; }
+.sara-wave-bar:nth-child(5) { animation-delay: 0.6s; height: 18px; }
+.sara-wave-bar:nth-child(6) { animation-delay: 0.75s; height: 12px; }
+.sara-wave-bar:nth-child(7) { animation-delay: 0.9s; height: 20px; }
+.sara-wave-bar:nth-child(8) { animation-delay: 0.65s; height: 14px; }
+.sara-wave-bar:nth-child(9) { animation-delay: 0.4s; height: 9px; }
+.sara-wave-bar:nth-child(10) { animation-delay: 0.25s; height: 15px; }
+.sara-wave-bar:nth-child(11) { animation-delay: 0.1s; height: 11px; }
+.sara-wave-bar:nth-child(12) { animation-delay: 0.35s; height: 7px; }
+
+@keyframes saraWavePulse {
+  0% { transform: scaleY(0.4); opacity: 0.4; }
+  50% { transform: scaleY(1.2); opacity: 0.95; }
+  100% { transform: scaleY(0.6); opacity: 0.6; }
+}
+
+/* 2. Cockpit Multi-Tab Navigation */
+.dash-tab-bar {
+  display: flex;
+  gap: 4px;
+  padding: 6px 12px;
+  background: rgba(8, 14, 28, 0.85);
+  border-bottom: 1px solid rgba(157, 220, 255, 0.18);
+  overflow-x: auto;
+}
+
+.dash-tab-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.dash-tab-btn:hover {
+  color: #e2e8f0;
+  background: rgba(157, 220, 255, 0.08);
+}
+
+.dash-tab-btn.active {
+  color: #75D9E8;
+  background: rgba(117, 217, 232, 0.15);
+  border: 1px solid rgba(117, 217, 232, 0.35);
+  box-shadow: 0 0 10px rgba(117, 217, 232, 0.2);
+}
+
+/* 3. n8n Workflows Hub View */
+.n8n-search-input {
+  width: 100%;
+  padding: 8px 12px;
+  background: rgba(10, 16, 32, 0.9);
+  border: 1px solid rgba(157, 220, 255, 0.25);
+  border-radius: 8px;
+  color: #f1f5f9;
+  font-size: 11.5px;
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+}
+
+.n8n-search-input:focus {
+  border-color: #75D9E8;
+  box-shadow: 0 0 10px rgba(117, 217, 232, 0.3);
+}
+
+.n8n-chips-bar {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+}
+
+.n8n-chip {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.n8n-chip:hover, .n8n-chip.active {
+  border-color: #75D9E8;
+  color: #75D9E8;
+  background: rgba(117, 217, 232, 0.12);
+}
+
+.n8n-item-card {
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(157, 220, 255, 0.15);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.n8n-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.n8n-item-nodes {
+  font-size: 10px;
+  color: #75D9E8;
+  background: rgba(117, 217, 232, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* 4. Discord NEXORA Cockpit View */
+.discord-server-banner {
+  background: linear-gradient(135deg, rgba(88, 101, 242, 0.25) 0%, rgba(10, 18, 34, 0.8) 100%);
+  border: 1px solid rgba(88, 101, 242, 0.4);
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.discord-server-status {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #5865F2;
+}
+
+.discord-channels-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.discord-ch-pill {
+  font-size: 10px;
+  font-family: monospace;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(88, 101, 242, 0.3);
+  color: #c7d2fe;
+  padding: 3px 7px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.discord-ch-pill:hover {
+  background: rgba(88, 101, 242, 0.25);
+  border-color: #5865F2;
+}
+
+/* 5. APInex Model Cockpit Grid */
+.apinex-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.apinex-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(157, 220, 255, 0.2);
+  border-radius: 8px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.apinex-card-title {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #EDF5FF;
+}
+
+.apinex-card-role {
+  font-size: 9.5px;
+  color: #94a3b8;
+}
+
+.apinex-card-badge {
+  font-size: 9px;
+  color: #75D9E8;
+  font-family: monospace;
+}
+
