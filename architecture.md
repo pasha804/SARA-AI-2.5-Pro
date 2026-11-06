@@ -167,7 +167,7 @@ flowchart TD
 | **Benchmarked Models** | APInex Free Verified Tier | Rank 1: `free/glm-5.3-flashx` (1216ms), Rank 2: `free/gemini-3.8-flash` (1320ms), Rank 3: `free/deepseek-v4-pro-0813` (1369ms) |
 | **Desktop Projects** | `C:\Users\USER\Desktop\pasha_nexus_dashboard` | Autonomous full-stack scaffolding with syntax self-healing |
 | **Memory Engine** | 3-Tier SQLite + FTS5 | L0 Working RAM, L1 Facts, L2 Milestones, automated user profile synthesis & backups |
-| **Test Quality Gate** | 244 / 244 Unit Tests Passing | `python -m unittest discover tests` — 100% OK, zero popups or errors |
+| **Test Quality Gate** | 250 / 250 Unit Tests Passing | `python -m unittest discover tests` — 100% OK, zero popups or errors |
 | **Disk Reclamation** | C: Drive Cleanable Space | Safe temporary caches verified for user-confirmed cleanup |
 
 ---
@@ -175,6 +175,7 @@ flowchart TD
 ## 8. Directory & File Manifest
 
 - `sara_neural_brain.py` — Central Python intelligence engine and Win32 desktop drivers.
+- `sara_apinex_provider.py` — High-end multi-model cognitive provider with auto-throttling & failover.
 - `sara_automation_suite.py` — Unified 9-pipeline automation suite, n8n catalog, and C: drive cleaner.
 - `sara_project_manager.py` — Autonomous web project scaffolding on Desktop and error self-healing.
 - `sara_antigravity_bridge.py` — Google Antigravity IDE CLI launcher with interactive prompts.

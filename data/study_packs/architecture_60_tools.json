@@ -1,5 +1,5 @@
 {
-  "id": "study_1793951759",
+  "id": "study_1793959283",
   "title": "Architecture 60 Tools",
   "source": "D:\\MARAA AI\\architecture.md",
   "concepts": [
@@ -12,12 +12,12 @@
       "explanation": "## 1. High-Level System Architecture..."
     },
     {
-      "concept": "2. Awesome-n8n 360+ Automations Integration Topology",
-      "explanation": "## 2. Awesome-n8n 360+ Automations Integration Topology..."
+      "concept": "2. Awesome-n8n 415+ Automations Integration Topology",
+      "explanation": "## 2. Awesome-n8n 415+ Automations Integration Topology..."
     },
     {
       "concept": "C1[\"AI & RAG (41)\"]",
-      "explanation": "```mermaid\ngraph LR\n    subgraph Catalog [\"Awesome-n8n Master Repository (360 Workflows)\"]\n        C1[\"AI & RAG (41)\"]\n        C2[\"OpenAI & LLMs (92)\"]\n        C3[\"Other Integrations (52)\"]\n        C4..."
+      "explanation": "```mermaid\ngraph LR\n    subgraph Catalog [\"Awesome-n8n Master Repository (415 Workflows)\"]\n        C1[\"AI & RAG (41)\"]\n        C2[\"OpenAI & LLMs (92)\"]\n        C3[\"Other Integrations (52)\"]\n        C4..."
     }
   ],
   "quiz_questions": [
@@ -44,5 +44,5 @@
       "explanation": "Optimized state machines and lookup tables achieve near O(1) deterministic performance."
     }
   ],
-  "created_at": "2026-11-06 12:55:59"
+  "created_at": "2026-11-06 15:01:23"
 }
