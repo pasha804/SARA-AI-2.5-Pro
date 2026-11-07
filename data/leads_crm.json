@@ -1295,5 +1295,15 @@
     "campaign_id": "camp_1794060837",
     "offer": "Custom AI Employee Deployment (Save 30+ Dev Hours/Week)",
     "updated_at": "2026-11-07 19:13:57"
+  },
+  {
+    "name": "Sophia Vance",
+    "company": "Hyperion Ventures",
+    "email": "sophia@hyperion.ai",
+    "phone": "+1-415-555-0199",
+    "status": "OUTREACH_GENERATED",
+    "campaign_id": "camp_1794066049",
+    "offer": "Custom AI Employee Deployment (Save 30+ Dev Hours/Week)",
+    "updated_at": "2026-11-07 20:40:49"
   }
 ]

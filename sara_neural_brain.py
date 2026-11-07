@@ -6315,6 +6315,30 @@ if __name__ == "__main__":
                 print(json.dumps(res, indent=2))
             except Exception as e:
                 print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["manus_loop", "run_manus_goal", "manus"]:
+            try:
+                from sara_manus_loop import manus_agent
+                goal_text = sys.argv[2] if len(sys.argv) > 2 else "Research AI trends, create Word report, and generate presentation"
+                res = manus_agent.run_goal_loop(goal_text, open_artifacts=True)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["create_word", "word_doc"]:
+            try:
+                from sara_office_and_browser_suite import word_engine
+                t = sys.argv[2] if len(sys.argv) > 2 else "Executive Document"
+                res = word_engine.create_word_document(title=t, open_after_create=True)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["create_ppt", "ppt_deck"]:
+            try:
+                from sara_office_and_browser_suite import ppt_engine
+                t = sys.argv[2] if len(sys.argv) > 2 else "Executive Presentation"
+                res = ppt_engine.create_presentation(title=t, open_after_create=True)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
     
     else:
 
