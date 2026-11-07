@@ -32,6 +32,12 @@ class TestManusAutonomousAgentLoop(unittest.TestCase):
         self.assertTrue(Path(res.get("session_file")).exists())
         self.assertIn("Pasha Jan", res.get("spoken_reply", ""))
 
+        # Verify active session tracking
+        active = manus_agent.get_active_session()
+        self.assertEqual(active.get("status"), "COMPLETED")
+        self.assertEqual(active.get("progress_pct"), 100)
+
 
 if __name__ == "__main__":
     unittest.main()
+

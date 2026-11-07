@@ -19452,6 +19452,33 @@ function executeNodeNativeTool(tool, args) {
     }
   
     
+    if (tool === "runManusGoal" || tool === "manusAutonomousLoop" || tool === "manusLoop") {
+      const goal = String(args.goal || args.target || "Research AI trends and generate executive reports");
+      const brain = getBrainScript();
+      const out = execFileSync("python", [brain, "manus_loop", goal], { encoding: "utf-8", timeout: 60000 });
+      let parsed = { success: true };
+      try { parsed = JSON.parse(out); } catch {}
+      return { ok: true, result: parsed };
+    }
+
+    if (tool === "createWordDocument" || tool === "authorWordDoc") {
+      const title = String(args.title || "Executive Document");
+      const brain = getBrainScript();
+      const out = execFileSync("python", [brain, "create_word", title], { encoding: "utf-8", timeout: 25000 });
+      let parsed = { success: true };
+      try { parsed = JSON.parse(out); } catch {}
+      return { ok: true, result: parsed };
+    }
+
+    if (tool === "createPowerPointPresentation" || tool === "createPresentationDeck") {
+      const title = String(args.title || "Executive Presentation");
+      const brain = getBrainScript();
+      const out = execFileSync("python", [brain, "create_ppt", title], { encoding: "utf-8", timeout: 25000 });
+      let parsed = { success: true };
+      try { parsed = JSON.parse(out); } catch {}
+      return { ok: true, result: parsed };
+    }
+
     if (tool === "manageDiscordServer" || tool === "postToDiscordChannel" || tool === "navigateDiscord") {
       const channel = String(args.channel || args.target || "general");
       const msg = String(args.message || args.text || "");
@@ -24700,6 +24727,41 @@ let lastConsolidatedIndex = 0;
 
 
               functionDeclarations: [
+                {
+                  name: "runManusGoal",
+                  description: "Full-Fledged Manus Autonomous Agent Execution Loop: Takes an ambitious user goal (research, technical paper, Word document creation, PowerPoint pitch deck, Discord broadcast), breaks it down into sequential steps, executes tools, self-debugs, and delivers finished digital artifacts right onto Pasha Dev's desktop.",
+                  parameters: {
+                    type: "OBJECT",
+                    properties: {
+                      goal: { type: "STRING", description: "The ambitious user goal or project to autonomously execute." }
+                    },
+                    required: ["goal"]
+                  }
+                },
+                {
+                  name: "createWordDocument",
+                  description: "Autonomously authors and formats a professional Microsoft Word (.docx) document with custom headers, sections, bullet points, and styled tables, and automatically launches it in MS Word.",
+                  parameters: {
+                    type: "OBJECT",
+                    properties: {
+                      title: { type: "STRING", description: "Title of the Word document to author." },
+                      subtitle: { type: "STRING", description: "Optional subtitle or topic description." }
+                    },
+                    required: ["title"]
+                  }
+                },
+                {
+                  name: "createPowerPointPresentation",
+                  description: "Autonomously designs and formats an executive 16:9 widescreen PowerPoint (.pptx) presentation deck with custom dark-mode styling, bullet cards, and contact information, and launches it in Microsoft PowerPoint.",
+                  parameters: {
+                    type: "OBJECT",
+                    properties: {
+                      title: { type: "STRING", description: "Title of the PowerPoint presentation deck." },
+                      subtitle: { type: "STRING", description: "Optional subtitle or topic focus." }
+                    },
+                    required: ["title"]
+                  }
+                },
                 {
                   name: "runDiscordServerEngagement",
                   description: "Autonomous multi-channel Discord engagement driver: manages Pasha Jan's Discord server by sending lively messages, daily tips, and announcements across general, announcements, and dev-chat channels without manual user effort.",
