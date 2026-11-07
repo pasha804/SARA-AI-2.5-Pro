@@ -5,6 +5,7 @@ import unittest
 from pathlib import Path
 
 BASE_DIR = Path(r"D:\MARAA AI").resolve()
+DATA_DIR = BASE_DIR / "data"
 sys.path.insert(0, str(BASE_DIR))
 
 from sara_automation_suite import (
@@ -16,7 +17,11 @@ from sara_automation_suite import (
     discord_autonomous_manager,
     browser_first_link_manager,
     c_drive_cleaner,
-    n8n_catalog
+    n8n_catalog,
+    startup_pitch_deck_engine,
+    client_outreach_engine,
+    codebase_security_engine,
+    startup_revenue_engine
 )
 from sara_project_manager import project_manager
 from sara_self_improvement import self_improvement
@@ -81,6 +86,45 @@ class TestExtendedAutomationSuite(unittest.TestCase):
         """Test self-improvement capabilities assessment."""
         res = self_improvement.evaluate_system_capabilities()
         self.assertEqual(res.get("overall_health"), "OPTIMAL")
+
+    def test_pipeline_10_startup_pitch_deck_engine(self):
+        """Test automated 10-slide VC pitch deck generation and markdown export."""
+        res = startup_pitch_deck_engine.generate_pitch_deck()
+        self.assertTrue(res.get("success"))
+        self.assertEqual(res.get("total_slides"), 10)
+        self.assertIn("Pasha Jan", res.get("spoken_pitch_ur", ""))
+        self.assertTrue((DATA_DIR / "startup" / "pitch_deck_sara.json").exists())
+        self.assertTrue((DATA_DIR / "startup" / "pitch_deck_sara.md").exists())
+
+    def test_pipeline_11_client_outreach_engine(self):
+        """Test B2B cold email, LinkedIn note, and WhatsApp voice script generation."""
+        res = client_outreach_engine.create_campaign(
+            lead_name="Sophia Vance",
+            lead_company="Hyperion Ventures",
+            lead_email="sophia@hyperion.ai"
+        )
+        self.assertTrue(res.get("success"))
+        self.assertIn("sequences", res.get("campaign", {}))
+        self.assertIn("email_touch_1", res["campaign"]["sequences"])
+        self.assertIn("Pasha Jan", res.get("spoken_summary", ""))
+
+    def test_pipeline_12_codebase_security_engine(self):
+        """Test autonomous security audit and Executive Health Certificate."""
+        res = codebase_security_engine.run_security_audit(max_files=50)
+        self.assertTrue(res.get("success"))
+        self.assertIn(res.get("security_grade"), ["A+", "A", "B"])
+        self.assertGreaterEqual(res.get("security_score", 0), 70)
+        self.assertTrue((DATA_DIR / "startup" / "security_audit_certificate.json").exists())
+
+    def test_pipeline_13_startup_revenue_engine(self):
+        """Test MRR, ARR, LTV:CAC, runway and SaaS valuation simulation."""
+        res = startup_revenue_engine.simulate_financials(active_subscribers=100, avg_price_per_month=49.0)
+        self.assertTrue(res.get("success"))
+        self.assertEqual(res.get("active_subscribers"), 100)
+        self.assertGreater(res.get("mrr", 0), 0)
+        self.assertGreater(res.get("arr", 0), 0)
+        self.assertTrue(res.get("is_profitable"))
+        self.assertIn("Pasha Jan", res.get("spoken_summary", ""))
 
 
 if __name__ == "__main__":
