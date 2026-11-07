@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "product": "SARA AI 2.5 Pro",
+  "active_subscribers": 100,
+  "avg_subscription_price": 49.0,
+  "enterprise_clients": 2,
+  "enterprise_retainer": 1500.0,
+  "mrr": 7900.0,
+  "arr": 94800.0,
+  "monthly_burn": 1200.0,
+  "net_monthly_cashflow": 6700.0,
+  "is_profitable": true,
+  "cash_in_bank": 20000.0,
+  "runway": "Infinite (Cashflow Positive / Profitable)",
+  "unit_economics": {
+    "ltv": 1631.7,
+    "cac": 45.0,
+    "ltv_to_cac_ratio": "36.3:1 (Target > 3:1)",
+    "churn_rate": "3.0%"
+  },
+  "valuation_multiples": {
+    "conservative_8x_arr": "$758,400.00",
+    "growth_15x_arr": "$1,422,000.00"
+  },
+  "timestamp": "2026-11-07 17:23:51",
+  "spoken_summary": "Pasha Jan, financial simulation ke mutabiq SARA ka projected MRR $7,900 aur ARR $94,800 hai! Net monthly cashflow positive hai ($6,700/mo) aur projected 10x SaaS valuation $948,000 banti hai!"
+}

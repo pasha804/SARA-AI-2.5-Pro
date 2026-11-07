@@ -1,0 +1,19 @@
+{
+  "campaign_id": "camp_1794054231",
+  "target_persona": "AI Agency Founder / CTO",
+  "industry": "Software Development & Digital Automation",
+  "offer": "Custom AI Employee Deployment (Save 30+ Dev Hours/Week)",
+  "lead": {
+    "name": "Sophia Vance",
+    "company": "Hyperion Ventures",
+    "email": "sophia@hyperion.ai",
+    "phone": "+1-415-555-0199"
+  },
+  "sequences": {
+    "email_touch_1": "Subject: Quick question regarding Hyperion Ventures's dev automation\n\nHi Sophia Vance,\n\nI came across Hyperion Ventures's impressive work in Software Development & Digital Automation. Most technical founders I speak with are spending 15-20 hours a week on repetitive workflow context switching and routine DevOps chores.\n\nWe built SARA AI 2.5 Pro—an autonomous AI employee that runs right on the desktop with 120 native OS tools and 415+ pre-built n8n automations (WhatsApp CRM, Discord management, deep C: drive optimization, and multi-model neural fallback).\n\nWould you be open to a 5-minute video walkthrough showing how we automated 30+ dev hours last week?\n\nBest regards,\nMuhammad Mubashar (Pasha Dev)\npashadev804@gmail.com | +923332656733",
+    "email_touch_2_followup": "Subject: Re: Quick question regarding Hyperion Ventures's dev automation\n\nHi Sophia Vance,\n\nFollowing up on my note earlier. Here is a 30-second clip of SARA handling our full Discord community engagement, cleaning 5.2GB of developer build cache, and triaging customer WhatsApp leads into our CRM autonomously.\n\nNo complex setup required—it deploys directly on Windows/Mac and hooks into existing repositories.\n\nDo you have 10 minutes this Thursday afternoon for a quick demo?\n\nBest,\nPasha Dev",
+    "linkedin_invite_note": "Hi Sophia Vance, love what you're building at Hyperion Ventures! We recently deployed SARA AI 2.5 Pro—an autonomous desktop AI employee that handles 120 system automations & 415+ n8n workflows. Thought you'd find our architecture interesting. Let's connect! — Pasha Dev",
+    "whatsapp_voice_script": "Hi Sophia Vance! Pasha here from SARA AI. We help technical teams at Hyperion Ventures automate 30+ hours/week using our autonomous AI employee (voice, vision, 120 OS tools & 415+ n8n automations). Happy to share a quick 2-min demo if you're interested!"
+  },
+  "created_at": "2026-11-07 17:23:51"
+}

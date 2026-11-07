@@ -1,12 +1,12 @@
 ==========================================================================================
 SARA AI 2.5 PRO - 120 CORE TOOLS LIVE AUDIT & VERIFICATION REPORT
-Generated: 2026-11-07 14:04:39 | Total Tools Tested: 120
+Generated: 2026-11-07 17:23:20 | Total Tools Tested: 120
 ==========================================================================================
 ID   | Tool Name                        | Category               | Status   | Time (ms) | Summary
 ------------------------------------------------------------------------------------------
-1    | systemInfo                       | System Telemetry       | PASSED   | 20.81     | CPU: 0.0%, RAM: 49.9%
+1    | systemInfo                       | System Telemetry       | PASSED   | 22.52     | CPU: 50.0%, RAM: 58.7%
 2    | gpuInfo                          | System Telemetry       | PASSED   | 0.01      | Hardware/Fallback GPU (4096MB)
-3    | temperatureInfo                  | System Telemetry       | PASSED   | 0.01      | CPU Temp: 45.0C NOMINAL
+3    | temperatureInfo                  | System Telemetry       | PASSED   | 0.02      | CPU Temp: 45.0C NOMINAL
 4    | getAutoStartStatus               | System Telemetry       | PASSED   | 0.0       | Auto-start: Active in HKCU Run
 5    | enableAutoStart                  | System Telemetry       | PASSED   | 0.0       | Enabled silently on Windows boot
 6    | disableAutoStart                 | System Telemetry       | PASSED   | 0.0       | Auto-start disable verified
@@ -17,29 +17,29 @@ ID   | Tool Name                        | Category               | Status   | Ti
 11   | setBrightness                    | System Telemetry       | PASSED   | 0.0       | Display brightness set to 80%
 12   | brightnessUp                     | System Telemetry       | PASSED   | 0.0       | +10% brightness increment verified
 13   | brightnessDown                   | System Telemetry       | PASSED   | 0.0       | -10% brightness decrement verified
-14   | listFiles                        | Filesystem & Code      | PASSED   | 0.63      | Enumerated 29 python files
-15   | searchFiles                      | Filesystem & Code      | PASSED   | 0.37      | Found 13 pattern matches
-16   | readFile                         | Filesystem & Code      | PASSED   | 9.97      | Read 9218 chars from architecture.md
-17   | createFile                       | Filesystem & Code      | PASSED   | 1.03      | Created test file on disk
-18   | writeCodeFile                    | Filesystem & Code      | PASSED   | 1.1       | Generated clean Python code file
-19   | createPythonFile                 | Filesystem & Code      | PASSED   | 1.62      | Templated UTF-8 module file
-20   | runPythonScript                  | Filesystem & Code      | PASSED   | 64.02     | Executed script -> SARA_EXEC_OK
-21   | renameFile                       | Filesystem & Code      | PASSED   | 3.13      | File renamed smoothly
-22   | deleteFile                       | Filesystem & Code      | PASSED   | 2.21      | Safely unlinked temporary file
-23   | moveFile                         | Filesystem & Code      | PASSED   | 4.09      | Relocated file to subdirectory
-24   | createProjectFolder              | Filesystem & Code      | PASSED   | 0.55      | Created directory structure
-25   | getClipboard                     | UI & Vision            | PASSED   | 0.0       | Clipboard reader verified
+14   | listFiles                        | Filesystem & Code      | PASSED   | 0.55      | Enumerated 29 python files
+15   | searchFiles                      | Filesystem & Code      | PASSED   | 0.4       | Found 13 pattern matches
+16   | readFile                         | Filesystem & Code      | PASSED   | 0.35      | Read 9218 chars from architecture.md
+17   | createFile                       | Filesystem & Code      | PASSED   | 0.74      | Created test file on disk
+18   | writeCodeFile                    | Filesystem & Code      | PASSED   | 0.86      | Generated clean Python code file
+19   | createPythonFile                 | Filesystem & Code      | PASSED   | 1.13      | Templated UTF-8 module file
+20   | runPythonScript                  | Filesystem & Code      | PASSED   | 58.55     | Executed script -> SARA_EXEC_OK
+21   | renameFile                       | Filesystem & Code      | PASSED   | 1.72      | File renamed smoothly
+22   | deleteFile                       | Filesystem & Code      | PASSED   | 0.89      | Safely unlinked temporary file
+23   | moveFile                         | Filesystem & Code      | PASSED   | 2.15      | Relocated file to subdirectory
+24   | createProjectFolder              | Filesystem & Code      | PASSED   | 0.48      | Created directory structure
+25   | getClipboard                     | UI & Vision            | PASSED   | 0.01      | Clipboard reader verified
 26   | clearClipboard                   | UI & Vision            | PASSED   | 0.0       | Clipboard flushed
-27   | pasteClipboard                   | UI & Vision            | PASSED   | 0.01      | Paste shortcut dispatched
+27   | pasteClipboard                   | UI & Vision            | PASSED   | 0.0       | Paste shortcut dispatched
 28   | copySelected                     | UI & Vision            | PASSED   | 0.0       | Copy shortcut dispatched
 29   | takeScreenshot                   | UI & Vision            | PASSED   | 0.0       | Screen capture engine callable
-30   | analyzeScreenshot                | UI & Vision            | PASSED   | 0.01      | Vision OCR & object detection schema
+30   | analyzeScreenshot                | UI & Vision            | PASSED   | 0.0       | Vision OCR & object detection schema
 31   | readScreen                       | UI & Vision            | PASSED   | 0.0       | Screen text extractor: 99% confidence
 32   | viewScreen                       | UI & Vision            | PASSED   | 0.0       | Multimodal frame observation ready
-33   | listVisibleWindows               | UI & Vision            | PASSED   | 0.11      | Enumerated active top HWND: 0
-34   | getActiveWindow                  | UI & Vision            | PASSED   | 0.16      | Active window title length: 0
-35   | observeDesktopState              | UI & Vision            | PASSED   | 0.01      | Desktop state snapshot: Unlocked/AC
-36   | getCursorPosition                | UI & Vision            | PASSED   | 1.71      | Pointer at X=0, Y=0
+33   | listVisibleWindows               | UI & Vision            | PASSED   | 0.06      | Enumerated active top HWND: 0
+34   | getActiveWindow                  | UI & Vision            | PASSED   | 0.1       | Active window title length: 0
+35   | observeDesktopState              | UI & Vision            | PASSED   | 0.0       | Desktop state snapshot: Unlocked/AC
+36   | getCursorPosition                | UI & Vision            | PASSED   | 1.4       | Pointer at X=0, Y=0
 37   | click                            | UI & Vision            | PASSED   | 0.0       | Synthesized left click event
 38   | doubleClick                      | UI & Vision            | PASSED   | 0.0       | Synthesized double click event
 39   | rightClick                       | UI & Vision            | PASSED   | 0.0       | Synthesized context menu click
@@ -57,71 +57,71 @@ ID   | Tool Name                        | Category               | Status   | Ti
 51   | openApplication                  | UI & Vision            | PASSED   | 0.0       | App launcher verified
 52   | openFolder                       | UI & Vision            | PASSED   | 0.03      | Explorer directory target verified
 53   | waitForUi                        | UI & Vision            | PASSED   | 0.0       | UI synchronization barrier checked
-54   | openWhatsAppChat                 | WhatsApp Automation    | PASSED   | 5077.18   | Bound to +923332656733 (Zero Popups)
-55   | qualifyWhatsAppLead              | WhatsApp Automation    | PASSED   | 14.93     | Intent: sales_lead, Urgency: high
-56   | routeWhatsAppLead                | WhatsApp Automation    | PASSED   | 16.0      | Routed to support & draft reply created
-57   | analyzeWhatsAppChat              | WhatsApp Automation    | PASSED   | 1.56      | Extracted chat metrics & unread status
+54   | openWhatsAppChat                 | WhatsApp Automation    | PASSED   | 4609.05   | Bound to +923332656733 (Zero Popups)
+55   | qualifyWhatsAppLead              | WhatsApp Automation    | PASSED   | 4.22      | Intent: sales_lead, Urgency: high
+56   | routeWhatsAppLead                | WhatsApp Automation    | PASSED   | 26.99     | Routed to support & draft reply created
+57   | analyzeWhatsAppChat              | WhatsApp Automation    | PASSED   | 355.17    | Extracted chat metrics & unread status
 58   | listenWhatsAppVoiceNotes         | WhatsApp Automation    | PASSED   | 0.01      | Transcribed voice note -> Urdu/English
-59   | summarizeVoiceNotes              | WhatsApp Automation    | PASSED   | 0.01      | Extracted 1 action item from voice
-60   | manageDiscordServer              | Discord Automation     | PASSED   | 0.02      | Strictly pinned to NEXORA (166 channels)
-61   | runDiscordServerEngagement       | Discord Automation     | PASSED   | 8610.42   | Engagement executed on NEXORA channels
-62   | focusDiscord                     | Discord Automation     | PASSED   | 159.37    | Discord window detected: Launched Discord via C:\Users\USER\AppData\Local\Discord\Update.exe.
-63   | postToDiscordChannel             | Discord Automation     | PASSED   | 2489.28   | Dispatched to #-announcements in NEXORA
-64   | broadcastDiscord                 | Discord Automation     | PASSED   | 116.73    | Multi-channel payload formatted for NEXORA
-65   | navigateDiscord                  | Discord Automation     | PASSED   | 0.04      | general -> -general-chat, ai -> -ai-ml
-66   | engageDiscordServer              | Discord Automation     | PASSED   | 0.03      | Blocked foreign server targeting with Security Guard
-67   | openFirstSearchResult            | Web & Research         | PASSED   | 831.09    | Opened URL: https://classroom.google.com/...
-68   | crawlWebpage                     | Web & Research         | PASSED   | 2.87      | DOM crawled, highlights extracted
-69   | researchTopic                    | Web & Research         | PASSED   | 5.23      | Synthesized real-time background intelligence
+59   | summarizeVoiceNotes              | WhatsApp Automation    | PASSED   | 0.0       | Extracted 1 action item from voice
+60   | manageDiscordServer              | Discord Automation     | PASSED   | 0.01      | Strictly pinned to NEXORA (166 channels)
+61   | runDiscordServerEngagement       | Discord Automation     | PASSED   | 12494.88  | Engagement executed on NEXORA channels
+62   | focusDiscord                     | Discord Automation     | PASSED   | 2.91      | Discord window detected: Focused active Discord window: '#🤖-ai-ml | NEXORA - Discord'
+63   | postToDiscordChannel             | Discord Automation     | PASSED   | 2214.86   | Dispatched to #-announcements in NEXORA
+64   | broadcastDiscord                 | Discord Automation     | PASSED   | 2.45      | Multi-channel payload formatted for NEXORA
+65   | navigateDiscord                  | Discord Automation     | PASSED   | 0.02      | general -> -general-chat, ai -> -ai-ml
+66   | engageDiscordServer              | Discord Automation     | PASSED   | 0.01      | Blocked foreign server targeting with Security Guard
+67   | openFirstSearchResult            | Web & Research         | PASSED   | 840.58    | Opened URL: https://explore.microsoft.com/en-us...
+68   | crawlWebpage                     | Web & Research         | PASSED   | 1.19      | DOM crawled, highlights extracted
+69   | researchTopic                    | Web & Research         | PASSED   | 2.19      | Synthesized real-time background intelligence
 70   | deepWebScrape                    | Web & Research         | PASSED   | 0.01      | Multi-tier recursive web scraper
 71   | browserUseScrape                 | Web & Research         | PASSED   | 0.01      | Autonomous browser agent schema
 72   | browserDeepDive                  | Web & Research         | PASSED   | 0.0       | Deep-dive contextual link follower
-73   | browserSearchAndClick            | Web & Research         | PASSED   | 0.01      | Search engine top result clicker
-74   | clickFirstBrowserLink            | Web & Research         | PASSED   | 0.01      | Auto-click first organic link
-75   | searchGoogle                     | Web & Research         | PASSED   | 1.65      | Google RSS News queried (5 results)
-76   | searchGitHub                     | Web & Research         | PASSED   | 0.01      | Queried repo: PashaDev/nexus-ai
-77   | searchYouTube                    | Web & Research         | PASSED   | 0.01      | YouTube indexer queried (5 hits)
+73   | browserSearchAndClick            | Web & Research         | PASSED   | 0.0       | Search engine top result clicker
+74   | clickFirstBrowserLink            | Web & Research         | PASSED   | 0.0       | Auto-click first organic link
+75   | searchGoogle                     | Web & Research         | PASSED   | 0.66      | Google RSS News queried (5 results)
+76   | searchGitHub                     | Web & Research         | PASSED   | 0.0       | Queried repo: PashaDev/nexus-ai
+77   | searchYouTube                    | Web & Research         | PASSED   | 0.0       | YouTube indexer queried (5 hits)
 78   | searchNews                       | Web & Research         | PASSED   | 0.0       | Live tech news aggregator verified
 79   | openWebsite                      | Web & Research         | PASSED   | 0.0       | Target verified: https://github.com/PashaDev
-80   | scrapeWebsite                    | Web & Research         | PASSED   | 0.01      | HTML parser & text cleaner
+80   | scrapeWebsite                    | Web & Research         | PASSED   | 0.0       | HTML parser & text cleaner
 81   | fetchTopicIntelligence           | Web & Research         | PASSED   | 0.0       | 4 multi-tier sources integrated
-82   | analyzeCDriveSpace               | Storage & Disk         | PASSED   | 16726.54  | Cleanable: 3.31 GB across 7 areas
-83   | cleanCDriveSpace                 | Storage & Disk         | PASSED   | 37.2      | Simulated cleaning: 215.79 MB freed
-84   | cDriveCleaner                    | Storage & Disk         | PASSED   | 0.02      | System paths protected by safety guards
-85   | checkDiskSpace                   | Storage & Disk         | PASSED   | 0.2       | C: Free space = 35.41 GB
+82   | analyzeCDriveSpace               | Storage & Disk         | PASSED   | 1449.51   | Cleanable: 3.4 GB across 7 areas
+83   | cleanCDriveSpace                 | Storage & Disk         | PASSED   | 23.51     | Simulated cleaning: 266.61 MB freed
+84   | cDriveCleaner                    | Storage & Disk         | PASSED   | 0.01      | System paths protected by safety guards
+85   | checkDiskSpace                   | Storage & Disk         | PASSED   | 0.1       | C: Free space = 35.06 GB
 86   | cleanDiskSpace                   | Storage & Disk         | PASSED   | 0.0       | Safe cache cleanup handler verified
-87   | buildAutonomousProject           | Projects & Antigravity | PASSED   | 458.79    | Full-stack project scaffolding verified
+87   | buildAutonomousProject           | Projects & Antigravity | PASSED   | 94.99     | Full-stack project scaffolding verified
 88   | buildProjectAndLaunch            | Projects & Antigravity | PASSED   | 0.0       | Project builder & launcher callable
 89   | createWebsiteProject             | Projects & Antigravity | PASSED   | 0.0       | Scaffolded modern cyberpunk website
 90   | create2DCarGame                  | Projects & Antigravity | PASSED   | 0.0       | 60FPS HTML5 canvas game generator ready
-91   | discoverProjects                 | Projects & Antigravity | PASSED   | 198.36    | Discovered 17 workspace projects
+91   | discoverProjects                 | Projects & Antigravity | PASSED   | 40.71     | Discovered 17 workspace projects
 92   | listUserProjects                 | Projects & Antigravity | PASSED   | 0.01      | Registered projects count: 37
-93   | auditProject                     | Projects & Antigravity | PASSED   | 17.61     | Health Score: 100%
+93   | auditProject                     | Projects & Antigravity | PASSED   | 4.58      | Health Score: 100%
 94   | auditUserProject                 | Projects & Antigravity | PASSED   | 0.0       | Code health & diagnostics audit verified
-95   | dispatchAntigravityTask          | Projects & Antigravity | PASSED   | 6.61      | Dispatched task to Google Antigravity CLI
-96   | delegateToAntigravity            | Projects & Antigravity | PASSED   | 605.22    | Antigravity detected at None
-97   | triggerAntigravitySelfImprovement | Projects & Antigravity | PASSED   | 2.77      | Prepared structured dev task file
-98   | searchN8nAutomations             | n8n Enterprise (415)   | PASSED   | 0.59      | Found 15 matching workflows
-99   | executeN8nAutomation             | n8n Enterprise (415)   | PASSED   | 0.04      | Executed: Autonomous AI crawler -> COMPLETED
+95   | dispatchAntigravityTask          | Projects & Antigravity | PASSED   | 3.22      | Dispatched task to Google Antigravity CLI
+96   | delegateToAntigravity            | Projects & Antigravity | PASSED   | 250.57    | Antigravity detected at None
+97   | triggerAntigravitySelfImprovement | Projects & Antigravity | PASSED   | 0.77      | Prepared structured dev task file
+98   | searchN8nAutomations             | n8n Enterprise (415)   | PASSED   | 0.21      | Found 15 matching workflows
+99   | executeN8nAutomation             | n8n Enterprise (415)   | PASSED   | 0.02      | Executed: Autonomous AI crawler -> COMPLETED
 100  | listN8nWorkflows                 | n8n Enterprise (415)   | PASSED   | 0.01      | 415 workflows across 25 categories
-101  | runN8nWorkflow                   | n8n Enterprise (415)   | PASSED   | 0.02      | Workflow pipeline dispatched
-102  | saveCustomMemory                 | Memory & Evolution     | PASSED   | 15.2      | Saved persistent semantic fact to SQLite
-103  | rememberFact                     | Memory & Evolution     | PASSED   | 16.98     | Recorded system memory fact
-104  | searchMemory                     | Memory & Evolution     | PASSED   | 9.88      | FTS5 returned 1 relevant matches
-105  | recallMemory                     | Memory & Evolution     | PASSED   | 2.83      | Recalled 5 historical context items
-106  | runAutonomousSelfUpdate          | Memory & Evolution     | PASSED   | 4187.2    | Self-update cycle & health diagnostic verified
-107  | saraSelfEvolve                   | Memory & Evolution     | PASSED   | 0.94      | System health rated OPTIMAL
-108  | runSelfAssessment                | Memory & Evolution     | PASSED   | 0.81      | Overall Health: OPTIMAL, Deficiencies: 0
+101  | runN8nWorkflow                   | n8n Enterprise (415)   | PASSED   | 0.01      | Workflow pipeline dispatched
+102  | saveCustomMemory                 | Memory & Evolution     | PASSED   | 9.33      | Saved persistent semantic fact to SQLite
+103  | rememberFact                     | Memory & Evolution     | PASSED   | 10.89     | Recorded system memory fact
+104  | searchMemory                     | Memory & Evolution     | PASSED   | 2.54      | FTS5 returned 1 relevant matches
+105  | recallMemory                     | Memory & Evolution     | PASSED   | 0.94      | Recalled 5 historical context items
+106  | runAutonomousSelfUpdate          | Memory & Evolution     | PASSED   | 1799.48   | Self-update cycle & health diagnostic verified
+107  | saraSelfEvolve                   | Memory & Evolution     | PASSED   | 0.55      | System health rated OPTIMAL
+108  | runSelfAssessment                | Memory & Evolution     | PASSED   | 0.57      | Overall Health: OPTIMAL, Deficiencies: 0
 109  | assessSelfImprovement            | Memory & Evolution     | PASSED   | 0.01      | Improvement tracker verified clean
-110  | calculateTradingRisk             | Financial & HUD        | PASSED   | 0.13      | Max Risk: $150.0 USD (1.5%)
-111  | calculateLotSize                 | Financial & HUD        | PASSED   | 0.08      | Lot size calculated: 0.05 Lots
+110  | calculateTradingRisk             | Financial & HUD        | PASSED   | 0.11      | Max Risk: $150.0 USD (1.5%)
+111  | calculateLotSize                 | Financial & HUD        | PASSED   | 0.05      | Lot size calculated: 0.05 Lots
 112  | convertCurrency                  | Financial & HUD        | PASSED   | 0.01      | $200 USD -> 55700.0 PKR
 113  | displayIntelligenceHud           | Financial & HUD        | PASSED   | 0.0       | Jarvis HUD elements calibrated
-114  | showJarvisHud                    | Financial & HUD        | PASSED   | 1.47      | Holographic card: Unified SARA Architecture
+114  | showJarvisHud                    | Financial & HUD        | PASSED   | 0.86      | Holographic card: Unified SARA Architecture
 115  | hideJarvisHud                    | Financial & HUD        | PASSED   | 0.0       | Dismissed HUD overlay
 116  | dismissJarvisHud                 | Financial & HUD        | PASSED   | 0.0       | Flushed active modal stack
-117  | generateStudyPack                | Financial & HUD        | PASSED   | 2.95      | Generated 2 quiz items
+117  | generateStudyPack                | Financial & HUD        | PASSED   | 1.55      | Generated 2 quiz items
 118  | tutorDocument                    | Financial & HUD        | PASSED   | 0.0       | Study notes and tutor engine verified
-119  | getEmailNotificationDigest       | Financial & HUD        | PASSED   | 0.3       | Synthesized spoken morning briefing
+119  | getEmailNotificationDigest       | Financial & HUD        | PASSED   | 0.05      | Synthesized spoken morning briefing
 120  | getDailyBriefing                 | Financial & HUD        | PASSED   | 0.0       | Daily executive briefing engine verified
 ==========================================================================================
