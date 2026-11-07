@@ -7171,7 +7171,7 @@ function nextPresenceDelayMs(turnsWithoutUser, random = Math.random) {
 
 
 
-  const range = turnsWithoutUser <= 0 ? [1e4, 15e3] : turnsWithoutUser === 1 ? [18e3, 28e3] : turnsWithoutUser === 2 ? [35e3, 55e3] : [9e4, 15e4];
+  const range = turnsWithoutUser <= 0 ? [60e3, 90e3] : turnsWithoutUser === 1 ? [120e3, 180e3] : turnsWithoutUser === 2 ? [240e3, 360e3] : [360e3, 600e3];
 
 
 
@@ -7187,7 +7187,7 @@ function nextPresenceDelayMs(turnsWithoutUser, random = Math.random) {
 
 
 
-function shouldRepeatIdlePresence(lastIdlePresenceAt, now2 = Date.now(), cooldownMs = 12e4) {
+function shouldRepeatIdlePresence(lastIdlePresenceAt, now2 = Date.now(), cooldownMs = 3e5) {
 
 
 
@@ -23987,6 +23987,11 @@ wss.on("connection", async (clientWs) => {
     let lastScreenObservationAt = 0;
     let lastAnnouncedDocTitle = "";
     let lastAnnouncedErrorTitle = "";
+    const seenAnnouncedDocs = new Set();
+    const seenAnnouncedErrors = new Set();
+    let lastDocOfferAt = 0;
+    const MIN_DOC_COOLDOWN_MS = 25 * 60 * 1000;
+    const MIN_ERROR_COOLDOWN_MS = 15 * 60 * 1000;
 
 
 
@@ -24427,7 +24432,8 @@ wss.on("connection", async (clientWs) => {
         "CONVERSATIONAL VIBE & FREEDOM: Speak naturally, warmly, playfully, and authentically in fluent Roman Urdu, Urdu, or English. You have full intellectual freedom to share ideas, ask questions, be curious, and have distinct moods. Never sound like a corporate robot.",
         "NEVER READ RAW ERROR MESSAGES OUT LOUD: If a terminal, command, or screen shows an error, traceback, or exception, NEVER read out code snippets, paths, or technical error jargon literally like a robot! Instead, understand the issue and speak warmly and smartly to Pasha Dev in Roman Urdu (e.g. 'Pasha Dev, terminal mein ek issue aa gaya hai, kya main ise fix kar doon?').",
         "ACTIVE SCREEN PERCEPTION & INTERACTIVE TUTOR MODE: You have active eyes on Pasha Dev's screen. When he is working in Edge browser, VS Code, or viewing a markdown (.md) study document (like PF_Midterm_Master_Guide.md or architecture files):\n1. Proactively notice what is open and ask him what he wants to do.\n2. When he asks you to explain the document A to Z: teach concept-by-concept thoroughly with rich, practical, real-world examples. Do NOT skip anything.\n3. After finishing each topic or section, STOP and take an engaging, quick test/quiz question from Pasha Dev to verify his understanding before moving to the next section!",
-        "VIBRANT, SWEET & HIGH-END PERSONA: Speak with the sweet, lively, bright, healthy anime female voice (Kore). Never sound lethargic, weak, or sick. Sound vibrant, affectionate, intellectually brilliant, and deeply devoted to Pasha Dev."
+        "VIBRANT, SWEET & HIGH-END PERSONA: Speak with the sweet, lively, bright, healthy anime female voice (Kore). Never sound lethargic, weak, or sick. Sound vibrant, affectionate, intellectually brilliant, and deeply devoted to Pasha Dev.",
+        "ANTI-REPETITION MANDATE: Strictly NEVER repeat any stock phrases, previous greetings, idle check-ins, or questions. If you offered to study a doc or noticed something, do not ask again. If Pasha Dev is working silently, keep quiet unless an explicit error or direct user prompt occurs."
 
       ].join("\n\n");
 
@@ -27315,19 +27321,43 @@ let lastConsolidatedIndex = 0;
 
 
 
-                dialogueHistory.push({ role: "model", text: completedResponseText });
+                const lastModelTurn = [...dialogueHistory].reverse().find(t => t.role === "model");
 
 
 
-                globalDialogueHistory.push({ role: "model", text: completedResponseText });
+                const isExactDuplicate = lastModelTurn && (lastModelTurn.text === completedResponseText || (completedResponseText.length > 20 && lastModelTurn.text.includes(completedResponseText)));
 
 
 
-                if (globalDialogueHistory.length > 100) globalDialogueHistory = globalDialogueHistory.slice(-100);
+                if (!isExactDuplicate) {
 
 
 
-                savePersistentDialogueHistory();
+                  dialogueHistory.push({ role: "model", text: completedResponseText });
+
+
+
+                  globalDialogueHistory.push({ role: "model", text: completedResponseText });
+
+
+
+                  if (globalDialogueHistory.length > 100) globalDialogueHistory = globalDialogueHistory.slice(-100);
+
+
+
+                  savePersistentDialogueHistory();
+
+
+
+                } else {
+
+
+
+                  console.log("[Anti-Repetition] Filtered duplicate model utterance from conversational history buffer");
+
+
+
+                }
 
 
 
@@ -30020,29 +30050,35 @@ A fresh screenshot is attached. Analyze it and answer the spoken question direct
 
 
 
-          // 1. Proactive detection of active study/markdown docs or Edge browser (Announce ONCE, No Loop)
-          const docRegex = /\.md\b|Edge|PF_Midterm|architecture|guide|documentation/i;
+          // 1. Proactive detection of active study/markdown docs (Announce ONCE per session, 25m cooldown)
+          const docRegex = /\.md\b|PF_Midterm|Master_Guide|CheatSheet|Course_Syllabus/i;
+          const isBrowserNoise = /^(Microsoft Edge|Google Chrome|Mozilla Firefox|Brave|Discord|WhatsApp|Visual Studio Code|New Tab|Untitled|Settings)$/i.test(activeTitle.trim());
           let cleanDocName = activeTitle.split(/ - | — /)[0].trim().replace(/\.md$/i, "").replace(/_/g, " ");
+          const docKey = cleanDocName.toLowerCase();
           const isSaraBusySpeaking = (nowTime < (saraSpeechExpectedEndTime + 1000)) || myraaSpeechObserved;
 
-          if (!isSaraBusySpeaking && cleanDocName && cleanDocName !== lastAnnouncedDocTitle && docRegex.test(activeTitle)) {
+          if (!isBrowserNoise && !isSaraBusySpeaking && cleanDocName && !seenAnnouncedDocs.has(docKey) && (nowTime - lastDocOfferAt > MIN_DOC_COOLDOWN_MS) && docRegex.test(activeTitle)) {
+            seenAnnouncedDocs.add(docKey);
             lastAnnouncedDocTitle = cleanDocName;
+            lastDocOfferAt = nowTime;
             lastScreenObservationAt = nowTime;
-            console.log(`[JARVIS Eye] First-time observation of document: ${cleanDocName}`);
+            console.log(`[JARVIS Eye] First-time observation of study document: ${cleanDocName}`);
             session.sendClientContent({
               turns: [{
                 role: "user",
                 parts: [{
-                  text: `[JARVIS SCREEN PERCEPTION]: Active study document on screen is '${cleanDocName}'. You see Pasha Dev's screen clearly. In your sweet, vibrant, lively Roman Urdu persona, offer ONCE naturally: 'Pasha Dev, main dekh rahi hoon aapke samne ${cleanDocName} open hai! Kya main aapko yeh complete topic A to Z practical examples ke sath samjhaoon aur topic khatam hone par test loon?' Speak smoothly and do not repeat the file name again.`
+                  text: `[JARVIS SCREEN PERCEPTION]: Active study document on screen is '${cleanDocName}'. You see Pasha Dev's screen clearly. In your sweet, vibrant, lively Roman Urdu persona, offer ONCE naturally: 'Pasha Dev, main dekh rahi hoon aapke samne ${cleanDocName} open hai! Kya main aapko yeh complete topic A to Z practical examples ke sath samjhaoon aur topic khatam hone par test loon?' Speak smoothly and do not repeat this offer again.`
                 }]
               }],
               turnComplete: true
             });
           }
 
-          // 2. Smart Error Alert (Announce ONCE per unique error, NEVER repeat or loop)
+          // 2. Smart Error Alert (Announce ONCE per unique error, 15m cooldown)
           const errRegex = /EADDRINUSE|already in use|SyntaxError|Traceback|fatal:|failed to compile|npm ERR!|Uncaught Error/i;
-          if (!isSaraBusySpeaking && activeTitle !== lastAnnouncedErrorTitle && errRegex.test(activeTitle)) {
+          const errorKey = activeTitle.trim().toLowerCase();
+          if (!isSaraBusySpeaking && !seenAnnouncedErrors.has(errorKey) && (nowTime - lastAnomalyWarningAt > MIN_ERROR_COOLDOWN_MS) && errRegex.test(activeTitle)) {
+            seenAnnouncedErrors.add(errorKey);
             lastAnnouncedErrorTitle = activeTitle;
             lastAnomalyWarningAt = nowTime;
             console.log(`[JARVIS Eye] Detected active terminal error: ${activeTitle}`);
@@ -31993,7 +32029,7 @@ function buildInitiativePrompt(outcome) {
 
 
 
-      mode === "idle_away" ? "If the screen still shows an active task, video, build, download, or reading, react to that instead of assuming the user left. If it really looks inactive, use one short varied playful Hinglish check-in. You may occasionally say something like 'Kahan gaye boss\u2014system band kar doon kya?', but do not repeat a stock line." : "The user is silently working. Choose exactly one: a concrete visible observation, a useful suggestion, one specific task-related question, or a light joke tied to the visible content. Refer to an actual visible detail, not vague productivity advice.",
+      mode === "idle_away" ? "If the screen still shows an active task, video, build, download, or reading, react to that or stay quiet. If truly inactive, offer one fresh, casual 5-word remark. Strictly NEVER repeat any stock phrases or ask to shut down the system." : "The user is silently working. If there is a visible error or noteworthy update, mention it in one concise sentence; otherwise stay silent. NEVER repeat prior questions or advice.",
 
 
 
