@@ -23,6 +23,15 @@ from typing import Dict, List, Any, Optional
 import requests
 from bs4 import BeautifulSoup
 
+from sara_office_and_browser_suite import (
+    word_engine,
+    ppt_engine,
+    browser_engine,
+    WordDocumentAutomationEngine,
+    PowerPointPresentationEngine,
+    AdvancedBrowserInteractionEngine
+)
+
 USER_PROFILE = Path(os.environ.get("USERPROFILE") or os.path.expanduser("~")).resolve()
 BASE_DIR = Path(r"D:\MARAA AI").resolve()
 DATA_DIR = BASE_DIR / "data"
@@ -1888,6 +1897,37 @@ if __name__ == "__main__":
             subs = int(sys.argv[2]) if len(sys.argv) > 2 else 50
             price = float(sys.argv[3]) if len(sys.argv) > 3 else 49.0
             res = startup_revenue_engine.simulate_financials(active_subscribers=subs, avg_price_per_month=price)
+            print(json.dumps(res, indent=2))
+
+        elif pipeline in ["word", "create_word", "docx"]:
+            title_text = sys.argv[2] if len(sys.argv) > 2 else "SARA AI Project Overview"
+            res = word_engine.create_word_document(title=title_text)
+            print(json.dumps(res, indent=2))
+
+        elif pipeline in ["read_word", "read_docx"]:
+            doc_p = sys.argv[2] if len(sys.argv) > 2 else str(DATA_DIR / "documents" / "sara_ai_2_5_pro_master_documentation.docx")
+            res = word_engine.read_word_document(doc_p)
+            print(json.dumps(res, indent=2))
+
+        elif pipeline in ["ppt", "create_ppt", "presentation"]:
+            ppt_title = sys.argv[2] if len(sys.argv) > 2 else "SARA AI 2.5 Pro Presentation"
+            res = ppt_engine.create_presentation(title=ppt_title)
+            print(json.dumps(res, indent=2))
+
+        elif pipeline in ["read_ppt", "read_pptx"]:
+            ppt_p = sys.argv[2] if len(sys.argv) > 2 else str(DATA_DIR / "presentations" / "sara_ai_2_5_pro_investor_deck.pptx")
+            res = ppt_engine.read_presentation(ppt_p)
+            print(json.dumps(res, indent=2))
+
+        elif pipeline in ["browser_search", "web_search", "search_browser"]:
+            q_text = sys.argv[2] if len(sys.argv) > 2 else "FastAPI tutorial"
+            eng = sys.argv[3] if len(sys.argv) > 3 else "google"
+            res = browser_engine.search_web(q_text, engine=eng, open_browser=False)
+            print(json.dumps(res, indent=2))
+
+        elif pipeline in ["browser_scrape", "web_scrape", "read_page"]:
+            scrape_url = sys.argv[2] if len(sys.argv) > 2 else "https://en.wikipedia.org/wiki/Artificial_intelligence"
+            res = browser_engine.scrape_and_summarize_url(scrape_url)
             print(json.dumps(res, indent=2))
 
         else:
