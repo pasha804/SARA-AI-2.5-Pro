@@ -1,0 +1,99 @@
+{
+  "project": "SARA AI 2.5 Pro — Autonomous Enterprise OS",
+  "owner": "Muhammad Mubashar (Pasha Dev)",
+  "updated_at": "2026-11-07 22:43:34",
+  "columns": {
+    "backlog": [
+      {
+        "id": "kb_1",
+        "title": "Integrate Native Mobile Mirroring",
+        "priority": "MEDIUM",
+        "tag": "Vision"
+      },
+      {
+        "id": "kb_2",
+        "title": "Local Whisper STT GPU Acceleration",
+        "priority": "LOW",
+        "tag": "Audio"
+      },
+      {
+        "id": "kb_2935",
+        "title": "Autonomous Multi-Model Router",
+        "priority": "MEDIUM",
+        "tag": "Feature"
+      }
+    ],
+    "in_progress": [
+      {
+        "id": "kb_3",
+        "title": "Manus Multi-Step Execution Loop",
+        "priority": "URGENT",
+        "tag": "Autonomous"
+      },
+      {
+        "id": "kb_4",
+        "title": "Office Suite Word & PPT Auto-Launch",
+        "priority": "HIGH",
+        "tag": "Enterprise"
+      },
+      {
+        "id": "kb_2972",
+        "title": "Unit Test Task",
+        "priority": "HIGH",
+        "tag": "Feature"
+      },
+      {
+        "id": "kb_3083",
+        "title": "Unit Test Task",
+        "priority": "HIGH",
+        "tag": "Feature"
+      },
+      {
+        "id": "kb_3244",
+        "title": "Unit Test Task",
+        "priority": "HIGH",
+        "tag": "Feature"
+      },
+      {
+        "id": "kb_3334",
+        "title": "Unit Test Task",
+        "priority": "HIGH",
+        "tag": "Feature"
+      },
+      {
+        "id": "kb_3414",
+        "title": "Unit Test Task",
+        "priority": "HIGH",
+        "tag": "Feature"
+      }
+    ],
+    "testing": [
+      {
+        "id": "kb_5",
+        "title": "259 Unit Tests 100% Green Verification",
+        "priority": "HIGH",
+        "tag": "QA"
+      }
+    ],
+    "done": [
+      {
+        "id": "kb_6",
+        "title": "Floating Acrylic HUD & Official Logo Navbar",
+        "priority": "URGENT",
+        "tag": "UI/UX"
+      },
+      {
+        "id": "kb_7",
+        "title": "Anti-Repetition Engine & Cooldown Throttles",
+        "priority": "URGENT",
+        "tag": "Cognitive Core"
+      },
+      {
+        "id": "kb_8",
+        "title": "APInex Multi-Model 9-LLM Failover Gateway",
+        "priority": "HIGH",
+        "tag": "Neural Brain"
+      }
+    ]
+  }
+}

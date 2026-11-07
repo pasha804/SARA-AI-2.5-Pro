@@ -6339,6 +6339,107 @@ if __name__ == "__main__":
                 print(json.dumps(res, indent=2))
             except Exception as e:
                 print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["repomix", "pack_codebase"]:
+            try:
+                from sara_advanced_viral_automations import repomix_packer
+                t_path = sys.argv[2] if len(sys.argv) > 2 else None
+                res = repomix_packer.pack_repository(t_path)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["firecrawl_docs", "crawl_docs"]:
+            try:
+                from sara_advanced_viral_automations import firecrawl_crawler
+                url = sys.argv[2] if len(sys.argv) > 2 else "https://fastapi.tiangolo.com"
+                topic = sys.argv[3] if len(sys.argv) > 3 else "fastapi_docs"
+                res = firecrawl_crawler.crawl_and_compile(url, topic)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["kanban_add"]:
+            try:
+                from sara_advanced_viral_automations import vibe_kanban
+                task_title = sys.argv[2] if len(sys.argv) > 2 else "New Sprint Task"
+                res = vibe_kanban.add_task(task_title)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["caveman_compress", "compress_tokens"]:
+            try:
+                from sara_advanced_viral_automations import caveman_compressor
+                txt = sys.argv[2] if len(sys.argv) > 2 else "As an AI model I would certainly help"
+                res = caveman_compressor.compress_telegraphic(txt)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["claude_mem", "recall_mem", "memory_recall"]:
+            try:
+                from sara_viral_automations_part2 import ClaudeMemAssociativeEngine
+                engine = ClaudeMemAssociativeEngine()
+                q = sys.argv[2] if len(sys.argv) > 2 else "Pasha Dev SARA AI"
+                recalled = engine.associative_recall(q)
+                header = engine.generate_prompt_memory_injection(q)
+                print(json.dumps({"recalled": recalled, "prompt_injection": header}, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["route_model", "model_router", "smart_route"]:
+            try:
+                from sara_viral_automations_part2 import ClaudeCodeRouterEngine
+                router = ClaudeCodeRouterEngine()
+                q = sys.argv[2] if len(sys.argv) > 2 else "Refactor architecture with TDD"
+                res = router.route_request(q)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["taste_audit", "slop_linter", "design_audit"]:
+            try:
+                from sara_viral_automations_part2 import TasteSkillAestheticLinter
+                linter = TasteSkillAestheticLinter()
+                target_file = sys.argv[2] if len(sys.argv) > 2 else None
+                if target_file and Path(target_file).exists():
+                    with open(target_file, "r", encoding="utf-8", errors="ignore") as f:
+                        code = f.read()
+                    res = linter.audit_code(code)
+                else:
+                    sample_code = sys.argv[2] if len(sys.argv) > 2 else "<h1>Unleash the power of AI</h1>"
+                    res = linter.audit_code(sample_code)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["live_hud", "hud", "telemetry_hud"]:
+            try:
+                from sara_viral_automations_part2 import ClaudeLiveHUDTelemetry
+                hud = ClaudeLiveHUDTelemetry()
+                html_path = hud.generate_live_html_hud()
+                term = hud.render_terminal_hud()
+                print(term)
+                print(json.dumps({"success": True, "html_dashboard": str(html_path)}, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["switch_profile", "profile", "cc_switch"]:
+            try:
+                from sara_viral_automations_part2 import CcSwitchProfileManager
+                switcher = CcSwitchProfileManager()
+                prof_name = sys.argv[2] if len(sys.argv) > 2 else "founder"
+                res = switcher.switch_profile(prof_name)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["beads_pipeline", "run_beads"]:
+            try:
+                from sara_viral_automations_part2 import BeadsWorkflowDAGOrchestrator
+                beads_orch = BeadsWorkflowDAGOrchestrator()
+                pipe_name = sys.argv[2] if len(sys.argv) > 2 else "demo_pipeline"
+                # Create default beads if not present
+                demo_beads = [
+                    {"id": "init_context", "name": "Initialize Context", "action": "custom", "params": {"startup": "SARA AI"}, "dependencies": []},
+                    {"id": "pack_core", "name": "Pack Codebase", "action": "custom", "params": {"scope": "core"}, "dependencies": ["init_context"]}
+                ]
+                beads_orch.create_pipeline(pipe_name, demo_beads)
+                res = beads_orch.execute_pipeline(pipe_name)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
     
     else:
 
