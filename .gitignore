@@ -55,6 +55,7 @@ data/presentations/
 data/manus/
 data/hud/*.html
 data/pipelines/test_*.json
+graphify-out/cache/
 data/backups/
 data/dialogue_history.json
 data/background_tasks.json

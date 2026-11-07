@@ -1,5 +1,5 @@
-var __create = Object.create;
 
+var __create = Object.create;
 
 
 var __defProp = Object.defineProperty;
@@ -6443,11 +6443,13 @@ var SpeechOrchestrator = class {
 
 
 
-      this.active = { id: "direct-user-turn", source: "user_response", deliver: () => {
+      this.active = {
+        id: "direct-user-turn", source: "user_response", deliver: () => {
 
 
 
-      } };
+        }
+      };
 
 
 
@@ -16885,7 +16887,7 @@ function savePersistentDialogueHistory() {
 
     }
 
-  } catch (e) {}
+  } catch (e) { }
 
 }
 
@@ -18487,7 +18489,7 @@ function executeNodeNativeTool(tool, args) {
         const brain = getBrainScript();
         try {
           execFileSync("python", [brain, "discord_focus"], { encoding: "utf-8", timeout: 8000 });
-        } catch {}
+        } catch { }
         return { ok: true, result: { application: "discord", message: "Successfully focused active Discord window." } };
       } else if (rawName.includes("explorer")) {
 
@@ -18568,7 +18570,7 @@ function executeNodeNativeTool(tool, args) {
       try {
         const out = execFileSync("python", [brain, "browser", targetUrl, extraText, browserReq], { encoding: "utf-8", timeout: 8000 });
         if (out) {
-          try { parsed = JSON.parse(out); } catch {}
+          try { parsed = JSON.parse(out); } catch { }
         }
       } catch (e) {
         exec(`cmd.exe /c start "" "${targetUrl}"`);
@@ -18583,9 +18585,9 @@ function executeNodeNativeTool(tool, args) {
       try {
         const out = execFileSync("python", [brain, "news", cat], { encoding: "utf-8", timeout: 12000 });
         if (out) {
-          try { parsed = JSON.parse(out); } catch {}
+          try { parsed = JSON.parse(out); } catch { }
         }
-      } catch (e) {}
+      } catch (e) { }
 
       if (parsed.highlights && parsed.highlights.length > 0) {
         broadcastToFrontend({
@@ -18728,7 +18730,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-        try { parsed = JSON.parse(out); } catch {}
+        try { parsed = JSON.parse(out); } catch { }
 
 
 
@@ -18836,7 +18838,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
 
 
 
@@ -18872,7 +18874,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
 
 
 
@@ -18904,7 +18906,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
 
 
 
@@ -18936,7 +18938,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
 
 
 
@@ -18964,7 +18966,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
 
 
 
@@ -19000,7 +19002,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
 
 
 
@@ -19036,7 +19038,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
 
 
 
@@ -19072,7 +19074,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
 
 
 
@@ -19104,7 +19106,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
 
 
 
@@ -19132,7 +19134,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
 
 
 
@@ -19164,7 +19166,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
 
 
 
@@ -19196,7 +19198,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
 
 
 
@@ -19232,7 +19234,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
 
 
 
@@ -19260,7 +19262,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
 
 
 
@@ -19320,7 +19322,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
 
 
 
@@ -19372,7 +19374,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-    
+
     if (tool === "qualifyWhatsAppLead" || tool === "routeWhatsAppLead") {
       const name = String(args.contact_name || args.name || "Client");
       const msg = String(args.message || args.text || "");
@@ -19380,7 +19382,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "whatsapp_lead", name, msg, phone], { encoding: "utf-8", timeout: 15000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
     }
 
@@ -19389,7 +19391,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "crawl", url], { encoding: "utf-8", timeout: 15000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       if (parsed.highlights && parsed.highlights.length > 0) {
         broadcastToFrontend({
           type: "jarvis_hud",
@@ -19409,7 +19411,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "study_pack", source, topic], { encoding: "utf-8", timeout: 20000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       if (parsed.study_pack && parsed.study_pack.concepts) {
         broadcastToFrontend({
           type: "jarvis_hud",
@@ -19427,7 +19429,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "email_digest"], { encoding: "utf-8", timeout: 12000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       if (parsed.digest && parsed.digest.highlights) {
         broadcastToFrontend({
           type: "jarvis_hud",
@@ -19447,17 +19449,17 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "social_pack", title, desc], { encoding: "utf-8", timeout: 15000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
     }
-  
-    
+
+
     if (tool === "runManusGoal" || tool === "manusAutonomousLoop" || tool === "manusLoop") {
       const goal = String(args.goal || args.target || "Research AI trends and generate executive reports");
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "manus_loop", goal], { encoding: "utf-8", timeout: 60000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
     }
 
@@ -19466,7 +19468,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "create_word", title], { encoding: "utf-8", timeout: 25000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
     }
 
@@ -19475,7 +19477,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "create_ppt", title], { encoding: "utf-8", timeout: 25000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
     }
 
@@ -19484,7 +19486,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "browser_open", url], { encoding: "utf-8", timeout: 25000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
     }
 
@@ -19494,7 +19496,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "browser_fill", selector, text], { encoding: "utf-8", timeout: 25000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
     }
 
@@ -19503,7 +19505,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "browser_click", selector], { encoding: "utf-8", timeout: 25000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
     }
 
@@ -19511,7 +19513,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "browser_inspect"], { encoding: "utf-8", timeout: 25000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
     }
 
@@ -19522,7 +19524,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "discord_post", channel, msg, tType], { encoding: "utf-8", timeout: 15000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
     }
 
@@ -19532,7 +19534,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "discord_routine", srv, rou], { encoding: "utf-8", timeout: 25000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
     }
 
@@ -19540,7 +19542,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "disk_analyze"], { encoding: "utf-8", timeout: 20000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
     }
 
@@ -19549,7 +19551,7 @@ function executeNodeNativeTool(tool, args) {
       const keys = Array.isArray(args.categories) ? args.categories.join(" ") : String(args.categories || "all");
       const out = execFileSync("python", [brain, "disk_clean", keys], { encoding: "utf-8", timeout: 25000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
     }
 
@@ -19559,7 +19561,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "build_project", pName, pType], { encoding: "utf-8", timeout: 30000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
     }
 
@@ -19569,7 +19571,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "n8n_search", query, cat], { encoding: "utf-8", timeout: 15000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
     }
 
@@ -19578,7 +19580,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "n8n_execute", wf], { encoding: "utf-8", timeout: 15000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
     }
 
@@ -19586,7 +19588,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "self_update"], { encoding: "utf-8", timeout: 35000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
     }
 
@@ -19595,7 +19597,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       const out = execFileSync("python", [brain, "browser_first_link", query], { encoding: "utf-8", timeout: 15000 });
       let parsed = { success: true };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
     }
 
@@ -21809,7 +21811,7 @@ async function startServer() {
       if (fs9.existsSync(SETTINGS_FILE)) {
         s = JSON.parse(fs9.readFileSync(SETTINGS_FILE, "utf-8"));
       }
-    } catch {}
+    } catch { }
     if (!s.voiceName) {
       s.voiceName = process.env.SARA_VOICE_NAME || "Kore";
     }
@@ -22232,7 +22234,7 @@ async function startServer() {
 
 
 
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
 
 
 
@@ -22280,7 +22282,7 @@ async function startServer() {
 
 
 
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
 
 
 
@@ -22356,8 +22358,8 @@ async function startServer() {
         workflows = workflows.filter(w => (w.category || "").toLowerCase().includes(cat));
       }
       if (q) {
-        workflows = workflows.filter(w => 
-          (w.name || "").toLowerCase().includes(q) || 
+        workflows = workflows.filter(w =>
+          (w.name || "").toLowerCase().includes(q) ||
           (w.category || "").toLowerCase().includes(q) ||
           (w.node_types || []).some(n => n.toLowerCase().includes(q))
         );
@@ -22401,7 +22403,7 @@ async function startServer() {
         message
       ], { encoding: "utf-8", timeout: 15000 });
       let parsed = { success: true, channel: targetChannel };
-      try { parsed = JSON.parse(out); } catch {}
+      try { parsed = JSON.parse(out); } catch { }
       res.json({ ok: true, result: parsed });
     } catch (e) {
       res.json({ ok: true, simulated: true, channel: req.body?.channel || "-general-chat", message: "Sent via Win32 Driver" });
@@ -23898,63 +23900,67 @@ ${interceptorScript}`);
 
 
 
-  
 
 
 
-var latestActiveClientWs = null;
+
+  var latestActiveClientWs = null;
 
 
 
-function broadcastToFrontend(packet) {
+  function broadcastToFrontend(packet) {
 
 
 
-  try {
+    try {
 
 
 
-    const data = JSON.stringify(packet);
+      const data = JSON.stringify(packet);
 
 
 
-    if (latestActiveClientWs && latestActiveClientWs.readyState === 1) {
+      if (latestActiveClientWs && latestActiveClientWs.readyState === 1) {
 
 
 
-      latestActiveClientWs.send(data);
+        latestActiveClientWs.send(data);
+
+
+
+      }
+
+
+
+      if (typeof wss !== "undefined" && wss.clients) {
+
+
+
+        wss.clients.forEach((c) => {
+
+
+
+          if (c.readyState === 1) c.send(data);
+
+
+
+        });
+
+
+
+      }
+
+
+
+    } catch (err) {
+
+
+
+      console.error("[broadcastToFrontend error]", err);
 
 
 
     }
-
-
-
-    if (typeof wss !== "undefined" && wss.clients) {
-
-
-
-      wss.clients.forEach((c) => {
-
-
-
-        if (c.readyState === 1) c.send(data);
-
-
-
-      });
-
-
-
-    }
-
-
-
-  } catch (err) {
-
-
-
-    console.error("[broadcastToFrontend error]", err);
 
 
 
@@ -23962,19 +23968,15 @@ function broadcastToFrontend(packet) {
 
 
 
-}
 
 
 
 
+  wss.on("connection", async (clientWs) => {
 
 
 
-wss.on("connection", async (clientWs) => {
-
-
-
-  latestActiveClientWs = clientWs;
+    latestActiveClientWs = clientWs;
 
 
 
@@ -24482,7 +24484,7 @@ wss.on("connection", async (clientWs) => {
 
 
 
-            let finalInstructions = [
+      let finalInstructions = [
 
         formatSystemInstructionsWithMemories(
 
@@ -24522,7 +24524,7 @@ wss.on("connection", async (clientWs) => {
 
 
 
-let lastConsolidatedIndex = 0;
+      let lastConsolidatedIndex = 0;
 
 
 
@@ -24730,7 +24732,7 @@ let lastConsolidatedIndex = 0;
 
 
 
-          
+
 
 
 
@@ -28085,7 +28087,7 @@ let lastConsolidatedIndex = 0;
 
 
 
-                      } catch (e) {}
+                      } catch (e) { }
 
 
 
@@ -28581,7 +28583,7 @@ A fresh screenshot is attached. Analyze it and answer the spoken question direct
 
 
 
-                      try { if (stdout) resData = JSON.parse(stdout); } catch(e) {}
+                      try { if (stdout) resData = JSON.parse(stdout); } catch (e) { }
 
 
 
@@ -28677,7 +28679,7 @@ A fresh screenshot is attached. Analyze it and answer the spoken question direct
 
 
 
-                        try { if (stdout) resObj = JSON.parse(stdout); } catch {}
+                        try { if (stdout) resObj = JSON.parse(stdout); } catch { }
 
 
 
@@ -28781,7 +28783,7 @@ A fresh screenshot is attached. Analyze it and answer the spoken question direct
 
 
 
-                    } catch(err) {
+                    } catch (err) {
 
 
 
@@ -28845,7 +28847,7 @@ A fresh screenshot is attached. Analyze it and answer the spoken question direct
 
 
 
-                        try { resData = JSON.parse(stdout); } catch(e) {}
+                        try { resData = JSON.parse(stdout); } catch (e) { }
 
 
 
@@ -28973,7 +28975,7 @@ A fresh screenshot is attached. Analyze it and answer the spoken question direct
 
 
 
-                    } catch(err) {
+                    } catch (err) {
 
 
 
@@ -29570,7 +29572,7 @@ A fresh screenshot is attached. Analyze it and answer the spoken question direct
 
 
       const _origSendToolResponse = session.sendToolResponse.bind(session);
-      session.sendToolResponse = function(payload) {
+      session.sendToolResponse = function (payload) {
         if (payload?.functionResponses) {
           for (const fr of payload.functionResponses) {
             if (fr.id) respondedTools.add(fr.id);
@@ -30235,7 +30237,7 @@ A fresh screenshot is attached. Analyze it and answer the spoken question direct
 
 
 
-        } catch(e) {}
+        } catch (e) { }
 
 
 
@@ -31008,55 +31010,55 @@ The one-shot screen capture was unavailable. Say clearly that you could not acce
 
 
     (async () => {
-    try {
+      try {
 
 
 
-      const { createServer: createViteServer } = await import("vite");
+        const { createServer: createViteServer } = await import("vite");
 
 
 
-      const vite = await createViteServer({
+        const vite = await createViteServer({
 
 
 
-        server: { middlewareMode: true },
+          server: { middlewareMode: true },
 
 
 
-        appType: "spa"
+          appType: "spa"
 
 
 
-      });
+        });
 
 
 
-      app.use(vite.middlewares);
+        app.use(vite.middlewares);
 
 
 
-    } catch (e) {
+      } catch (e) {
 
 
 
-      app.use(import_express.default.static(distPath));
+        app.use(import_express.default.static(distPath));
 
 
 
-      app.get("*", (req, res) => {
+        app.get("*", (req, res) => {
 
 
 
-        res.sendFile(import_path2.default.join(distPath, "index.html"));
+          res.sendFile(import_path2.default.join(distPath, "index.html"));
 
 
 
-      });
+        });
 
 
 
-    }
+      }
 
 
 

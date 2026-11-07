@@ -1,0 +1,45 @@
+# Graphify ignore for SARA AI workspace
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.git/
+**/.git/
+venv/
+**/venv/
+__pycache__/
+**/__pycache__/
+*.exe
+*.dll
+*.pak
+*.bin
+*.zip
+*.tar.gz
+*.png
+*.jpg
+*.jpeg
+*.ico
+*.mp4
+*.mp3
+
+# External massive repositories folder
+repositories/
+**/repositories/
+
+# External non-core projects
+Projects-2/
+only study/
+template-weaver-main/
+birthday cook 13/
+Trading/
+Job Hunt/
+3D-birthday/
+cooking/
+Pasha-devpolit/
+weadding template1/
+pasha_unit_test_proj/
+pasha_tool_unit_test/
+pasha_unit_live_120/
+Postmotam/
+game/
+warm-hug-react-engineering/
