@@ -19479,6 +19479,42 @@ function executeNodeNativeTool(tool, args) {
       return { ok: true, result: parsed };
     }
 
+    if (tool === "browserOpenUrl" || tool === "openBrowserUrl") {
+      const url = String(args.url || "https://google.com");
+      const brain = getBrainScript();
+      const out = execFileSync("python", [brain, "browser_open", url], { encoding: "utf-8", timeout: 25000 });
+      let parsed = { success: true };
+      try { parsed = JSON.parse(out); } catch {}
+      return { ok: true, result: parsed };
+    }
+
+    if (tool === "browserFillField" || tool === "fillBrowserInput") {
+      const selector = String(args.selector || args.field || "q");
+      const text = String(args.text || args.value || "");
+      const brain = getBrainScript();
+      const out = execFileSync("python", [brain, "browser_fill", selector, text], { encoding: "utf-8", timeout: 25000 });
+      let parsed = { success: true };
+      try { parsed = JSON.parse(out); } catch {}
+      return { ok: true, result: parsed };
+    }
+
+    if (tool === "browserClickElement" || tool === "clickBrowserButton") {
+      const selector = String(args.selector || args.button || "button");
+      const brain = getBrainScript();
+      const out = execFileSync("python", [brain, "browser_click", selector], { encoding: "utf-8", timeout: 25000 });
+      let parsed = { success: true };
+      try { parsed = JSON.parse(out); } catch {}
+      return { ok: true, result: parsed };
+    }
+
+    if (tool === "browserInspectForm" || tool === "inspectBrowserPage") {
+      const brain = getBrainScript();
+      const out = execFileSync("python", [brain, "browser_inspect"], { encoding: "utf-8", timeout: 25000 });
+      let parsed = { success: true };
+      try { parsed = JSON.parse(out); } catch {}
+      return { ok: true, result: parsed };
+    }
+
     if (tool === "manageDiscordServer" || tool === "postToDiscordChannel" || tool === "navigateDiscord") {
       const channel = String(args.channel || args.target || "general");
       const msg = String(args.message || args.text || "");
@@ -24760,6 +24796,48 @@ let lastConsolidatedIndex = 0;
                       subtitle: { type: "STRING", description: "Optional subtitle or topic focus." }
                     },
                     required: ["title"]
+                  }
+                },
+                {
+                  name: "browserOpenUrl",
+                  description: "Opens a live interactive browser window and navigates to the specified URL.",
+                  parameters: {
+                    type: "OBJECT",
+                    properties: {
+                      url: { type: "STRING", description: "The full URL or domain to open." }
+                    },
+                    required: ["url"]
+                  }
+                },
+                {
+                  name: "browserFillField",
+                  description: "Types text into any input field, form input, search box, or textarea in the interactive browser.",
+                  parameters: {
+                    type: "OBJECT",
+                    properties: {
+                      selector: { type: "STRING", description: "CSS selector, input name, id, or placeholder text of the field to fill." },
+                      text: { type: "STRING", description: "The exact text to type into the field." }
+                    },
+                    required: ["selector", "text"]
+                  }
+                },
+                {
+                  name: "browserClickElement",
+                  description: "Clicks on any button, submit button, link, checkbox, or interactive element in the browser.",
+                  parameters: {
+                    type: "OBJECT",
+                    properties: {
+                      selector: { type: "STRING", description: "CSS selector, button text, or id to click." }
+                    },
+                    required: ["selector"]
+                  }
+                },
+                {
+                  name: "browserInspectForm",
+                  description: "Scans the current webpage and returns all available input fields, textareas, and buttons so SARA knows what form fields can be filled.",
+                  parameters: {
+                    type: "OBJECT",
+                    properties: {}
                   }
                 },
                 {

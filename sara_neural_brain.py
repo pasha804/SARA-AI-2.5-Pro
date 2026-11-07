@@ -6440,6 +6440,46 @@ if __name__ == "__main__":
                 print(json.dumps(res, indent=2))
             except Exception as e:
                 print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["browser_open", "browser_navigate", "open_url"]:
+            try:
+                from sara_interactive_browser import browser_agent
+                u = sys.argv[2] if len(sys.argv) > 2 else "https://google.com"
+                res = browser_agent.navigate_to(u)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["browser_inspect", "inspect_form"]:
+            try:
+                from sara_interactive_browser import browser_agent
+                res = browser_agent.inspect_page_elements()
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["browser_fill", "fill_field"]:
+            try:
+                from sara_interactive_browser import browser_agent
+                sel = sys.argv[2] if len(sys.argv) > 2 else "q"
+                val = sys.argv[3] if len(sys.argv) > 3 else "Pasha Dev"
+                res = browser_agent.fill_field(sel, val)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["browser_click", "click_btn"]:
+            try:
+                from sara_interactive_browser import browser_agent
+                sel = sys.argv[2] if len(sys.argv) > 2 else "button"
+                res = browser_agent.click_element(sel)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["browser_type_active", "type_active"]:
+            try:
+                from sara_interactive_browser import SaraInteractiveBrowserAgent
+                txt = sys.argv[2] if len(sys.argv) > 2 else "Pasha Dev"
+                res = SaraInteractiveBrowserAgent.os_type_and_submit_in_browser(txt)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
     
     else:
 
