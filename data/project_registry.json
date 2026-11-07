@@ -12,7 +12,7 @@
       "has_python": true,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-07T20:40:46.022437"
+      "discovered_at": "2026-11-07T22:37:47.600078"
     },
     "game": {
       "name": "game",
@@ -42,7 +42,7 @@
       "skills": [
         "live-avatar-3d-video"
       ],
-      "discovered_at": "2026-11-07T20:40:45.626429"
+      "discovered_at": "2026-11-07T22:37:47.575341"
     },
     "tests": {
       "name": "tests",
@@ -58,7 +58,7 @@
       "has_python": true,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-07T20:40:46.134328"
+      "discovered_at": "2026-11-07T22:37:47.608031"
     },
     "data": {
       "name": "data",
@@ -74,7 +74,7 @@
       "has_python": true,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-07T20:40:45.637744"
+      "discovered_at": "2026-11-07T22:37:47.579803"
     },
     "birthday cook 13": {
       "name": "birthday cook 13",
@@ -665,7 +665,7 @@
         "warm-hug-react-engineering",
         "warm-hug-svg-assets"
       ],
-      "discovered_at": "2026-11-07T20:40:48.484204"
+      "discovered_at": "2026-11-07T22:37:47.656141"
     },
     "only study": {
       "name": "only study",
@@ -715,7 +715,7 @@
       "has_python": false,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-07T20:40:48.640503"
+      "discovered_at": "2026-11-07T22:37:47.660611"
     },
     "Pasha-devpolit": {
       "name": "Pasha-devpolit",
@@ -742,7 +742,7 @@
       "skills": [
         "railway-config"
       ],
-      "discovered_at": "2026-11-07T20:40:48.785241"
+      "discovered_at": "2026-11-07T22:37:47.662975"
     },
     "Projects-2": {
       "name": "Projects-2",
@@ -784,7 +784,7 @@
       "has_python": false,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-07T20:40:49.375835"
+      "discovered_at": "2026-11-07T22:37:47.679498"
     },
     "template-weaver-main": {
       "name": "template-weaver-main",
@@ -819,7 +819,7 @@
       "has_python": true,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-07T20:40:49.469652"
+      "discovered_at": "2026-11-07T22:37:47.682906"
     },
     "Trading": {
       "name": "Trading",
@@ -839,7 +839,7 @@
         "market-analyzer",
         "trend-and-structure"
       ],
-      "discovered_at": "2026-11-07T20:40:49.505375"
+      "discovered_at": "2026-11-07T22:37:47.686103"
     },
     "weadding template1": {
       "name": "weadding template1",
@@ -924,7 +924,7 @@
       "has_python": true,
       "has_agents": true,
       "skills": [],
-      "discovered_at": "2026-11-07T20:40:46.325028"
+      "discovered_at": "2026-11-07T22:37:47.622525"
     },
     "pasha_unit_test_proj": {
       "name": "pasha_unit_test_proj",
@@ -943,7 +943,7 @@
       "has_python": true,
       "has_agents": true,
       "skills": [],
-      "discovered_at": "2026-11-07T20:40:46.392179"
+      "discovered_at": "2026-11-07T22:37:47.626184"
     },
     "pasha_tool_unit_test": {
       "name": "pasha_tool_unit_test",
@@ -987,7 +987,7 @@
       "has_python": true,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-07T20:40:48.034363"
+      "discovered_at": "2026-11-07T22:37:47.649679"
     },
     "pasha_unit_live_120": {
       "name": "pasha_unit_live_120",
@@ -1006,7 +1006,7 @@
       "has_python": true,
       "has_agents": true,
       "skills": [],
-      "discovered_at": "2026-11-07T19:13:34.235038"
+      "discovered_at": "2026-11-07T22:37:41.928603"
     },
     "Postmotam": {
       "name": "Postmotam",
@@ -1027,7 +1027,7 @@
       "has_python": false,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-07T20:40:49.117183"
+      "discovered_at": "2026-11-07T22:37:47.669331"
     },
     "3D-birthday": {
       "name": "3D-birthday",
@@ -1050,7 +1050,7 @@
       "has_python": false,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-07T20:40:46.707149"
+      "discovered_at": "2026-11-07T22:37:47.632687"
     },
     "cooking": {
       "name": "cooking",
@@ -1073,7 +1073,7 @@
       "has_python": false,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-07T20:40:47.637698"
+      "discovered_at": "2026-11-07T22:37:47.638329"
     },
     "Job Hunt": {
       "name": "Job Hunt",
@@ -1089,9 +1089,9 @@
       "has_python": true,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-07T20:40:48.036213"
+      "discovered_at": "2026-11-07T22:37:47.651619"
     }
   },
-  "last_scanned_at": "2026-11-07T20:40:49.509753",
+  "last_scanned_at": "2026-11-07T22:37:47.691075",
   "total_projects": 37
 }

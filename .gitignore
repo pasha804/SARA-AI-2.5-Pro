@@ -48,6 +48,13 @@ logs/
 .myraa-data/
 .sara-data/
 data/sara_persistent_memory.db*
+data/codebase_packs/
+data/knowledge_bases/
+data/documents/
+data/presentations/
+data/manus/
+data/hud/*.html
+data/pipelines/test_*.json
 data/backups/
 data/dialogue_history.json
 data/background_tasks.json
