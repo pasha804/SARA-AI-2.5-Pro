@@ -1,11 +1,11 @@
 {
-  "assessment_id": "eval_1793959306",
-  "generated_at": "2026-11-06T15:01:46.769935",
+  "assessment_id": "eval_1794042324",
+  "generated_at": "2026-11-07T14:05:24.902025",
   "overall_health": "OPTIMAL",
   "total_deficiencies_found": 0,
   "findings": [],
   "metrics": {
-    "evaluation_duration_ms": 0.18,
+    "evaluation_duration_ms": 0.23,
     "active_proposals_count": 0,
     "completed_upgrades_count": 0
   }
