@@ -464,9 +464,10 @@ class HeadroomContextBudgetGuard:
 # ============================================================================
 class CavemanTelegraphicCompressor:
     """
-    Ultra-dense telegraphic prompt and text compressor.
-    Strips fluff, conversational filler, passive voice, and redundant adverbs
-    to save 60-70% tokens for high-speed voice and tool operations.
+    Ultra-dense telegraphic prompt and text compressor with Smart Technical Exemptions.
+    Strips fluff, conversational filler, passive voice, and redundant adverbs to save
+    60-70% tokens for high-speed voice and tool operations while strictly preserving
+    markdown code blocks, absolute file paths, URLs, and API endpoints.
     """
 
     def __init__(self):
@@ -476,21 +477,77 @@ class CavemanTelegraphicCompressor:
             r"\b(certainly|furthermore|consequently|additionally|moreover)\b"
         ]
 
+    def _extract_exemptions(self, text: str) -> tuple:
+        """
+        Extracts code blocks, absolute file paths, and URLs/API endpoints,
+        replacing them with safe unique placeholder tokens to prevent
+        unwanted compression or truncation of critical technical data.
+        """
+        exemptions = {}
+        counter = 0
+
+        # 1. Markdown code blocks (multi-line fenced code blocks or inline code spans)
+        code_pattern = r"(```[\s\S]*?```|`[^`\n]+`)"
+        def replace_code(match):
+            nonlocal counter
+            token = f"__EXEMPT_CODE_{counter}__"
+            exemptions[token] = match.group(0)
+            counter += 1
+            return token
+
+        text = re.sub(code_pattern, replace_code, text)
+
+        # 2. URLs and API endpoints
+        url_pattern = r"(https?://[^\s\"'<>]+|wss?://[^\s\"'<>]+|/api/[a-zA-Z0-9_\-/\?=&%#]+)"
+        def replace_url(match):
+            nonlocal counter
+            token = f"__EXEMPT_URL_{counter}__"
+            exemptions[token] = match.group(0)
+            counter += 1
+            return token
+
+        text = re.sub(url_pattern, replace_url, text)
+
+        # 3. Absolute file paths (Windows e.g. D:\... or Unix e.g. /home/...)
+        path_pattern = r"([a-zA-Z]:\\[^\s\"'<>|?*]+|/(?:home|usr|etc|var|app|root)/[^\s\"'<>|?*]+)"
+        def replace_path(match):
+            nonlocal counter
+            token = f"__EXEMPT_PATH_{counter}__"
+            exemptions[token] = match.group(0)
+            counter += 1
+            return token
+
+        text = re.sub(path_pattern, replace_path, text)
+
+        return text, exemptions
+
+    def _restore_exemptions(self, text: str, exemptions: Dict[str, str]) -> str:
+        """Restores original exempt tokens verbatim without any modification."""
+        for token, original in exemptions.items():
+            text = text.replace(token, original)
+        return text
+
     def compress_telegraphic(self, text: str) -> Dict[str, Any]:
         original_len = len(text)
-        cleaned = text
+        
+        # Protect critical technical data from compression
+        masked_text, exemptions = self._extract_exemptions(text)
+        cleaned = masked_text
 
         for pat in self.stop_phrases:
             cleaned = re.sub(pat, "", cleaned, flags=re.IGNORECASE)
 
-        # Simplify whitespace
-        cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+        # Simplify whitespace in non-code text
+        cleaned = re.sub(r'[ \t]+', ' ', cleaned).strip()
 
         # Telegraphic transform: remove passive fluff
         cleaned = re.sub(r'\b(is currently|are currently)\b', 'is', cleaned, flags=re.IGNORECASE)
         cleaned = re.sub(r'\b(has been completed)\b', 'done', cleaned, flags=re.IGNORECASE)
 
-        compressed_len = len(cleaned)
+        # Restore exempt code blocks, paths, and URLs verbatim
+        final_text = self._restore_exemptions(cleaned, exemptions)
+
+        compressed_len = len(final_text)
         savings_percent = round(((original_len - compressed_len) / original_len) * 100, 1) if original_len > 0 else 0.0
 
         return {
@@ -498,7 +555,8 @@ class CavemanTelegraphicCompressor:
             "original_length": original_len,
             "compressed_length": compressed_len,
             "tokens_saved_percent": savings_percent,
-            "compressed_text": cleaned,
+            "compressed_text": final_text,
+            "exemptions_preserved": len(exemptions),
             "spoken_reply": f"Pasha Jan, text telegraphically compress ho gaya hai ({savings_percent}% token saving)."
         }
 

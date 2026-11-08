@@ -856,10 +856,11 @@ class DiscordAutonomousManager:
             import pyperclip
             pyautogui.FAILSAFE = False
             pyautogui.hotkey('ctrl', 'k')
-            time.sleep(0.3)
+            time.sleep(0.35)
             pyperclip.copy(f"*{self.AUTHORIZED_SERVER}")
             pyautogui.hotkey('ctrl', 'v')
-            time.sleep(0.3)
+            # Task 5 hardening: deterministic 450ms stabilization delay before Enter to allow Discord Quick Switcher DOM dropdown to populate
+            time.sleep(0.45)
             pyautogui.press('enter')
             time.sleep(0.5)
 
@@ -933,10 +934,10 @@ class DiscordAutonomousManager:
 
         if not self.is_in_nexora():
             pyautogui.hotkey('ctrl', 'k')
-            time.sleep(0.3)
+            time.sleep(0.35)
             pyperclip.copy(f"*{self.AUTHORIZED_SERVER}")
             pyautogui.hotkey('ctrl', 'v')
-            time.sleep(0.3)
+            time.sleep(0.45)
             pyautogui.press('enter')
             time.sleep(0.5)
 
@@ -955,7 +956,8 @@ class DiscordAutonomousManager:
             query = f"{prefix}{clean_target}"
             pyperclip.copy(query)
             pyautogui.hotkey('ctrl', 'v')
-            time.sleep(0.5)
+            # Task 5 hardening: deterministic 450ms delay for Discord Quick Switcher channel list to populate before Enter
+            time.sleep(0.45)
             pyautogui.press('enter')
             time.sleep(0.6)
 

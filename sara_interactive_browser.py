@@ -19,17 +19,6 @@ import re
 from pathlib import Path
 from typing import Dict, List, Any, Optional
 
-try:
-    import pyautogui
-    pyautogui.FAILSAFE = False
-except ImportError:
-    pyautogui = None
-
-try:
-    import pyperclip
-except ImportError:
-    pyperclip = None
-
 BASE_DIR = Path(r"D:\MARAA AI").resolve()
 DATA_DIR = BASE_DIR / "data"
 BROWSER_DATA_DIR = DATA_DIR / "browser_sessions"
@@ -178,15 +167,23 @@ class SaraInteractiveBrowserAgent:
         return None
 
     def fill_field(self, selector_or_label: str, value: str, press_enter: bool = False) -> Dict[str, Any]:
-        """Finds an input field by selector, placeholder, or label, and types the value."""
-        self._ensure_browser()
+        """Finds an input field by selector, placeholder, or label, and types the value with 100% Playwright-native actions."""
+        page = self._ensure_browser()
+        # Explicit wait for selector with 5-second timeout if valid selector string
+        if any(selector_or_label.startswith(p) for p in ("#", ".", "[", "//", "input", "textarea", "select")):
+            try:
+                page.wait_for_selector(selector_or_label, timeout=5000, state="attached")
+            except Exception:
+                pass
+
         elem = self._find_element(selector_or_label)
         if not elem:
-            return {"ok": False, "error": f"Element '{selector_or_label}' not found on page"}
+            return {"ok": False, "success": False, "error": f"Element '{selector_or_label}' not found on page"}
 
         try:
+            elem.wait_for(timeout=5000, state="attached")
             elem.scroll_into_view_if_needed(timeout=3000)
-            elem.fill(value)
+            elem.fill(value, timeout=5000)
             if press_enter:
                 elem.press("Enter")
             return {
@@ -200,15 +197,22 @@ class SaraInteractiveBrowserAgent:
             return {"ok": False, "success": False, "error": str(e), "selector": selector_or_label}
 
     def click_element(self, selector_or_text: str) -> Dict[str, Any]:
-        """Clicks an element found by selector, text, or accessibility label."""
-        self._ensure_browser()
+        """Clicks an element found by selector, text, or accessibility label with 100% Playwright-native actions."""
+        page = self._ensure_browser()
+        if any(selector_or_text.startswith(p) for p in ("#", ".", "[", "//", "button", "a", "input")):
+            try:
+                page.wait_for_selector(selector_or_text, timeout=5000, state="attached")
+            except Exception:
+                pass
+
         elem = self._find_element(selector_or_text)
         if not elem:
-            return {"ok": False, "error": f"Element '{selector_or_text}' not found to click"}
+            return {"ok": False, "success": False, "error": f"Element '{selector_or_text}' not found to click"}
 
         try:
+            elem.wait_for(timeout=5000, state="attached")
             elem.scroll_into_view_if_needed(timeout=3000)
-            elem.click(timeout=5000)
+            elem.click(force=True, timeout=5000)
             return {"ok": True, "success": True, "action": "click", "target": selector_or_text}
         except Exception as e:
             return {"ok": False, "success": False, "error": str(e), "target": selector_or_text}
@@ -480,23 +484,18 @@ class SaraInteractiveBrowserAgent:
             self._browser = None
             self._playwright = None
 
-    # --- OS-LEVEL PYAUTOGUI ACTIVE BROWSER FALLBACK ---
+    # --- 100% PLAYWRIGHT-NATIVE ACTIVE BROWSER ACTION ---
     @staticmethod
     def os_type_and_submit_in_browser(text: str) -> Dict[str, Any]:
-        """PyAutoGUI active-window fallback for already open browsers."""
-        if not pyautogui:
-            return {"ok": False, "error": "pyautogui not available"}
+        """100% Playwright-native typing and submitting in the active web page."""
+        global browser_agent
         try:
-            if pyperclip:
-                pyperclip.copy(text)
-                pyautogui.hotkey('ctrl', 'v')
-            else:
-                pyautogui.write(text, interval=0.01)
-            time.sleep(0.1)
-            pyautogui.press('enter')
-            return {"ok": True, "text": text, "submitted": True}
+            page = browser_agent._ensure_browser()
+            page.keyboard.type(text)
+            page.keyboard.press("Enter")
+            return {"ok": True, "success": True, "text": text, "submitted": True, "engine": "playwright_native"}
         except Exception as e:
-            return {"ok": False, "error": str(e)}
+            return {"ok": False, "success": False, "error": str(e)}
 
 
 # Global interactive agent instance

@@ -60,6 +60,27 @@ class TestAdvancedViralAutomations(unittest.TestCase):
         self.assertGreater(res.get("tokens_saved_percent", 0), 20.0)
         self.assertNotIn("as an ai language model", res.get("compressed_text", "").lower())
 
+    def test_caveman_smart_exemptions(self):
+        """Test that code blocks, file paths, and URLs are strictly exempted from compression."""
+        technical_text = (
+            "Please note that in order to execute tests, inspect file `D:\\MARAA AI\\sara_neural_brain.py` "
+            "and verify endpoint https://api.sara.ai/v1/health using:\n"
+            "```python\ndef run_check():\n    return 200\n```\n"
+            "Certainly, let me know if you need anything else."
+        )
+        res = caveman_compressor.compress_telegraphic(technical_text)
+        self.assertTrue(res.get("success"))
+        compressed = res.get("compressed_text", "")
+        # Fluff removed
+        self.assertNotIn("please note that", compressed.lower())
+        self.assertNotIn("in order to", compressed.lower())
+        self.assertNotIn("let me know if you need anything else", compressed.lower())
+        # Critical technical data preserved verbatim
+        self.assertIn("D:\\MARAA AI\\sara_neural_brain.py", compressed)
+        self.assertIn("https://api.sara.ai/v1/health", compressed)
+        self.assertIn("```python\ndef run_check():\n    return 200\n```", compressed)
+        self.assertGreaterEqual(res.get("exemptions_preserved", 0), 3)
+
 
 if __name__ == "__main__":
     unittest.main()

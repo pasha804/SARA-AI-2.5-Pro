@@ -18141,7 +18141,63 @@ try { $application = (Get-Process -Id $foregroundPid -ErrorAction Stop).ProcessN
 
 
 
-function executeNodeNativeTool(tool, args) {
+
+const { spawn: nodeChildSpawn } = require("child_process");
+
+function runAsyncSpawn(cmd, args, options = {}) {
+  return new Promise((resolve) => {
+    const timeoutMs = options.timeout || 30000;
+    try {
+      const proc = nodeChildSpawn(cmd, args, {
+        cwd: options.cwd || process.cwd(),
+        env: options.env || process.env,
+        windowsHide: true,
+        stdio: ["ignore", "pipe", "pipe"]
+      });
+
+      let stdoutData = "";
+      let stderrData = "";
+      let settled = false;
+
+      const timer = setTimeout(() => {
+        if (!settled) {
+          settled = true;
+          try { proc.kill(); } catch {}
+          resolve(stdoutData || stderrData || "");
+        }
+      }, timeoutMs);
+
+      proc.stdout?.on("data", (chunk) => {
+        stdoutData += chunk.toString("utf-8");
+      });
+
+      proc.stderr?.on("data", (chunk) => {
+        stderrData += chunk.toString("utf-8");
+      });
+
+      proc.on("error", () => {
+        if (!settled) {
+          settled = true;
+          clearTimeout(timer);
+          resolve("");
+        }
+      });
+
+      proc.on("close", () => {
+        if (!settled) {
+          settled = true;
+          clearTimeout(timer);
+          resolve(stdoutData || stderrData || "");
+        }
+      });
+    } catch (err) {
+      resolve("");
+    }
+  });
+}
+
+async function executeNodeNativeTool(tool, args) {
+
 
 
 
@@ -18488,7 +18544,7 @@ function executeNodeNativeTool(tool, args) {
       } else if (rawName.includes("discord")) {
         const brain = getBrainScript();
         try {
-          execFileSync("python", [brain, "discord_focus"], { encoding: "utf-8", timeout: 8000 });
+          await runAsyncSpawn("python", [brain, "discord_focus"], { timeout: 8000 });
         } catch { }
         return { ok: true, result: { application: "discord", message: "Successfully focused active Discord window." } };
       } else if (rawName.includes("explorer")) {
@@ -18568,7 +18624,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       let parsed = { success: true, url: targetUrl };
       try {
-        const out = execFileSync("python", [brain, "browser", targetUrl, extraText, browserReq], { encoding: "utf-8", timeout: 8000 });
+        const out = await runAsyncSpawn("python", [brain, "browser", targetUrl, extraText, browserReq], { timeout: 8000 });
         if (out) {
           try { parsed = JSON.parse(out); } catch { }
         }
@@ -18583,7 +18639,7 @@ function executeNodeNativeTool(tool, args) {
       const brain = getBrainScript();
       let parsed = { success: true, query: cat, highlights: [], summary: "" };
       try {
-        const out = execFileSync("python", [brain, "news", cat], { encoding: "utf-8", timeout: 12000 });
+        const out = await runAsyncSpawn("python", [brain, "news", cat], { timeout: 12000 });
         if (out) {
           try { parsed = JSON.parse(out); } catch { }
         }
@@ -18722,7 +18778,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-        const out = execFileSync("python", [brain, "research", q], { encoding: "utf-8", timeout: 15000 });
+        const out = await runAsyncSpawn("python", [brain, "research", q], { timeout: 15000 });
 
 
 
@@ -18830,7 +18886,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      const out = execFileSync("python", [brain, "game"], { encoding: "utf-8", timeout: 18000 });
+      const out = await runAsyncSpawn("python", [brain, "game"], { timeout: 18000 });
 
 
 
@@ -18866,7 +18922,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      const out = execFileSync("python", [brain, "whatsapp", chat, msg], { encoding: "utf-8", timeout: 12000 });
+      const out = await runAsyncSpawn("python", [brain, "whatsapp", chat, msg], { timeout: 12000 });
 
 
 
@@ -18898,7 +18954,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      const out = execFileSync("python", [brain, "whatsapp_review", chat], { encoding: "utf-8", timeout: 15000 });
+      const out = await runAsyncSpawn("python", [brain, "whatsapp_review", chat], { timeout: 15000 });
 
 
 
@@ -18930,7 +18986,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      const out = execFileSync("python", [brain, "browser_click", q], { encoding: "utf-8", timeout: 18000 });
+      const out = await runAsyncSpawn("python", [brain, "browser_click", q], { timeout: 18000 });
 
 
 
@@ -18958,7 +19014,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      const out = execFileSync("python", [brain, "camera"], { encoding: "utf-8", timeout: 12000 });
+      const out = await runAsyncSpawn("python", [brain, "camera"], { timeout: 12000 });
 
 
 
@@ -18994,7 +19050,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      const out = execFileSync("python", [brain, "improve", topic, details], { encoding: "utf-8", timeout: 10000 });
+      const out = await runAsyncSpawn("python", [brain, "improve", topic, details], { timeout: 10000 });
 
 
 
@@ -19030,7 +19086,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      const out = execFileSync("python", [brain, "viking", repo, level], { encoding: "utf-8", timeout: 8000 });
+      const out = await runAsyncSpawn("python", [brain, "viking", repo, level], { timeout: 8000 });
 
 
 
@@ -19066,7 +19122,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      const out = execFileSync("python", [brain, "scrape", targetUrl], { encoding: "utf-8", timeout: 12000 });
+      const out = await runAsyncSpawn("python", [brain, "scrape", targetUrl], { timeout: 12000 });
 
 
 
@@ -19098,7 +19154,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      const out = execFileSync("python", [brain, "project_audit", target], { encoding: "utf-8", timeout: 15000 });
+      const out = await runAsyncSpawn("python", [brain, "project_audit", target], { timeout: 15000 });
 
 
 
@@ -19126,7 +19182,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      const out = execFileSync("python", [brain, "project_discover"], { encoding: "utf-8", timeout: 15000 });
+      const out = await runAsyncSpawn("python", [brain, "project_discover"], { timeout: 15000 });
 
 
 
@@ -19158,7 +19214,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      const out = execFileSync("python", [brain, "whatsapp_voice", contact], { encoding: "utf-8", timeout: 20000 });
+      const out = await runAsyncSpawn("python", [brain, "whatsapp_voice", contact], { timeout: 20000 });
 
 
 
@@ -19190,7 +19246,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      const out = execFileSync("python", [brain, "antigravity_task", task], { encoding: "utf-8", timeout: 30000 });
+      const out = await runAsyncSpawn("python", [brain, "antigravity_task", task], { timeout: 30000 });
 
 
 
@@ -19226,7 +19282,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      const out = execFileSync("python", [brain, "browser_deepdive", targetUrl, highlightText], { encoding: "utf-8", timeout: 15000 });
+      const out = await runAsyncSpawn("python", [brain, "browser_deepdive", targetUrl, highlightText], { timeout: 15000 });
 
 
 
@@ -19254,7 +19310,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      const out = execFileSync("python", [brain, "self_assessment"], { encoding: "utf-8", timeout: 20000 });
+      const out = await runAsyncSpawn("python", [brain, "self_assessment"], { timeout: 20000 });
 
 
 
@@ -19302,7 +19358,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      const out = execFileSync("python", [
+      const out = await runAsyncSpawn("python", [
 
 
 
@@ -19314,7 +19370,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-      ], { encoding: "utf-8", timeout: 10000 });
+      ], { timeout: 10000 });
 
 
 
@@ -19380,7 +19436,7 @@ function executeNodeNativeTool(tool, args) {
       const msg = String(args.message || args.text || "");
       const phone = String(args.phone || "");
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "whatsapp_lead", name, msg, phone], { encoding: "utf-8", timeout: 15000 });
+      const out = await runAsyncSpawn("python", [brain, "whatsapp_lead", name, msg, phone], { timeout: 15000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
@@ -19389,7 +19445,7 @@ function executeNodeNativeTool(tool, args) {
     if (tool === "crawlWebpage" || tool === "deepWebScrape") {
       const url = String(args.url || args.target_url || "");
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "crawl", url], { encoding: "utf-8", timeout: 15000 });
+      const out = await runAsyncSpawn("python", [brain, "crawl", url], { timeout: 15000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       if (parsed.highlights && parsed.highlights.length > 0) {
@@ -19409,7 +19465,7 @@ function executeNodeNativeTool(tool, args) {
       const source = String(args.file_path || args.path || args.text || "architecture.md");
       const topic = String(args.topic || "");
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "study_pack", source, topic], { encoding: "utf-8", timeout: 20000 });
+      const out = await runAsyncSpawn("python", [brain, "study_pack", source, topic], { timeout: 20000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       if (parsed.study_pack && parsed.study_pack.concepts) {
@@ -19427,7 +19483,7 @@ function executeNodeNativeTool(tool, args) {
 
     if (tool === "getDailyBriefing" || tool === "getEmailNotificationDigest") {
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "email_digest"], { encoding: "utf-8", timeout: 12000 });
+      const out = await runAsyncSpawn("python", [brain, "email_digest"], { timeout: 12000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       if (parsed.digest && parsed.digest.highlights) {
@@ -19447,7 +19503,7 @@ function executeNodeNativeTool(tool, args) {
       const title = String(args.title || "Project Announcement");
       const desc = String(args.description || args.content || "Autonomous update");
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "social_pack", title, desc], { encoding: "utf-8", timeout: 15000 });
+      const out = await runAsyncSpawn("python", [brain, "social_pack", title, desc], { timeout: 15000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
@@ -19457,7 +19513,7 @@ function executeNodeNativeTool(tool, args) {
     if (tool === "runManusGoal" || tool === "manusAutonomousLoop" || tool === "manusLoop") {
       const goal = String(args.goal || args.target || "Research AI trends and generate executive reports");
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "manus_loop", goal], { encoding: "utf-8", timeout: 60000 });
+      const out = await runAsyncSpawn("python", [brain, "manus_loop", goal], { timeout: 60000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
@@ -19466,7 +19522,7 @@ function executeNodeNativeTool(tool, args) {
     if (tool === "createWordDocument" || tool === "authorWordDoc") {
       const title = String(args.title || "Executive Document");
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "create_word", title], { encoding: "utf-8", timeout: 25000 });
+      const out = await runAsyncSpawn("python", [brain, "create_word", title], { timeout: 25000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
@@ -19475,7 +19531,7 @@ function executeNodeNativeTool(tool, args) {
     if (tool === "createPowerPointPresentation" || tool === "createPresentationDeck") {
       const title = String(args.title || "Executive Presentation");
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "create_ppt", title], { encoding: "utf-8", timeout: 25000 });
+      const out = await runAsyncSpawn("python", [brain, "create_ppt", title], { timeout: 25000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
@@ -19484,7 +19540,7 @@ function executeNodeNativeTool(tool, args) {
     if (tool === "browserOpenUrl" || tool === "openBrowserUrl") {
       const url = String(args.url || "https://google.com");
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "browser_open", url], { encoding: "utf-8", timeout: 25000 });
+      const out = await runAsyncSpawn("python", [brain, "browser_open", url], { timeout: 25000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
@@ -19494,7 +19550,7 @@ function executeNodeNativeTool(tool, args) {
       const selector = String(args.selector || args.field || "q");
       const text = String(args.text || args.value || "");
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "browser_fill", selector, text], { encoding: "utf-8", timeout: 25000 });
+      const out = await runAsyncSpawn("python", [brain, "browser_fill", selector, text], { timeout: 25000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
@@ -19503,7 +19559,7 @@ function executeNodeNativeTool(tool, args) {
     if (tool === "browserClickElement" || tool === "clickBrowserButton") {
       const selector = String(args.selector || args.button || "button");
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "browser_click", selector], { encoding: "utf-8", timeout: 25000 });
+      const out = await runAsyncSpawn("python", [brain, "browser_click", selector], { timeout: 25000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
@@ -19511,7 +19567,7 @@ function executeNodeNativeTool(tool, args) {
 
     if (tool === "browserInspectForm" || tool === "inspectBrowserPage") {
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "browser_inspect"], { encoding: "utf-8", timeout: 25000 });
+      const out = await runAsyncSpawn("python", [brain, "browser_inspect"], { timeout: 25000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
@@ -19522,7 +19578,7 @@ function executeNodeNativeTool(tool, args) {
       const msg = String(args.message || args.text || "");
       const tType = String(args.type || args.channel_type || "text");
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "discord_post", channel, msg, tType], { encoding: "utf-8", timeout: 15000 });
+      const out = await runAsyncSpawn("python", [brain, "discord_post", channel, msg, tType], { timeout: 15000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
@@ -19532,7 +19588,7 @@ function executeNodeNativeTool(tool, args) {
       const srv = String(args.server_name || "NEXORA");
       const rou = String(args.routine_type || "daily_lively");
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "discord_routine", srv, rou], { encoding: "utf-8", timeout: 25000 });
+      const out = await runAsyncSpawn("python", [brain, "discord_routine", srv, rou], { timeout: 25000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
@@ -19540,7 +19596,7 @@ function executeNodeNativeTool(tool, args) {
 
     if (tool === "analyzeCDriveSpace" || tool === "checkDiskSpace" || tool === "cDriveCleaner") {
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "disk_analyze"], { encoding: "utf-8", timeout: 20000 });
+      const out = await runAsyncSpawn("python", [brain, "disk_analyze"], { timeout: 20000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
@@ -19549,7 +19605,7 @@ function executeNodeNativeTool(tool, args) {
     if (tool === "cleanCDriveSpace" || tool === "cleanDiskSpace") {
       const brain = getBrainScript();
       const keys = Array.isArray(args.categories) ? args.categories.join(" ") : String(args.categories || "all");
-      const out = execFileSync("python", [brain, "disk_clean", keys], { encoding: "utf-8", timeout: 25000 });
+      const out = await runAsyncSpawn("python", [brain, "disk_clean", keys], { timeout: 25000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
@@ -19559,7 +19615,7 @@ function executeNodeNativeTool(tool, args) {
       const pName = String(args.project_name || "pasha_nexus_dashboard");
       const pType = String(args.project_type || "Full-Stack SaaS Platform");
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "build_project", pName, pType], { encoding: "utf-8", timeout: 30000 });
+      const out = await runAsyncSpawn("python", [brain, "build_project", pName, pType], { timeout: 30000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
@@ -19569,7 +19625,7 @@ function executeNodeNativeTool(tool, args) {
       const query = String(args.query || "");
       const cat = String(args.category || "");
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "n8n_search", query, cat], { encoding: "utf-8", timeout: 15000 });
+      const out = await runAsyncSpawn("python", [brain, "n8n_search", query, cat], { timeout: 15000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
@@ -19578,7 +19634,7 @@ function executeNodeNativeTool(tool, args) {
     if (tool === "executeN8nAutomation" || tool === "runN8nWorkflow") {
       const wf = String(args.workflow_name || args.name || "Discord AI-powered bot");
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "n8n_execute", wf], { encoding: "utf-8", timeout: 15000 });
+      const out = await runAsyncSpawn("python", [brain, "n8n_execute", wf], { timeout: 15000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
@@ -19586,7 +19642,7 @@ function executeNodeNativeTool(tool, args) {
 
     if (tool === "runAutonomousSelfUpdate" || tool === "saraSelfEvolve") {
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "self_update"], { encoding: "utf-8", timeout: 35000 });
+      const out = await runAsyncSpawn("python", [brain, "self_update"], { timeout: 35000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
@@ -19595,7 +19651,7 @@ function executeNodeNativeTool(tool, args) {
     if (tool === "openFirstSearchResult" || tool === "clickFirstBrowserLink" || tool === "clickFirstLink") {
       const query = String(args.query || args.search_term || "");
       const brain = getBrainScript();
-      const out = execFileSync("python", [brain, "browser_first_link", query], { encoding: "utf-8", timeout: 15000 });
+      const out = await runAsyncSpawn("python", [brain, "browser_first_link", query], { timeout: 15000 });
       let parsed = { success: true };
       try { parsed = JSON.parse(out); } catch { }
       return { ok: true, result: parsed };
@@ -19617,7 +19673,7 @@ function executeNodeNativeTool(tool, args) {
 
 
 
-        const out = execFileSync("python", [resolved], { encoding: "utf-8", timeout: 15000 });
+        const out = await runAsyncSpawn("python", [resolved], { timeout: 15000 });
 
 
 
@@ -19749,7 +19805,7 @@ function executeNodeNativeTool(tool, args) {
 
         const mappedAction = actionMap[tool] || tool;
 
-        const out = execFileSync("python", [osControllerScript, mappedAction, JSON.stringify(args || {})], { encoding: "utf-8", timeout: 10000 });
+        const out = await runAsyncSpawn("python", [osControllerScript, mappedAction, JSON.stringify(args || {})], { timeout: 10000 });
 
         const parsed = JSON.parse(out.trim());
 
@@ -19782,7 +19838,7 @@ function executeNodeNativeTool(tool, args) {
         };
         const targetCmd = cmdMap[tool] || "upgrade";
         const subArg = (args && (args.intent || args.query || args.proposal_id || args.id)) ? (args.intent || args.query || args.proposal_id || args.id) : "status";
-        const out = execFileSync("python", [brainScript, targetCmd, targetCmd, subArg], { encoding: "utf-8", timeout: 25000 });
+        const out = await runAsyncSpawn("python", [brainScript, targetCmd, targetCmd, subArg], { timeout: 25000 });
         const parsed = JSON.parse(out.trim());
         return { ok: true, result: parsed };
       } catch (e) {
@@ -19820,7 +19876,7 @@ async function callDesktopAgent(tool, args, outerSignal) {
 
 
 
-  const nativeFast = executeNodeNativeTool(tool, args);
+  const nativeFast = await executeNodeNativeTool(tool, args);
 
 
 
@@ -22436,7 +22492,7 @@ async function startServer() {
 
 
 
-      const out = execFileSync("python", [brain, "project_audit", "sopify"], { encoding: "utf-8", timeout: 12000 });
+      const out = await runAsyncSpawn("python", [brain, "project_audit", "sopify"], { timeout: 12000 });
 
 
 
@@ -22484,7 +22540,7 @@ async function startServer() {
 
 
 
-      const out = execFileSync("python", [brain, "project_audit", target], { encoding: "utf-8", timeout: 15000 });
+      const out = await runAsyncSpawn("python", [brain, "project_audit", target], { timeout: 15000 });
 
 
 
@@ -22606,12 +22662,12 @@ async function startServer() {
       const message = req.body?.message || "";
       const brain = getBrainScript();
       const suitePath = path.join(path.dirname(brain), "sara_automation_suite.py");
-      const out = execFileSync("python", [
+      const out = await runAsyncSpawn("python", [
         suitePath,
         "discord_post",
         targetChannel,
         message
-      ], { encoding: "utf-8", timeout: 15000 });
+      ], { timeout: 15000 });
       let parsed = { success: true, channel: targetChannel };
       try { parsed = JSON.parse(out); } catch { }
       res.json({ ok: true, result: parsed });

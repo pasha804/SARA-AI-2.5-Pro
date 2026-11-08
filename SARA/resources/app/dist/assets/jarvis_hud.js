@@ -1,5 +1,5 @@
 // SARA AI 2.5 Pro — JARVIS Intelligence HUD, Companion Dashboard & Telemetry
-(function() {
+(function () {
   // =========================================================================
   // 0. HIGH-TECH WEB AUDIO SYNTHESIZER (MICRO-INTERACTION SOUND EFFECTS)
   // =========================================================================
@@ -16,7 +16,7 @@
     return audioCtx;
   }
 
-  window.saraPlayHoverSound = function() {
+  window.saraPlayHoverSound = function () {
     if (soundMuted) return;
     try {
       const ctx = getAudioCtx();
@@ -32,10 +32,10 @@
       gain.connect(ctx.destination);
       osc.start();
       osc.stop(ctx.currentTime + 0.03);
-    } catch (e) {}
+    } catch (e) { }
   };
 
-  window.saraPlayClickSound = function() {
+  window.saraPlayClickSound = function () {
     if (soundMuted) return;
     try {
       const ctx = getAudioCtx();
@@ -51,7 +51,7 @@
       gain.connect(ctx.destination);
       osc.start();
       osc.stop(ctx.currentTime + 0.045);
-    } catch (e) {}
+    } catch (e) { }
   };
 
   // =========================================================================
@@ -293,8 +293,8 @@
       if (clockEl) clockEl.textContent = `${String(hours).padStart(2, '0')}:${minutes}`;
       if (ampmEl) ampmEl.textContent = ampm;
 
-      const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-      const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
       const dateEl = document.getElementById('sara-live-date');
       if (dateEl) {
         dateEl.textContent = `${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()} • ${days[now.getDay()]}`;
@@ -342,7 +342,7 @@
   }
 
   // Quick Action Handler - sets input value cleanly without disrupting form
-  window.saraTriggerAction = function(action) {
+  window.saraTriggerAction = function (action) {
     const input = document.querySelector('input[aria-label="Message SARA"]');
     if (!input) return;
 
@@ -592,7 +592,7 @@
   }
 
   // Interactive Cockpit Tab Switcher
-  window.saraSwitchDashTab = function(tabName, ev) {
+  window.saraSwitchDashTab = function (tabName, ev) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const tabs = document.querySelectorAll('.dash-tab-btn');
     tabs.forEach(t => t.classList.remove('active'));
@@ -605,7 +605,7 @@
     });
   };
 
-  window.saraAuditProject = async function(pName) {
+  window.saraAuditProject = async function (pName) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const descEl = document.getElementById('dash-' + pName + '-desc');
     if (descEl) descEl.innerHTML = '<em>Auditing workspace health...</em>';
@@ -620,7 +620,7 @@
     }
   };
 
-  window.saraPostDiscord = async function(actionType) {
+  window.saraPostDiscord = async function (actionType) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const input = document.querySelector('input[aria-label="Message SARA"]');
     if (!input) return;
@@ -636,7 +636,7 @@
     window.hideTaskDashboard();
   };
 
-  window.saraSetDiscordTarget = function(channel) {
+  window.saraSetDiscordTarget = function (channel) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const input = document.querySelector('input[aria-label="Message SARA"]');
     if (input) {
@@ -647,7 +647,7 @@
     }
   };
 
-  window.saraRunWorkflow = function(name) {
+  window.saraRunWorkflow = function (name) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const input = document.querySelector('input[aria-label="Message SARA"]');
     if (input) {
@@ -658,14 +658,14 @@
     }
   };
 
-  window.saraSelectN8nCategory = function(cat, btn) {
+  window.saraSelectN8nCategory = function (cat, btn) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     document.querySelectorAll('.n8n-chip').forEach(c => c.classList.remove('active'));
     if (btn) btn.classList.add('active');
     window.saraFilterN8n(cat);
   };
 
-  window.saraFilterN8n = function(categoryOverride) {
+  window.saraFilterN8n = function (categoryOverride) {
     const input = document.getElementById('n8n-search-input');
     const q = (input ? input.value : "").toLowerCase().trim();
     const items = document.querySelectorAll('.n8n-item-card');
@@ -678,7 +678,7 @@
   };
 
   // Public Controllers
-  window.showJarvisHud = function(data) {
+  window.showJarvisHud = function (data) {
     createHudElement();
     const overlay = document.getElementById('jarvis-hud-overlay');
     if (!overlay) return;
@@ -720,18 +720,18 @@
     overlay.classList.remove('hidden');
   };
 
-  window.hideJarvisHud = function() {
+  window.hideJarvisHud = function () {
     const overlay = document.getElementById('jarvis-hud-overlay');
     if (overlay) overlay.classList.add('hidden');
   };
 
-  window.toggleTaskDashboard = function() {
+  window.toggleTaskDashboard = function () {
     createTaskDashboardElement();
     const modal = document.getElementById('sara-task-dashboard-modal');
     if (modal) modal.classList.toggle('hidden');
   };
 
-  window.hideTaskDashboard = function() {
+  window.hideTaskDashboard = function () {
     const modal = document.getElementById('sara-task-dashboard-modal');
     if (modal) modal.classList.add('hidden');
   };
@@ -746,12 +746,12 @@
       if (!rightPanel) return;
       const bodyHtml = document.body.innerHTML || '';
       const bodyText = document.body.textContent || '';
-      const isSettingsOpen = bodyHtml.includes('SARA Configuration') || 
-                             bodyHtml.includes('System settings &amp; preferences') || 
-                             bodyHtml.includes('System settings & preferences') ||
-                             bodyText.includes('SARA Configuration') ||
-                             document.body.classList.contains('sara-settings-open') ||
-                             document.body.classList.contains('sara-modal-open');
+      const isSettingsOpen = bodyHtml.includes('SARA Configuration') ||
+        bodyHtml.includes('System settings &amp; preferences') ||
+        bodyHtml.includes('System settings & preferences') ||
+        bodyText.includes('SARA Configuration') ||
+        document.body.classList.contains('sara-settings-open') ||
+        document.body.classList.contains('sara-modal-open');
       if (isSettingsOpen) {
         if (!document.body.classList.contains('sara-settings-open')) {
           document.body.classList.add('sara-settings-open');
@@ -774,11 +774,11 @@
     }
 
     const observer = new MutationObserver(checkAndToggle);
-    observer.observe(document.body, { 
-      childList: true, 
-      subtree: true, 
-      attributes: true, 
-      attributeFilter: ['class', 'style'] 
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['class', 'style']
     });
     setInterval(checkAndToggle, 150);
   }
@@ -786,7 +786,7 @@
   // =========================================================================
   // 4. TOAST NOTIFICATION & SOUND FX HELPERS
   // =========================================================================
-  window.saraShowToast = function(msg) {
+  window.saraShowToast = function (msg) {
     const existing = document.getElementById('sara-live-toast');
     if (existing) existing.remove();
 
@@ -1020,12 +1020,12 @@
     document.body.appendChild(overlay);
   }
 
-  window.saraToggleKeyVisibility = function() {
+  window.saraToggleKeyVisibility = function () {
     const input = document.getElementById('onboard-apikey-input');
     if (input) input.type = input.type === 'password' ? 'text' : 'password';
   };
 
-  window.saraTestApiKeyLive = async function() {
+  window.saraTestApiKeyLive = async function () {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const input = document.getElementById('onboard-apikey-input');
     const badge = document.getElementById('api-key-status-badge');
@@ -1056,7 +1056,7 @@
     }
   };
 
-  window.saraOnboardingStep = async function(dir) {
+  window.saraOnboardingStep = async function (dir) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const prevStep = onboardingActiveStep;
     const nextStep = prevStep + dir;
@@ -1073,7 +1073,7 @@
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ apiKey: keyVal })
           });
-        } catch (e) {}
+        } catch (e) { }
       }
     }
 
@@ -1110,7 +1110,7 @@
     }
   };
 
-  window.saraSelectPersonality = function(p) {
+  window.saraSelectPersonality = function (p) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     chosenPersonality = p;
     const cards = ['companion', 'engineer', 'sentinel', 'jarvis'];
@@ -1123,7 +1123,7 @@
     });
   };
 
-  window.saraFinalizeOnboarding = async function() {
+  window.saraFinalizeOnboarding = async function () {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const keyInput = document.getElementById('onboard-apikey-input');
     const apiKey = keyInput ? keyInput.value.trim() : '';
@@ -1148,7 +1148,7 @@
           userProfile: { name, honorific, role, language }
         })
       });
-    } catch (e) {}
+    } catch (e) { }
 
     localStorage.setItem('sara_onboarding_completed', 'true');
     localStorage.setItem('sara_user_honorific', honorific);
@@ -1168,13 +1168,13 @@
     window.saraShowToast(`⚡ SARA 3.0 ONLINE: Welcome ${honorific}! Cognitive matrix synchronized.`);
   };
 
-  window.openSaraOnboarding = function() {
+  window.openSaraOnboarding = function () {
     createOnboardingModal();
     const modal = document.getElementById('sara-onboarding-modal');
     if (modal) modal.classList.remove('hidden');
   };
 
-  window.closeSaraOnboarding = function() {
+  window.closeSaraOnboarding = function () {
     const modal = document.getElementById('sara-onboarding-modal');
     if (modal) modal.classList.add('hidden');
   };
@@ -1377,7 +1377,7 @@
     document.body.appendChild(overlay);
   }
 
-  window.saraSwitchSettingsTab = function(tabName, ev) {
+  window.saraSwitchSettingsTab = function (tabName, ev) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const tabs = document.querySelectorAll('#sara-high-end-settings-modal .dash-tab-btn');
     tabs.forEach(t => t.classList.remove('active'));
@@ -1390,14 +1390,14 @@
     });
   };
 
-  window.saraSelectModel = function(modelName, cardEl) {
+  window.saraSelectModel = function (modelName, cardEl) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     document.querySelectorAll('.apinex-card').forEach(c => c.style.borderColor = 'rgba(157, 220, 255, 0.2)');
     if (cardEl) cardEl.style.borderColor = '#00f0ff';
     localStorage.setItem('sara_active_model', modelName);
   };
 
-  window.saraSetPersona = function(p) {
+  window.saraSetPersona = function (p) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     chosenPersonality = p;
     const cards = ['companion', 'engineer', 'sentinel', 'jarvis'];
@@ -1410,7 +1410,7 @@
     });
   };
 
-  window.saraTestSettingsApiKey = async function() {
+  window.saraTestSettingsApiKey = async function () {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const input = document.getElementById('settings-api-key');
     const key = input ? input.value.trim() : '';
@@ -1435,7 +1435,7 @@
     }
   };
 
-  window.saraSaveAllSettings = async function() {
+  window.saraSaveAllSettings = async function () {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const keyInput = document.getElementById('settings-api-key');
     const nameInput = document.getElementById('settings-user-name');
@@ -1458,7 +1458,7 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ apiKey })
         });
-      } catch (e) {}
+      } catch (e) { }
     }
 
     try {
@@ -1472,7 +1472,7 @@
           userProfile: { name, honorific, role }
         })
       });
-    } catch (e) {}
+    } catch (e) { }
 
     localStorage.setItem('sara_user_honorific', honorific);
     localStorage.setItem('sara_user_name', name);
@@ -1490,7 +1490,7 @@
     window.saraShowToast('⚡ SARA Settings Synchronized Successfully!');
   };
 
-  window.openSaraSettings = function() {
+  window.openSaraSettings = function () {
     createHighEndSettingsModal();
     const modal = document.getElementById('sara-high-end-settings-modal');
     if (modal) modal.classList.remove('hidden');
@@ -1504,7 +1504,7 @@
     if (nInput) nInput.value = name;
   };
 
-  window.closeSaraSettings = function() {
+  window.closeSaraSettings = function () {
     const modal = document.getElementById('sara-high-end-settings-modal');
     if (modal) modal.classList.add('hidden');
   };
@@ -1537,7 +1537,7 @@
           return;
         }
       }
-    } catch (e) {}
+    } catch (e) { }
 
     setTimeout(() => {
       window.openSaraOnboarding();

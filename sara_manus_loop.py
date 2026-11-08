@@ -29,6 +29,32 @@ ACTIVE_SESSION_FILE = MANUS_DIR / "active_session.json"
 from sara_office_and_browser_suite import word_engine, ppt_engine, browser_engine
 
 
+def atomic_write_json(filepath: Any, data: Any, indent: int = 2) -> bool:
+    """
+    Crash-safe atomic JSON file writer.
+    Writes payload to a temporary `.tmp` file first, flushes and syncs to disk,
+    then uses os.replace() for an instantaneous, atomic file commitment.
+    Prevents file corruption or partial reads during unexpected system interruptions.
+    """
+    path = Path(filepath)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp_path = path.with_suffix(path.suffix + ".tmp")
+    try:
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=indent, ensure_ascii=False)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp_path, path)
+        return True
+    except Exception as e:
+        if tmp_path.exists():
+            try:
+                tmp_path.unlink()
+            except Exception:
+                pass
+        raise e
+
+
 class ManusAutonomousAgentLoop:
     """
     Full-Fledged General-Purpose Autonomous Agent Loop for SARA AI 2.5 Pro.
@@ -349,8 +375,7 @@ class ManusAutonomousAgentLoop:
         # Save session file & clear active
         session_file = self.sessions_dir / f"{session_id}.json"
         try:
-            with open(session_file, "w", encoding="utf-8") as f:
-                json.dump(session_record, f, indent=2, ensure_ascii=False)
+            atomic_write_json(session_file, session_record)
             self._save_active_session(session_record)
         except Exception:
             pass
@@ -374,8 +399,7 @@ class ManusAutonomousAgentLoop:
 
     def _save_active_session(self, data: Dict[str, Any]):
         try:
-            with open(self.active_session_file, "w", encoding="utf-8") as f:
-                json.dump(data, f, indent=2, ensure_ascii=False)
+            atomic_write_json(self.active_session_file, data)
         except Exception:
             pass
 
