@@ -25094,11 +25094,12 @@ ${interceptorScript}`);
 
 
 
+      let liveSpeechModel = (process.env.SARA_SPEECH_MODEL || process.env.MYRAA_SPEECH_MODEL || "gemini-3.1-flash-live-preview").trim();
+      if (!liveSpeechModel || liveSpeechModel === "gemini-2.0-flash-exp" || liveSpeechModel.includes("2.0-flash-exp")) {
+        liveSpeechModel = "gemini-3.1-flash-live-preview";
+      }
       const session = await ai.live.connect({
-
-
-
-        model: process.env.SARA_SPEECH_MODEL || process.env.MYRAA_SPEECH_MODEL || "gemini-3.8-live",
+        model: liveSpeechModel,
 
 
 
@@ -29825,7 +29826,7 @@ A fresh screenshot is attached. Analyze it and answer the spoken question direct
 
 
 
-            const authenticationRejected = event.code === 1008 || /authentication|credential|api.?key|unauthenticated|leaked|forbidden|permission_denied/i.test(reason);
+            const authenticationRejected = (/authentication|credential|api.?key|unauthenticated|leaked|forbidden|permission_denied/i.test(reason) || (event.code === 1008 && /api.?key|credential|auth|unauthenticated|leaked/i.test(reason))) && !/not found for API version|not supported for bidiGenerateContent/i.test(reason);
 
             const isSessionLimit = !authenticationRejected && /GoAway|duration|limit|timeout/i.test(reason);
 

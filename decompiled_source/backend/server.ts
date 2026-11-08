@@ -2961,7 +2961,9 @@ async function startServer() {
             const reason = event.reason || "No close reason provided";
             const details = `code=${event.code} reason=${reason}`;
             const authenticationRejected =
-              event.code === 1008 || /authentication|credential|api.?key|unauthenticated|leaked|forbidden|permission_denied/i.test(reason);
+              (/authentication|credential|api.?key|unauthenticated|leaked|forbidden|permission_denied/i.test(reason) ||
+               (event.code === 1008 && /api.?key|credential|auth|unauthenticated|leaked/i.test(reason))) &&
+              !/not found for API version|not supported for bidiGenerateContent/i.test(reason);
             const isSessionLimit = !authenticationRejected && /GoAway|duration|limit|timeout/i.test(reason);
             console.error("Gemini Live session closed:", details);
             logError(`GEMINI_LIVE_CLOSED ${details}`);

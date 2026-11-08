@@ -136,6 +136,7 @@ function startBackend() {
   let resolvedGeminiKey = (process.env.GEMINI_API_KEY || '').trim();
   let resolvedApinexKey = (process.env.APINEX_API_KEY || '').trim();
   let resolvedCleanKey = (process.env.CLEAN_API_KEY || '').trim();
+  let resolvedSpeechModel = (process.env.SARA_SPEECH_MODEL || '').trim();
 
   const secretCandidates = [
     path.join(dataDir, 'secrets.json'),
@@ -179,10 +180,15 @@ function startBackend() {
             if (k === 'GEMINI_API_KEY' && !resolvedGeminiKey) resolvedGeminiKey = v;
             if (k === 'APINEX_API_KEY' && !resolvedApinexKey) resolvedApinexKey = v;
             if (k === 'CLEAN_API_KEY' && !resolvedCleanKey) resolvedCleanKey = v;
+            if (k === 'SARA_SPEECH_MODEL' && !resolvedSpeechModel) resolvedSpeechModel = v;
           }
         }
       } catch {}
     }
+  }
+
+  if (!resolvedSpeechModel || resolvedSpeechModel === "gemini-2.0-flash-exp" || resolvedSpeechModel.includes("2.0-flash-exp")) {
+    resolvedSpeechModel = "gemini-3.1-flash-live-preview";
   }
 
   const env = {
@@ -198,7 +204,7 @@ function startBackend() {
     GEMINI_API_KEY: resolvedGeminiKey,
     APINEX_API_KEY: resolvedApinexKey,
     CLEAN_API_KEY: resolvedCleanKey,
-    SARA_SPEECH_MODEL: "gemini-2.0-flash-exp",
+    SARA_SPEECH_MODEL: resolvedSpeechModel,
   };
   if (app.isPackaged) {
     // The desktop agent uses this exact executable for the per-user Windows
