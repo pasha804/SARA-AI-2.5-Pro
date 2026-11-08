@@ -464,91 +464,97 @@ class HeadroomContextBudgetGuard:
 # ============================================================================
 class CavemanTelegraphicCompressor:
     """
-    Ultra-dense telegraphic prompt and text compressor with Smart Technical Exemptions.
-    Strips fluff, conversational filler, passive voice, and redundant adverbs to save
-    60-70% tokens for high-speed voice and tool operations while strictly preserving
-    markdown code blocks, absolute file paths, URLs, and API endpoints.
+    Compresses verbose conversational responses into dense telegraphic 
+    phrasing while preserving critical technical data (code blocks, 
+    file paths, URLs, API keys, email addresses).
+    Ref: Section 45.1 of Master Technical Reference.
     """
 
     def __init__(self):
+        # Define patterns to protect from compression
+        self.protected_patterns = {
+            'code_blocks': re.compile(r'```[\s\S]*?```', re.MULTILINE),
+            'inline_code': re.compile(r'`[^`]+`'),
+            'urls': re.compile(r'https?://[^\s"\'<>]+|wss?://[^\s"\'<>]+'),
+            'email_addresses': re.compile(r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'),
+            'api_keys': re.compile(r'\b[A-Za-z0-9_\-]{32,}\b'),  # Long tokens / API keys
+            'file_paths_windows': re.compile(r'[a-zA-Z]:\\(?:[a-zA-Z0-9_\- ]+\\)*[a-zA-Z0-9_\- .]+\.[a-zA-Z0-9]+|[a-zA-Z]:\\[^\s"\'<>|?*]+'),
+            'file_paths_unix': re.compile(r'/(?:home|usr|var|etc)/[^\s"\'<>|?*]+'),
+        }
         self.stop_phrases = [
             r"\b(as an ai language model|as you know|in order to|please note that|it is important to remember that)\b",
             r"\b(i would be happy to|feel free to|let me know if you need anything else)\b",
             r"\b(certainly|furthermore|consequently|additionally|moreover)\b"
         ]
 
-    def _extract_exemptions(self, text: str) -> tuple:
+    def compress(self, text: str) -> str:
         """
-        Extracts code blocks, absolute file paths, and URLs/API endpoints,
-        replacing them with safe unique placeholder tokens to prevent
-        unwanted compression or truncation of critical technical data.
+        Compress text while protecting critical patterns from truncation.
+
+        Args:
+            text: Input text to compress
+
+        Returns:
+            Compressed text with protected patterns intact
         """
-        exemptions = {}
-        counter = 0
+        # Step 1: Extract and protect critical patterns
+        placeholders = {}
+        protected_text = text
 
-        # 1. Markdown code blocks (multi-line fenced code blocks or inline code spans)
-        code_pattern = r"(```[\s\S]*?```|`[^`\n]+`)"
-        def replace_code(match):
-            nonlocal counter
-            token = f"__EXEMPT_CODE_{counter}__"
-            exemptions[token] = match.group(0)
-            counter += 1
-            return token
+        for pattern_name, pattern in self.protected_patterns.items():
+            matches = pattern.findall(protected_text)
+            for i, match in enumerate(matches):
+                # Create unique placeholder
+                placeholder = f"__PROTECTED_{pattern_name.upper()}_{i}__"
+                placeholders[placeholder] = match
+                # Replace first occurrence only
+                protected_text = protected_text.replace(match, placeholder, 1)
 
-        text = re.sub(code_pattern, replace_code, text)
+        # Step 2: Apply aggressive compression to protected_text
+        compressed = self._apply_compression(protected_text)
 
-        # 2. URLs and API endpoints
-        url_pattern = r"(https?://[^\s\"'<>]+|wss?://[^\s\"'<>]+|/api/[a-zA-Z0-9_\-/\?=&%#]+)"
-        def replace_url(match):
-            nonlocal counter
-            token = f"__EXEMPT_URL_{counter}__"
-            exemptions[token] = match.group(0)
-            counter += 1
-            return token
+        # Step 3: Restore protected patterns
+        for placeholder, original in placeholders.items():
+            compressed = compressed.replace(placeholder, original)
 
-        text = re.sub(url_pattern, replace_url, text)
+        return compressed
 
-        # 3. Absolute file paths (Windows e.g. D:\... or Unix e.g. /home/...)
-        path_pattern = r"([a-zA-Z]:\\[^\s\"'<>|?*]+|/(?:home|usr|etc|var|app|root)/[^\s\"'<>|?*]+)"
-        def replace_path(match):
-            nonlocal counter
-            token = f"__EXEMPT_PATH_{counter}__"
-            exemptions[token] = match.group(0)
-            counter += 1
-            return token
+    def _apply_compression(self, text: str) -> str:
+        """
+        Apply telegraphic compression rules to non-protected text.
+        """
+        for pat in self.stop_phrases:
+            text = re.sub(pat, "", text, flags=re.IGNORECASE)
 
-        text = re.sub(path_pattern, replace_path, text)
+        # Remove conversational fillers
+        text = re.sub(r'\b(please|kindly|actually|basically|essentially)\b', '', text, flags=re.IGNORECASE)
 
-        return text, exemptions
+        # Remove polite phrases
+        text = re.sub(r'\b(I would like to|I think that|In my opinion|As far as I know)\b', '', text, flags=re.IGNORECASE)
 
-    def _restore_exemptions(self, text: str, exemptions: Dict[str, str]) -> str:
-        """Restores original exempt tokens verbatim without any modification."""
-        for token, original in exemptions.items():
-            text = text.replace(token, original)
+        # Telegraphic transform: remove passive fluff
+        text = re.sub(r'\b(is currently|are currently)\b', 'is', text, flags=re.IGNORECASE)
+        text = re.sub(r'\b(has been completed)\b', 'done', text, flags=re.IGNORECASE)
+
+        # Compress multiple spaces
+        text = re.sub(r'[ \t]+', ' ', text)
+
+        # Remove leading/trailing whitespace
+        text = text.strip()
+
         return text
 
     def compress_telegraphic(self, text: str) -> Dict[str, Any]:
+        """
+        Telegraphic compression returning structured metadata for system telemetry.
+        """
         original_len = len(text)
-        
-        # Protect critical technical data from compression
-        masked_text, exemptions = self._extract_exemptions(text)
-        cleaned = masked_text
-
-        for pat in self.stop_phrases:
-            cleaned = re.sub(pat, "", cleaned, flags=re.IGNORECASE)
-
-        # Simplify whitespace in non-code text
-        cleaned = re.sub(r'[ \t]+', ' ', cleaned).strip()
-
-        # Telegraphic transform: remove passive fluff
-        cleaned = re.sub(r'\b(is currently|are currently)\b', 'is', cleaned, flags=re.IGNORECASE)
-        cleaned = re.sub(r'\b(has been completed)\b', 'done', cleaned, flags=re.IGNORECASE)
-
-        # Restore exempt code blocks, paths, and URLs verbatim
-        final_text = self._restore_exemptions(cleaned, exemptions)
-
+        final_text = self.compress(text)
         compressed_len = len(final_text)
         savings_percent = round(((original_len - compressed_len) / original_len) * 100, 1) if original_len > 0 else 0.0
+
+        # Count preserved exemptions
+        preserved_count = sum(len(pat.findall(text)) for pat in self.protected_patterns.values())
 
         return {
             "success": True,
@@ -556,7 +562,7 @@ class CavemanTelegraphicCompressor:
             "compressed_length": compressed_len,
             "tokens_saved_percent": savings_percent,
             "compressed_text": final_text,
-            "exemptions_preserved": len(exemptions),
+            "exemptions_preserved": preserved_count,
             "spoken_reply": f"Pasha Jan, text telegraphically compress ho gaya hai ({savings_percent}% token saving)."
         }
 

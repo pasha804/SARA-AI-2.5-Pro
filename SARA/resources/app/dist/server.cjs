@@ -17637,10 +17637,69 @@ async function probeDesktopObserver(url) {
 
 const { spawn: nodeChildSpawn } = require("child_process");
 
+/**
+ * Execute Python script asynchronously with timeout protection (Ref: Section 31.2)
+ * @param {string} scriptPath - Path to Python script
+ * @param {Array} args - Command line arguments
+ * @param {number} timeoutMs - Timeout in milliseconds (default 5000)
+ * @returns {Promise<{stdout: string, stderr: string}>} Resolves with {stdout, stderr} or rejects with error
+ */
+function executePythonAsync(scriptPath, args = [], timeoutMs = 5000) {
+  return new Promise((resolve, reject) => {
+    const proc = nodeChildSpawn('python', [scriptPath, ...args], {
+      stdio: ['pipe', 'pipe', 'pipe'],
+      windowsHide: true,
+      env: { 
+        ...process.env, 
+        PYTHONIOENCODING: 'utf-8',
+        PYTHONUTF8: '1'
+      }
+    });
+    
+    let stdout = '';
+    let stderr = '';
+    
+    proc.stdout?.on('data', (data) => {
+      stdout += data.toString('utf-8');
+    });
+    
+    proc.stderr?.on('data', (data) => {
+      stderr += data.toString('utf-8');
+    });
+    
+    const timer = setTimeout(() => {
+      try { proc.kill('SIGTERM'); } catch {}
+      reject(new Error(`Python script timeout after ${timeoutMs}ms: ${scriptPath}`));
+    }, timeoutMs);
+    
+    proc.on('close', (code) => {
+      clearTimeout(timer);
+      if (code === 0) {
+        resolve({ stdout, stderr });
+      } else {
+        reject(new Error(`Python exit code ${code}: ${stderr || stdout}`));
+      }
+    });
+    
+    proc.on('error', (err) => {
+      clearTimeout(timer);
+      reject(new Error(`Failed to spawn Python process: ${err.message}`));
+    });
+  });
+}
+
 function runAsyncSpawn(cmd, args, options = {}) {
+  const timeoutMs = options.timeout || 5000;
+  if (cmd === "python") {
+    const scriptPath = args[0] || "";
+    const scriptArgs = args.slice(1);
+    return executePythonAsync(scriptPath, scriptArgs, timeoutMs)
+      .then(res => res.stdout || "")
+      .catch(err => {
+        return "";
+      });
+  }
   return new Promise((resolve) => {
-    // Strict 5000ms timeout default to protect <200ms voice latency pipeline (Ref: Section 31.2)
-    const timeoutMs = options.timeout || 5000;
     try {
       const proc = nodeChildSpawn(cmd, args, {
         cwd: options.cwd || process.cwd(),

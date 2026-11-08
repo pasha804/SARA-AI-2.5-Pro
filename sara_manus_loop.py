@@ -29,30 +29,53 @@ ACTIVE_SESSION_FILE = MANUS_DIR / "active_session.json"
 from sara_office_and_browser_suite import word_engine, ppt_engine, browser_engine
 
 
-def atomic_write_json(filepath: Any, data: Any, indent: int = 2) -> bool:
+class ManusStateCorruptionError(Exception):
+    """Raised when Manus state file cannot be safely written"""
+    pass
+
+
+def atomic_write_json(filepath: Any, data: Any, indent: int = 2) -> None:
     """
-    Crash-safe atomic JSON file writer.
-    Writes payload to a temporary `.tmp` file first, flushes and syncs to disk,
-    then uses os.replace() for an instantaneous, atomic file commitment.
-    Prevents file corruption or partial reads during unexpected system interruptions.
+    Crash-safe atomic JSON write using temp file + os.replace (Ref: Section 43.2).
+    
+    This function guarantees that the target file is either completely 
+    written or not written at all, preventing corruption from unexpected 
+    system crashes during write operations.
+    
+    Args:
+        filepath: Path to target JSON file
+        data: Dictionary to serialize as JSON
+        indent: Indentation level for JSON dump (default 2)
+        
+    Raises:
+        ManusStateCorruptionError: If atomic write fails
     """
     path = Path(filepath)
     path.parent.mkdir(parents=True, exist_ok=True)
-    tmp_path = path.with_suffix(path.suffix + ".tmp")
+    tmp_path = path.with_suffix('.json.tmp')
+    
     try:
-        with open(tmp_path, "w", encoding="utf-8") as f:
+        # Step 1: Write to temporary file first
+        with open(tmp_path, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=indent, ensure_ascii=False)
             f.flush()
-            os.fsync(f.fileno())
+            os.fsync(f.fileno())  # Force disk write
+        
+        # Step 2: Atomic rename (instantaneous, crash-proof)
         os.replace(tmp_path, path)
-        return True
+        print(f"[ManusLoop] Atomic write successful: {filepath}")
+        
     except Exception as e:
+        # Cleanup temp file if it exists
         if tmp_path.exists():
             try:
                 tmp_path.unlink()
             except Exception:
                 pass
-        raise e
+        
+        error_msg = f"Atomic write failed for {filepath}: {str(e)}"
+        print(f"[ManusLoop] ERROR: {error_msg}")
+        raise ManusStateCorruptionError(error_msg)
 
 
 class ManusAutonomousAgentLoop:
@@ -63,10 +86,18 @@ class ManusAutonomousAgentLoop:
     and delivers finished digital artifacts right onto Pasha Jan's desktop.
     """
 
-    def __init__(self):
+    def __init__(self, goal: Optional[str] = None):
         self.sessions_dir = MANUS_DIR
         self.sessions_dir.mkdir(parents=True, exist_ok=True)
         self.active_session_file = ACTIVE_SESSION_FILE
+        self.current_goal = goal
+        if goal:
+            self.save_session_state({"session_id": "init", "goal": goal, "status": "INITIALIZED", "timestamp": time.time()})
+
+    def save_session_state(self, session_data: dict) -> None:
+        """Save Manus session state with atomic write protection (Ref: Section 43.2)"""
+        session_file = self.sessions_dir / "active_session.json"
+        atomic_write_json(str(session_file), session_data)
 
     def decompose_goal(self, goal: str) -> List[Dict[str, Any]]:
         """
@@ -414,6 +445,7 @@ class ManusAutonomousAgentLoop:
 
 
 manus_agent = ManusAutonomousAgentLoop()
+ManusLoop = ManusAutonomousAgentLoop
 
 if __name__ == "__main__":
     test_goal = sys.argv[1] if len(sys.argv) > 1 else "Research AI agentic systems, write a Word report, and create a slide presentation"

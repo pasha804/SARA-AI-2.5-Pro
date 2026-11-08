@@ -28,6 +28,11 @@ SCREENSHOTS_DIR = DATA_DIR / "screenshots"
 SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
 
 
+class BrowserAutomationError(Exception):
+    """Raised when Playwright browser automation fails after retries"""
+    pass
+
+
 class SaraInteractiveBrowserAgent:
     """
     Autonomous Interactive Browser Agent for SARA AI 2.5 Pro.
@@ -44,6 +49,18 @@ class SaraInteractiveBrowserAgent:
         self._context = None
         self._page = None
         self._dialog_action = "accept"
+
+    @property
+    def page(self):
+        """Active Playwright page instance (guarantees initialized browser context)."""
+        return self._ensure_browser()
+
+    def _resolve_selector(self, selector_or_label: str) -> str:
+        """Resolves selector or label into a valid CSS/XPath/text locator string."""
+        s = selector_or_label.strip()
+        if any(s.startswith(p) for p in ("#", ".", "[", "//", "input", "button", "textarea", "select", "a", "xpath=")):
+            return s
+        return f"input[placeholder*='{s}' i], input[name='{s}'], [aria-label*='{s}' i], button:has-text('{s}'), text='{s}'"
 
     def _ensure_browser(self):
         """Initializes or restores browser context and active page."""
@@ -166,56 +183,130 @@ class SaraInteractiveBrowserAgent:
 
         return None
 
-    def fill_field(self, selector_or_label: str, value: str, press_enter: bool = False) -> Dict[str, Any]:
-        """Finds an input field by selector, placeholder, or label, and types the value with 100% Playwright-native actions."""
-        page = self._ensure_browser()
-        # Explicit wait for selector with 5-second timeout if valid selector string
-        if any(selector_or_label.startswith(p) for p in ("#", ".", "[", "//", "input", "textarea", "select")):
+    def fill_field(self, selector_or_label: str, value: str, press_enter: bool = False, raise_on_failure: bool = False) -> Dict[str, Any]:
+        """
+        Fill form field using 100% Playwright-native DOM injection (Ref: Section 46.4).
+        Wait for element to be ready (5 second timeout) and fills using Playwright native method.
+        """
+        page = self.page
+        selector = self._resolve_selector(selector_or_label)
+        last_err = None
+
+        for attempt in range(1, 4):
             try:
-                page.wait_for_selector(selector_or_label, timeout=5000, state="attached")
-            except Exception:
-                pass
+                page.wait_for_selector(selector, timeout=5000, state='visible')
+                loc = page.locator(selector).first
+                loc.scroll_into_view_if_needed(timeout=3000)
+                loc.fill(value, timeout=5000)
+                if press_enter:
+                    loc.press("Enter")
+                print(f"[BrowserAgent] Filled field '{selector}' with text")
+                return {
+                    "ok": True,
+                    "success": True,
+                    "selector": selector,
+                    "value_filled": value,
+                    "pressed_enter": press_enter,
+                    "engine": "playwright_native"
+                }
+            except Exception as e:
+                last_err = e
+                try:
+                    elem = self._find_element(selector_or_label)
+                    if elem:
+                        elem.scroll_into_view_if_needed(timeout=3000)
+                        elem.fill(value, timeout=5000)
+                        if press_enter:
+                            elem.press("Enter")
+                        print(f"[BrowserAgent] Filled field '{selector_or_label}' via DOM element")
+                        return {
+                            "ok": True,
+                            "success": True,
+                            "selector": selector_or_label,
+                            "value_filled": value,
+                            "pressed_enter": press_enter,
+                            "engine": "playwright_native"
+                        }
+                except Exception as inner_e:
+                    last_err = inner_e
+                time.sleep(0.2)
 
-        elem = self._find_element(selector_or_label)
-        if not elem:
-            return {"ok": False, "success": False, "error": f"Element '{selector_or_label}' not found on page"}
+        err_msg = f"[BrowserAgent] ERROR: Failed to fill field '{selector_or_label}' after 3 attempts: {str(last_err)}"
+        print(err_msg)
+        if raise_on_failure:
+            raise BrowserAutomationError(err_msg)
+        return {"ok": False, "success": False, "error": str(last_err), "selector": selector_or_label}
 
+    def click_element(self, selector_or_text: str, force: bool = True, raise_on_failure: bool = False) -> Dict[str, Any]:
+        """
+        Click element using 100% Playwright-native DOM injection (Ref: Section 46.4).
+        Wait for element to be ready (5s timeout), scroll into view, and click with force=True.
+        """
+        page = self.page
+        selector = self._resolve_selector(selector_or_text)
+        last_err = None
+
+        for attempt in range(1, 4):
+            try:
+                page.wait_for_selector(selector, timeout=5000, state='visible')
+                loc = page.locator(selector).first
+                loc.scroll_into_view_if_needed(timeout=3000)
+                loc.click(force=force, timeout=5000)
+                print(f"[BrowserAgent] Clicked element '{selector}'")
+                return {
+                    "ok": True,
+                    "success": True,
+                    "action": "click",
+                    "target": selector,
+                    "engine": "playwright_native"
+                }
+            except Exception as e:
+                last_err = e
+                try:
+                    elem = self._find_element(selector_or_text)
+                    if elem:
+                        elem.scroll_into_view_if_needed(timeout=3000)
+                        elem.click(force=force, timeout=5000)
+                        print(f"[BrowserAgent] Clicked element '{selector_or_text}' via DOM element")
+                        return {
+                            "ok": True,
+                            "success": True,
+                            "action": "click",
+                            "target": selector_or_text,
+                            "engine": "playwright_native"
+                        }
+                except Exception as inner_e:
+                    last_err = inner_e
+                time.sleep(0.2)
+
+        err_msg = f"[BrowserAgent] ERROR: Failed to click element '{selector_or_text}' after 3 attempts: {str(last_err)}"
+        print(err_msg)
+        if raise_on_failure:
+            raise BrowserAutomationError(err_msg)
+        return {"ok": False, "success": False, "error": str(last_err), "target": selector_or_text}
+
+    def submit_form(self, selector: str, raise_on_failure: bool = False) -> Dict[str, Any]:
+        """Submit form using Playwright-native Enter key press (Ref: Section 46.4)"""
+        page = self.page
+        resolved = self._resolve_selector(selector)
         try:
-            elem.wait_for(timeout=5000, state="attached")
-            elem.scroll_into_view_if_needed(timeout=3000)
-            elem.fill(value, timeout=5000)
-            if press_enter:
-                elem.press("Enter")
+            page.wait_for_selector(resolved, timeout=5000, state='visible')
+            loc = page.locator(resolved).first
+            loc.press('Enter')
+            print(f"[BrowserAgent] Submitted form via Enter key on '{resolved}'")
             return {
                 "ok": True,
                 "success": True,
-                "selector": selector_or_label,
-                "value_filled": value,
-                "pressed_enter": press_enter
+                "action": "submit",
+                "target": resolved,
+                "engine": "playwright_native"
             }
         except Exception as e:
-            return {"ok": False, "success": False, "error": str(e), "selector": selector_or_label}
-
-    def click_element(self, selector_or_text: str) -> Dict[str, Any]:
-        """Clicks an element found by selector, text, or accessibility label with 100% Playwright-native actions."""
-        page = self._ensure_browser()
-        if any(selector_or_text.startswith(p) for p in ("#", ".", "[", "//", "button", "a", "input")):
-            try:
-                page.wait_for_selector(selector_or_text, timeout=5000, state="attached")
-            except Exception:
-                pass
-
-        elem = self._find_element(selector_or_text)
-        if not elem:
-            return {"ok": False, "success": False, "error": f"Element '{selector_or_text}' not found to click"}
-
-        try:
-            elem.wait_for(timeout=5000, state="attached")
-            elem.scroll_into_view_if_needed(timeout=3000)
-            elem.click(force=True, timeout=5000)
-            return {"ok": True, "success": True, "action": "click", "target": selector_or_text}
-        except Exception as e:
-            return {"ok": False, "success": False, "error": str(e), "target": selector_or_text}
+            err_msg = f"[BrowserAgent] ERROR: Failed to submit form '{selector}': {str(e)}"
+            print(err_msg)
+            if raise_on_failure:
+                raise BrowserAutomationError(err_msg)
+            return {"ok": False, "success": False, "error": str(e), "target": selector}
 
     def double_click(self, selector_or_text: str) -> Dict[str, Any]:
         """Double clicks an element."""
