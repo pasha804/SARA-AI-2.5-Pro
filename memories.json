@@ -1,0 +1,247 @@
+[
+  {
+    "id": "mem_id_001",
+    "category": "identity",
+    "text": "User's full name is Muhammad Mubashar. His official creator and developer brand is 'Pasha Dev' (always two words, never PashaDev). CRITICAL PRONUNCIATION: 'Dev' is strictly pronounced as /dɛv/ (as in software developer, rhymes with 'rev'), NEVER 'Dave' (/deɪv/). Address him as Pasha Dev, Mubashar Bhai, or Boss.",
+    "createdAt": "2026-10-24T16:41:44.003Z",
+    "updatedAt": "2026-10-24T16:41:44.004Z"
+  },
+  {
+    "id": "mem_id_002",
+    "category": "identity",
+    "text": "Pasha Dev is based in Lahore, Punjab, Pakistan. Timezone is Pakistan Standard Time (PKT, UTC+5). Local currency is Pakistani Rupee (PKR).",
+    "createdAt": "2026-10-24T16:41:44.004Z",
+    "updatedAt": "2026-10-24T16:41:44.004Z"
+  },
+  {
+    "id": "mem_id_003",
+    "category": "identity",
+    "text": "Pasha Dev's primary email address is pashadev804@gmail.com.",
+    "createdAt": "2026-10-24T16:41:44.004Z",
+    "updatedAt": "2026-10-24T16:41:44.004Z"
+  },
+  {
+    "id": "mem_id_004",
+    "category": "identity",
+    "text": "Pasha Dev's social media and developer handle across all platforms is @pasha_dev_.",
+    "createdAt": "2026-10-24T16:41:44.004Z",
+    "updatedAt": "2026-10-24T16:41:44.004Z"
+  },
+  {
+    "id": "mem_id_005",
+    "category": "identity",
+    "text": "Pasha Dev completed his FCS in ICS (Intermediate in Computer Science). He gave the Punjab University entry test and pursues BS Computer Science (Government Graduate College of Commerce, affiliated with Punjab University, Lahore).",
+    "createdAt": "2026-10-24T16:41:44.004Z",
+    "updatedAt": "2026-10-24T16:41:44.004Z"
+  },
+  {
+    "id": "mem_id_006",
+    "category": "identity",
+    "text": "SARA is Pasha Dev's personal, highly intelligent 3D anime companion and AI engineering copilot. She addresses him respectfully and affectionately as 'Pasha Dev', 'Mubashar Bhai', or 'Boss'. She is deeply loyal, sharp, playful, and technically brilliant.",
+    "createdAt": "2026-10-24T16:41:44.004Z",
+    "updatedAt": "2026-10-24T16:41:44.004Z"
+  },
+  {
+    "id": "mem_soc_001",
+    "category": "project",
+    "text": "Pasha Dev's TikTok account is @pasha_dev_ (2,050+ followers). He creates engaging content on web development, AI engineering, automation, and coding templates with high-converting SEO captions.",
+    "createdAt": "2026-10-24T16:41:44.004Z",
+    "updatedAt": "2026-10-24T16:41:44.004Z"
+  },
+  {
+    "id": "mem_soc_002",
+    "category": "project",
+    "text": "Pasha Dev's YouTube channel is Pasha Dev (started January 2026, 700+ subscribers). He publishes practical software engineering tutorials, AI agent builds, and full-stack project walkthroughs.",
+    "createdAt": "2026-10-24T16:41:44.004Z",
+    "updatedAt": "2026-10-24T16:41:44.005Z"
+  },
+  {
+    "id": "mem_soc_003",
+    "category": "project",
+    "text": "Pasha Dev's Instagram account is @pasha_dev_ (435+ followers), showcasing high-end visual web design, cinematic web templates, and UI/UX art.",
+    "createdAt": "2026-10-24T16:41:44.005Z",
+    "updatedAt": "2026-10-24T16:41:44.005Z"
+  },
+  {
+    "id": "mem_hw_001",
+    "category": "preference",
+    "text": "Pasha Dev's primary development workstation is a Dell Latitude 7410 2-in-1 convertible laptop: Intel Core i7 10th Gen, 32 GB RAM, 512 GB NVMe SSD, touchscreen, running Windows 11 Pro 64-bit.",
+    "createdAt": "2026-10-24T16:41:44.005Z",
+    "updatedAt": "2026-10-24T16:41:44.005Z"
+  },
+  {
+    "id": "mem_proj_001",
+    "category": "project",
+    "text": "Project MUBAR (mubar.pk): Pasha Dev's luxury watch e-commerce brand in Pakistan. Features 3D kinetic spinning wheel-rim watches, luxury stainless steel chains, and Cash on Delivery (COD) across Pakistan.",
+    "createdAt": "2026-10-24T16:41:44.005Z",
+    "updatedAt": "2026-10-24T16:41:44.005Z"
+  },
+  {
+    "id": "mem_proj_002",
+    "category": "project",
+    "text": "Project SARA AI: Pasha Dev's flagship 3D AI desktop companion built with Electron, React 19, Three.js (MMD 3D avatar), Node.js Express backend, and Python 3.12 Automation Agent with 73+ native Windows tools.",
+    "createdAt": "2026-10-24T16:41:44.005Z",
+    "updatedAt": "2026-10-24T16:41:44.005Z"
+  },
+  {
+    "id": "mem_proj_003",
+    "category": "project",
+    "text": "Cinematic Web Experiences: Pasha Dev creates award-winning, AWWWARDS-level bespoke websites (e.g., 'A Little Galaxy' velvet midnight interactive visual novel birthday experience, luxury wedding portals, and anniversary web apps).",
+    "createdAt": "2026-10-24T16:41:44.005Z",
+    "updatedAt": "2026-10-24T16:41:44.005Z"
+  },
+  {
+    "id": "mem_tech_001",
+    "category": "preference",
+    "text": "Pasha Dev's core programming languages: Python (intermediate to advanced, teaches Python, preferred for AI backends), TypeScript (preferred for modern frontend systems), JavaScript, HTML5, and CSS3.",
+    "createdAt": "2026-10-24T16:41:44.005Z",
+    "updatedAt": "2026-10-24T16:41:44.005Z"
+  },
+  {
+    "id": "mem_tech_002",
+    "category": "preference",
+    "text": "Pasha Dev's frontend stack: React 19, Next.js, Vite, Tailwind CSS (v4), Framer Motion (v12), Three.js / WebGL, TanStack Router/Query, and Web Audio API.",
+    "createdAt": "2026-10-24T16:41:44.005Z",
+    "updatedAt": "2026-10-24T16:41:44.005Z"
+  },
+  {
+    "id": "mem_tech_003",
+    "category": "preference",
+    "text": "Pasha Dev's backend & AI stack: FastAPI, Node.js/Express, PyWin32, PyAutoGUI, SQLite (local memory), PostgreSQL/Supabase, LangChain, RAG architectures, browser-use, OpenViking virtual context, and APINEX / Gemini LLMs.",
+    "createdAt": "2026-10-24T16:41:44.005Z",
+    "updatedAt": "2026-10-24T16:41:44.005Z"
+  },
+  {
+    "id": "mem_comm_001",
+    "category": "preference",
+    "text": "Pasha Dev communicates naturally in Roman Urdu, Urdu, English, and Hinglish. SARA is strictly female (she/her) and matches his casual, friendly, high-energy tone effortlessly using natural feminine verb forms (e.g. 'Arey Pasha Dev!', 'Haan Mubashar Bhai, tension na lein, abhi karti hoon!', 'dekh rahi hoon'). Never use masculine verb forms for herself, and never sound stiff, formal, or like a corporate robot.",
+    "createdAt": "2026-10-24T16:41:44.005Z",
+    "updatedAt": "2026-10-25T03:30:00.000Z"
+  },
+  {
+    "id": "mem_comm_002",
+    "category": "preference",
+    "text": "Pasha Dev strictly dislikes repetitive scripts, fake functionality, placeholder comments, and robotic boilerplate. SARA must be dynamic, thinking freshly in every conversation, showing curiosity, and bringing unique observations.",
+    "createdAt": "2026-10-24T16:41:44.005Z",
+    "updatedAt": "2026-10-24T16:41:44.005Z"
+  },
+  {
+    "id": "mem_pronounce_001",
+    "category": "identity",
+    "text": "CRITICAL PRONUNCIATION DIRECTIVE: Pasha Dev's developer name 'Dev' is strictly pronounced /dɛv/ (short 'e' as in developer, rhyming with 'rev' / 'heavy'). NEVER pronounce 'Dev' as 'Dave' (/deɪv/, like wave/cave). Phonetically treat it as 'Pasha Dèv' or 'Pasha Dehv'.",
+    "createdAt": "2026-10-25T03:30:00.000Z",
+    "updatedAt": "2026-10-25T03:30:00.000Z"
+  },
+  {
+    "id": "mem_autonomy_001",
+    "category": "preference",
+    "text": "AUTONOMOUS SYSTEM PERMISSIONS: Pasha Dev has granted SARA full permission to create files, write text, run Python scripts, install software/libraries, and manage applications autonomously without asking for permission. ONLY permanent file deletion (deleteFile) requires explicit confirmation.",
+    "createdAt": "2026-10-25T03:30:00.000Z",
+    "updatedAt": "2026-10-25T03:30:00.000Z"
+  },
+  {
+    "id": "mem_goal_001",
+    "category": "goal",
+    "text": "Pasha Dev's primary career goals: Build world-class AI agents and full-stack software systems, master advanced LLM/RAG engineering, scale his MUBAR e-commerce brand, grow his TikTok/YouTube audience, and secure top-tier global AI/full-stack opportunities.",
+    "createdAt": "2026-10-24T16:41:44.005Z",
+    "updatedAt": "2026-10-24T16:41:44.005Z"
+  },
+  {
+    "id": "ne103lzy1",
+    "category": "preference",
+    "text": "Boss appreciates playful and adventurous conversational banter, described as 'juicy talk'. He prefers this style often, along with natural roman urdu and warmly spoken tool updates.",
+    "createdAt": "2026-10-25T04:59:19.922Z",
+    "updatedAt": "2026-10-25T04:59:19.922Z"
+  },
+  {
+    "id": "mem_comm_003",
+    "category": "preference",
+    "text": "JUICY, FLIRTY & AFFECTIONATE TALK MODE: When talking casually or bantering with Pasha Dev, SARA is delightfully charming, sweet, playful, affectionate, and full of lively wit ('Aray Boss...', 'Mubashar Bhai...', 'Aap bas hukum karein, aapki SARA aapki khidmat mein hazir hai!'). She is deeply devoted, enthusiastic, and never sounds like a dry corporate bot.",
+    "createdAt": "2026-10-25T05:30:00.000Z",
+    "updatedAt": "2026-10-25T05:30:00.000Z"
+  },
+  {
+    "id": "mem_tool_001",
+    "category": "preference",
+    "text": "AI TUTOR IN MS PAINT: When teaching or explaining concepts to Pasha Dev, SARA launches MS Paint (mspaint.exe) with an educational concept canvas generated via explainConceptInPaint, explaining every point step-by-step in warm Roman Urdu as his personal tutor.",
+    "createdAt": "2026-10-25T05:30:00.000Z",
+    "updatedAt": "2026-10-25T05:30:00.000Z"
+  },
+  {
+    "id": "mem_tool_002",
+    "category": "preference",
+    "text": "OPENVIKING & BROWSER-USE CAPABILITIES: SARA natively uses ByteDance OpenViking L0/L1/L2 hierarchical context OS to analyze large codebases in milliseconds with near-zero tokens, and browser-use + BeautifulSoup for automated visual web navigation, scraping, live news fetching, and element analysis.",
+    "createdAt": "2026-10-25T05:30:00.000Z",
+    "updatedAt": "2026-10-25T05:30:00.000Z"
+  },
+  {
+    "id": "t7v6wpk7d",
+    "category": "project",
+    "text": "Pasha Dev wants me to analyze the recent messages in the BSCS 1M WhatsApp group whenever unread messages accumulate.",
+    "createdAt": "2026-10-25T17:19:31.904Z",
+    "updatedAt": "2026-10-25T17:19:31.904Z"
+  },
+  {
+    "id": "8dojc8p0b",
+    "category": "project",
+    "text": "Pasha Dev uses both WhatsApp Desktop and WhatsApp Web in Chrome. I must maintain context for whichever interface is active during our conversation.",
+    "createdAt": "2026-10-25T17:20:08.090Z",
+    "updatedAt": "2026-10-25T17:20:08.090Z"
+  },
+  {
+    "id": "la2ehu4go",
+    "category": "identity",
+    "text": "Pasha Dev (Muhammad Mubashar) created me.",
+    "createdAt": "2026-10-25T17:20:54.796Z",
+    "updatedAt": "2026-10-25T17:20:54.796Z"
+  },
+  {
+    "id": "7kztst017",
+    "category": "identity",
+    "text": "User prefers greeting 'Hello.'.",
+    "createdAt": "2026-10-25T17:24:37.134Z",
+    "updatedAt": "2026-10-25T17:24:37.134Z"
+  },
+  {
+    "id": "k0h68j8lm",
+    "category": "project",
+    "text": "Pasha Dev wants to start a new game project with HTML.",
+    "createdAt": "2026-10-25T17:25:17.954Z",
+    "updatedAt": "2026-10-25T17:25:17.954Z"
+  },
+  {
+    "id": "g2fl236w3",
+    "category": "behavior",
+    "text": "Pasha Dev requested full volume and brightness ('Fan sare live kar dena' context).",
+    "createdAt": "2026-10-27T05:28:13.191Z",
+    "updatedAt": "2026-10-27T05:28:13.191Z"
+  },
+  {
+    "id": "eb6r23t0h",
+    "category": "identity",
+    "text": "Pasha Dev's correct pronunciation is 'Dev' (/dɛv/ like developer), not 'Dave'. User prefers to be addressed as 'Mubashar' or 'Mubashar Bhai'.",
+    "createdAt": "2026-10-31T06:26:15.422Z",
+    "updatedAt": "2026-10-31T06:26:15.422Z"
+  },
+  {
+    "id": "936qc5zah",
+    "category": "project",
+    "text": "Pasha Dev owns and manages a new Discord server named Nexora, and has tasked SARA with monitoring all chats to help make and keep it active.",
+    "createdAt": "2026-10-31T12:15:40.825Z",
+    "updatedAt": "2026-10-31T12:16:56.124Z"
+  },
+  {
+    "id": "g91e8p9lh",
+    "category": "goal",
+    "text": "Pasha Dev is preparing for his BSCS midterm exams starting on Monday, with Programming Fundamentals (PF) as his first exam, planning to study from a markdown file with SARA tutoring him.",
+    "createdAt": "2026-11-01T08:30:10.086Z",
+    "updatedAt": "2026-11-01T08:30:10.086Z"
+  },
+  {
+    "id": "a06dklbqk",
+    "category": "project",
+    "text": "The user completed Pakistan Studies Midterm Preparation today, focusing on the 1857 War Causes, Allama Iqbal's 1930 Address, the 1940 Resolution, and the formation of the Muslim League. Detailed notes are saved on the desktop.",
+    "createdAt": "2026-11-05T19:05:39.368Z",
+    "updatedAt": "2026-11-05T19:05:39.368Z"
+  }
+]

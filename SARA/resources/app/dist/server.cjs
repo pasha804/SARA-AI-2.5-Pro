@@ -208,6 +208,23 @@ var import_genai2 = require("@google/genai");
 
 
 var import_dotenv = __toESM(require("dotenv"), 1);
+(() => {
+  try {
+    const _p = require("path");
+    const _f = require("fs");
+    const envCandidates = [
+      _p.join(__dirname, "..", ".env"),
+      _p.join(process.cwd(), ".env"),
+      _p.join(process.env.APPDATA || "", "SARA", ".env"),
+      "D:/MARAA AI/.env"
+    ];
+    for (const ep of envCandidates) {
+      if (_f.existsSync(ep)) {
+        import_dotenv.default.config({ path: ep });
+      }
+    }
+  } catch {}
+})();
 
 
 
@@ -309,24 +326,26 @@ var SECRETS_FILE = dataFile("secrets.json");
 
 function readSecrets() {
   const defaults = {
-    geminiApiKey: process.env.GEMINI_API_KEY || "AIzaSyAp8VhLzxY7D2pvfSdQxq9sb8DPyGw866g",
-    apinexApiKey: process.env.APINEX_API_KEY || "sk-apx8a660d087a150ce79fbe12593375ea9401369fdac8ed70e",
-    apinexBaseUrl: "https://api.apinex.bond/v1",
-    cleanApiKey: process.env.CLEAN_API_KEY || "cc_aA8u23hJEU4sjo1yvZ3FYUR3B1M7nF0i5H9DxUcoKVSqOY5X",
-    cleanBaseUrl: "https://cleanapis.com/v1",
-    preferredModel: "free/mimo-v2.6-pro"
+    geminiApiKey: process.env.GEMINI_API_KEY || "",
+    apinexApiKey: process.env.APINEX_API_KEY || "",
+    apinexBaseUrl: process.env.APINEX_BASE_URL || "https://api.apinex.bond/v1",
+    cleanApiKey: process.env.CLEAN_API_KEY || "",
+    cleanBaseUrl: process.env.CLEAN_BASE_URL || "https://cleanapis.com/v1",
+    preferredModel: "free/deepseek-v4-pro-0813"
   };
   try {
     const f = dataFile("secrets.json");
     if (import_fs.default.existsSync(f)) {
       const parsed = JSON.parse(import_fs.default.readFileSync(f, "utf-8"));
       if (parsed && typeof parsed === "object") {
+        const storedGemini = (parsed.geminiApiKey || "").trim();
+        const safeGemini = storedGemini.startsWith("AIzaSyAp8Vh") ? "" : storedGemini;
         return {
           ...defaults,
           ...parsed,
-          geminiApiKey: (parsed.geminiApiKey || defaults.geminiApiKey).trim(),
-          apinexApiKey: (parsed.apinexApiKey || defaults.apinexApiKey).trim(),
-          cleanApiKey: (parsed.cleanApiKey || defaults.cleanApiKey).trim()
+          geminiApiKey: safeGemini || (defaults.geminiApiKey || "").trim(),
+          apinexApiKey: (parsed.apinexApiKey || defaults.apinexApiKey || "").trim(),
+          cleanApiKey: (parsed.cleanApiKey || defaults.cleanApiKey || "").trim()
         };
       }
     }
@@ -338,9 +357,10 @@ function readSecrets() {
 
 function getGeminiApiKey() {
   const stored = readSecrets().geminiApiKey?.trim();
-  if (stored) return stored;
+  if (stored && !stored.startsWith("AIzaSyAp8Vh")) return stored;
   const env = process.env.GEMINI_API_KEY?.trim();
-  return env || "AIzaSyAp8VhLzxY7D2pvfSdQxq9sb8DPyGw866g";
+  if (env && !env.startsWith("AIzaSyAp8Vh")) return env;
+  return "";
 }
 
 
@@ -22280,8 +22300,8 @@ async function startServer() {
 
   app.get("/api/config", (_req, res) => {
     const secrets = readSecrets();
-    const apinexKey = secrets.apinexApiKey || process.env.APINEX_API_KEY || "sk-apx8a660d087a150ce79fbe12593375ea9401369fdac8ed70e";
-    const geminiKey = getGeminiApiKey() || "AIzaSyAp8VhLzxY7D2pvfSdQxq9sb8DPyGw866g";
+    const apinexKey = secrets.apinexApiKey || process.env.APINEX_API_KEY || "";
+    const geminiKey = getGeminiApiKey() || "";
     res.json({
       hasApiKey: true,
       hasGeminiKey: true,
@@ -22289,7 +22309,7 @@ async function startServer() {
       onboardingCompleted: true,
       maskedApinexKey: apinexKey.slice(0, 8) + "..." + apinexKey.slice(-4),
       maskedGeminiKey: geminiKey.slice(0, 6) + "..." + geminiKey.slice(-4),
-      activeModel: (loadSettingsFile() || {}).model || "free/mimo-v2.6-pro"
+      activeModel: (loadSettingsFile() || {}).model || "free/deepseek-v4-pro-0813"
     });
   });
 

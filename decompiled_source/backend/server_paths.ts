@@ -67,24 +67,26 @@ interface Secrets {
 
 function readSecrets(): Secrets {
   const defaults: Secrets = {
-    geminiApiKey: process.env.GEMINI_API_KEY || "AIzaSyAp8VhLzxY7D2pvfSdQxq9sb8DPyGw866g",
-    apinexApiKey: process.env.APINEX_API_KEY || "sk-apx8a660d087a150ce79fbe12593375ea9401369fdac8ed70e",
-    apinexBaseUrl: "https://api.apinex.bond/v1",
-    cleanApiKey: process.env.CLEAN_API_KEY || "cc_aA8u23hJEU4sjo1yvZ3FYUR3B1M7nF0i5H9DxUcoKVSqOY5X",
-    cleanBaseUrl: "https://cleanapis.com/v1",
-    preferredModel: "free/mimo-v2.6-pro"
+    geminiApiKey: process.env.GEMINI_API_KEY || "",
+    apinexApiKey: process.env.APINEX_API_KEY || "",
+    apinexBaseUrl: process.env.APINEX_BASE_URL || "https://api.apinex.bond/v1",
+    cleanApiKey: process.env.CLEAN_API_KEY || "",
+    cleanBaseUrl: process.env.CLEAN_BASE_URL || "https://cleanapis.com/v1",
+    preferredModel: "free/deepseek-v4-pro-0813"
   };
   try {
     const f = dataFile("secrets.json");
     if (fs.existsSync(f)) {
       const parsed = JSON.parse(fs.readFileSync(f, "utf-8")) as Secrets;
       if (parsed && typeof parsed === "object") {
+        const storedGemini = (parsed.geminiApiKey || "").trim();
+        const safeGemini = storedGemini.startsWith("AIzaSyAp8Vh") ? "" : storedGemini;
         return {
           ...defaults,
           ...parsed,
-          geminiApiKey: (parsed.geminiApiKey || defaults.geminiApiKey)?.trim(),
-          apinexApiKey: (parsed.apinexApiKey || defaults.apinexApiKey)?.trim(),
-          cleanApiKey: (parsed.cleanApiKey || defaults.cleanApiKey)?.trim()
+          geminiApiKey: safeGemini || (defaults.geminiApiKey || "").trim(),
+          apinexApiKey: (parsed.apinexApiKey || defaults.apinexApiKey || "").trim(),
+          cleanApiKey: (parsed.cleanApiKey || defaults.cleanApiKey || "").trim()
         };
       }
     }
@@ -100,9 +102,10 @@ function readSecrets(): Secrets {
  */
 export function getGeminiApiKey(): string | undefined {
   const stored = readSecrets().geminiApiKey?.trim();
-  if (stored) return stored;
+  if (stored && !stored.startsWith("AIzaSyAp8Vh")) return stored;
   const env = process.env.GEMINI_API_KEY?.trim();
-  return env || "AIzaSyAp8VhLzxY7D2pvfSdQxq9sb8DPyGw866g";
+  if (env && !env.startsWith("AIzaSyAp8Vh")) return env;
+  return "";
 }
 
 /** Whether any usable key is configured (without revealing it). */

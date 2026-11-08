@@ -1155,5 +1155,183 @@
       "status": "ROLLED_BACK"
     },
     "timestamp": 1794160799.9852855
+  },
+  {
+    "ok": true,
+    "status": "PATCHED",
+    "signature": "SyntaxError:test_self_healing_target.txt:1",
+    "backup_checkpoint": "D:\\MARAA AI\\data\\backups\\self_healing\\test_self_healing_target.txt.backup_1794162654",
+    "anomaly": {
+      "anomaly_id": "TEST-001",
+      "error_type": "SyntaxError",
+      "error_message": "Test message",
+      "target_file": "D:\\MARAA AI\\data\\test_self_healing_target.txt",
+      "line_number": 1,
+      "stack_trace": "traceback",
+      "timestamp": 0.0,
+      "confidence_score": 0.85,
+      "status": "PATCHED"
+    },
+    "timestamp": 1794162654.367923
+  },
+  {
+    "ok": true,
+    "status": "PATCHED",
+    "signature": "RecursionError:test_self_healing_target.txt:1",
+    "backup_checkpoint": "D:\\MARAA AI\\data\\backups\\self_healing\\test_self_healing_target.txt.backup_1794162654",
+    "anomaly": {
+      "anomaly_id": "TEST-003",
+      "error_type": "RecursionError",
+      "error_message": "Infinite loop",
+      "target_file": "D:\\MARAA AI\\data\\test_self_healing_target.txt",
+      "line_number": 1,
+      "stack_trace": "traceback",
+      "timestamp": 0.0,
+      "confidence_score": 0.85,
+      "status": "PATCHED"
+    },
+    "timestamp": 1794162654.6193767
+  },
+  {
+    "ok": true,
+    "status": "PATCHED",
+    "signature": "RecursionError:test_self_healing_target.txt:1",
+    "backup_checkpoint": "D:\\MARAA AI\\data\\backups\\self_healing\\test_self_healing_target.txt.backup_1794162654",
+    "anomaly": {
+      "anomaly_id": "TEST-003",
+      "error_type": "RecursionError",
+      "error_message": "Infinite loop",
+      "target_file": "D:\\MARAA AI\\data\\test_self_healing_target.txt",
+      "line_number": 1,
+      "stack_trace": "traceback",
+      "timestamp": 0.0,
+      "confidence_score": 0.85,
+      "status": "PATCHED"
+    },
+    "timestamp": 1794162654.660196
+  },
+  {
+    "signature": "RecursionError:test_self_healing_target.txt:1",
+    "ok": false,
+    "status": "QUARANTINED",
+    "message": "Anomaly signature 'RecursionError:test_self_healing_target.txt:1' quarantined to prevent infinite self-repair loops.",
+    "anomaly": {
+      "anomaly_id": "TEST-003",
+      "error_type": "RecursionError",
+      "error_message": "Infinite loop",
+      "target_file": "D:\\MARAA AI\\data\\test_self_healing_target.txt",
+      "line_number": 1,
+      "stack_trace": "traceback",
+      "timestamp": 0.0,
+      "confidence_score": 0.85,
+      "status": "QUARANTINED"
+    }
+  },
+  {
+    "ok": false,
+    "status": "ROLLED_BACK",
+    "signature": "AttributeError:test_self_healing_target.txt:1",
+    "error": "Patch verification failed syntactically!",
+    "anomaly": {
+      "anomaly_id": "TEST-002",
+      "error_type": "AttributeError",
+      "error_message": "Method missing",
+      "target_file": "D:\\MARAA AI\\data\\test_self_healing_target.txt",
+      "line_number": 1,
+      "stack_trace": "traceback",
+      "timestamp": 0.0,
+      "confidence_score": 0.85,
+      "status": "ROLLED_BACK"
+    },
+    "timestamp": 1794162654.8043253
+  },
+  {
+    "ok": true,
+    "status": "PATCHED",
+    "signature": "SyntaxError:test_self_healing_target.txt:1",
+    "backup_checkpoint": "D:\\MARAA AI\\data\\backups\\self_healing\\test_self_healing_target.txt.backup_1794163797",
+    "anomaly": {
+      "anomaly_id": "TEST-001",
+      "error_type": "SyntaxError",
+      "error_message": "Test message",
+      "target_file": "D:\\MARAA AI\\data\\test_self_healing_target.txt",
+      "line_number": 1,
+      "stack_trace": "traceback",
+      "timestamp": 0.0,
+      "confidence_score": 0.85,
+      "status": "PATCHED"
+    },
+    "timestamp": 1794163797.5076747
+  },
+  {
+    "ok": true,
+    "status": "PATCHED",
+    "signature": "RecursionError:test_self_healing_target.txt:1",
+    "backup_checkpoint": "D:\\MARAA AI\\data\\backups\\self_healing\\test_self_healing_target.txt.backup_1794163797",
+    "anomaly": {
+      "anomaly_id": "TEST-003",
+      "error_type": "RecursionError",
+      "error_message": "Infinite loop",
+      "target_file": "D:\\MARAA AI\\data\\test_self_healing_target.txt",
+      "line_number": 1,
+      "stack_trace": "traceback",
+      "timestamp": 0.0,
+      "confidence_score": 0.85,
+      "status": "PATCHED"
+    },
+    "timestamp": 1794163797.5772436
+  },
+  {
+    "ok": true,
+    "status": "PATCHED",
+    "signature": "RecursionError:test_self_healing_target.txt:1",
+    "backup_checkpoint": "D:\\MARAA AI\\data\\backups\\self_healing\\test_self_healing_target.txt.backup_1794163797",
+    "anomaly": {
+      "anomaly_id": "TEST-003",
+      "error_type": "RecursionError",
+      "error_message": "Infinite loop",
+      "target_file": "D:\\MARAA AI\\data\\test_self_healing_target.txt",
+      "line_number": 1,
+      "stack_trace": "traceback",
+      "timestamp": 0.0,
+      "confidence_score": 0.85,
+      "status": "PATCHED"
+    },
+    "timestamp": 1794163797.5990934
+  },
+  {
+    "signature": "RecursionError:test_self_healing_target.txt:1",
+    "ok": false,
+    "status": "QUARANTINED",
+    "message": "Anomaly signature 'RecursionError:test_self_healing_target.txt:1' quarantined to prevent infinite self-repair loops.",
+    "anomaly": {
+      "anomaly_id": "TEST-003",
+      "error_type": "RecursionError",
+      "error_message": "Infinite loop",
+      "target_file": "D:\\MARAA AI\\data\\test_self_healing_target.txt",
+      "line_number": 1,
+      "stack_trace": "traceback",
+      "timestamp": 0.0,
+      "confidence_score": 0.85,
+      "status": "QUARANTINED"
+    }
+  },
+  {
+    "ok": false,
+    "status": "ROLLED_BACK",
+    "signature": "AttributeError:test_self_healing_target.txt:1",
+    "error": "Patch verification failed syntactically!",
+    "anomaly": {
+      "anomaly_id": "TEST-002",
+      "error_type": "AttributeError",
+      "error_message": "Method missing",
+      "target_file": "D:\\MARAA AI\\data\\test_self_healing_target.txt",
+      "line_number": 1,
+      "stack_trace": "traceback",
+      "timestamp": 0.0,
+      "confidence_score": 0.85,
+      "status": "ROLLED_BACK"
+    },
+    "timestamp": 1794163797.701833
   }
 ]

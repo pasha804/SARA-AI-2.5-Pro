@@ -132,6 +132,59 @@ function startBackend() {
     ? path.join(process.resourcesPath, 'agent', 'myraa-agent.exe')
     : path.join(APP_ROOT, 'agent_dist', 'myraa-agent', 'myraa-agent.exe');
 
+  // Dynamically resolve API keys from secrets.json and .env
+  let resolvedGeminiKey = (process.env.GEMINI_API_KEY || '').trim();
+  let resolvedApinexKey = (process.env.APINEX_API_KEY || '').trim();
+  let resolvedCleanKey = (process.env.CLEAN_API_KEY || '').trim();
+
+  const secretCandidates = [
+    path.join(dataDir, 'secrets.json'),
+    path.join(canonicalUserData, 'secrets.json'),
+    path.join(altUserData, 'secrets.json'),
+    path.join(APP_ROOT, 'secrets.json'),
+    path.join(APP_ROOT, 'data', 'secrets.json'),
+    path.join('D:/MARAA AI', 'secrets.json'),
+  ];
+  for (const sf of secretCandidates) {
+    if (fs.existsSync(sf)) {
+      try {
+        const parsed = JSON.parse(fs.readFileSync(sf, 'utf-8'));
+        if (!resolvedGeminiKey && parsed.geminiApiKey) resolvedGeminiKey = parsed.geminiApiKey.trim();
+        if (!resolvedApinexKey && parsed.apinexApiKey) resolvedApinexKey = parsed.apinexApiKey.trim();
+        if (!resolvedCleanKey && parsed.cleanApiKey) resolvedCleanKey = parsed.cleanApiKey.trim();
+      } catch {}
+    }
+  }
+
+  const envCandidates = [
+    path.join(APP_ROOT, '.env'),
+    path.join(dataDir, '.env'),
+    path.join(canonicalUserData, '.env'),
+    path.join('D:/MARAA AI', '.env'),
+  ];
+  for (const ef of envCandidates) {
+    if (fs.existsSync(ef)) {
+      try {
+        const lines = fs.readFileSync(ef, 'utf-8').split('\n');
+        for (const line of lines) {
+          const trimmed = line.trim();
+          if (!trimmed || trimmed.startsWith('#')) continue;
+          const eq = trimmed.indexOf('=');
+          if (eq > 0) {
+            const k = trimmed.slice(0, eq).trim();
+            let v = trimmed.slice(eq + 1).trim();
+            if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) {
+              v = v.slice(1, -1);
+            }
+            if (k === 'GEMINI_API_KEY' && !resolvedGeminiKey) resolvedGeminiKey = v;
+            if (k === 'APINEX_API_KEY' && !resolvedApinexKey) resolvedApinexKey = v;
+            if (k === 'CLEAN_API_KEY' && !resolvedCleanKey) resolvedCleanKey = v;
+          }
+        }
+      } catch {}
+    }
+  }
+
   const env = {
     ...process.env,
     NODE_ENV: 'production',
@@ -142,9 +195,9 @@ function startBackend() {
     MYRAA_DATA_DIR: dataDir,
     SARA_APP_ROOT: APP_ROOT,
     MYRAA_APP_ROOT: APP_ROOT,
-    GEMINI_API_KEY: process.env.GEMINI_API_KEY || "AIzaSyAp8VhLzxY7D2pvfSdQxq9sb8DPyGw866g",
-    APINEX_API_KEY: process.env.APINEX_API_KEY || "sk-apx8a660d087a150ce79fbe12593375ea9401369fdac8ed70e",
-    CLEAN_API_KEY: process.env.CLEAN_API_KEY || "cc_aA8u23hJEU4sjo1yvZ3FYUR3B1M7nF0i5H9DxUcoKVSqOY5X",
+    GEMINI_API_KEY: resolvedGeminiKey,
+    APINEX_API_KEY: resolvedApinexKey,
+    CLEAN_API_KEY: resolvedCleanKey,
     SARA_SPEECH_MODEL: "gemini-2.0-flash-exp",
   };
   if (app.isPackaged) {
@@ -276,6 +329,11 @@ function stopBackend() {
     } catch {
       /* best-effort */
     }
+  }
+  if (process.platform === 'win32') {
+    try {
+      spawn('taskkill', ['/IM', 'myraa-agent.exe', '/F']);
+    } catch {}
   }
   serverProcess = null;
 }

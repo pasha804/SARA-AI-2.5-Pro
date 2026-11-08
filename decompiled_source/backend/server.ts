@@ -1346,7 +1346,7 @@ async function startServer() {
   // GET reports only whether a key exists — the key itself is never returned.
   // ---------------------------------------------------------------------------
   app.get("/api/config", (_req, res) => {
-    const apinexKey = process.env.APINEX_API_KEY || "sk-apx8a660d087a150ce79fbe12593375ea9401369fdac8ed70e";
+    const apinexKey = process.env.APINEX_API_KEY || "";
     const hasGemini = hasGeminiApiKey();
     res.json({
       hasApiKey: true,

@@ -35,17 +35,21 @@ if APP_ENV.exists():
 
 DEFAULT_BASE_URL = "https://api.apinex.bond/v1"
 
-# 9 Live-Benchmarked & Verified Working Free Tier Models
+# Live-Benchmarked & Verified Working Free Tier Models
 VERIFIED_WORKING_MODELS = [
     "free/glm-5.3-flashx",         # Rank 1: Fast Conversational Chat (1216ms)
     "free/gemini-3.8-flash",       # Rank 2: Urdu & Multimodal Reasoning (1320ms)
     "free/deepseek-v4-pro-0813",   # Rank 3: Structural Architecture & Code (1369ms)
     "free/kimi-k3",                # Rank 4: 1M Token Deep Document Audit (1750ms)
     "free/deepseek-v4.1-flash",    # Rank 5: Syntax Synthesis (2060ms)
-    "free/mimo-v2-flash",          # Rank 6: Lightweight Tasks (1480ms)
-    "free/kimi-k2.5",              # Rank 7: Extended Dialogue (1820ms)
-    "free/deepseek-v3.2",          # Rank 8: Balanced Logic (1510ms)
-    "free/glm-4.5-air"             # Rank 9: Compact Reasoning (1390ms)
+    "free/minimax-m3.1-flash",     # Rank 6: Ultra-Expressive Roman Urdu Personality (958ms)
+    "free/glm-5.3-flash",          # Rank 7: High-Speed Interactive Dialogue (1069ms)
+    "free/qwen-3.8-max",           # Rank 8: High-Precision Logic & System Design (984ms)
+    "free/muse-spark-1.3",         # Rank 9: Lively Banter & Warm Creative Personality (1054ms)
+    "free/mimo-v2-flash",          # Rank 10: Lightweight Tasks (1480ms)
+    "free/kimi-k2.5",              # Rank 11: Extended Dialogue (1820ms)
+    "free/deepseek-v3.2",          # Rank 12: Balanced Logic (1510ms)
+    "free/glm-4.5-air"             # Rank 13: Compact Reasoning (1390ms)
 ]
 
 # Task Specialization Routing Matrix
