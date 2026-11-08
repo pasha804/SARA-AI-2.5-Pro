@@ -12,302 +12,86 @@
         background: transparent;
         overflow: hidden;
         user-select: none;
-        font-family: 'JetBrains Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
       }
       .card {
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        border-radius: 20px;
-        background: #030712;
+        border-radius: 18px;
+        background: #000000;
         border: 1.5px solid rgba(0, 240, 255, 0.6);
         box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), 0 0 45px rgba(0, 240, 255, 0.35);
         position: relative;
         overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         -webkit-app-region: drag;
-      }
-
-      /* Background Video with Cyberpunk Treatment */
-      .video-container {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-        overflow: hidden;
+        cursor: pointer;
       }
       video {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        opacity: 0.75;
-        filter: contrast(1.15) brightness(0.9) saturate(1.2);
+        display: block;
+        border-radius: 16px;
       }
-      .video-overlay {
+      .skip-pill {
         position: absolute;
-        inset: 0;
-        background: radial-gradient(circle at center, rgba(3,7,18,0.2) 0%, rgba(3,7,18,0.85) 80%, rgba(3,7,18,0.98) 100%);
-        pointer-events: none;
-      }
-      .scanlines {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
-        background-size: 100% 4px, 6px 100%;
-        pointer-events: none;
-      }
-
-      /* Cyberpunk Corner Tech Brackets */
-      .bracket {
-        position: absolute;
-        width: 16px;
-        height: 16px;
-        border-color: #00f0ff;
-        border-style: solid;
-        pointer-events: none;
-        z-index: 10;
-      }
-      .bracket-tl { top: 8px; left: 8px; border-width: 2px 0 0 2px; }
-      .bracket-tr { top: 8px; right: 8px; border-width: 2px 2px 0 0; }
-      .bracket-bl { bottom: 8px; left: 8px; border-width: 0 0 2px 2px; }
-      .bracket-br { bottom: 8px; right: 8px; border-width: 0 2px 2px 0; }
-
-      /* Top Header */
-      .splash-header {
-        position: relative;
-        z-index: 5;
-        padding: 18px 22px 10px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .brand-box {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .logo-emblem {
-        width: 44px;
-        height: 44px;
-        border-radius: 12px;
-        object-fit: cover;
-        box-shadow: 0 0 20px rgba(0, 240, 255, 0.8);
-        border: 1px solid rgba(0, 240, 255, 0.8);
-        animation: pulseLogo 2.5s ease-in-out infinite;
-      }
-      @keyframes pulseLogo {
-        0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(0,240,255,0.7)); }
-        50% { transform: scale(1.05); filter: drop-shadow(0 0 22px rgba(0,240,255,1)); }
-      }
-      .brand-text h1 {
-        font-size: 17px;
-        font-weight: 900;
-        letter-spacing: 0.18em;
-        color: #ffffff;
-        text-shadow: 0 0 16px rgba(0, 240, 255, 0.7);
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .brand-sub {
-        font-size: 9.5px;
-        color: rgba(148, 163, 184, 0.9);
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        margin-top: 2px;
-      }
-      .brand-pill {
-        font-size: 9px;
-        font-weight: 700;
-        padding: 4px 10px;
-        border-radius: 20px;
-        background: rgba(0, 240, 255, 0.15);
-        color: #00f0ff;
-        border: 1px solid rgba(0, 240, 255, 0.5);
+        bottom: 14px;
+        right: 18px;
+        font-family: 'JetBrains Mono', monospace, -apple-system, sans-serif;
+        font-size: 10px;
         letter-spacing: 0.1em;
-        text-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
-      }
-
-      /* Center Pulse Indicator */
-      .splash-center {
-        position: relative;
-        z-index: 5;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        pointer-events: none;
-      }
-      .center-badge {
-        font-size: 11px;
-        letter-spacing: 0.25em;
-        color: rgba(255, 255, 255, 0.9);
+        color: rgba(255, 255, 255, 0.6);
         background: rgba(0, 0, 0, 0.65);
-        padding: 6px 16px;
-        border-radius: 30px;
-        border: 1px solid rgba(0, 240, 255, 0.35);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
-        animation: glowBadge 3s ease-in-out infinite alternate;
+        padding: 5px 12px;
+        border-radius: 20px;
+        border: 1px solid rgba(0, 240, 255, 0.3);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s;
+        backdrop-filter: blur(8px);
       }
-      @keyframes glowBadge {
-        from { border-color: rgba(0, 240, 255, 0.35); box-shadow: 0 0 15px rgba(0,240,255,0.2); }
-        to { border-color: rgba(168, 85, 247, 0.6); box-shadow: 0 0 25px rgba(168,85,247,0.4); }
-      }
-
-      /* Bottom Footer & Progress Bar */
-      .splash-footer {
-        position: relative;
-        z-index: 5;
-        padding: 16px 24px 20px;
-        background: linear-gradient(to top, rgba(3,7,18,0.95), rgba(3,7,18,0.5) 70%, transparent);
-      }
-      .progress-label-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 8px;
-        font-size: 11px;
-      }
-      .status-text {
-        color: #38bdf8;
-        font-weight: 600;
-        letter-spacing: 0.05em;
-        text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-      .status-dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: #00f0ff;
-        box-shadow: 0 0 8px #00f0ff;
-        animation: blinkDot 1s infinite alternate;
-      }
-      @keyframes blinkDot {
-        from { opacity: 0.3; } to { opacity: 1; }
-      }
-      .progress-pct {
-        font-family: monospace;
-        font-weight: 700;
-        color: #f1f5f9;
-      }
-      .progress-track {
-        width: 100%;
-        height: 5px;
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.08);
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        position: relative;
-      }
-      .progress-fill {
-        height: 100%;
-        width: 0%;
-        background: linear-gradient(90deg, #06b6d4, #00f0ff, #a855f7);
-        box-shadow: 0 0 15px rgba(0, 240, 255, 0.9);
-        border-radius: 10px;
-        transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .meta-ticker {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 8px;
-        font-size: 9px;
-        color: rgba(148, 163, 184, 0.65);
-        letter-spacing: 0.08em;
+      .card:hover .skip-pill {
+        opacity: 0.9;
       }
     </style>
   </head>
   <body>
-    <div class="card">
-      <div class="bracket bracket-tl"></div>
-      <div class="bracket bracket-tr"></div>
-      <div class="bracket bracket-bl"></div>
-      <div class="bracket bracket-br"></div>
-
-      <!-- Cyberpunk Video Background -->
-      <div class="video-container">
-        <video id="intro-vid" src="intro_video.mp4" autoplay loop muted playsinline></video>
-        <div class="video-overlay"></div>
-        <div class="scanlines"></div>
-      </div>
-
-      <!-- Header -->
-      <div class="splash-header">
-        <div class="brand-box">
-          <img src="../dist/assets/sara_logo.png" alt="SARA Logo" class="logo-emblem" onerror="this.src='../assets/sara_logo.png'" />
-          <div class="brand-text">
-            <h1>SARA AI 3.0</h1>
-            <div class="brand-sub">ENTERPRISE PRO // AUTONOMOUS WORKSTATION</div>
-          </div>
-        </div>
-        <div class="brand-pill">V3.0.0 CORE</div>
-      </div>
-
-      <!-- Center Hologram Pulse -->
-      <div class="splash-center">
-        <div class="center-badge">⚡ QUANTUM COGNITIVE CORE ACTIVE</div>
-      </div>
-
-      <!-- Footer / Loading Progress -->
-      <div class="splash-footer">
-        <div class="progress-label-row">
-          <div class="status-text">
-            <span class="status-dot"></span>
-            <span id="status-desc">Booting Neural Synapses & APInex Cascade...</span>
-          </div>
-          <span id="pct-val" class="progress-pct">15%</span>
-        </div>
-        <div class="progress-track">
-          <div id="progress-bar" class="progress-fill"></div>
-        </div>
-        <div class="meta-ticker">
-          <span>PORT: 3344 // LOCALHOST</span>
-          <span>PASHA DEV • AUTONOMOUS AGENT ECOSYSTEM</span>
-          <span>STATUS: INITIALIZING</span>
-        </div>
-      </div>
+    <div class="card" id="splash-card" title="Click or press any key to skip">
+      <video id="intro-vid" src="intro_video.mp4" autoplay playsinline></video>
+      <div class="skip-pill">PRESS ANY KEY OR CLICK TO SKIP ⇥</div>
     </div>
 
     <script>
       (function() {
-        const stages = [
-          { pct: 20, text: 'Booting Neural Synapses & APInex Cascade...' },
-          { pct: 45, text: 'Synchronizing Win32 Fast-Path Controller (2.4ms)...' },
-          { pct: 68, text: 'Loading 223 Tools & 439 Enterprise Automations...' },
-          { pct: 86, text: 'Activating Playwright Browser Autonomy & Locators...' },
-          { pct: 96, text: 'Waking up Evelyn 3D Companion Avatar & Viewport...' },
-          { pct: 100, text: 'SARA AI 3.0 Core Ready. Launching Workstation...' }
-        ];
+        const vid = document.getElementById('intro-vid');
+        const card = document.getElementById('splash-card');
+        let finished = false;
 
-        let currentStage = 0;
-        const fillEl = document.getElementById('progress-bar');
-        const descEl = document.getElementById('status-desc');
-        const pctEl = document.getElementById('pct-val');
-
-        function advanceProgress() {
-          if (currentStage >= stages.length) return;
-          const stage = stages[currentStage];
-          if (fillEl) fillEl.style.width = stage.pct + '%';
-          if (descEl) descEl.textContent = stage.text;
-          if (pctEl) pctEl.textContent = stage.pct + '%';
-          currentStage++;
-          if (currentStage < stages.length) {
-            setTimeout(advanceProgress, 600 + Math.random() * 400);
+        function finish() {
+          if (finished) return;
+          finished = true;
+          try {
+            const { ipcRenderer } = require('electron');
+            ipcRenderer.send('splash-video-finished');
+          } catch (e) {
+            window.close();
           }
         }
 
-        setTimeout(advanceProgress, 300);
-
-        // Ensure video plays smoothly
-        const vid = document.getElementById('intro-vid');
         if (vid) {
-          vid.play().catch(() => {});
+          vid.play().catch(function() {
+            // If autoplay with sound is blocked by OS policy, mute and retry
+            vid.muted = true;
+            vid.play().catch(function() {});
+          });
+          vid.addEventListener('ended', finish);
+          vid.addEventListener('error', finish);
         }
+
+        card.addEventListener('click', finish);
+        window.addEventListener('keydown', finish);
       })();
     </script>
   </body>

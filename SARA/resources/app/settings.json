@@ -1,0 +1,12 @@
+{
+  "onboardingCompleted": true,
+  "personality": "companion",
+  "voiceName": "Kore",
+  "model": "glm-5.3",
+  "userProfile": {
+    "name": "Muhammad Mubashar",
+    "honorific": "Pasha Jan",
+    "role": "Lead Autonomous AI Engineer",
+    "language": "Roman Urdu + English"
+  }
+}

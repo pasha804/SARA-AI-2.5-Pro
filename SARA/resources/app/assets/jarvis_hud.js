@@ -1656,20 +1656,34 @@
   async function checkAndShowOnboarding() {
     const completed = localStorage.getItem('sara_onboarding_completed');
     if (completed === 'true') {
-      const savedHonorific = localStorage.getItem('sara_user_honorific');
-      if (savedHonorific) {
-        const greetingEl = document.getElementById('sara-greeting-title');
-        if (greetingEl) {
-          const now = new Date();
-          const rawH = now.getHours();
-          const timeGreet = rawH < 12 ? 'Good Morning' : rawH < 18 ? 'Good Afternoon' : 'Good Evening';
-          greetingEl.textContent = `${timeGreet}, ${savedHonorific}`;
-        }
+      const savedHonorific = localStorage.getItem('sara_user_honorific') || 'Pasha Jan';
+      const greetingEl = document.getElementById('sara-greeting-title');
+      if (greetingEl) {
+        const now = new Date();
+        const rawH = now.getHours();
+        const timeGreet = rawH < 12 ? 'Good Morning' : rawH < 18 ? 'Good Afternoon' : 'Good Evening';
+        greetingEl.textContent = `${timeGreet}, ${savedHonorific}`;
       }
       return;
     }
 
     try {
+      const configRes = await fetch('/api/config');
+      if (configRes.ok) {
+        const cfg = await configRes.json();
+        if (cfg.hasApiKey || cfg.hasGeminiKey || cfg.hasApinexKey) {
+          localStorage.setItem('sara_onboarding_completed', 'true');
+          localStorage.setItem('sara_user_honorific', 'Pasha Jan');
+          const greetingEl = document.getElementById('sara-greeting-title');
+          if (greetingEl) {
+            const now = new Date();
+            const rawH = now.getHours();
+            const timeGreet = rawH < 12 ? 'Good Morning' : rawH < 18 ? 'Good Afternoon' : 'Good Evening';
+            greetingEl.textContent = `${timeGreet}, Pasha Jan`;
+          }
+          return;
+        }
+      }
       const res = await fetch('/api/onboarding/status');
       if (res.ok) {
         const data = await res.json();

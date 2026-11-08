@@ -267,22 +267,49 @@ let splashStartTime = Date.now();
 function createSplashWindow() {
   splashStartTime = Date.now();
   splashWindow = new BrowserWindow({
-    width: 720,
-    height: 440,
+    width: 960,
+    height: 540,
     frame: false,
     transparent: true,
     resizable: false,
     center: true,
     show: true,
     alwaysOnTop: true,
-    skipTaskbar: true,
+    skipTaskbar: false,
     backgroundColor: '#00000000',
     icon: APP_ICON,
-    webPreferences: { contextIsolation: true, nodeIntegration: false },
+    webPreferences: { contextIsolation: false, nodeIntegration: true },
   });
   splashWindow.loadFile(path.join(__dirname, 'splash.html'));
   splashWindow.on('closed', () => (splashWindow = null));
 }
+
+let mainWindowReady = false;
+let splashFinished = false;
+
+function transitionToMainWindow() {
+  if (splashFinished) return;
+  splashFinished = true;
+  debugLog('transitionToMainWindow executing: showing mainWindow and closing splash');
+  if (splashWindow && !splashWindow.isDestroyed()) {
+    try { splashWindow.close(); } catch {}
+    splashWindow = null;
+  }
+  if (mainWindow && !mainWindow.isDestroyed()) {
+    mainWindow.show();
+    mainWindow.focus();
+  }
+}
+
+ipcMain.once('splash-video-finished', () => {
+  debugLog('Received splash-video-finished IPC event');
+  if (mainWindowReady) {
+    transitionToMainWindow();
+  } else {
+    // Wait until mainWindow finishes its ready-to-show
+    mainWindow?.once('ready-to-show', () => transitionToMainWindow());
+  }
+});
 
 function createMainWindow() {
   debugLog("createMainWindow called");
@@ -318,14 +345,20 @@ function createMainWindow() {
 
   mainWindow.once('ready-to-show', () => {
     debugLog('mainWindow ready-to-show event fired!');
-    const elapsed = Date.now() - splashStartTime;
-    const remaining = Math.max(0, 3200 - elapsed);
-    setTimeout(() => {
-      if (splashWindow) splashWindow.close();
-      mainWindow?.show();
-      mainWindow?.focus();
-    }, remaining);
+    mainWindowReady = true;
+    // Fallback if splash was skipped or already finished
+    if (splashFinished) {
+      transitionToMainWindow();
+    }
   });
+
+  // Maximum fallback timeout to guarantee main window shows up even if video fails
+  setTimeout(() => {
+    if (!splashFinished) {
+      debugLog('Splash fallback timer triggered (11s)');
+      transitionToMainWindow();
+    }
+  }, 11000);
 
   
   mainWindow.webContents.on('did-finish-load', () => debugLog('mainWindow did-finish-load fired!'));
