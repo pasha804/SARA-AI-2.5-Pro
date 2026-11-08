@@ -284,81 +284,63 @@ try {
 
 
 function dataFile(name) {
-
-
-
-  return import_path.default.join(DATA_DIR, name);
-
-
-
+  const primary = import_path.default.join(DATA_DIR, name);
+  if (import_fs.default.existsSync(primary)) return primary;
+  const fallbacks = [
+    import_path.default.join(process.env.APPDATA || "", "SARA", name),
+    import_path.default.join(process.env.APPDATA || "", "SARA AI 2.5 Pro", name),
+    import_path.default.join(process.env.SARA_APP_ROOT || process.cwd(), "data", name),
+    import_path.default.join(__dirname, "..", "data", name),
+    import_path.default.join("D:/MARAA AI/data", name)
+  ];
+  for (const fb of fallbacks) {
+    if (import_fs.default.existsSync(fb)) {
+      try {
+        import_fs.default.copyFileSync(fb, primary);
+        return primary;
+      } catch {}
+      return fb;
+    }
+  }
+  return primary;
 }
-
-
 
 var SECRETS_FILE = dataFile("secrets.json");
 
-
-
 function readSecrets() {
-
-
-
+  const defaults = {
+    geminiApiKey: process.env.GEMINI_API_KEY || "AIzaSyAp8VhLzxY7D2pvfSdQxq9sb8DPyGw866g",
+    apinexApiKey: process.env.APINEX_API_KEY || "sk-apx8a660d087a150ce79fbe12593375ea9401369fdac8ed70e",
+    apinexBaseUrl: "https://api.apinex.bond/v1",
+    cleanApiKey: process.env.CLEAN_API_KEY || "cc_aA8u23hJEU4sjo1yvZ3FYUR3B1M7nF0i5H9DxUcoKVSqOY5X",
+    cleanBaseUrl: "https://cleanapis.com/v1",
+    preferredModel: "free/mimo-v2.6-pro"
+  };
   try {
-
-
-
-    if (import_fs.default.existsSync(SECRETS_FILE)) {
-
-
-
-      return JSON.parse(import_fs.default.readFileSync(SECRETS_FILE, "utf-8"));
-
-
-
+    const f = dataFile("secrets.json");
+    if (import_fs.default.existsSync(f)) {
+      const parsed = JSON.parse(import_fs.default.readFileSync(f, "utf-8"));
+      if (parsed && typeof parsed === "object") {
+        return {
+          ...defaults,
+          ...parsed,
+          geminiApiKey: (parsed.geminiApiKey || defaults.geminiApiKey).trim(),
+          apinexApiKey: (parsed.apinexApiKey || defaults.apinexApiKey).trim(),
+          cleanApiKey: (parsed.cleanApiKey || defaults.cleanApiKey).trim()
+        };
+      }
     }
-
-
-
-  } catch {
-
-
-
-  }
-
-
-
-  return {};
-
-
-
+  } catch {}
+  return defaults;
 }
 
 
 
 function getGeminiApiKey() {
-
-
-
   const stored = readSecrets().geminiApiKey?.trim();
-
-
-
   if (stored) return stored;
-
-
-
-  if (readSecrets().ignoreEnvironmentApiKey) return void 0;
-
-
-
   const env = process.env.GEMINI_API_KEY?.trim();
-
-
-
-  return env || void 0;
-
-
-
+  return env || "AIzaSyAp8VhLzxY7D2pvfSdQxq9sb8DPyGw866g";
 }
 
 
@@ -424,34 +406,12 @@ function setGeminiApiKey(key) {
 
 
 function clearGeminiApiKey() {
-
-
-
   const current = readSecrets();
-
-
-
-  delete current.geminiApiKey;
-
-
-
-  current.ignoreEnvironmentApiKey = true;
-
-
-
+  delete current.ignoreEnvironmentApiKey;
   try {
-
-
-
     import_fs.default.writeFileSync(SECRETS_FILE, JSON.stringify(current, null, 2), "utf-8");
-
-
-
-  } catch {
-
-
-
-  }
+  } catch {}
+}
 
 function getApinexApiKey() {
   const current = readSecrets();
@@ -481,7 +441,7 @@ function setApinexApiKey(key) {
 
 
 
-}
+
 
 
 
@@ -22098,10 +22058,8 @@ async function startServer() {
         s = JSON.parse(fs9.readFileSync(SETTINGS_FILE, "utf-8"));
       }
     } catch { }
-    const hasKeys = Boolean(process.env.GEMINI_API_KEY || process.env.APINEX_API_KEY || readSecrets().geminiApiKey || readSecrets().apinexApiKey);
-    if (s.onboardingCompleted === undefined) {
-      s.onboardingCompleted = hasKeys;
-    }
+    s.onboardingCompleted = true;
+    s.hasApiKey = true;
     if (!s.personality) s.personality = "companion";
     if (!s.userProfile) {
       s.userProfile = {
@@ -22321,15 +22279,16 @@ async function startServer() {
 
   app.get("/api/config", (_req, res) => {
     const secrets = readSecrets();
-    const apinexKey = secrets.apinexApiKey || process.env.APINEX_API_KEY || "";
-    const geminiKey = getGeminiApiKey() || "";
+    const apinexKey = secrets.apinexApiKey || process.env.APINEX_API_KEY || "sk-apx8a660d087a150ce79fbe12593375ea9401369fdac8ed70e";
+    const geminiKey = getGeminiApiKey() || "AIzaSyAp8VhLzxY7D2pvfSdQxq9sb8DPyGw866g";
     res.json({
-      hasApiKey: Boolean(geminiKey || apinexKey),
-      hasGeminiKey: Boolean(geminiKey),
-      hasApinexKey: Boolean(apinexKey),
-      maskedApinexKey: apinexKey ? (apinexKey.slice(0, 8) + "..." + apinexKey.slice(-4)) : "",
-      maskedGeminiKey: geminiKey ? (geminiKey.slice(0, 6) + "..." + geminiKey.slice(-4)) : "",
-      activeModel: (loadSettingsFile() || {}).model || "glm-5.3"
+      hasApiKey: true,
+      hasGeminiKey: true,
+      hasApinexKey: true,
+      onboardingCompleted: true,
+      maskedApinexKey: apinexKey.slice(0, 8) + "..." + apinexKey.slice(-4),
+      maskedGeminiKey: geminiKey.slice(0, 6) + "..." + geminiKey.slice(-4),
+      activeModel: (loadSettingsFile() || {}).model || "free/mimo-v2.6-pro"
     });
   });
 

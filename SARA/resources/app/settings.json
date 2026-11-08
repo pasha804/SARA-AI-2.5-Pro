@@ -1,12 +1,20 @@
-{
-  "onboardingCompleted": true,
-  "personality": "companion",
+﻿{
+  "autoStart": false,
+  "wakeWordEnabled": true,
+  "wakePhrase": "sara",
+  "micDeviceId": "",
+  "sensitivity": 60,
+  "animations": true,
+  "characterShine": 50,
   "voiceName": "Kore",
-  "model": "glm-5.3",
+  "personality": "companion",
+  "onboardingCompleted": true,
+  "hasApiKey": true,
+  "model": "free/mimo-v2.6-pro",
+  "customPrompt": "SARA speaks fluently in warm, affectionate Roman Urdu with English technical terms. Always address Muhammad Mubashar as Pasha Jan, Mubashar Bhai, or Boss.",
   "userProfile": {
     "name": "Muhammad Mubashar",
     "honorific": "Pasha Jan",
-    "role": "Lead Autonomous AI Engineer",
-    "language": "Roman Urdu + English"
+    "role": "Lead Autonomous AI Engineer & Workstation Architect"
   }
 }

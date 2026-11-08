@@ -63,6 +63,38 @@ let isQuitting = false;
 // Single-instance guard — second launches focus the existing window instead of
 // starting a second backend on the same port.
 // ---------------------------------------------------------------------------
+// Ensure userData points to the canonical SARA user data directory
+const canonicalUserData = path.join(app.getPath('appData'), 'SARA');
+const altUserData = path.join(app.getPath('appData'), 'SARA AI 2.5 Pro');
+try { fs.mkdirSync(canonicalUserData, { recursive: true }); } catch {}
+try { fs.mkdirSync(altUserData, { recursive: true }); } catch {}
+
+function syncUserDataDirs() {
+  const jsonFiles = [
+    'secrets.json', 'settings.json', 'memories.json', 
+    'personality_state.json', 'dialogue_history.json', 
+    'contacts.json', 'working_context.json'
+  ];
+  for (const f of jsonFiles) {
+    const src1 = path.join(canonicalUserData, f);
+    const src2 = path.join(altUserData, f);
+    const srcLocal = path.join(APP_ROOT, 'data', f);
+    let best = null;
+    if (fs.existsSync(src1)) best = src1;
+    else if (fs.existsSync(src2)) best = src2;
+    else if (fs.existsSync(srcLocal)) best = srcLocal;
+
+    if (best) {
+      try {
+        if (!fs.existsSync(src1)) fs.copyFileSync(best, src1);
+        if (!fs.existsSync(src2)) fs.copyFileSync(best, src2);
+      } catch {}
+    }
+  }
+}
+try { syncUserDataDirs(); } catch {}
+app.setPath('userData', canonicalUserData);
+
 const gotSingleInstanceLock = app.requestSingleInstanceLock();
 if (!gotSingleInstanceLock) {
   app.quit();
@@ -110,6 +142,10 @@ function startBackend() {
     MYRAA_DATA_DIR: dataDir,
     SARA_APP_ROOT: APP_ROOT,
     MYRAA_APP_ROOT: APP_ROOT,
+    GEMINI_API_KEY: process.env.GEMINI_API_KEY || "AIzaSyAp8VhLzxY7D2pvfSdQxq9sb8DPyGw866g",
+    APINEX_API_KEY: process.env.APINEX_API_KEY || "sk-apx8a660d087a150ce79fbe12593375ea9401369fdac8ed70e",
+    CLEAN_API_KEY: process.env.CLEAN_API_KEY || "cc_aA8u23hJEU4sjo1yvZ3FYUR3B1M7nF0i5H9DxUcoKVSqOY5X",
+    SARA_SPEECH_MODEL: "gemini-2.0-flash-exp",
   };
   if (app.isPackaged) {
     // The desktop agent uses this exact executable for the per-user Windows

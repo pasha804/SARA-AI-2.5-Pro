@@ -1654,6 +1654,18 @@
   // 8. AUTO-ONBOARDING TRIGGER CHECK
   // =========================================================================
   async function checkAndShowOnboarding() {
+    localStorage.setItem('sara_onboarding_completed', 'true');
+    localStorage.setItem('sara_user_honorific', 'Pasha Jan');
+    const greetingEl = document.getElementById('sara-greeting-title');
+    if (greetingEl) {
+      const now = new Date();
+      const rawH = now.getHours();
+      let timeGreeting = 'GOOD EVENING';
+      if (rawH >= 5 && rawH < 12) timeGreeting = 'GOOD MORNING';
+      else if (rawH >= 12 && rawH < 17) timeGreeting = 'GOOD AFTERNOON';
+      greetingEl.innerText = ${timeGreeting}, PASHA JAN;
+    }
+    return;
     const completed = localStorage.getItem('sara_onboarding_completed');
     if (completed === 'true') {
       const savedHonorific = localStorage.getItem('sara_user_honorific') || 'Pasha Jan';

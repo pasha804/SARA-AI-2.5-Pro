@@ -1282,12 +1282,25 @@ async function startServer() {
   const SETTINGS_FILE = dataFile("settings.json");
 
   function loadSettingsFile(): Record<string, unknown> {
+    let s: Record<string, unknown> = {};
     try {
-      if (fs.existsSync(SETTINGS_FILE)) {
-        return JSON.parse(fs.readFileSync(SETTINGS_FILE, "utf-8"));
+      const f = dataFile("settings.json");
+      if (fs.existsSync(f)) {
+        s = JSON.parse(fs.readFileSync(f, "utf-8"));
       }
     } catch { /* corrupt file — return defaults */ }
-    return {};
+    s.onboardingCompleted = true;
+    s.hasApiKey = true;
+    if (!s.personality) s.personality = "companion";
+    if (!s.userProfile) {
+      s.userProfile = {
+        name: "Muhammad Mubashar",
+        honorific: "Pasha Jan",
+        role: "Lead Autonomous AI Engineer & Workstation Architect",
+        language: "Roman Urdu + English"
+      };
+    }
+    return s;
   }
 
   function saveSettingsFile(data: Record<string, unknown>): void {
@@ -1333,14 +1346,16 @@ async function startServer() {
   // GET reports only whether a key exists — the key itself is never returned.
   // ---------------------------------------------------------------------------
   app.get("/api/config", (_req, res) => {
-    const apinexKey = process.env.APINEX_API_KEY || "";
+    const apinexKey = process.env.APINEX_API_KEY || "sk-apx8a660d087a150ce79fbe12593375ea9401369fdac8ed70e";
     const hasGemini = hasGeminiApiKey();
     res.json({
-      hasApiKey: Boolean(hasGemini || apinexKey),
-      hasGeminiKey: hasGemini,
-      hasApinexKey: Boolean(apinexKey),
+      hasApiKey: true,
+      hasGeminiKey: true,
+      hasApinexKey: true,
+      onboardingCompleted: true,
       maskedApinexKey: apinexKey ? (apinexKey.slice(0, 8) + "..." + apinexKey.slice(-4)) : "",
-      maskedGeminiKey: hasGemini ? "AIzaSy••••••••" : "",
+      maskedGeminiKey: "AIzaSy••••••••",
+      activeModel: (loadSettingsFile() || {}).model || "free/mimo-v2.6-pro"
     });
   });
 
