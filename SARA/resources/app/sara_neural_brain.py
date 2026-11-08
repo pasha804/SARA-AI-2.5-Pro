@@ -6315,6 +6315,189 @@ if __name__ == "__main__":
                 print(json.dumps(res, indent=2))
             except Exception as e:
                 print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["manus_loop", "run_manus_goal", "manus"]:
+            try:
+                from sara_manus_loop import manus_agent
+                goal_text = sys.argv[2] if len(sys.argv) > 2 else "Research AI trends, create Word report, and generate presentation"
+                res = manus_agent.run_goal_loop(goal_text, open_artifacts=True)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["create_word", "word_doc"]:
+            try:
+                from sara_office_and_browser_suite import word_engine
+                t = sys.argv[2] if len(sys.argv) > 2 else "Executive Document"
+                res = word_engine.create_word_document(title=t, open_after_create=True)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["create_ppt", "ppt_deck"]:
+            try:
+                from sara_office_and_browser_suite import ppt_engine
+                t = sys.argv[2] if len(sys.argv) > 2 else "Executive Presentation"
+                res = ppt_engine.create_presentation(title=t, open_after_create=True)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["repomix", "pack_codebase"]:
+            try:
+                from sara_advanced_viral_automations import repomix_packer
+                t_path = sys.argv[2] if len(sys.argv) > 2 else None
+                res = repomix_packer.pack_repository(t_path)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["firecrawl_docs", "crawl_docs"]:
+            try:
+                from sara_advanced_viral_automations import firecrawl_crawler
+                url = sys.argv[2] if len(sys.argv) > 2 else "https://fastapi.tiangolo.com"
+                topic = sys.argv[3] if len(sys.argv) > 3 else "fastapi_docs"
+                res = firecrawl_crawler.crawl_and_compile(url, topic)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["kanban_add"]:
+            try:
+                from sara_advanced_viral_automations import vibe_kanban
+                task_title = sys.argv[2] if len(sys.argv) > 2 else "New Sprint Task"
+                res = vibe_kanban.add_task(task_title)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["caveman_compress", "compress_tokens"]:
+            try:
+                from sara_advanced_viral_automations import caveman_compressor
+                txt = sys.argv[2] if len(sys.argv) > 2 else "As an AI model I would certainly help"
+                res = caveman_compressor.compress_telegraphic(txt)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["claude_mem", "recall_mem", "memory_recall"]:
+            try:
+                from sara_viral_automations_part2 import ClaudeMemAssociativeEngine
+                engine = ClaudeMemAssociativeEngine()
+                q = sys.argv[2] if len(sys.argv) > 2 else "Pasha Dev SARA AI"
+                recalled = engine.associative_recall(q)
+                header = engine.generate_prompt_memory_injection(q)
+                print(json.dumps({"recalled": recalled, "prompt_injection": header}, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["route_model", "model_router", "smart_route"]:
+            try:
+                from sara_viral_automations_part2 import ClaudeCodeRouterEngine
+                router = ClaudeCodeRouterEngine()
+                q = sys.argv[2] if len(sys.argv) > 2 else "Refactor architecture with TDD"
+                res = router.route_request(q)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["taste_audit", "slop_linter", "design_audit"]:
+            try:
+                from sara_viral_automations_part2 import TasteSkillAestheticLinter
+                linter = TasteSkillAestheticLinter()
+                target_file = sys.argv[2] if len(sys.argv) > 2 else None
+                if target_file and Path(target_file).exists():
+                    with open(target_file, "r", encoding="utf-8", errors="ignore") as f:
+                        code = f.read()
+                    res = linter.audit_code(code)
+                else:
+                    sample_code = sys.argv[2] if len(sys.argv) > 2 else "<h1>Unleash the power of AI</h1>"
+                    res = linter.audit_code(sample_code)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["live_hud", "hud", "telemetry_hud"]:
+            try:
+                from sara_viral_automations_part2 import ClaudeLiveHUDTelemetry
+                hud = ClaudeLiveHUDTelemetry()
+                html_path = hud.generate_live_html_hud()
+                term = hud.render_terminal_hud()
+                print(term)
+                print(json.dumps({"success": True, "html_dashboard": str(html_path)}, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["switch_profile", "profile", "cc_switch"]:
+            try:
+                from sara_viral_automations_part2 import CcSwitchProfileManager
+                switcher = CcSwitchProfileManager()
+                prof_name = sys.argv[2] if len(sys.argv) > 2 else "founder"
+                res = switcher.switch_profile(prof_name)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["beads_pipeline", "run_beads"]:
+            try:
+                from sara_viral_automations_part2 import BeadsWorkflowDAGOrchestrator
+                beads_orch = BeadsWorkflowDAGOrchestrator()
+                pipe_name = sys.argv[2] if len(sys.argv) > 2 else "demo_pipeline"
+                # Create default beads if not present
+                demo_beads = [
+                    {"id": "init_context", "name": "Initialize Context", "action": "custom", "params": {"startup": "SARA AI"}, "dependencies": []},
+                    {"id": "pack_core", "name": "Pack Codebase", "action": "custom", "params": {"scope": "core"}, "dependencies": ["init_context"]}
+                ]
+                beads_orch.create_pipeline(pipe_name, demo_beads)
+                res = beads_orch.execute_pipeline(pipe_name)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["browser_open", "browser_navigate", "open_url"]:
+            try:
+                from sara_interactive_browser import browser_agent
+                u = sys.argv[2] if len(sys.argv) > 2 else "https://google.com"
+                res = browser_agent.navigate_to(u)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["browser_inspect", "inspect_form"]:
+            try:
+                from sara_interactive_browser import browser_agent
+                res = browser_agent.inspect_page_elements()
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["browser_fill", "fill_field"]:
+            try:
+                from sara_interactive_browser import browser_agent
+                sel = sys.argv[2] if len(sys.argv) > 2 else "q"
+                val = sys.argv[3] if len(sys.argv) > 3 else "Pasha Dev"
+                res = browser_agent.fill_field(sel, val)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["browser_click", "click_btn"]:
+            try:
+                from sara_interactive_browser import browser_agent
+                sel = sys.argv[2] if len(sys.argv) > 2 else "button"
+                res = browser_agent.click_element(sel)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["browser_type_active", "type_active"]:
+            try:
+                from sara_interactive_browser import SaraInteractiveBrowserAgent
+                txt = sys.argv[2] if len(sys.argv) > 2 else "Pasha Dev"
+                res = SaraInteractiveBrowserAgent.os_type_and_submit_in_browser(txt)
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["desktop_os", "os_action"]:
+            try:
+                from sara_desktop_os_controller import DesktopOSController
+                action_name = sys.argv[2] if len(sys.argv) > 2 else "system_info"
+                args_json = sys.argv[3] if len(sys.argv) > 3 else "{}"
+                import json
+                try:
+                    pargs = json.loads(args_json)
+                except Exception:
+                    pargs = {}
+                fn = getattr(DesktopOSController, action_name, None)
+                if fn:
+                    res = fn(**pargs)
+                else:
+                    res = {"ok": False, "error": f"Unknown action: {action_name}"}
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"ok": False, "error": str(e)}))
     
     else:
 

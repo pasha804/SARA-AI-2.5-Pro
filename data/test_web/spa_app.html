@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SARA SPA Async Test Platform</title>
+    <style>
+        body { font-family: sans-serif; background: #0b0f19; color: #e2e8f0; padding: 40px; }
+        .tab-btn { background: #1e293b; color: #94a3b8; border: none; padding: 10px 20px; cursor: pointer; margin-right: 5px; border-radius: 6px 6px 0 0; }
+        .tab-btn.active { background: #38bdf8; color: #0f172a; font-weight: bold; }
+        .content-box { background: #1e293b; padding: 25px; border-radius: 0 8px 8px 8px; min-height: 200px; }
+        .loading { color: #38bdf8; font-style: italic; }
+    </style>
+</head>
+<body>
+    <h1>SARA Dynamic Single Page Application (SPA)</h1>
+    <div class="tabs">
+        <button id="tab-overview" class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+        <button id="tab-data" class="tab-btn" onclick="switchTab('data')">Async Data</button>
+        <button id="tab-logs" class="tab-btn" onclick="switchTab('logs')">Live Logs</button>
+    </div>
+
+    <div id="content" class="content-box">
+        <h3>System Overview</h3>
+        <p id="desc">SARA AI 2.5 Autonomous Workstation is fully connected.</p>
+    </div>
+
+    <script>
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('tab-' + tab).classList.add('active');
+            const box = document.getElementById('content');
+            box.innerHTML = '<p class="loading">Loading asynchronous state from API...</p>';
+            
+            setTimeout(() => {
+                if (tab === 'overview') {
+                    box.innerHTML = '<h3>System Overview</h3><p id="desc">SARA AI 2.5 Autonomous Workstation is fully connected.</p>';
+                } else if (tab === 'data') {
+                    box.innerHTML = '<h3>Asynchronous Analytics</h3><ul id="data-list"><li>Node Agents: 14 Active</li><li>Task Queue: 0 Pending</li><li>Memory Index: 100% Synced</li></ul>';
+                } else if (tab === 'logs') {
+                    box.innerHTML = '<h3>Live Telemetry Stream</h3><pre id="log-box">[13:30:00] SARA Agent heartbeat OK\n[13:30:05] WebSocket 24kHz stream online</pre>';
+                }
+            }, 300);
+        }
+    </script>
+</body>
+</html>

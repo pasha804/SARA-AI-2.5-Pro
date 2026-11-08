@@ -6480,6 +6480,24 @@ if __name__ == "__main__":
                 print(json.dumps(res, indent=2))
             except Exception as e:
                 print(json.dumps({"success": False, "error": str(e)}))
+        elif cmd in ["desktop_os", "os_action"]:
+            try:
+                from sara_desktop_os_controller import DesktopOSController
+                action_name = sys.argv[2] if len(sys.argv) > 2 else "system_info"
+                args_json = sys.argv[3] if len(sys.argv) > 3 else "{}"
+                import json
+                try:
+                    pargs = json.loads(args_json)
+                except Exception:
+                    pargs = {}
+                fn = getattr(DesktopOSController, action_name, None)
+                if fn:
+                    res = fn(**pargs)
+                else:
+                    res = {"ok": False, "error": f"Unknown action: {action_name}"}
+                print(json.dumps(res, indent=2))
+            except Exception as e:
+                print(json.dumps({"ok": False, "error": str(e)}))
     
     else:
 

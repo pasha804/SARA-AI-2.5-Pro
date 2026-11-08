@@ -19633,6 +19633,138 @@ function executeNodeNativeTool(tool, args) {
 
 
 
+    if (["click", "doubleClick", "rightClick", "moveMouse", "scroll", "drag", "typeText", "pressKey", "hotkey", "getClipboard", "setClipboard", "clearClipboard", "getActiveWindow", "listVisibleWindows", "minimizeWindow", "maximizeWindow", "closeWindow", "closeApplication", "switchApplication", "volumeUp", "volumeDown", "setVolume", "muteToggle", "setBrightness", "brightnessUp", "brightnessDown", "getCursorPosition", "copySelected", "pasteClipboard", "waitForUi", "saveScreenshot", "analyzeScreenshot", "gpuInfo", "temperatureInfo", "getAutoStartStatus", "enableAutoStart", "disableAutoStart", "requestPowerAction", "executePowerAction", "systemInfo", "listFiles", "searchFiles", "renameFile", "moveFile", "deleteFile", "observeDesktopState", "readScreen", "locateText", "clickText", "convertCurrency", "changeBackground", "confirmPendingAction", "searchApiCapabilities", "refreshApiCatalogue", "checkApiProvider", "callVerifiedApiAdapter"].includes(tool)) {
+
+      try {
+
+        const osControllerScript = path.join(process.cwd(), "sara_desktop_os_controller.py");
+
+        const actionMap = {
+
+          doubleClick: "double_click",
+
+          rightClick: "right_click",
+
+          moveMouse: "move_mouse",
+
+          typeText: "type_text",
+
+          pressKey: "press_key",
+
+          getClipboard: "get_clipboard",
+
+          setClipboard: "set_clipboard",
+
+          clearClipboard: "clear_clipboard",
+
+          getActiveWindow: "get_active_window",
+
+          listVisibleWindows: "list_visible_windows",
+
+          minimizeWindow: "minimize_window",
+
+          maximizeWindow: "maximize_window",
+
+          closeWindow: "close_window",
+
+          closeApplication: "close_application",
+
+          switchApplication: "switch_application",
+
+          volumeUp: "volume_up",
+
+          volumeDown: "volume_down",
+
+          setVolume: "set_volume",
+
+          muteToggle: "mute_toggle",
+
+          setBrightness: "set_brightness",
+
+          brightnessUp: "brightness_up",
+
+          brightnessDown: "brightness_down",
+
+          getCursorPosition: "get_cursor_position",
+
+          copySelected: "copy_selected",
+
+          pasteClipboard: "paste_clipboard",
+
+          waitForUi: "wait_for_ui",
+
+          saveScreenshot: "save_screenshot",
+
+          analyzeScreenshot: "analyze_screenshot",
+
+          gpuInfo: "gpu_info",
+
+          temperatureInfo: "temperature_info",
+
+          getAutoStartStatus: "get_autostart_status",
+
+          enableAutoStart: "enable_autostart",
+
+          disableAutoStart: "disable_autostart",
+
+          requestPowerAction: "request_power_action",
+
+          executePowerAction: "execute_power_action",
+
+          systemInfo: "system_info",
+
+          listFiles: "list_files",
+
+          searchFiles: "search_files",
+
+          renameFile: "rename_file",
+
+          moveFile: "move_file",
+
+          deleteFile: "delete_file",
+
+          observeDesktopState: "observe_desktop_state",
+
+          readScreen: "read_screen",
+
+          locateText: "locate_text",
+
+          clickText: "click_text",
+
+          convertCurrency: "convert_currency",
+
+          changeBackground: "change_background",
+
+          confirmPendingAction: "confirm_pending_action",
+
+          searchApiCapabilities: "search_api_capabilities",
+
+          refreshApiCatalogue: "refresh_api_catalogue",
+
+          checkApiProvider: "check_api_provider",
+
+          callVerifiedApiAdapter: "call_verified_api_adapter"
+
+        };
+
+        const mappedAction = actionMap[tool] || tool;
+
+        const out = execFileSync("python", [osControllerScript, mappedAction, JSON.stringify(args || {})], { encoding: "utf-8", timeout: 10000 });
+
+        const parsed = JSON.parse(out.trim());
+
+        return { ok: parsed.ok !== false, result: parsed };
+
+      } catch (e) {
+
+        return { ok: false, error: e.message };
+
+      }
+
+    }
+
+
+
   } catch (err) {
 
 

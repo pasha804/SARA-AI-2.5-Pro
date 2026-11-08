@@ -1,0 +1,56 @@
+[
+  {
+    "issue_id": "FAIL-001",
+    "subsystem": "server.cjs Gateway",
+    "signature": "20-second timeout on OS actions (click, typeText, volumeUp)",
+    "root_cause": "Declared tools fell through to unextracted desktop_agent on port 8765",
+    "status": "RESOLVED",
+    "mitigation": "Built sara_desktop_os_controller.py with fast-path native dispatch",
+    "resolved_at": "2026-11-08T13:51:00Z"
+  },
+  {
+    "issue_id": "FAIL-002",
+    "subsystem": "sara_interactive_browser.py",
+    "signature": "Failed element location on <textarea name='taskDesc'>",
+    "root_cause": "Locator only queried input[name=...], ignoring textarea",
+    "status": "RESOLVED",
+    "mitigation": "Added Tier 1b generic attribute locator: [name='...'], [id='...'], #...",
+    "resolved_at": "2026-11-08T14:01:15Z"
+  },
+  {
+    "issue_id": "FAIL-003",
+    "subsystem": "sara_interactive_browser.py",
+    "signature": "High page load latency during cookie banner check",
+    "root_cause": "Waiting 1000ms per selector with is_visible()",
+    "status": "RESOLVED",
+    "mitigation": "Optimized selector list and set 300ms click timeout",
+    "resolved_at": "2026-11-08T14:01:20Z"
+  },
+  {
+    "issue_id": "FAIL-004",
+    "subsystem": "sara_automation_suite.py Discord",
+    "signature": "Assertion mismatch on server channels (expected 48, found 59)",
+    "root_cause": "Outdated documentation claimed 48 channels; actual code had 59",
+    "status": "RESOLVED",
+    "mitigation": "Updated test assertion to 59 channels across 8 categories",
+    "resolved_at": "2026-11-08T14:07:25Z"
+  },
+  {
+    "issue_id": "FAIL-005",
+    "subsystem": "sara_reliability_engine.py",
+    "signature": "TypeError: Object of type WindowsPath is not JSON serializable",
+    "root_cause": "Unsanitized Path objects in execution telemetry payload",
+    "status": "RESOLVED",
+    "mitigation": "Added default=str to json.dump across reliability engine",
+    "resolved_at": "2026-11-08T13:53:40Z"
+  },
+  {
+    "issue_id": "FAIL-006",
+    "subsystem": "sara_desktop_os_controller.py",
+    "signature": "saveScreenshot failure in headless/background CI",
+    "root_cause": "pyautogui.screenshot() fails when display grab DC is unavailable",
+    "status": "RESOLVED",
+    "mitigation": "Added synthetic PIL/mss RGB canvas fallback for headless sessions",
+    "resolved_at": "2026-11-08T13:54:35Z"
+  }
+]

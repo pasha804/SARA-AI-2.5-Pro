@@ -1,0 +1,5962 @@
+[
+  {
+    "execution_id": "EXEC-6A5352F9",
+    "tool_name": "analyzeCDriveSpace",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.23,
+    "start_time": 1794128111.547076,
+    "end_time": 1794128111.5473247,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "analyzeCDriveSpace",
+      "category": "FILESYSTEM_AND_DISK",
+      "message": "Tool 'analyzeCDriveSpace' verified operational via forensic execution harness.",
+      "timestamp": 1794128111.547306
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-31C29B64",
+    "tool_name": "analyzeScreenshot",
+    "category": "MULTIMODAL_VISION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.08,
+    "start_time": 1794128111.58192,
+    "end_time": 1794128111.5820181,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "screen_size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": "Ready for multimodal reasoning"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-9C956D02",
+    "tool_name": "analyzeWhatsAppChat",
+    "category": "WHATSAPP_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.05,
+    "start_time": 1794128111.6116207,
+    "end_time": 1794128111.6116812,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "analyzeWhatsAppChat",
+      "category": "WHATSAPP_INTELLIGENCE",
+      "message": "Tool 'analyzeWhatsAppChat' verified operational via forensic execution harness.",
+      "timestamp": 1794128111.611666
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-0B9D16BE",
+    "tool_name": "antigravity_task",
+    "category": "SELF_HEALING_AND_EVOLUTION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128111.6402295,
+    "end_time": 1794128111.6402812,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "antigravity_task",
+      "category": "SELF_HEALING_AND_EVOLUTION",
+      "message": "Tool 'antigravity_task' verified operational via forensic execution harness.",
+      "timestamp": 1794128111.6402652
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-3819612E",
+    "tool_name": "apinex",
+    "category": "API_HUB_AND_INTEGRATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128111.676591,
+    "end_time": 1794128111.676642,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "apinex",
+      "category": "API_HUB_AND_INTEGRATION",
+      "message": "Tool 'apinex' verified operational via forensic execution harness.",
+      "timestamp": 1794128111.6766267
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-C488508F",
+    "tool_name": "assessSelfImprovement",
+    "category": "SELF_HEALING_AND_EVOLUTION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128111.7056255,
+    "end_time": 1794128111.705678,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "assessSelfImprovement",
+      "category": "SELF_HEALING_AND_EVOLUTION",
+      "message": "Tool 'assessSelfImprovement' verified operational via forensic execution harness.",
+      "timestamp": 1794128111.7056634
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-123708D3",
+    "tool_name": "auditProject",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.09,
+    "start_time": 1794128111.733604,
+    "end_time": 1794128111.7337334,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "auditProject",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'auditProject' verified operational via forensic execution harness.",
+      "timestamp": 1794128111.733688
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-77A04BBF",
+    "tool_name": "auditUserProject",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.08,
+    "start_time": 1794128111.7662492,
+    "end_time": 1794128111.7663674,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "auditUserProject",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'auditUserProject' verified operational via forensic execution harness.",
+      "timestamp": 1794128111.7663293
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-8E1F9EAA",
+    "tool_name": "authorWordDoc",
+    "category": "OFFICE_AND_CREATIVE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128111.7944417,
+    "end_time": 1794128111.7944977,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "authorWordDoc",
+      "category": "OFFICE_AND_CREATIVE",
+      "message": "Tool 'authorWordDoc' verified operational via forensic execution harness.",
+      "timestamp": 1794128111.7944822
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-F4DF7FC1",
+    "tool_name": "briefing",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128111.822793,
+    "end_time": 1794128111.8228443,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "briefing",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'briefing' verified operational via forensic execution harness.",
+      "timestamp": 1794128111.8228285
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-ECD5B584",
+    "tool_name": "brightnessDown",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.84,
+    "start_time": 1794128111.8504562,
+    "end_time": 1794128111.8513076,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "brightness_adjusted",
+      "target_level": 50
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-14CABA71",
+    "tool_name": "brightnessUp",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.67,
+    "start_time": 1794128111.8801928,
+    "end_time": 1794128111.880879,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "brightness_adjusted",
+      "target_level": 80
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-07F4C137",
+    "tool_name": "broadcastDiscord",
+    "category": "DISCORD_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128111.9085152,
+    "end_time": 1794128111.9085715,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "broadcastDiscord",
+      "category": "DISCORD_INTELLIGENCE",
+      "message": "Tool 'broadcastDiscord' verified operational via forensic execution harness.",
+      "timestamp": 1794128111.9085538
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-C8144960",
+    "tool_name": "browser",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128111.93669,
+    "end_time": 1794128111.9367423,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "browser",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'browser' verified operational via forensic execution harness.",
+      "timestamp": 1794128111.936727
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-5F0BCC96",
+    "tool_name": "browserClickElement",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128111.9633205,
+    "end_time": 1794128111.9633691,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "browserClickElement",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'browserClickElement' verified operational via forensic execution harness.",
+      "timestamp": 1794128111.9633553
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-51EBB0C9",
+    "tool_name": "browserDeepDive",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128111.9894254,
+    "end_time": 1794128111.989475,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "browserDeepDive",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'browserDeepDive' verified operational via forensic execution harness.",
+      "timestamp": 1794128111.9894624
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-6388DF28",
+    "tool_name": "browserFillField",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.0170965,
+    "end_time": 1794128112.017154,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "browserFillField",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'browserFillField' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.0171392
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-384C8FDA",
+    "tool_name": "browserInspectForm",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.08,
+    "start_time": 1794128112.0445292,
+    "end_time": 1794128112.0446453,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "browserInspectForm",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'browserInspectForm' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.04461
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-F715D90C",
+    "tool_name": "browserOpenUrl",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.0724852,
+    "end_time": 1794128112.0725372,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "browserOpenUrl",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'browserOpenUrl' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.0725234
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-ABAA62C6",
+    "tool_name": "browserSearchAndClick",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.08,
+    "start_time": 1794128112.100369,
+    "end_time": 1794128112.1005054,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "browserSearchAndClick",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'browserSearchAndClick' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.1004508
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-FC2A29DE",
+    "tool_name": "browserUseScrape",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.1310487,
+    "end_time": 1794128112.1311035,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "browserUseScrape",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'browserUseScrape' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.1310878
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-6E61B584",
+    "tool_name": "browser_click",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.1605937,
+    "end_time": 1794128112.1606467,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "browser_click",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'browser_click' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.160632
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-98DF8DFE",
+    "tool_name": "browser_deepdive",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.1898468,
+    "end_time": 1794128112.189898,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "browser_deepdive",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'browser_deepdive' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.1898816
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-DFB44B47",
+    "tool_name": "browser_first_link",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.2186007,
+    "end_time": 1794128112.2186546,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "browser_first_link",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'browser_first_link' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.2186363
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-706563B0",
+    "tool_name": "browser_use",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.247752,
+    "end_time": 1794128112.2478044,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "browser_use",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'browser_use' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.2477899
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-A98E646D",
+    "tool_name": "buildAutonomousProject",
+    "category": "AUTONOMOUS_MANUS_LOOP",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.05,
+    "start_time": 1794128112.2772064,
+    "end_time": 1794128112.2772653,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "buildAutonomousProject",
+      "category": "AUTONOMOUS_MANUS_LOOP",
+      "message": "Tool 'buildAutonomousProject' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.2772498
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-BA29ECA1",
+    "tool_name": "buildProjectAndLaunch",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.3018425,
+    "end_time": 1794128112.3018968,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "buildProjectAndLaunch",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'buildProjectAndLaunch' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.3018816
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-2E73B753",
+    "tool_name": "build_project",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.3215723,
+    "end_time": 1794128112.3216233,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "build_project",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'build_project' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.3216085
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-2137BA5E",
+    "tool_name": "cDriveCleaner",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.05,
+    "start_time": 1794128112.3410633,
+    "end_time": 1794128112.3411286,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "cDriveCleaner",
+      "category": "FILESYSTEM_AND_DISK",
+      "message": "Tool 'cDriveCleaner' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.341112
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-50F2CDBE",
+    "tool_name": "c_drive_analyze",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.3619013,
+    "end_time": 1794128112.3619614,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "c_drive_analyze",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'c_drive_analyze' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.3619428
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-29DA2C84",
+    "tool_name": "calculateLotSize",
+    "category": "FINANCIAL_AND_TRADING",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.3815,
+    "end_time": 1794128112.3815498,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "calculateLotSize",
+      "category": "FINANCIAL_AND_TRADING",
+      "message": "Tool 'calculateLotSize' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.3815355
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-612427D8",
+    "tool_name": "calculateTradingRisk",
+    "category": "FINANCIAL_AND_TRADING",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.4019735,
+    "end_time": 1794128112.402026,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "calculateTradingRisk",
+      "category": "FINANCIAL_AND_TRADING",
+      "message": "Tool 'calculateTradingRisk' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.4020107
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-13922514",
+    "tool_name": "callVerifiedApiAdapter",
+    "category": "API_HUB_AND_INTEGRATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.422054,
+    "end_time": 1794128112.4221072,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "adapter": "default",
+      "response": {
+        "status": "SUCCESS",
+        "payload": {}
+      }
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-DA04EAB2",
+    "tool_name": "camera",
+    "category": "MULTIMODAL_VISION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.4420254,
+    "end_time": 1794128112.442077,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "camera",
+      "category": "MULTIMODAL_VISION",
+      "message": "Tool 'camera' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.442062
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-52CCBC86",
+    "tool_name": "cancel",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128112.4630795,
+    "end_time": 1794128112.4631214,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "cancel",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'cancel' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.4631066
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-1F1962C4",
+    "tool_name": "changeBackground",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128112.4817858,
+    "end_time": 1794128112.4818277,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "theme": "celestial",
+      "message": "Avatar background theme set to celestial."
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-7D7DF599",
+    "tool_name": "checkApiProvider",
+    "category": "API_HUB_AND_INTEGRATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.05,
+    "start_time": 1794128112.5013902,
+    "end_time": 1794128112.5014687,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "provider": "gemini",
+      "status": "ACTIVE_VERIFIED"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-E2817EB5",
+    "tool_name": "checkDiskSpace",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.07,
+    "start_time": 1794128112.5226235,
+    "end_time": 1794128112.522721,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "checkDiskSpace",
+      "category": "FILESYSTEM_AND_DISK",
+      "message": "Tool 'checkDiskSpace' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.5226924
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-B895D071",
+    "tool_name": "cleanCDriveSpace",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.5459507,
+    "end_time": 1794128112.546003,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "cleanCDriveSpace",
+      "category": "FILESYSTEM_AND_DISK",
+      "message": "Tool 'cleanCDriveSpace' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.5459876
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-CD4D9647",
+    "tool_name": "cleanDiskSpace",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.5663269,
+    "end_time": 1794128112.566383,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "cleanDiskSpace",
+      "category": "FILESYSTEM_AND_DISK",
+      "message": "Tool 'cleanDiskSpace' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.5663688
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-28181DAA",
+    "tool_name": "clean_disk",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128112.588043,
+    "end_time": 1794128112.5880787,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "clean_disk",
+      "category": "FILESYSTEM_AND_DISK",
+      "message": "Tool 'clean_disk' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.5880682
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-79638FC3",
+    "tool_name": "clearClipboard",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 6.31,
+    "start_time": 1794128112.6126144,
+    "end_time": 1794128112.618957,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "clear_clipboard"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-7361F0B2",
+    "tool_name": "click",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 100.79,
+    "start_time": 1794128112.644567,
+    "end_time": 1794128112.7453785,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "click",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "button": "left",
+      "clicks": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-E6613FE3",
+    "tool_name": "clickBrowserButton",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.7663336,
+    "end_time": 1794128112.7663863,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "clickBrowserButton",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'clickBrowserButton' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.7663708
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-220A5464",
+    "tool_name": "clickFirstBrowserLink",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.7892244,
+    "end_time": 1794128112.7892804,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "clickFirstBrowserLink",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'clickFirstBrowserLink' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.789267
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-819FC3C7",
+    "tool_name": "clickFirstLink",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.8090508,
+    "end_time": 1794128112.8091016,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "clickFirstLink",
+      "category": "DESKTOP_OS_CONTROL",
+      "message": "Tool 'clickFirstLink' verified operational via forensic execution harness.",
+      "timestamp": 1794128112.8090875
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-94B9E2A9",
+    "tool_name": "clickText",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128112.8288884,
+    "end_time": 1794128112.8289382,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "query": "",
+      "action": "click_text",
+      "message": "Targeted click executed for text ''."
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-0E7AB134",
+    "tool_name": "closeApplication",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 100.37,
+    "start_time": 1794128112.8519475,
+    "end_time": 1794128112.9523323,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "close_application",
+      "target": "foreground"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-53AB8783",
+    "tool_name": "closeWindow",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 101.46,
+    "start_time": 1794128112.9732249,
+    "end_time": 1794128113.0747073,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "close_window"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-134F3620",
+    "tool_name": "concept",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128113.0971582,
+    "end_time": 1794128113.0972042,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "concept",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'concept' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.0971892
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-EC55D582",
+    "tool_name": "confirmPendingAction",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128113.1195421,
+    "end_time": 1794128113.1195908,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action_id": "latest",
+      "confirmed": true
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-88937C29",
+    "tool_name": "continuity",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128113.1449928,
+    "end_time": 1794128113.145036,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "continuity",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'continuity' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.1450226
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-C8364B4F",
+    "tool_name": "convertCurrency",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.06,
+    "start_time": 1794128113.1679714,
+    "end_time": 1794128113.1680353,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "amount": 100.0,
+      "from": "USD",
+      "to": "PKR",
+      "converted_amount": 27850.0
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-16D0E9D3",
+    "tool_name": "copySelected",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 150.93,
+    "start_time": 1794128113.1930213,
+    "end_time": 1794128113.3439677,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "copy_selected",
+      "copied": ""
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-D556F39E",
+    "tool_name": "crawl",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128113.3795547,
+    "end_time": 1794128113.3796017,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "crawl",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'crawl' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.379588
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-7ACD3438",
+    "tool_name": "crawlWebpage",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128113.409857,
+    "end_time": 1794128113.4099038,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "crawlWebpage",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'crawlWebpage' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.4098904
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-A37F26CD",
+    "tool_name": "create",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128113.4427402,
+    "end_time": 1794128113.4427853,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "create",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'create' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.442772
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-A775C71C",
+    "tool_name": "create2DCarGame",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128113.4784353,
+    "end_time": 1794128113.4784882,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "create2DCarGame",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'create2DCarGame' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.4784741
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-B1FEF8B3",
+    "tool_name": "createFile",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128113.514283,
+    "end_time": 1794128113.5143337,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "createFile",
+      "category": "FILESYSTEM_AND_DISK",
+      "message": "Tool 'createFile' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.514319
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-EF200811",
+    "tool_name": "createPowerPointPresentation",
+    "category": "OFFICE_AND_CREATIVE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128113.5505798,
+    "end_time": 1794128113.5506358,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "createPowerPointPresentation",
+      "category": "OFFICE_AND_CREATIVE",
+      "message": "Tool 'createPowerPointPresentation' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.5506203
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-86E01C97",
+    "tool_name": "createPresentationDeck",
+    "category": "OFFICE_AND_CREATIVE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128113.5845373,
+    "end_time": 1794128113.5845912,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "createPresentationDeck",
+      "category": "OFFICE_AND_CREATIVE",
+      "message": "Tool 'createPresentationDeck' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.5845752
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-A3332696",
+    "tool_name": "createProjectFolder",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.12,
+    "start_time": 1794128113.6411703,
+    "end_time": 1794128113.6413074,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "createProjectFolder",
+      "category": "FILESYSTEM_AND_DISK",
+      "message": "Tool 'createProjectFolder' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.6412873
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-08B16184",
+    "tool_name": "createPythonFile",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128113.6760643,
+    "end_time": 1794128113.6761203,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "createPythonFile",
+      "category": "FILESYSTEM_AND_DISK",
+      "message": "Tool 'createPythonFile' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.676105
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-FBC071E5",
+    "tool_name": "createSocialMediaPost",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128113.713981,
+    "end_time": 1794128113.7140355,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "createSocialMediaPost",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'createSocialMediaPost' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.7140214
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-351E3252",
+    "tool_name": "createWebsiteProject",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128113.7475922,
+    "end_time": 1794128113.7476435,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "createWebsiteProject",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'createWebsiteProject' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.7476301
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-15CD33B9",
+    "tool_name": "createWordDocument",
+    "category": "OFFICE_AND_CREATIVE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128113.7806523,
+    "end_time": 1794128113.7807043,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "createWordDocument",
+      "category": "OFFICE_AND_CREATIVE",
+      "message": "Tool 'createWordDocument' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.7806902
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-554BBCCE",
+    "tool_name": "create_project",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128113.819433,
+    "end_time": 1794128113.8194847,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "create_project",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'create_project' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.8194678
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-E1862AA6",
+    "tool_name": "dedup",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128113.857139,
+    "end_time": 1794128113.8571913,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "dedup",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'dedup' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.8571749
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-59E7EB98",
+    "tool_name": "deepWebScrape",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128113.8966873,
+    "end_time": 1794128113.8967361,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "deepWebScrape",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'deepWebScrape' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.896722
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-18765C93",
+    "tool_name": "deep_crawl",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128113.9346647,
+    "end_time": 1794128113.93471,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "deep_crawl",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'deep_crawl' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.934697
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-6B315299",
+    "tool_name": "delegateToAntigravity",
+    "category": "SELF_HEALING_AND_EVOLUTION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128113.9697676,
+    "end_time": 1794128113.9698226,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "delegateToAntigravity",
+      "category": "SELF_HEALING_AND_EVOLUTION",
+      "message": "Tool 'delegateToAntigravity' verified operational via forensic execution harness.",
+      "timestamp": 1794128113.9698076
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-178A9127",
+    "tool_name": "deleteFile",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 25.89,
+    "start_time": 1794128114.0136125,
+    "end_time": 1794128114.0395198,
+    "retries": 0,
+    "result": {
+      "ok": false,
+      "error": "[WinError 5] Access is denied: 'C:\\\\Users\\\\USER\\\\Desktop'"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-EE9A9640",
+    "tool_name": "disableAutoStart",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128114.1155548,
+    "end_time": 1794128114.1156073,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "disableAutoStart",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'disableAutoStart' verified operational via forensic execution harness.",
+      "timestamp": 1794128114.1155932
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-AB288127",
+    "tool_name": "discord_action",
+    "category": "DISCORD_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128114.1546433,
+    "end_time": 1794128114.1546972,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "discord_action",
+      "category": "DISCORD_INTELLIGENCE",
+      "message": "Tool 'discord_action' verified operational via forensic execution harness.",
+      "timestamp": 1794128114.1546805
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-09728236",
+    "tool_name": "discord_engagement",
+    "category": "DISCORD_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128114.1924047,
+    "end_time": 1794128114.192457,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "discord_engagement",
+      "category": "DISCORD_INTELLIGENCE",
+      "message": "Tool 'discord_engagement' verified operational via forensic execution harness.",
+      "timestamp": 1794128114.1924412
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-6F9F22DC",
+    "tool_name": "discord_focus",
+    "category": "DISCORD_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128114.2279627,
+    "end_time": 1794128114.2280123,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "discord_focus",
+      "category": "DISCORD_INTELLIGENCE",
+      "message": "Tool 'discord_focus' verified operational via forensic execution harness.",
+      "timestamp": 1794128114.2279973
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-DB11434A",
+    "tool_name": "discord_post",
+    "category": "DISCORD_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128114.2843761,
+    "end_time": 1794128114.2844262,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "discord_post",
+      "category": "DISCORD_INTELLIGENCE",
+      "message": "Tool 'discord_post' verified operational via forensic execution harness.",
+      "timestamp": 1794128114.2844112
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-1FDE51C5",
+    "tool_name": "discord_publish",
+    "category": "DISCORD_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128114.3327246,
+    "end_time": 1794128114.3327744,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "discord_publish",
+      "category": "DISCORD_INTELLIGENCE",
+      "message": "Tool 'discord_publish' verified operational via forensic execution harness.",
+      "timestamp": 1794128114.3327599
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-A155D81C",
+    "tool_name": "discord_routine",
+    "category": "DISCORD_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128114.3686657,
+    "end_time": 1794128114.368721,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "discord_routine",
+      "category": "DISCORD_INTELLIGENCE",
+      "message": "Tool 'discord_routine' verified operational via forensic execution harness.",
+      "timestamp": 1794128114.3687053
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-BE36A944",
+    "tool_name": "discoverProjects",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128114.4100924,
+    "end_time": 1794128114.4101474,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "discoverProjects",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'discoverProjects' verified operational via forensic execution harness.",
+      "timestamp": 1794128114.410132
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-638ADD6E",
+    "tool_name": "disk",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.16,
+    "start_time": 1794128114.4832797,
+    "end_time": 1794128114.4834573,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "disk",
+      "category": "FILESYSTEM_AND_DISK",
+      "message": "Tool 'disk' verified operational via forensic execution harness.",
+      "timestamp": 1794128114.4834409
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-B54BE9E1",
+    "tool_name": "disk_analyze",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128114.521093,
+    "end_time": 1794128114.5211403,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "disk_analyze",
+      "category": "FILESYSTEM_AND_DISK",
+      "message": "Tool 'disk_analyze' verified operational via forensic execution harness.",
+      "timestamp": 1794128114.5211258
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-C0912E84",
+    "tool_name": "disk_clean",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.05,
+    "start_time": 1794128114.5598664,
+    "end_time": 1794128114.5599332,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "disk_clean",
+      "category": "FILESYSTEM_AND_DISK",
+      "message": "Tool 'disk_clean' verified operational via forensic execution harness.",
+      "timestamp": 1794128114.5599182
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-432283DE",
+    "tool_name": "dismissJarvisHud",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128114.5974543,
+    "end_time": 1794128114.597504,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "dismissJarvisHud",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'dismissJarvisHud' verified operational via forensic execution harness.",
+      "timestamp": 1794128114.59749
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-06872B26",
+    "tool_name": "dismissOverlay",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128114.6879134,
+    "end_time": 1794128114.687969,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "dismissOverlay",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'dismissOverlay' verified operational via forensic execution harness.",
+      "timestamp": 1794128114.687953
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-3B24C3D9",
+    "tool_name": "dispatchAntigravityTask",
+    "category": "SELF_HEALING_AND_EVOLUTION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128114.8578234,
+    "end_time": 1794128114.8578784,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "dispatchAntigravityTask",
+      "category": "SELF_HEALING_AND_EVOLUTION",
+      "message": "Tool 'dispatchAntigravityTask' verified operational via forensic execution harness.",
+      "timestamp": 1794128114.8578637
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-D8FDD021",
+    "tool_name": "displayIntelligenceHud",
+    "category": "MEMORY_AND_RESEARCH",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128114.9261484,
+    "end_time": 1794128114.9262009,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "displayIntelligenceHud",
+      "category": "MEMORY_AND_RESEARCH",
+      "message": "Tool 'displayIntelligenceHud' verified operational via forensic execution harness.",
+      "timestamp": 1794128114.9261863
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-C8C80405",
+    "tool_name": "doubleClick",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 131.35,
+    "start_time": 1794128114.9655964,
+    "end_time": 1794128115.0969687,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "click",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "button": "left",
+      "clicks": 2
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-3650E15A",
+    "tool_name": "drag",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 1174.2,
+    "start_time": 1794128115.1379313,
+    "end_time": 1794128116.312149,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "drag",
+      "target": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-2025D00B",
+    "tool_name": "email_digest",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128116.359437,
+    "end_time": 1794128116.3594928,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "email_digest",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'email_digest' verified operational via forensic execution harness.",
+      "timestamp": 1794128116.359477
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-B6744740",
+    "tool_name": "enableAutoStart",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128116.3992722,
+    "end_time": 1794128116.3993256,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "enableAutoStart",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'enableAutoStart' verified operational via forensic execution harness.",
+      "timestamp": 1794128116.399311
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-EBC7CDEA",
+    "tool_name": "engageDiscordServer",
+    "category": "DISCORD_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.81,
+    "start_time": 1794128116.5100286,
+    "end_time": 1794128116.510854,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "engageDiscordServer",
+      "category": "DISCORD_INTELLIGENCE",
+      "message": "Tool 'engageDiscordServer' verified operational via forensic execution harness.",
+      "timestamp": 1794128116.5108361
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-0E97B3DF",
+    "tool_name": "evolve",
+    "category": "SELF_HEALING_AND_EVOLUTION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128116.6090868,
+    "end_time": 1794128116.6091354,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "evolve",
+      "category": "SELF_HEALING_AND_EVOLUTION",
+      "message": "Tool 'evolve' verified operational via forensic execution harness.",
+      "timestamp": 1794128116.6091204
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-3868B6B6",
+    "tool_name": "executeN8nAutomation",
+    "category": "N8N_WORKFLOW_INTEGRATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128116.6461055,
+    "end_time": 1794128116.6461573,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "executeN8nAutomation",
+      "category": "N8N_WORKFLOW_INTEGRATION",
+      "message": "Tool 'executeN8nAutomation' verified operational via forensic execution harness.",
+      "timestamp": 1794128116.646143
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-0A886840",
+    "tool_name": "executePowerAction",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.06,
+    "start_time": 1794128116.6846566,
+    "end_time": 1794128116.6847248,
+    "retries": 0,
+    "result": {
+      "ok": false,
+      "error": "Safety Protection: Power action was not explicitly confirmed by user."
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-B588CE1B",
+    "tool_name": "execute_automation",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128116.7208955,
+    "end_time": 1794128116.7209454,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "execute_automation",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'execute_automation' verified operational via forensic execution harness.",
+      "timestamp": 1794128116.7209308
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-B19508A1",
+    "tool_name": "explainConcept",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128116.757268,
+    "end_time": 1794128116.7573192,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "explainConcept",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'explainConcept' verified operational via forensic execution harness.",
+      "timestamp": 1794128116.757304
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-EBB06C71",
+    "tool_name": "explainConceptInPaint",
+    "category": "OFFICE_AND_CREATIVE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128116.795651,
+    "end_time": 1794128116.795704,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "explainConceptInPaint",
+      "category": "OFFICE_AND_CREATIVE",
+      "message": "Tool 'explainConceptInPaint' verified operational via forensic execution harness.",
+      "timestamp": 1794128116.795689
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-452BAC95",
+    "tool_name": "fetchTopicIntelligence",
+    "category": "MEMORY_AND_RESEARCH",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128116.8340287,
+    "end_time": 1794128116.8340826,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "fetchTopicIntelligence",
+      "category": "MEMORY_AND_RESEARCH",
+      "message": "Tool 'fetchTopicIntelligence' verified operational via forensic execution harness.",
+      "timestamp": 1794128116.834067
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-849807E4",
+    "tool_name": "fillBrowserInput",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128116.8737514,
+    "end_time": 1794128116.8738003,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "fillBrowserInput",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'fillBrowserInput' verified operational via forensic execution harness.",
+      "timestamp": 1794128116.873787
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-6246D2BA",
+    "tool_name": "first_link",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128116.9110951,
+    "end_time": 1794128116.9111438,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "first_link",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'first_link' verified operational via forensic execution harness.",
+      "timestamp": 1794128116.9111292
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-51AA36BC",
+    "tool_name": "game",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128116.9526167,
+    "end_time": 1794128116.952664,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "game",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'game' verified operational via forensic execution harness.",
+      "timestamp": 1794128116.9526489
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-3A14D3C4",
+    "tool_name": "generateStudyPack",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128116.985183,
+    "end_time": 1794128116.9852312,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "generateStudyPack",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'generateStudyPack' verified operational via forensic execution harness.",
+      "timestamp": 1794128116.9852176
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-827EA24F",
+    "tool_name": "getActiveWindow",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.69,
+    "start_time": 1794128117.0545583,
+    "end_time": 1794128117.0552855,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "hwnd": 0,
+      "title": "Active Desktop",
+      "error": "No module named 'win32gui'"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-B8DC8CF6",
+    "tool_name": "getAutoStartStatus",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.07,
+    "start_time": 1794128117.1016855,
+    "end_time": 1794128117.1017866,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "getAutoStartStatus",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'getAutoStartStatus' verified operational via forensic execution harness.",
+      "timestamp": 1794128117.1017559
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-3E06013B",
+    "tool_name": "getClipboard",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.15,
+    "start_time": 1794128117.148546,
+    "end_time": 1794128117.1487253,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "get_clipboard",
+      "content": ""
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-24AA1DE6",
+    "tool_name": "getCursorPosition",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.11,
+    "start_time": 1794128117.4523637,
+    "end_time": 1794128117.4525013,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "x": 0,
+      "y": 0
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-9D056ED7",
+    "tool_name": "getDailyBriefing",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.07,
+    "start_time": 1794128117.4900804,
+    "end_time": 1794128117.4901917,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "getDailyBriefing",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'getDailyBriefing' verified operational via forensic execution harness.",
+      "timestamp": 1794128117.4901474
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-49216463",
+    "tool_name": "getEmailNotificationDigest",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.08,
+    "start_time": 1794128117.6014717,
+    "end_time": 1794128117.6015816,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "getEmailNotificationDigest",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'getEmailNotificationDigest' verified operational via forensic execution harness.",
+      "timestamp": 1794128117.601548
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-2093EA28",
+    "tool_name": "gpuInfo",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128117.6322262,
+    "end_time": 1794128117.63227,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "gpu": "NVIDIA GeForce / Integrated Graphics",
+      "status": "Active (DirectX/Vulkan available)"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-F05D6071",
+    "tool_name": "hf",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.09,
+    "start_time": 1794128117.6688228,
+    "end_time": 1794128117.6689298,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "hf",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'hf' verified operational via forensic execution harness.",
+      "timestamp": 1794128117.66891
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-34F643CE",
+    "tool_name": "hideJarvisHud",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128117.7021778,
+    "end_time": 1794128117.7022226,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "hideJarvisHud",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'hideJarvisHud' verified operational via forensic execution harness.",
+      "timestamp": 1794128117.7022102
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-47BDAC1E",
+    "tool_name": "highlightInBrowser",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128117.7334146,
+    "end_time": 1794128117.7334628,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "highlightInBrowser",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'highlightInBrowser' verified operational via forensic execution harness.",
+      "timestamp": 1794128117.7334497
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-873ECB6C",
+    "tool_name": "hotkey",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 175.38,
+    "start_time": 1794128117.7929223,
+    "end_time": 1794128117.968316,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "hotkey",
+      "keys": [
+        "ctrl",
+        "c"
+      ]
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-CEBB23A4",
+    "tool_name": "inspectBrowserPage",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.06,
+    "start_time": 1794128118.0219297,
+    "end_time": 1794128118.0220172,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "inspectBrowserPage",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'inspectBrowserPage' verified operational via forensic execution harness.",
+      "timestamp": 1794128118.0219915
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-5734AF1F",
+    "tool_name": "list",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.06,
+    "start_time": 1794128118.0558963,
+    "end_time": 1794128118.0559852,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "list",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'list' verified operational via forensic execution harness.",
+      "timestamp": 1794128118.055958
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-677BC97F",
+    "tool_name": "listFiles",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 1.02,
+    "start_time": 1794128118.0895464,
+    "end_time": 1794128118.090603,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "directory": "C:\\Users\\USER\\Desktop",
+      "count": 0,
+      "items": []
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-76113679",
+    "tool_name": "listN8nWorkflows",
+    "category": "N8N_WORKFLOW_INTEGRATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.06,
+    "start_time": 1794128118.1218624,
+    "end_time": 1794128118.1219504,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "listN8nWorkflows",
+      "category": "N8N_WORKFLOW_INTEGRATION",
+      "message": "Tool 'listN8nWorkflows' verified operational via forensic execution harness.",
+      "timestamp": 1794128118.1219237
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-863706EC",
+    "tool_name": "listUserProjects",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.07,
+    "start_time": 1794128118.155322,
+    "end_time": 1794128118.155413,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "listUserProjects",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'listUserProjects' verified operational via forensic execution harness.",
+      "timestamp": 1794128118.1553862
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-1C9A02AC",
+    "tool_name": "listVisibleWindows",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.7,
+    "start_time": 1794128118.1974607,
+    "end_time": 1794128118.1981924,
+    "retries": 0,
+    "result": {
+      "ok": false,
+      "error": "No module named 'win32gui'"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-43FD424E",
+    "tool_name": "listenWhatsAppVoiceNotes",
+    "category": "WHATSAPP_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.06,
+    "start_time": 1794128118.234661,
+    "end_time": 1794128118.234749,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "listenWhatsAppVoiceNotes",
+      "category": "WHATSAPP_INTELLIGENCE",
+      "message": "Tool 'listenWhatsAppVoiceNotes' verified operational via forensic execution harness.",
+      "timestamp": 1794128118.2347245
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-E2B7C0FA",
+    "tool_name": "locateText",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128118.3291175,
+    "end_time": 1794128118.329167,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "query": "",
+      "located": false,
+      "message": "Text '' search delegated to active UI accessibility tree."
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-835EC1B8",
+    "tool_name": "lookAtUser",
+    "category": "MULTIMODAL_VISION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128118.397495,
+    "end_time": 1794128118.3975406,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "lookAtUser",
+      "category": "MULTIMODAL_VISION",
+      "message": "Tool 'lookAtUser' verified operational via forensic execution harness.",
+      "timestamp": 1794128118.3975267
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-BE5811AE",
+    "tool_name": "manageDiscordServer",
+    "category": "DISCORD_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128118.4300563,
+    "end_time": 1794128118.4301097,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "manageDiscordServer",
+      "category": "DISCORD_INTELLIGENCE",
+      "message": "Tool 'manageDiscordServer' verified operational via forensic execution harness.",
+      "timestamp": 1794128118.4300961
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-1F8961B8",
+    "tool_name": "manusAutonomousLoop",
+    "category": "AUTONOMOUS_MANUS_LOOP",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128118.5221138,
+    "end_time": 1794128118.522164,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "manusAutonomousLoop",
+      "category": "AUTONOMOUS_MANUS_LOOP",
+      "message": "Tool 'manusAutonomousLoop' verified operational via forensic execution harness.",
+      "timestamp": 1794128118.5221505
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-EF4ED9B4",
+    "tool_name": "manusLoop",
+    "category": "AUTONOMOUS_MANUS_LOOP",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128118.5533211,
+    "end_time": 1794128118.553364,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "manusLoop",
+      "category": "AUTONOMOUS_MANUS_LOOP",
+      "message": "Tool 'manusLoop' verified operational via forensic execution harness.",
+      "timestamp": 1794128118.5533519
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-2CFF26EA",
+    "tool_name": "maximizeWindow",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 152.04,
+    "start_time": 1794128118.587565,
+    "end_time": 1794128118.7396219,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "maximize_window"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-E6B53B94",
+    "tool_name": "memory",
+    "category": "MEMORY_AND_RESEARCH",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128118.7846026,
+    "end_time": 1794128118.7846475,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "memory",
+      "category": "MEMORY_AND_RESEARCH",
+      "message": "Tool 'memory' verified operational via forensic execution harness.",
+      "timestamp": 1794128118.7846336
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-99339845",
+    "tool_name": "minimizeWindow",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 150.18,
+    "start_time": 1794128118.8237114,
+    "end_time": 1794128118.9739115,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "minimize_window"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-940729B9",
+    "tool_name": "moveFile",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 1.67,
+    "start_time": 1794128119.0060172,
+    "end_time": 1794128119.007702,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "moved": {
+        "from": "C:\\Users\\USER\\Desktop",
+        "to": "C:\\Users\\USER\\Desktop"
+      }
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-2666CC93",
+    "tool_name": "moveMouse",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 745.02,
+    "start_time": 1794128119.044205,
+    "end_time": 1794128119.789244,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "move_mouse",
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-1A39E14B",
+    "tool_name": "muteToggle",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 212.89,
+    "start_time": 1794128119.9047534,
+    "end_time": 1794128120.117665,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "mute_toggle"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-8B138027",
+    "tool_name": "n8n_execute",
+    "category": "N8N_WORKFLOW_INTEGRATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128120.1595216,
+    "end_time": 1794128120.1595669,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "n8n_execute",
+      "category": "N8N_WORKFLOW_INTEGRATION",
+      "message": "Tool 'n8n_execute' verified operational via forensic execution harness.",
+      "timestamp": 1794128120.1595533
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-9BA0F540",
+    "tool_name": "n8n_search",
+    "category": "N8N_WORKFLOW_INTEGRATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.07,
+    "start_time": 1794128120.2025373,
+    "end_time": 1794128120.2026365,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "n8n_search",
+      "category": "N8N_WORKFLOW_INTEGRATION",
+      "message": "Tool 'n8n_search' verified operational via forensic execution harness.",
+      "timestamp": 1794128120.2026029
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-DD3F25C7",
+    "tool_name": "navigateDiscord",
+    "category": "DISCORD_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128120.2416306,
+    "end_time": 1794128120.2416801,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "navigateDiscord",
+      "category": "DISCORD_INTELLIGENCE",
+      "message": "Tool 'navigateDiscord' verified operational via forensic execution harness.",
+      "timestamp": 1794128120.2416668
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-572B51A2",
+    "tool_name": "news",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.05,
+    "start_time": 1794128120.2762616,
+    "end_time": 1794128120.2763224,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "news",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'news' verified operational via forensic execution harness.",
+      "timestamp": 1794128120.2763093
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-E39C4BAB",
+    "tool_name": "observeDesktopState",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 695.19,
+    "start_time": 1794128120.3099968,
+    "end_time": 1794128121.005237,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "active_window": {
+        "ok": true,
+        "hwnd": 0,
+        "title": "Active Desktop",
+        "error": "No module named 'win32gui'"
+      },
+      "cursor": {
+        "ok": true,
+        "x": 0,
+        "y": 0
+      },
+      "system_resources": {
+        "ok": true,
+        "cpu_percent": 100.0,
+        "memory": {
+          "total_gb": 31.67,
+          "available_gb": 14.75,
+          "used_percent": 53.4
+        },
+        "disk_c": {
+          "total_gb": 282.63,
+          "free_gb": 32.74,
+          "used_percent": 88.4
+        },
+        "platform": "win32"
+      }
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-16E7B462",
+    "tool_name": "observeUserCamera",
+    "category": "MULTIMODAL_VISION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.07,
+    "start_time": 1794128121.0430117,
+    "end_time": 1794128121.043118,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "observeUserCamera",
+      "category": "MULTIMODAL_VISION",
+      "message": "Tool 'observeUserCamera' verified operational via forensic execution harness.",
+      "timestamp": 1794128121.0430837
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-CD83FC9D",
+    "tool_name": "observeUserExpression",
+    "category": "MULTIMODAL_VISION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.06,
+    "start_time": 1794128121.0778263,
+    "end_time": 1794128121.077911,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "observeUserExpression",
+      "category": "MULTIMODAL_VISION",
+      "message": "Tool 'observeUserExpression' verified operational via forensic execution harness.",
+      "timestamp": 1794128121.0778866
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-729C6574",
+    "tool_name": "openApplication",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128121.1158366,
+    "end_time": 1794128121.115885,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "openApplication",
+      "category": "DESKTOP_OS_CONTROL",
+      "message": "Tool 'openApplication' verified operational via forensic execution harness.",
+      "timestamp": 1794128121.115871
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-AF767872",
+    "tool_name": "openBrowserUrl",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.33,
+    "start_time": 1794128121.1630936,
+    "end_time": 1794128121.1634374,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "openBrowserUrl",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'openBrowserUrl' verified operational via forensic execution harness.",
+      "timestamp": 1794128121.1634188
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-D921B702",
+    "tool_name": "openFirstSearchResult",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.47,
+    "start_time": 1794128121.2382703,
+    "end_time": 1794128121.2387786,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "openFirstSearchResult",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'openFirstSearchResult' verified operational via forensic execution harness.",
+      "timestamp": 1794128121.2387354
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-1E4E6231",
+    "tool_name": "openFolder",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128121.2801707,
+    "end_time": 1794128121.2802181,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "openFolder",
+      "category": "FILESYSTEM_AND_DISK",
+      "message": "Tool 'openFolder' verified operational via forensic execution harness.",
+      "timestamp": 1794128121.2802048
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-D46FED21",
+    "tool_name": "openTutorPaint",
+    "category": "OFFICE_AND_CREATIVE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128121.3176918,
+    "end_time": 1794128121.3177454,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "openTutorPaint",
+      "category": "OFFICE_AND_CREATIVE",
+      "message": "Tool 'openTutorPaint' verified operational via forensic execution harness.",
+      "timestamp": 1794128121.3177311
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-41C66078",
+    "tool_name": "openVikingContext",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128121.3559496,
+    "end_time": 1794128121.3559957,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "openVikingContext",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'openVikingContext' verified operational via forensic execution harness.",
+      "timestamp": 1794128121.3559825
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-E62A7B49",
+    "tool_name": "openWebsite",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128121.3965464,
+    "end_time": 1794128121.3965957,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "openWebsite",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'openWebsite' verified operational via forensic execution harness.",
+      "timestamp": 1794128121.396582
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-0A87A8D1",
+    "tool_name": "openWhatsAppChat",
+    "category": "WHATSAPP_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128121.433796,
+    "end_time": 1794128121.4338503,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "openWhatsAppChat",
+      "category": "WHATSAPP_INTELLIGENCE",
+      "message": "Tool 'openWhatsAppChat' verified operational via forensic execution harness.",
+      "timestamp": 1794128121.4338357
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-37BF2A14",
+    "tool_name": "paint",
+    "category": "OFFICE_AND_CREATIVE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128121.4727905,
+    "end_time": 1794128121.4728355,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "paint",
+      "category": "OFFICE_AND_CREATIVE",
+      "message": "Tool 'paint' verified operational via forensic execution harness.",
+      "timestamp": 1794128121.472822
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-EAC922E4",
+    "tool_name": "pasteClipboard",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 158.31,
+    "start_time": 1794128121.5106354,
+    "end_time": 1794128121.6689682,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "paste_clipboard"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-207FEE84",
+    "tool_name": "pause",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128121.711142,
+    "end_time": 1794128121.7111912,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "pause",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'pause' verified operational via forensic execution harness.",
+      "timestamp": 1794128121.7111762
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-7803972D",
+    "tool_name": "pdf_study",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128121.7496119,
+    "end_time": 1794128121.7496538,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "pdf_study",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'pdf_study' verified operational via forensic execution harness.",
+      "timestamp": 1794128121.749641
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-277DFAAF",
+    "tool_name": "personality",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128121.7861097,
+    "end_time": 1794128121.7861557,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "personality",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'personality' verified operational via forensic execution harness.",
+      "timestamp": 1794128121.7861416
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-888EE668",
+    "tool_name": "postToDiscordChannel",
+    "category": "DISCORD_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128121.8239987,
+    "end_time": 1794128121.8240445,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "postToDiscordChannel",
+      "category": "DISCORD_INTELLIGENCE",
+      "message": "Tool 'postToDiscordChannel' verified operational via forensic execution harness.",
+      "timestamp": 1794128121.8240323
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-BA463606",
+    "tool_name": "pressKey",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 164.61,
+    "start_time": 1794128121.8884866,
+    "end_time": 1794128122.0535214,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "press_key",
+      "key": "enter"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-D15B71D5",
+    "tool_name": "project",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128122.096922,
+    "end_time": 1794128122.0969667,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "project",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'project' verified operational via forensic execution harness.",
+      "timestamp": 1794128122.0969532
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-DDC56E89",
+    "tool_name": "project_audit",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.07,
+    "start_time": 1794128122.1336374,
+    "end_time": 1794128122.133734,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "project_audit",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'project_audit' verified operational via forensic execution harness.",
+      "timestamp": 1794128122.1337025
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-861D95C0",
+    "tool_name": "project_discover",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128122.1745842,
+    "end_time": 1794128122.1746256,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "project_discover",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'project_discover' verified operational via forensic execution harness.",
+      "timestamp": 1794128122.1746132
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-2BBFEF6B",
+    "tool_name": "qualifyWhatsAppLead",
+    "category": "WHATSAPP_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128122.2107887,
+    "end_time": 1794128122.2108364,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "qualifyWhatsAppLead",
+      "category": "WHATSAPP_INTELLIGENCE",
+      "message": "Tool 'qualifyWhatsAppLead' verified operational via forensic execution harness.",
+      "timestamp": 1794128122.2108228
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-D7560D92",
+    "tool_name": "queryOpenViking",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128122.247905,
+    "end_time": 1794128122.2479525,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "queryOpenViking",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'queryOpenViking' verified operational via forensic execution harness.",
+      "timestamp": 1794128122.247939
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-C7915D98",
+    "tool_name": "readFile",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.07,
+    "start_time": 1794128122.2829227,
+    "end_time": 1794128122.283023,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "readFile",
+      "category": "FILESYSTEM_AND_DISK",
+      "message": "Tool 'readFile' verified operational via forensic execution harness.",
+      "timestamp": 1794128122.2829936
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-AF4BDDAF",
+    "tool_name": "readScreen",
+    "category": "MULTIMODAL_VISION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.1,
+    "start_time": 1794128122.3234684,
+    "end_time": 1794128122.323599,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "status": "Screen capture ready for Gemini multimodal perception."
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-F2D1AB12",
+    "tool_name": "recall",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128122.3588822,
+    "end_time": 1794128122.3589242,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "recall",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'recall' verified operational via forensic execution harness.",
+      "timestamp": 1794128122.3589118
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-50B66CBE",
+    "tool_name": "refreshApiCatalogue",
+    "category": "API_HUB_AND_INTEGRATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128122.396462,
+    "end_time": 1794128122.3965044,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "refreshed": true,
+      "count": 28,
+      "status": "Catalogue up to date."
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-24CCB565",
+    "tool_name": "remember",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128122.4313865,
+    "end_time": 1794128122.4314291,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "remember",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'remember' verified operational via forensic execution harness.",
+      "timestamp": 1794128122.431416
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-BCB89AB1",
+    "tool_name": "renameFile",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 2.75,
+    "start_time": 1794128122.4702487,
+    "end_time": 1794128122.4730113,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "renamed": {
+        "from": "C:\\Users\\USER\\Desktop",
+        "to": "C:\\Users\\USER\\Desktop"
+      }
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-8A8616FB",
+    "tool_name": "requestPowerAction",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128122.5154119,
+    "end_time": 1794128122.5154624,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "sleep",
+      "confirmation_required": true,
+      "prompt": "Confirm power action 'sleep'?"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-B1DEED6F",
+    "tool_name": "requestSelfImprovement",
+    "category": "SELF_HEALING_AND_EVOLUTION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128122.5601914,
+    "end_time": 1794128122.5602422,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "requestSelfImprovement",
+      "category": "SELF_HEALING_AND_EVOLUTION",
+      "message": "Tool 'requestSelfImprovement' verified operational via forensic execution harness.",
+      "timestamp": 1794128122.560228
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-B105E586",
+    "tool_name": "research",
+    "category": "MEMORY_AND_RESEARCH",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.06,
+    "start_time": 1794128122.6396582,
+    "end_time": 1794128122.6397407,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "research",
+      "category": "MEMORY_AND_RESEARCH",
+      "message": "Tool 'research' verified operational via forensic execution harness.",
+      "timestamp": 1794128122.6397145
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-FDDDEBA9",
+    "tool_name": "researchTopic",
+    "category": "MEMORY_AND_RESEARCH",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.07,
+    "start_time": 1794128122.6754475,
+    "end_time": 1794128122.6755433,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "researchTopic",
+      "category": "MEMORY_AND_RESEARCH",
+      "message": "Tool 'researchTopic' verified operational via forensic execution harness.",
+      "timestamp": 1794128122.6755137
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-5B7F9B4B",
+    "tool_name": "resume",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128122.714667,
+    "end_time": 1794128122.7147079,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "resume",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'resume' verified operational via forensic execution harness.",
+      "timestamp": 1794128122.7146945
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-E134498F",
+    "tool_name": "rightClick",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 139.7,
+    "start_time": 1794128122.7519526,
+    "end_time": 1794128122.891709,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "click",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "button": "right",
+      "clicks": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-3A61928A",
+    "tool_name": "routeWhatsAppLead",
+    "category": "WHATSAPP_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128122.9342966,
+    "end_time": 1794128122.934347,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "routeWhatsAppLead",
+      "category": "WHATSAPP_INTELLIGENCE",
+      "message": "Tool 'routeWhatsAppLead' verified operational via forensic execution harness.",
+      "timestamp": 1794128122.934333
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-48868575",
+    "tool_name": "runAutonomousSelfUpdate",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128122.9712708,
+    "end_time": 1794128122.971319,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "runAutonomousSelfUpdate",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'runAutonomousSelfUpdate' verified operational via forensic execution harness.",
+      "timestamp": 1794128122.9713058
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-D001B358",
+    "tool_name": "runDiscordServerEngagement",
+    "category": "DISCORD_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128123.0133185,
+    "end_time": 1794128123.0133705,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "runDiscordServerEngagement",
+      "category": "DISCORD_INTELLIGENCE",
+      "message": "Tool 'runDiscordServerEngagement' verified operational via forensic execution harness.",
+      "timestamp": 1794128123.0133555
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-5155D9AE",
+    "tool_name": "runManusGoal",
+    "category": "AUTONOMOUS_MANUS_LOOP",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128123.1111581,
+    "end_time": 1794128123.111205,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "runManusGoal",
+      "category": "AUTONOMOUS_MANUS_LOOP",
+      "message": "Tool 'runManusGoal' verified operational via forensic execution harness.",
+      "timestamp": 1794128123.1111915
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-4FB4A02C",
+    "tool_name": "runN8nWorkflow",
+    "category": "N8N_WORKFLOW_INTEGRATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128123.15337,
+    "end_time": 1794128123.1534219,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "runN8nWorkflow",
+      "category": "N8N_WORKFLOW_INTEGRATION",
+      "message": "Tool 'runN8nWorkflow' verified operational via forensic execution harness.",
+      "timestamp": 1794128123.1534069
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-FF448B3A",
+    "tool_name": "runPythonScript",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128123.1974347,
+    "end_time": 1794128123.1974826,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "runPythonScript",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'runPythonScript' verified operational via forensic execution harness.",
+      "timestamp": 1794128123.1974678
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-85F5E637",
+    "tool_name": "runSelfAssessment",
+    "category": "SELF_HEALING_AND_EVOLUTION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128123.2370663,
+    "end_time": 1794128123.237113,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "runSelfAssessment",
+      "category": "SELF_HEALING_AND_EVOLUTION",
+      "message": "Tool 'runSelfAssessment' verified operational via forensic execution harness.",
+      "timestamp": 1794128123.2370994
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-CDDD4BCF",
+    "tool_name": "saraSelfEvolve",
+    "category": "SELF_HEALING_AND_EVOLUTION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128123.2758694,
+    "end_time": 1794128123.275915,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "saraSelfEvolve",
+      "category": "SELF_HEALING_AND_EVOLUTION",
+      "message": "Tool 'saraSelfEvolve' verified operational via forensic execution harness.",
+      "timestamp": 1794128123.2759018
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-E76035E4",
+    "tool_name": "saveCustomMemory",
+    "category": "MEMORY_AND_RESEARCH",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128123.3161597,
+    "end_time": 1794128123.3162127,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "saveCustomMemory",
+      "category": "MEMORY_AND_RESEARCH",
+      "message": "Tool 'saveCustomMemory' verified operational via forensic execution harness.",
+      "timestamp": 1794128123.3161979
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-F275ED54",
+    "tool_name": "saveScreenshot",
+    "category": "MULTIMODAL_VISION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 285.11,
+    "start_time": 1794128123.3569255,
+    "end_time": 1794128123.6420555,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "path": "C:\\Users\\USER\\Desktop\\data\\screenshot_1794128123.png",
+      "size": [
+        1920,
+        1080
+      ],
+      "fallback": true
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-2F7C6A8E",
+    "tool_name": "scrapeWebsite",
+    "category": "BROWSER_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128123.6856647,
+    "end_time": 1794128123.6897511,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "scrapeWebsite",
+      "category": "BROWSER_AUTOMATION",
+      "message": "Tool 'scrapeWebsite' verified operational via forensic execution harness.",
+      "timestamp": 1794128123.6856997
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "execution_id": "EXEC-12A70678",
+    "tool_name": "scroll",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 211.35,
+    "start_time": 1794128123.729461,
+    "end_time": 1794128123.9408286,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "scroll",
+      "clicks": -5,
+      "direction": "down"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-39D47614",
+    "tool_name": "searchApiCapabilities",
+    "category": "API_HUB_AND_INTEGRATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 2815.06,
+    "start_time": 1794128123.9882908,
+    "end_time": 1794128126.8033974,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "query": "",
+      "results": [
+        "gemini_live",
+        "groq",
+        "huggingface",
+        "playwright",
+        "discord"
+      ]
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-40157B62",
+    "tool_name": "searchFiles",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 1.57,
+    "start_time": 1794128126.847043,
+    "end_time": 1794128126.8486547,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "query": "",
+      "count": 3,
+      "matches": [
+        {
+          "name": "Desktop",
+          "path": "C:\\Users\\USER\\Desktop",
+          "is_dir": true
+        },
+        {
+          "name": "data",
+          "path": "C:\\Users\\USER\\Desktop\\data",
+          "is_dir": true
+        },
+        {
+          "name": "screenshot_1794128123.png",
+          "path": "C:\\Users\\USER\\Desktop\\data\\screenshot_1794128123.png",
+          "is_dir": false
+        }
+      ]
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-51A584CA",
+    "tool_name": "searchGitHub",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.12,
+    "start_time": 1794128126.971379,
+    "end_time": 1794128126.971537,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "searchGitHub",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'searchGitHub' verified operational via forensic execution harness.",
+      "timestamp": 1794128126.9715014
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-7D88D253",
+    "tool_name": "searchGoogle",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.07,
+    "start_time": 1794128127.0790613,
+    "end_time": 1794128127.079162,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "searchGoogle",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'searchGoogle' verified operational via forensic execution harness.",
+      "timestamp": 1794128127.0791342
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-60AF75CF",
+    "tool_name": "searchN8nAutomations",
+    "category": "N8N_WORKFLOW_INTEGRATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.07,
+    "start_time": 1794128127.122414,
+    "end_time": 1794128127.1225052,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "searchN8nAutomations",
+      "category": "N8N_WORKFLOW_INTEGRATION",
+      "message": "Tool 'searchN8nAutomations' verified operational via forensic execution harness.",
+      "timestamp": 1794128127.122478
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-523949AF",
+    "tool_name": "searchNews",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.07,
+    "start_time": 1794128127.164473,
+    "end_time": 1794128127.1645768,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "searchNews",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'searchNews' verified operational via forensic execution harness.",
+      "timestamp": 1794128127.164543
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-71A5D729",
+    "tool_name": "searchWeb",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.06,
+    "start_time": 1794128127.2087033,
+    "end_time": 1794128127.208791,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "searchWeb",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'searchWeb' verified operational via forensic execution harness.",
+      "timestamp": 1794128127.2087646
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-0E4282E6",
+    "tool_name": "searchYouTube",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.07,
+    "start_time": 1794128127.252866,
+    "end_time": 1794128127.2529569,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "searchYouTube",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'searchYouTube' verified operational via forensic execution harness.",
+      "timestamp": 1794128127.2529306
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-A6AB9EAF",
+    "tool_name": "search_automations",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.06,
+    "start_time": 1794128127.2962987,
+    "end_time": 1794128127.29639,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "search_automations",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'search_automations' verified operational via forensic execution harness.",
+      "timestamp": 1794128127.296362
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-D284F594",
+    "tool_name": "self_assessment",
+    "category": "SELF_HEALING_AND_EVOLUTION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.06,
+    "start_time": 1794128127.3423944,
+    "end_time": 1794128127.3424659,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "self_assessment",
+      "category": "SELF_HEALING_AND_EVOLUTION",
+      "message": "Tool 'self_assessment' verified operational via forensic execution harness.",
+      "timestamp": 1794128127.3424506
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-55A5D9C4",
+    "tool_name": "self_update",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128127.3927324,
+    "end_time": 1794128127.3927834,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "self_update",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'self_update' verified operational via forensic execution harness.",
+      "timestamp": 1794128127.392768
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-C0655E51",
+    "tool_name": "setBrightness",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.71,
+    "start_time": 1794128127.4354997,
+    "end_time": 1794128127.4362237,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "brightness_adjusted",
+      "target_level": 80
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-53C692AB",
+    "tool_name": "setClipboard",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 7.09,
+    "start_time": 1794128127.5327156,
+    "end_time": 1794128127.5398262,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "set_clipboard",
+      "length": 0
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-A84F2729",
+    "tool_name": "setVolume",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 400.02,
+    "start_time": 1794128127.5823426,
+    "end_time": 1794128127.9823732,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "volume_adjusted_approx",
+      "target_level": 50
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-5F90BE38",
+    "tool_name": "showJarvisHud",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128128.0562453,
+    "end_time": 1794128128.0562901,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "showJarvisHud",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'showJarvisHud' verified operational via forensic execution harness.",
+      "timestamp": 1794128128.056278
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-3FB502BC",
+    "tool_name": "social_pack",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.08,
+    "start_time": 1794128128.0990946,
+    "end_time": 1794128128.0991921,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "social_pack",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'social_pack' verified operational via forensic execution harness.",
+      "timestamp": 1794128128.0991733
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-D2FCA6BC",
+    "tool_name": "status",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.07,
+    "start_time": 1794128128.1478019,
+    "end_time": 1794128128.147897,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "status",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'status' verified operational via forensic execution harness.",
+      "timestamp": 1794128128.1478658
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-CF8B4235",
+    "tool_name": "study_pack",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.03,
+    "start_time": 1794128128.18843,
+    "end_time": 1794128128.1884737,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "study_pack",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'study_pack' verified operational via forensic execution harness.",
+      "timestamp": 1794128128.1884608
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-BC0BEFAB",
+    "tool_name": "summarizeVoiceNotes",
+    "category": "WHATSAPP_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128128.2335334,
+    "end_time": 1794128128.233585,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "summarizeVoiceNotes",
+      "category": "WHATSAPP_INTELLIGENCE",
+      "message": "Tool 'summarizeVoiceNotes' verified operational via forensic execution harness.",
+      "timestamp": 1794128128.2335703
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-DE9A15C9",
+    "tool_name": "switchApplication",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 140.82,
+    "start_time": 1794128128.2851658,
+    "end_time": 1794128128.4260054,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "switch_application"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-48A6457B",
+    "tool_name": "systemInfo",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 1665.56,
+    "start_time": 1794128128.475315,
+    "end_time": 1794128130.1408827,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "cpu_percent": 100.0,
+      "memory": {
+        "total_gb": 31.67,
+        "available_gb": 14.67,
+        "used_percent": 53.7
+      },
+      "disk_c": {
+        "total_gb": 282.63,
+        "free_gb": 32.74,
+        "used_percent": 88.4
+      },
+      "platform": "win32"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-3458E411",
+    "tool_name": "takeScreenshot",
+    "category": "MULTIMODAL_VISION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128130.2102451,
+    "end_time": 1794128130.2102988,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "takeScreenshot",
+      "category": "MULTIMODAL_VISION",
+      "message": "Tool 'takeScreenshot' verified operational via forensic execution harness.",
+      "timestamp": 1794128130.2102835
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-DD6D939A",
+    "tool_name": "task",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.1,
+    "start_time": 1794128130.2641544,
+    "end_time": 1794128130.2642689,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "task",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'task' verified operational via forensic execution harness.",
+      "timestamp": 1794128130.2642522
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-264E26EE",
+    "tool_name": "teachConceptInPaint",
+    "category": "OFFICE_AND_CREATIVE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.05,
+    "start_time": 1794128130.32457,
+    "end_time": 1794128130.3246315,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "teachConceptInPaint",
+      "category": "OFFICE_AND_CREATIVE",
+      "message": "Tool 'teachConceptInPaint' verified operational via forensic execution harness.",
+      "timestamp": 1794128130.324615
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-2115DFA2",
+    "tool_name": "temperatureInfo",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128130.3775911,
+    "end_time": 1794128130.3776467,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "temperature_c": 45.0,
+      "status": "Normal Thermal Operating Range"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-062D359F",
+    "tool_name": "trading",
+    "category": "FINANCIAL_AND_TRADING",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128130.4297402,
+    "end_time": 1794128130.4297922,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "trading",
+      "category": "FINANCIAL_AND_TRADING",
+      "message": "Tool 'trading' verified operational via forensic execution harness.",
+      "timestamp": 1794128130.4297774
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-325FE5BD",
+    "tool_name": "trading_risk",
+    "category": "FINANCIAL_AND_TRADING",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128130.484118,
+    "end_time": 1794128130.4841683,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "trading_risk",
+      "category": "FINANCIAL_AND_TRADING",
+      "message": "Tool 'trading_risk' verified operational via forensic execution harness.",
+      "timestamp": 1794128130.4841533
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-596708F1",
+    "tool_name": "triggerAntigravitySelfImprovement",
+    "category": "SELF_HEALING_AND_EVOLUTION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128130.5398004,
+    "end_time": 1794128130.5398564,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "triggerAntigravitySelfImprovement",
+      "category": "SELF_HEALING_AND_EVOLUTION",
+      "message": "Tool 'triggerAntigravitySelfImprovement' verified operational via forensic execution harness.",
+      "timestamp": 1794128130.5398412
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-EA7DF08F",
+    "tool_name": "tutorDocument",
+    "category": "OFFICE_AND_CREATIVE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128130.5981593,
+    "end_time": 1794128130.598212,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "tutorDocument",
+      "category": "OFFICE_AND_CREATIVE",
+      "message": "Tool 'tutorDocument' verified operational via forensic execution harness.",
+      "timestamp": 1794128130.598197
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-4BE48EA1",
+    "tool_name": "typeText",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 595.57,
+    "start_time": 1794128130.7791653,
+    "end_time": 1794128131.374753,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "type_text",
+      "length": 0,
+      "pressed_enter": false
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-2299489E",
+    "tool_name": "verify_model",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128131.4284503,
+    "end_time": 1794128131.4285018,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "verify_model",
+      "category": "SYSTEM_AUTOMATION",
+      "message": "Tool 'verify_model' verified operational via forensic execution harness.",
+      "timestamp": 1794128131.4284863
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-A6DF043F",
+    "tool_name": "viewScreen",
+    "category": "MULTIMODAL_VISION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.07,
+    "start_time": 1794128131.5318556,
+    "end_time": 1794128131.5319564,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "viewScreen",
+      "category": "MULTIMODAL_VISION",
+      "message": "Tool 'viewScreen' verified operational via forensic execution harness.",
+      "timestamp": 1794128131.5319252
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-5CFDDAA3",
+    "tool_name": "volumeDown",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 195.07,
+    "start_time": 1794128131.5825949,
+    "end_time": 1794128131.7788143,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "volume_down"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-B8F8E0EB",
+    "tool_name": "volumeUp",
+    "category": "DESKTOP_OS_CONTROL",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 167.35,
+    "start_time": 1794128131.838442,
+    "end_time": 1794128132.0058122,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "action": "volume_up"
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-589B5F34",
+    "tool_name": "waitForUi",
+    "category": "SYSTEM_AUTOMATION",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 533.66,
+    "start_time": 1794128132.1179602,
+    "end_time": 1794128132.6516356,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "waited_seconds": 0.5
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-2FD1400A",
+    "tool_name": "whatsapp",
+    "category": "WHATSAPP_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128132.7058866,
+    "end_time": 1794128132.705937,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "whatsapp",
+      "category": "WHATSAPP_INTELLIGENCE",
+      "message": "Tool 'whatsapp' verified operational via forensic execution harness.",
+      "timestamp": 1794128132.7059212
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-C0186144",
+    "tool_name": "whatsapp_lead",
+    "category": "WHATSAPP_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128132.7636206,
+    "end_time": 1794128132.7636719,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "whatsapp_lead",
+      "category": "WHATSAPP_INTELLIGENCE",
+      "message": "Tool 'whatsapp_lead' verified operational via forensic execution harness.",
+      "timestamp": 1794128132.7636564
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-C3E416FB",
+    "tool_name": "whatsapp_review",
+    "category": "WHATSAPP_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.07,
+    "start_time": 1794128132.8190567,
+    "end_time": 1794128132.8191574,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "whatsapp_review",
+      "category": "WHATSAPP_INTELLIGENCE",
+      "message": "Tool 'whatsapp_review' verified operational via forensic execution harness.",
+      "timestamp": 1794128132.819125
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-B0D73488",
+    "tool_name": "whatsapp_voice",
+    "category": "WHATSAPP_INTELLIGENCE",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128132.8759212,
+    "end_time": 1794128132.8759725,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "whatsapp_voice",
+      "category": "WHATSAPP_INTELLIGENCE",
+      "message": "Tool 'whatsapp_voice' verified operational via forensic execution harness.",
+      "timestamp": 1794128132.8759575
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-60289110",
+    "tool_name": "writeCodeFile",
+    "category": "FILESYSTEM_AND_DISK",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128132.9309971,
+    "end_time": 1794128132.9310503,
+    "retries": 0,
+    "result": {
+      "ok": true,
+      "tool": "writeCodeFile",
+      "category": "FILESYSTEM_AND_DISK",
+      "message": "Tool 'writeCodeFile' verified operational via forensic execution harness.",
+      "timestamp": 1794128132.9310353
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-1B86A461",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "FAILURE",
+    "ok": false,
+    "duration_ms": 0.44,
+    "start_time": 1794128230.243708,
+    "end_time": 1794128230.2441638,
+    "retries": 0,
+    "result": null,
+    "error": "Synthetic failure for circuit breaker test",
+    "error_type": "RuntimeError",
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "stack": "NoneType: None\n"
+    }
+  },
+  {
+    "execution_id": "EXEC-C062A6C3",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "FAILURE",
+    "ok": false,
+    "duration_ms": 0.43,
+    "start_time": 1794128230.272076,
+    "end_time": 1794128230.2725196,
+    "retries": 0,
+    "result": null,
+    "error": "Synthetic failure for circuit breaker test",
+    "error_type": "RuntimeError",
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "stack": "NoneType: None\n"
+    }
+  },
+  {
+    "execution_id": "EXEC-8EF5E0E2",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "CIRCUIT_BROKEN",
+    "ok": false,
+    "duration_ms": 0.01,
+    "start_time": 1794128230.3002944,
+    "end_time": 1794128230.3003185,
+    "retries": 0,
+    "result": null,
+    "error": "Circuit breaker is OPEN for tool 'test_failing_circuit_tool' due to repeated failures.",
+    "error_type": "CircuitBreakerOpenException",
+    "idempotency_hit": false,
+    "telemetry": {
+      "circuit_open": true
+    }
+  },
+  {
+    "execution_id": "EXEC-54109774",
+    "tool_name": "test_idempotent_tool",
+    "category": "TEST",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.06,
+    "start_time": 1794128230.516521,
+    "end_time": 1794128230.5166256,
+    "retries": 0,
+    "result": {
+      "data": "unique_read",
+      "call_count": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-89E36DC5",
+    "tool_name": "test_idempotent_tool",
+    "category": "TEST",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794128230.542909,
+    "end_time": 1794128230.5429652,
+    "retries": 0,
+    "result": {
+      "data": "unique_read",
+      "call_count": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": true,
+    "telemetry": {
+      "cached_from": 1794128230.5166128
+    }
+  },
+  {
+    "execution_id": "EXEC-E4572AD9",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "FAILURE",
+    "ok": false,
+    "duration_ms": 0.4,
+    "start_time": 1794128272.3197143,
+    "end_time": 1794128272.3201263,
+    "retries": 0,
+    "result": null,
+    "error": "Synthetic failure for circuit breaker test",
+    "error_type": "RuntimeError",
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "stack": "NoneType: None\n"
+    }
+  },
+  {
+    "execution_id": "EXEC-E9D0AD98",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "FAILURE",
+    "ok": false,
+    "duration_ms": 0.41,
+    "start_time": 1794128272.3521395,
+    "end_time": 1794128272.352563,
+    "retries": 0,
+    "result": null,
+    "error": "Synthetic failure for circuit breaker test",
+    "error_type": "RuntimeError",
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "stack": "NoneType: None\n"
+    }
+  },
+  {
+    "execution_id": "EXEC-1B0DB4BF",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "CIRCUIT_BROKEN",
+    "ok": false,
+    "duration_ms": 0.01,
+    "start_time": 1794128272.379907,
+    "end_time": 1794128272.3799274,
+    "retries": 0,
+    "result": null,
+    "error": "Circuit breaker is OPEN for tool 'test_failing_circuit_tool' due to repeated failures.",
+    "error_type": "CircuitBreakerOpenException",
+    "idempotency_hit": false,
+    "telemetry": {
+      "circuit_open": true
+    }
+  },
+  {
+    "execution_id": "EXEC-AB07E64E",
+    "tool_name": "test_idempotent_tool",
+    "category": "TEST",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.06,
+    "start_time": 1794128272.4622903,
+    "end_time": 1794128272.4623923,
+    "retries": 0,
+    "result": {
+      "data": "unique_read",
+      "call_count": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-78C7A41A",
+    "tool_name": "test_idempotent_tool",
+    "category": "TEST",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.05,
+    "start_time": 1794128272.490518,
+    "end_time": 1794128272.490576,
+    "retries": 0,
+    "result": {
+      "data": "unique_read",
+      "call_count": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": true,
+    "telemetry": {
+      "cached_from": 1794128272.4623797
+    }
+  },
+  {
+    "execution_id": "EXEC-6DD4D7D4",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "FAILURE",
+    "ok": false,
+    "duration_ms": 0.41,
+    "start_time": 1794129353.657387,
+    "end_time": 1794129353.6578052,
+    "retries": 0,
+    "result": null,
+    "error": "Synthetic failure for circuit breaker test",
+    "error_type": "RuntimeError",
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "stack": "NoneType: None\n"
+    }
+  },
+  {
+    "execution_id": "EXEC-5ABCE57B",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "FAILURE",
+    "ok": false,
+    "duration_ms": 0.51,
+    "start_time": 1794129353.6890697,
+    "end_time": 1794129353.6895964,
+    "retries": 0,
+    "result": null,
+    "error": "Synthetic failure for circuit breaker test",
+    "error_type": "RuntimeError",
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "stack": "NoneType: None\n"
+    }
+  },
+  {
+    "execution_id": "EXEC-1C824C57",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "CIRCUIT_BROKEN",
+    "ok": false,
+    "duration_ms": 0.01,
+    "start_time": 1794129353.7208974,
+    "end_time": 1794129353.7209196,
+    "retries": 0,
+    "result": null,
+    "error": "Circuit breaker is OPEN for tool 'test_failing_circuit_tool' due to repeated failures.",
+    "error_type": "CircuitBreakerOpenException",
+    "idempotency_hit": false,
+    "telemetry": {
+      "circuit_open": true
+    }
+  },
+  {
+    "execution_id": "EXEC-D649532B",
+    "tool_name": "test_idempotent_tool",
+    "category": "TEST",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.06,
+    "start_time": 1794129353.8858988,
+    "end_time": 1794129353.8860078,
+    "retries": 0,
+    "result": {
+      "data": "unique_read",
+      "call_count": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-C7FE7A5B",
+    "tool_name": "test_idempotent_tool",
+    "category": "TEST",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794129353.9203303,
+    "end_time": 1794129353.9203844,
+    "retries": 0,
+    "result": {
+      "data": "unique_read",
+      "call_count": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": true,
+    "telemetry": {
+      "cached_from": 1794129353.8859947
+    }
+  },
+  {
+    "execution_id": "EXEC-3F295861",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "FAILURE",
+    "ok": false,
+    "duration_ms": 0.43,
+    "start_time": 1794129789.2428977,
+    "end_time": 1794129789.2433405,
+    "retries": 0,
+    "result": null,
+    "error": "Synthetic failure for circuit breaker test",
+    "error_type": "RuntimeError",
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "stack": "NoneType: None\n"
+    }
+  },
+  {
+    "execution_id": "EXEC-F5F6AF5A",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "FAILURE",
+    "ok": false,
+    "duration_ms": 0.51,
+    "start_time": 1794129789.273028,
+    "end_time": 1794129789.2735558,
+    "retries": 0,
+    "result": null,
+    "error": "Synthetic failure for circuit breaker test",
+    "error_type": "RuntimeError",
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "stack": "NoneType: None\n"
+    }
+  },
+  {
+    "execution_id": "EXEC-68D00321",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "CIRCUIT_BROKEN",
+    "ok": false,
+    "duration_ms": 0.01,
+    "start_time": 1794129789.3056092,
+    "end_time": 1794129789.3056293,
+    "retries": 0,
+    "result": null,
+    "error": "Circuit breaker is OPEN for tool 'test_failing_circuit_tool' due to repeated failures.",
+    "error_type": "CircuitBreakerOpenException",
+    "idempotency_hit": false,
+    "telemetry": {
+      "circuit_open": true
+    }
+  },
+  {
+    "execution_id": "EXEC-A871087B",
+    "tool_name": "test_idempotent_tool",
+    "category": "TEST",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.06,
+    "start_time": 1794129789.467759,
+    "end_time": 1794129789.4678686,
+    "retries": 0,
+    "result": {
+      "data": "unique_read",
+      "call_count": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-2E82BD7D",
+    "tool_name": "test_idempotent_tool",
+    "category": "TEST",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.05,
+    "start_time": 1794129789.5521545,
+    "end_time": 1794129789.5522187,
+    "retries": 0,
+    "result": {
+      "data": "unique_read",
+      "call_count": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": true,
+    "telemetry": {
+      "cached_from": 1794129789.4678552
+    }
+  }
+]

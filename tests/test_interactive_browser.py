@@ -9,11 +9,14 @@ Verifies:
   5. Multi-step automated browser flow execution
 """
 
+import sys
 import unittest
 from pathlib import Path
 import json
 
 BASE_DIR = Path(r"D:\MARAA AI").resolve()
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
 
 class TestInteractiveBrowserAgent(unittest.TestCase):
 

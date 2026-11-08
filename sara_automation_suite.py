@@ -890,7 +890,7 @@ class DiscordAutonomousManager:
         """Navigates to a specific channel in NEXORA and posts a message."""
         return self.send_channel_message(target=target_channel_or_user, message=message, server_name=server_name)
 
-    def send_channel_message(self, target: str, message: str, server_name: str = "NEXORA") -> dict:
+    def send_channel_message(self, target: str, message: str, server_name: str = "NEXORA", simulate: bool = False) -> dict:
         """Sends a message strictly to an authorized NEXORA channel."""
         if not self.validate_server_target(server_name):
             return {
@@ -900,9 +900,21 @@ class DiscordAutonomousManager:
         dist = self.distinguish_channel(target)
         target_channel = dist["channel"]
         resolved_type = dist.get("type", "text")
-        return self._send_discord_message(clean_target=target_channel, message=message, target_type=resolved_type)
+        return self._send_discord_message(clean_target=target_channel, message=message, target_type=resolved_type, simulate=simulate)
 
-    def _send_discord_message(self, clean_target: str, message: str = "", target_type: str = "text") -> dict:
+    def _send_discord_message(self, clean_target: str, message: str = "", target_type: str = "text", simulate: bool = False) -> dict:
+        if simulate:
+            action_desc = f"[SIMULATION] Posted message to '{clean_target}' ({target_type}) in [{self.AUTHORIZED_SERVER}]" if message else f"[SIMULATION] Navigated to '{clean_target}' ({target_type}) in [{self.AUTHORIZED_SERVER}]"
+            return {
+                "success": True,
+                "simulated": True,
+                "server": self.AUTHORIZED_SERVER,
+                "action": action_desc,
+                "target": clean_target,
+                "type": target_type,
+                "message": message
+            }
+
         hwnd, title = self._get_window()
         if not hwnd:
             self.focus_discord()

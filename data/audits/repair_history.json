@@ -1,0 +1,44 @@
+[
+  {
+    "repair_id": "REP-001",
+    "target_file": "SARA/resources/app/dist/server.cjs",
+    "component": "Gateway Fast-Path Dispatcher",
+    "description": "Added native routing block for 55 desktop tools eliminating 20s port 8765 timeout",
+    "timestamp": "2026-11-08T13:50:00Z"
+  },
+  {
+    "repair_id": "REP-002",
+    "target_file": "sara_interactive_browser.py",
+    "component": "Browser Locator Engine",
+    "description": "Expanded locator engine with Tier 1b attribute matching for textareas, inputs, and IDs",
+    "timestamp": "2026-11-08T14:01:15Z"
+  },
+  {
+    "repair_id": "REP-003",
+    "target_file": "sara_interactive_browser.py",
+    "component": "Cookie Consent Engine",
+    "description": "Reduced banner detection timeout to 300ms for non-blocking execution",
+    "timestamp": "2026-11-08T14:01:20Z"
+  },
+  {
+    "repair_id": "REP-004",
+    "target_file": "sara_automation_suite.py",
+    "component": "Discord Autonomous Manager",
+    "description": "Added simulate=True parameter for safe headless/CI message testing",
+    "timestamp": "2026-11-08T14:06:10Z"
+  },
+  {
+    "repair_id": "REP-005",
+    "target_file": "sara_reliability_engine.py",
+    "component": "Execution Reliability Layer",
+    "description": "Added default=str serialization for Path objects in execution history",
+    "timestamp": "2026-11-08T13:53:40Z"
+  },
+  {
+    "repair_id": "REP-006",
+    "target_file": "sara_desktop_os_controller.py",
+    "component": "Screen Perception Layer",
+    "description": "Added synthetic canvas fallback for headless screenshot capture",
+    "timestamp": "2026-11-08T13:54:35Z"
+  }
+]
