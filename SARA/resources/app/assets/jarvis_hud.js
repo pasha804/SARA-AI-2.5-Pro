@@ -1,5 +1,5 @@
 // SARA AI 2.5 Pro — JARVIS Intelligence HUD, Companion Dashboard & Telemetry
-(function() {
+(function () {
   // =========================================================================
   // 0. HIGH-TECH WEB AUDIO SYNTHESIZER (MICRO-INTERACTION SOUND EFFECTS)
   // =========================================================================
@@ -16,7 +16,7 @@
     return audioCtx;
   }
 
-  window.saraPlayHoverSound = function() {
+  window.saraPlayHoverSound = function () {
     if (soundMuted) return;
     try {
       const ctx = getAudioCtx();
@@ -32,10 +32,10 @@
       gain.connect(ctx.destination);
       osc.start();
       osc.stop(ctx.currentTime + 0.03);
-    } catch (e) {}
+    } catch (e) { }
   };
 
-  window.saraPlayClickSound = function() {
+  window.saraPlayClickSound = function () {
     if (soundMuted) return;
     try {
       const ctx = getAudioCtx();
@@ -51,7 +51,7 @@
       gain.connect(ctx.destination);
       osc.start();
       osc.stop(ctx.currentTime + 0.045);
-    } catch (e) {}
+    } catch (e) { }
   };
 
   // =========================================================================
@@ -293,8 +293,8 @@
       if (clockEl) clockEl.textContent = `${String(hours).padStart(2, '0')}:${minutes}`;
       if (ampmEl) ampmEl.textContent = ampm;
 
-      const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-      const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
       const dateEl = document.getElementById('sara-live-date');
       if (dateEl) {
         dateEl.textContent = `${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()} • ${days[now.getDay()]}`;
@@ -342,7 +342,7 @@
   }
 
   // Quick Action Handler - sets input value cleanly without disrupting form
-  window.saraTriggerAction = function(action) {
+  window.saraTriggerAction = function (action) {
     const input = document.querySelector('input[aria-label="Message SARA"]');
     if (!input) return;
 
@@ -592,7 +592,7 @@
   }
 
   // Interactive Cockpit Tab Switcher
-  window.saraSwitchDashTab = function(tabName, ev) {
+  window.saraSwitchDashTab = function (tabName, ev) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const tabs = document.querySelectorAll('.dash-tab-btn');
     tabs.forEach(t => t.classList.remove('active'));
@@ -605,7 +605,7 @@
     });
   };
 
-  window.saraAuditProject = async function(pName) {
+  window.saraAuditProject = async function (pName) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const descEl = document.getElementById('dash-' + pName + '-desc');
     if (descEl) descEl.innerHTML = '<em>Auditing workspace health...</em>';
@@ -620,7 +620,7 @@
     }
   };
 
-  window.saraPostDiscord = async function(actionType) {
+  window.saraPostDiscord = async function (actionType) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const input = document.querySelector('input[aria-label="Message SARA"]');
     if (!input) return;
@@ -636,7 +636,7 @@
     window.hideTaskDashboard();
   };
 
-  window.saraSetDiscordTarget = function(channel) {
+  window.saraSetDiscordTarget = function (channel) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const input = document.querySelector('input[aria-label="Message SARA"]');
     if (input) {
@@ -647,7 +647,7 @@
     }
   };
 
-  window.saraRunWorkflow = function(name) {
+  window.saraRunWorkflow = function (name) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const input = document.querySelector('input[aria-label="Message SARA"]');
     if (input) {
@@ -658,14 +658,14 @@
     }
   };
 
-  window.saraSelectN8nCategory = function(cat, btn) {
+  window.saraSelectN8nCategory = function (cat, btn) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     document.querySelectorAll('.n8n-chip').forEach(c => c.classList.remove('active'));
     if (btn) btn.classList.add('active');
     window.saraFilterN8n(cat);
   };
 
-  window.saraFilterN8n = function(categoryOverride) {
+  window.saraFilterN8n = function (categoryOverride) {
     const input = document.getElementById('n8n-search-input');
     const q = (input ? input.value : "").toLowerCase().trim();
     const items = document.querySelectorAll('.n8n-item-card');
@@ -678,7 +678,7 @@
   };
 
   // Public Controllers
-  window.showJarvisHud = function(data) {
+  window.showJarvisHud = function (data) {
     createHudElement();
     const overlay = document.getElementById('jarvis-hud-overlay');
     if (!overlay) return;
@@ -720,18 +720,18 @@
     overlay.classList.remove('hidden');
   };
 
-  window.hideJarvisHud = function() {
+  window.hideJarvisHud = function () {
     const overlay = document.getElementById('jarvis-hud-overlay');
     if (overlay) overlay.classList.add('hidden');
   };
 
-  window.toggleTaskDashboard = function() {
+  window.toggleTaskDashboard = function () {
     createTaskDashboardElement();
     const modal = document.getElementById('sara-task-dashboard-modal');
     if (modal) modal.classList.toggle('hidden');
   };
 
-  window.hideTaskDashboard = function() {
+  window.hideTaskDashboard = function () {
     const modal = document.getElementById('sara-task-dashboard-modal');
     if (modal) modal.classList.add('hidden');
   };
@@ -746,12 +746,12 @@
       if (!rightPanel) return;
       const bodyHtml = document.body.innerHTML || '';
       const bodyText = document.body.textContent || '';
-      const isSettingsOpen = bodyHtml.includes('SARA Configuration') || 
-                             bodyHtml.includes('System settings &amp; preferences') || 
-                             bodyHtml.includes('System settings & preferences') ||
-                             bodyText.includes('SARA Configuration') ||
-                             document.body.classList.contains('sara-settings-open') ||
-                             document.body.classList.contains('sara-modal-open');
+      const isSettingsOpen = bodyHtml.includes('SARA Configuration') ||
+        bodyHtml.includes('System settings &amp; preferences') ||
+        bodyHtml.includes('System settings & preferences') ||
+        bodyText.includes('SARA Configuration') ||
+        document.body.classList.contains('sara-settings-open') ||
+        document.body.classList.contains('sara-modal-open');
       if (isSettingsOpen) {
         if (!document.body.classList.contains('sara-settings-open')) {
           document.body.classList.add('sara-settings-open');
@@ -774,11 +774,11 @@
     }
 
     const observer = new MutationObserver(checkAndToggle);
-    observer.observe(document.body, { 
-      childList: true, 
-      subtree: true, 
-      attributes: true, 
-      attributeFilter: ['class', 'style'] 
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['class', 'style']
     });
     setInterval(checkAndToggle, 150);
   }
@@ -786,7 +786,7 @@
   // =========================================================================
   // 4. TOAST NOTIFICATION & SOUND FX HELPERS
   // =========================================================================
-  window.saraShowToast = function(msg) {
+  window.saraShowToast = function (msg) {
     const existing = document.getElementById('sara-live-toast');
     if (existing) existing.remove();
 
@@ -885,36 +885,62 @@
 
         <!-- Body -->
         <div class="sara-modal-body">
-          <!-- STEP 1: API KEY -->
+          <!-- STEP 1: API CORE & MODEL PROVIDERS -->
           <div id="step-page-1" class="sara-step-page active">
-            <div class="sara-guide-card">
+            <div style="font-size:12px; color:#cbd5e1; margin-bottom:10px; line-height:1.4;">
+              SARA 3.0 supports dual AI engine backends: <strong>APInex Multi-Model AI</strong> (GLM-5.3, DeepSeek, Kimi) and <strong>Google Gemini AI</strong> (Native Live Voice & Vision). Add one or both keys to activate:
+            </div>
+
+            <!-- APINEX KEY CARD (RECOMMENDED MULTI-MODEL) -->
+            <div class="sara-guide-card" style="border-left: 3px solid #00f0ff; background: rgba(0, 240, 255, 0.04);">
               <div class="sara-guide-header">
-                <span>🔑 GOOGLE GEMINI / APINEX API KEY SETUP</span>
+                <span style="color:#00f0ff; font-weight:700;">⚡ 1. APINEX MULTI-MODEL API KEY (GLM-5.3, DEEPSEEK, KIMI)</span>
+                <span class="sara-p-badge" style="background:rgba(0,240,255,0.15); color:#00f0ff; border:1px solid #00f0ff; font-size:9px; padding:2px 8px; border-radius:4px;">RECOMMENDED</span>
+              </div>
+              <ul class="sara-guide-steps" style="margin-top:6px; font-size:11px;">
+                <li><span class="sara-guide-num">1</span> Powers ultra-fast models: <strong>GLM-5.3 FlashX (1.2s conversational)</strong>, <strong>DeepSeek V4 Pro</strong>, and <strong>Kimi K3 (1M context)</strong>.</li>
+                <li><span class="sara-guide-num">2</span> Enter your APInex API Key (starts with <code>sk-apx...</code>) below:</li>
+              </ul>
+              <div class="sara-input-group" style="margin-top:8px;">
+                <label>
+                  <span>APINEX API KEY</span>
+                  <span id="apinex-key-status-badge" style="color:#94a3b8; font-size:10px;">AWAITING KEY</span>
+                </label>
+                <div class="sara-input-box">
+                  <input type="password" id="onboard-apinex-input" placeholder="sk-apx..." />
+                  <button type="button" class="sara-btn-secondary" style="padding:4px 10px; font-size:10px;" onclick="window.saraToggleKeyVisibility('onboard-apinex-input')">TOGGLE</button>
+                  <button type="button" class="sara-btn-secondary" style="padding:4px 12px; font-size:10px; border-color:#00f0ff; color:#00f0ff;" onclick="window.saraTestApinexKeyLive()">⚡ VERIFY</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- GOOGLE GEMINI KEY CARD -->
+            <div class="sara-guide-card" style="margin-top:12px; border-left: 3px solid #38bdf8; background: rgba(56, 189, 248, 0.04);">
+              <div class="sara-guide-header">
+                <span style="color:#38bdf8; font-weight:700;">🔑 2. GOOGLE GEMINI API KEY (LIVE AUDIO & VISION)</span>
                 <a href="https://aistudio.google.com/app/apikey" target="_blank" class="sara-guide-link">
                   Open Google AI Studio ↗
                 </a>
               </div>
-              <ul class="sara-guide-steps">
-                <li><span class="sara-guide-num">1</span> Click the link above to open Google AI Studio in your browser.</li>
-                <li><span class="sara-guide-num">2</span> Sign in with your Google account and click <strong>"Create API Key"</strong>.</li>
-                <li><span class="sara-guide-num">3</span> Copy your API key (starts with <code>AIzaSy...</code>) and paste it below.</li>
+              <ul class="sara-guide-steps" style="margin-top:6px; font-size:11px;">
+                <li><span class="sara-guide-num">1</span> Get a free Gemini key from Google AI Studio for native multimodal reasoning & voice streaming.</li>
+                <li><span class="sara-guide-num">2</span> Copy your API key (starts with <code>AIzaSy...</code>) and paste it below:</li>
               </ul>
-            </div>
-
-            <div class="sara-input-group">
-              <label>
-                <span>ENTER GEMINI OR APINEX API KEY</span>
-                <span id="api-key-status-badge" style="color:#94a3b8; font-size:10px;">AWAITING KEY</span>
-              </label>
-              <div class="sara-input-box">
-                <input type="password" id="onboard-apikey-input" placeholder="AIzaSy..." />
-                <button type="button" class="sara-btn-secondary" style="padding:4px 10px; font-size:10px;" onclick="window.saraToggleKeyVisibility()">TOGGLE</button>
+              <div class="sara-input-group" style="margin-top:8px;">
+                <label>
+                  <span>GOOGLE GEMINI API KEY</span>
+                  <span id="gemini-key-status-badge" style="color:#94a3b8; font-size:10px;">AWAITING KEY</span>
+                </label>
+                <div class="sara-input-box">
+                  <input type="password" id="onboard-gemini-input" placeholder="AIzaSy..." />
+                  <button type="button" class="sara-btn-secondary" style="padding:4px 10px; font-size:10px;" onclick="window.saraToggleKeyVisibility('onboard-gemini-input')">TOGGLE</button>
+                  <button type="button" class="sara-btn-secondary" style="padding:4px 12px; font-size:10px; border-color:#38bdf8; color:#38bdf8;" onclick="window.saraTestGeminiKeyLive()">⚡ VERIFY</button>
+                </div>
               </div>
             </div>
 
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:6px;">
-              <span style="font-size:10.5px; color:#64748b;">Key is stored locally in encrypted secrets & .env.</span>
-              <button type="button" class="sara-btn-secondary" onclick="window.saraTestApiKeyLive()">⚡ Test & Verify Key</button>
+            <div style="font-size:10.5px; color:#64748b; margin-top:8px;">
+              🛡️ Keys are stored locally in your workstation's encrypted secrets and .env file.
             </div>
           </div>
 
@@ -1020,15 +1046,47 @@
     document.body.appendChild(overlay);
   }
 
-  window.saraToggleKeyVisibility = function() {
-    const input = document.getElementById('onboard-apikey-input');
+  window.saraToggleKeyVisibility = function (id) {
+    const targetId = id || 'onboard-gemini-input';
+    const input = document.getElementById(targetId);
     if (input) input.type = input.type === 'password' ? 'text' : 'password';
   };
 
-  window.saraTestApiKeyLive = async function() {
+  window.saraTestApinexKeyLive = async function () {
     window.saraPlayClickSound && window.saraPlayClickSound();
-    const input = document.getElementById('onboard-apikey-input');
-    const badge = document.getElementById('api-key-status-badge');
+    const input = document.getElementById('onboard-apinex-input');
+    const badge = document.getElementById('apinex-key-status-badge');
+    const key = input ? input.value.trim() : '';
+
+    if (!key) {
+      if (badge) { badge.textContent = 'NO KEY ENTERED'; badge.style.color = '#f87171'; }
+      return;
+    }
+
+    if (badge) { badge.textContent = 'TESTING APINEX...'; badge.style.color = '#00f0ff'; }
+
+    try {
+      const res = await fetch('/api/config/apinex_key', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ apiKey: key })
+      });
+      const data = await res.json();
+      if (data.ok) {
+        if (badge) { badge.textContent = data.verified ? 'VERIFIED & ACTIVE ✓' : 'STORED LOCALLY ✓'; badge.style.color = '#10b981'; }
+        window.saraShowToast(data.message || 'APInex API Key Verified Successfully!');
+      } else {
+        if (badge) { badge.textContent = 'VALIDATION FAILED'; badge.style.color = '#f87171'; }
+      }
+    } catch (e) {
+      if (badge) { badge.textContent = 'SAVED LOCALLY'; badge.style.color = '#fbbf24'; }
+    }
+  };
+
+  window.saraTestGeminiKeyLive = async function () {
+    window.saraPlayClickSound && window.saraPlayClickSound();
+    const input = document.getElementById('onboard-gemini-input');
+    const badge = document.getElementById('gemini-key-status-badge');
     const key = input ? input.value.trim() : '';
 
     if (!key) {
@@ -1056,7 +1114,44 @@
     }
   };
 
-  window.saraOnboardingStep = async function(dir) {
+  window.saraSaveAndVerifyApinexKey = async function () {
+    const input = document.getElementById('settings-apinex-key');
+    const badge = document.getElementById('settings-apinex-badge');
+    const key = input ? input.value.trim() : '';
+    if (!key) return;
+    if (badge) { badge.textContent = 'VERIFYING...'; badge.style.color = '#00f0ff'; }
+    try {
+      const res = await fetch('/api/config/apinex_key', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ apiKey: key })
+      });
+      const data = await res.json();
+      if (data.ok) {
+        if (badge) { badge.textContent = 'ACTIVE ✓'; badge.style.color = '#10b981'; }
+        window.saraShowToast('APInex API Key Verified & Saved!');
+      }
+    } catch {}
+  };
+
+  window.saraSaveAndVerifyGeminiKey = async function () {
+    const input = document.getElementById('settings-gemini-key');
+    const key = input ? input.value.trim() : '';
+    if (!key) return;
+    try {
+      const res = await fetch('/api/config/apikey', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ apiKey: key })
+      });
+      const data = await res.json();
+      if (data.ok) {
+        window.saraShowToast('Google Gemini API Key Verified & Saved!');
+      }
+    } catch {}
+  };
+
+  window.saraOnboardingStep = async function (dir) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const prevStep = onboardingActiveStep;
     const nextStep = prevStep + dir;
@@ -1064,16 +1159,27 @@
     if (nextStep < 1) return;
 
     if (prevStep === 1 && dir > 0) {
-      const keyInput = document.getElementById('onboard-apikey-input');
-      const keyVal = keyInput ? keyInput.value.trim() : '';
-      if (keyVal) {
+      const apinexInput = document.getElementById('onboard-apinex-input');
+      const geminiInput = document.getElementById('onboard-gemini-input');
+      const apinexVal = apinexInput ? apinexInput.value.trim() : '';
+      const geminiVal = geminiInput ? geminiInput.value.trim() : '';
+      if (apinexVal) {
+        try {
+          await fetch('/api/config/apinex_key', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ apiKey: apinexVal })
+          });
+        } catch (e) { }
+      }
+      if (geminiVal) {
         try {
           await fetch('/api/config/apikey', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ apiKey: keyVal })
+            body: JSON.stringify({ apiKey: geminiVal })
           });
-        } catch (e) {}
+        } catch (e) { }
       }
     }
 
@@ -1110,7 +1216,7 @@
     }
   };
 
-  window.saraSelectPersonality = function(p) {
+  window.saraSelectPersonality = function (p) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     chosenPersonality = p;
     const cards = ['companion', 'engineer', 'sentinel', 'jarvis'];
@@ -1123,10 +1229,12 @@
     });
   };
 
-  window.saraFinalizeOnboarding = async function() {
+  window.saraFinalizeOnboarding = async function () {
     window.saraPlayClickSound && window.saraPlayClickSound();
-    const keyInput = document.getElementById('onboard-apikey-input');
-    const apiKey = keyInput ? keyInput.value.trim() : '';
+    const apinexInput = document.getElementById('onboard-apinex-input');
+    const geminiInput = document.getElementById('onboard-gemini-input');
+    const apinexApiKey = apinexInput ? apinexInput.value.trim() : '';
+    const apiKey = geminiInput ? geminiInput.value.trim() : '';
 
     const nameInput = document.getElementById('onboard-user-name');
     const honorificInput = document.getElementById('onboard-user-honorific');
@@ -1144,11 +1252,12 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           apiKey,
+          apinexApiKey,
           personality: chosenPersonality,
           userProfile: { name, honorific, role, language }
         })
       });
-    } catch (e) {}
+    } catch (e) { }
 
     localStorage.setItem('sara_onboarding_completed', 'true');
     localStorage.setItem('sara_user_honorific', honorific);
@@ -1168,13 +1277,30 @@
     window.saraShowToast(`⚡ SARA 3.0 ONLINE: Welcome ${honorific}! Cognitive matrix synchronized.`);
   };
 
-  window.openSaraOnboarding = function() {
+  window.openSaraOnboarding = async function () {
     createOnboardingModal();
     const modal = document.getElementById('sara-onboarding-modal');
     if (modal) modal.classList.remove('hidden');
+
+    try {
+      const res = await fetch('/api/config');
+      const cfg = await res.json();
+      if (cfg.hasApinexKey) {
+        const apinexInput = document.getElementById('onboard-apinex-input');
+        const badge = document.getElementById('apinex-key-status-badge');
+        if (apinexInput && !apinexInput.value) apinexInput.placeholder = cfg.maskedApinexKey || "sk-apx••••••••";
+        if (badge) { badge.textContent = 'KEY CONFIGURED ✓'; badge.style.color = '#10b981'; }
+      }
+      if (cfg.hasGeminiKey) {
+        const geminiInput = document.getElementById('onboard-gemini-input');
+        const badge = document.getElementById('gemini-key-status-badge');
+        if (geminiInput && !geminiInput.value) geminiInput.placeholder = cfg.maskedGeminiKey || "AIzaSy••••••••";
+        if (badge) { badge.textContent = 'KEY CONFIGURED ✓'; badge.style.color = '#10b981'; }
+      }
+    } catch (e) {}
   };
 
-  window.closeSaraOnboarding = function() {
+  window.closeSaraOnboarding = function () {
     const modal = document.getElementById('sara-onboarding-modal');
     if (modal) modal.classList.add('hidden');
   };
@@ -1215,14 +1341,29 @@
         <div class="sara-modal-body">
           <!-- TAB 1: API & MODELS -->
           <div id="settings-tab-api" class="settings-tab-panel">
+            <!-- APINEX KEY -->
             <div class="sara-input-group">
               <label>
-                <span>GOOGLE GEMINI / APINEX API KEY</span>
-                <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color:#00f0ff; text-decoration:none; font-size:10px;">Get Key ↗</a>
+                <span style="color:#00f0ff; font-weight:700;">⚡ APINEX MULTI-MODEL API KEY (GLM-5.3, DEEPSEEK, KIMI)</span>
+                <span id="settings-apinex-badge" style="color:#94a3b8; font-size:10px;">ONLINE</span>
               </label>
               <div class="sara-input-box">
-                <input type="password" id="settings-api-key" placeholder="Paste updated Gemini API key here..." />
-                <button type="button" class="sara-btn-secondary" style="padding:4px 10px; font-size:10px;" onclick="window.saraTestSettingsApiKey()">VERIFY</button>
+                <input type="password" id="settings-apinex-key" placeholder="Paste APInex key (sk-apx...)" />
+                <button type="button" class="sara-btn-secondary" style="padding:4px 10px; font-size:10px;" onclick="window.saraToggleKeyVisibility('settings-apinex-key')">TOGGLE</button>
+                <button type="button" class="sara-btn-secondary" style="padding:4px 12px; font-size:10px; border-color:#00f0ff; color:#00f0ff;" onclick="window.saraSaveAndVerifyApinexKey()">VERIFY & SAVE</button>
+              </div>
+            </div>
+
+            <!-- GEMINI KEY -->
+            <div class="sara-input-group" style="margin-top:12px;">
+              <label>
+                <span style="color:#38bdf8; font-weight:700;">🔑 GOOGLE GEMINI API KEY</span>
+                <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color:#38bdf8; text-decoration:none; font-size:10px;">Get Key ↗</a>
+              </label>
+              <div class="sara-input-box">
+                <input type="password" id="settings-gemini-key" placeholder="Paste Gemini key (AIzaSy...)" />
+                <button type="button" class="sara-btn-secondary" style="padding:4px 10px; font-size:10px;" onclick="window.saraToggleKeyVisibility('settings-gemini-key')">TOGGLE</button>
+                <button type="button" class="sara-btn-secondary" style="padding:4px 12px; font-size:10px; border-color:#38bdf8; color:#38bdf8;" onclick="window.saraSaveAndVerifyGeminiKey()">VERIFY & SAVE</button>
               </div>
             </div>
 
@@ -1377,7 +1518,7 @@
     document.body.appendChild(overlay);
   }
 
-  window.saraSwitchSettingsTab = function(tabName, ev) {
+  window.saraSwitchSettingsTab = function (tabName, ev) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const tabs = document.querySelectorAll('#sara-high-end-settings-modal .dash-tab-btn');
     tabs.forEach(t => t.classList.remove('active'));
@@ -1390,14 +1531,14 @@
     });
   };
 
-  window.saraSelectModel = function(modelName, cardEl) {
+  window.saraSelectModel = function (modelName, cardEl) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     document.querySelectorAll('.apinex-card').forEach(c => c.style.borderColor = 'rgba(157, 220, 255, 0.2)');
     if (cardEl) cardEl.style.borderColor = '#00f0ff';
     localStorage.setItem('sara_active_model', modelName);
   };
 
-  window.saraSetPersona = function(p) {
+  window.saraSetPersona = function (p) {
     window.saraPlayClickSound && window.saraPlayClickSound();
     chosenPersonality = p;
     const cards = ['companion', 'engineer', 'sentinel', 'jarvis'];
@@ -1410,7 +1551,7 @@
     });
   };
 
-  window.saraTestSettingsApiKey = async function() {
+  window.saraTestSettingsApiKey = async function () {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const input = document.getElementById('settings-api-key');
     const key = input ? input.value.trim() : '';
@@ -1435,7 +1576,7 @@
     }
   };
 
-  window.saraSaveAllSettings = async function() {
+  window.saraSaveAllSettings = async function () {
     window.saraPlayClickSound && window.saraPlayClickSound();
     const keyInput = document.getElementById('settings-api-key');
     const nameInput = document.getElementById('settings-user-name');
@@ -1458,7 +1599,7 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ apiKey })
         });
-      } catch (e) {}
+      } catch (e) { }
     }
 
     try {
@@ -1472,7 +1613,7 @@
           userProfile: { name, honorific, role }
         })
       });
-    } catch (e) {}
+    } catch (e) { }
 
     localStorage.setItem('sara_user_honorific', honorific);
     localStorage.setItem('sara_user_name', name);
@@ -1490,7 +1631,7 @@
     window.saraShowToast('⚡ SARA Settings Synchronized Successfully!');
   };
 
-  window.openSaraSettings = function() {
+  window.openSaraSettings = function () {
     createHighEndSettingsModal();
     const modal = document.getElementById('sara-high-end-settings-modal');
     if (modal) modal.classList.remove('hidden');
@@ -1504,7 +1645,7 @@
     if (nInput) nInput.value = name;
   };
 
-  window.closeSaraSettings = function() {
+  window.closeSaraSettings = function () {
     const modal = document.getElementById('sara-high-end-settings-modal');
     if (modal) modal.classList.add('hidden');
   };
@@ -1537,7 +1678,7 @@
           return;
         }
       }
-    } catch (e) {}
+    } catch (e) { }
 
     setTimeout(() => {
       window.openSaraOnboarding();

@@ -453,6 +453,32 @@ function clearGeminiApiKey() {
 
   }
 
+function getApinexApiKey() {
+  const current = readSecrets();
+  return current.apinexApiKey || process.env.APINEX_API_KEY || "";
+}
+
+function setApinexApiKey(key) {
+  const trimmed = (key || "").trim();
+  if (!trimmed) throw new Error("APInex API key must not be empty.");
+  const current = readSecrets();
+  current.apinexApiKey = trimmed;
+  import_fs.default.writeFileSync(SECRETS_FILE, JSON.stringify(current, null, 2), "utf-8");
+  process.env.APINEX_API_KEY = trimmed;
+  try {
+    const envPath = import_path.default.join(process.cwd(), ".env");
+    if (import_fs.default.existsSync(envPath)) {
+      let envContent = import_fs.default.readFileSync(envPath, "utf-8");
+      if (envContent.includes("APINEX_API_KEY=")) {
+        envContent = envContent.replace(/APINEX_API_KEY=.*/, `APINEX_API_KEY=${trimmed}`);
+      } else {
+        envContent += `\nAPINEX_API_KEY=${trimmed}\n`;
+      }
+      import_fs.default.writeFileSync(envPath, envContent, "utf-8");
+    }
+  } catch {}
+}
+
 
 
 }
@@ -22182,12 +22208,23 @@ async function startServer() {
 
   app.post("/api/onboarding/complete", async (req, res) => {
     try {
-      const { apiKey, personality, userProfile } = req.body || {};
+      const { apiKey, apinexApiKey, personality, userProfile } = req.body || {};
       if (apiKey && apiKey.trim()) {
         try {
-          setGeminiApiKey(apiKey.trim());
+          if (apiKey.trim().startsWith("sk-apx") || apiKey.trim().startsWith("sk-")) {
+            setApinexApiKey(apiKey.trim());
+          } else {
+            setGeminiApiKey(apiKey.trim());
+          }
         } catch (err) {
           console.error("[SARA] Error saving API key:", err.message);
+        }
+      }
+      if (apinexApiKey && apinexApiKey.trim()) {
+        try {
+          setApinexApiKey(apinexApiKey.trim());
+        } catch (err) {
+          console.error("[SARA] Error saving APInex API key:", err.message);
         }
       }
       const current = loadSettingsFile();
@@ -22211,16 +22248,43 @@ async function startServer() {
   });
 
   app.get("/api/config", (_req, res) => {
-
-
-
-    res.json({ hasApiKey: hasGeminiApiKey() });
-
-
-
+    const secrets = readSecrets();
+    const apinexKey = secrets.apinexApiKey || process.env.APINEX_API_KEY || "";
+    const geminiKey = getGeminiApiKey() || "";
+    res.json({
+      hasApiKey: Boolean(geminiKey || apinexKey),
+      hasGeminiKey: Boolean(geminiKey),
+      hasApinexKey: Boolean(apinexKey),
+      maskedApinexKey: apinexKey ? (apinexKey.slice(0, 8) + "..." + apinexKey.slice(-4)) : "",
+      maskedGeminiKey: geminiKey ? (geminiKey.slice(0, 6) + "..." + geminiKey.slice(-4)) : "",
+      activeModel: (loadSettingsFile() || {}).model || "glm-5.3"
+    });
   });
 
 
+
+    app.post("/api/config/apinex_key", async (req, res) => {
+    try {
+      const key = (req.body?.apiKey || req.body?.apinexApiKey || "").toString().trim();
+      if (!key) return res.status(400).json({ ok: false, error: "APInex API key is required." });
+      setApinexApiKey(key);
+      let verified = false;
+      try {
+        const verifyRes = await fetch("https://api.apinex.bond/v1/models", {
+          headers: { "Authorization": `Bearer ${key}` }
+        });
+        if (verifyRes.ok) verified = true;
+      } catch {}
+      res.json({
+        ok: true,
+        provider: "APInex",
+        verified,
+        message: verified ? "APInex API Key verified & stored successfully!" : "APInex API Key saved locally in secrets & .env."
+      });
+    } catch (e) {
+      res.status(500).json({ ok: false, error: e.message });
+    }
+  });
 
   app.post("/api/config/apikey", async (req, res) => {
 
@@ -22230,18 +22294,20 @@ async function startServer() {
 
 
 
-      const key = (req.body?.apiKey ?? "").toString().trim();
-
-
-
+            const key = (req.body?.apiKey ?? "").toString().trim();
       if (!key) {
-
-
-
         return res.status(400).json({ error: "API key is required." });
-
-
-
+      }
+      if (req.body?.provider === "apinex" || key.startsWith("sk-apx") || key.startsWith("sk-")) {
+        setApinexApiKey(key);
+        let verified = false;
+        try {
+          const testRes = await fetch("https://api.apinex.bond/v1/models", {
+            headers: { "Authorization": `Bearer ${key}` }
+          });
+          if (testRes.ok) verified = true;
+        } catch {}
+        return res.json({ ok: true, provider: "APInex", verified, message: verified ? "APInex API Key verified & stored successfully!" : "APInex API Key saved locally in secrets & .env." });
       }
 
 

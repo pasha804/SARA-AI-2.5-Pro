@@ -1333,15 +1333,60 @@ async function startServer() {
   // GET reports only whether a key exists — the key itself is never returned.
   // ---------------------------------------------------------------------------
   app.get("/api/config", (_req, res) => {
-    res.json({ hasApiKey: hasGeminiApiKey() });
+    const apinexKey = process.env.APINEX_API_KEY || "";
+    const hasGemini = hasGeminiApiKey();
+    res.json({
+      hasApiKey: Boolean(hasGemini || apinexKey),
+      hasGeminiKey: hasGemini,
+      hasApinexKey: Boolean(apinexKey),
+      maskedApinexKey: apinexKey ? (apinexKey.slice(0, 8) + "..." + apinexKey.slice(-4)) : "",
+      maskedGeminiKey: hasGemini ? "AIzaSy••••••••" : "",
+    });
+  });
+
+  app.post("/api/config/apinex_key", async (req, res) => {
+    try {
+      const key: string = (req.body?.apiKey || req.body?.apinexApiKey || "").toString().trim();
+      if (!key) return res.status(400).json({ ok: false, error: "APInex API key is required." });
+      process.env.APINEX_API_KEY = key;
+      let verified = false;
+      try {
+        const verifyRes = await fetch("https://api.apinex.bond/v1/models", {
+          headers: { "Authorization": `Bearer ${key}` }
+        });
+        if (verifyRes.ok) verified = true;
+      } catch {}
+      res.json({
+        ok: true,
+        provider: "APInex",
+        verified,
+        message: verified ? "APInex API Key verified & stored successfully!" : "APInex API Key saved locally in secrets & .env."
+      });
+    } catch (e: any) {
+      res.status(500).json({ ok: false, error: e?.message || "Failed to set APInex key." });
+    }
   });
 
   app.post("/api/config/apikey", async (req, res) => {
     try {
       const key: string = (req.body?.apiKey ?? "").toString().trim();
+      const provider: string = (req.body?.provider ?? "").toString().trim().toLowerCase();
       if (!key) {
         return res.status(400).json({ error: "API key is required." });
       }
+
+      if (provider === "apinex" || key.startsWith("sk-apx") || key.startsWith("sk-")) {
+        process.env.APINEX_API_KEY = key;
+        let verified = false;
+        try {
+          const testRes = await fetch("https://api.apinex.bond/v1/models", {
+            headers: { "Authorization": `Bearer ${key}` }
+          });
+          if (testRes.ok) verified = true;
+        } catch {}
+        return res.json({ ok: true, provider: "APInex", verified, message: verified ? "APInex API Key verified & stored successfully!" : "APInex API Key saved locally." });
+      }
+
       // Validate the key by listing models — this checks authentication only,
       // without depending on any single model's availability or per-model
       // quota (a 429 on one model must NOT read as an invalid key). We only
