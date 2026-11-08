@@ -484,18 +484,57 @@ class SaraInteractiveBrowserAgent:
             self._browser = None
             self._playwright = None
 
+    def type_and_submit(self, text: str, selector: Optional[str] = None) -> Dict[str, Any]:
+        """
+        [DEPRECATED FOR DIRECT OS AUTOMATION IN WEB CONTEXTS — Ref: Master Technical Reference Section 46.4]
+        Enforces 100% Playwright-native execution for all web contexts.
+        Uses page.locator(selector).fill(text) followed by page.locator(selector).press('Enter')
+        with explicit page.wait_for_selector(timeout=5000).
+        """
+        try:
+            page = self._ensure_browser()
+            target_sel = selector or "input:focus, textarea:focus, [contenteditable='true']:focus, input:not([type='hidden']), textarea"
+            try:
+                page.wait_for_selector(target_sel, timeout=5000, state="attached")
+                loc = page.locator(target_sel).first
+                loc.fill(text, timeout=5000)
+                loc.press("Enter")
+                return {
+                    "ok": True,
+                    "success": True,
+                    "text": text,
+                    "selector": target_sel,
+                    "submitted": True,
+                    "engine": "playwright_native",
+                    "deprecated_os_fallback": True
+                }
+            except Exception:
+                page.keyboard.type(text)
+                page.keyboard.press("Enter")
+                return {
+                    "ok": True,
+                    "success": True,
+                    "text": text,
+                    "submitted": True,
+                    "engine": "playwright_native_keyboard",
+                    "deprecated_os_fallback": True
+                }
+        except Exception as e:
+            return {"ok": False, "success": False, "error": str(e), "engine": "playwright_native"}
+
     # --- 100% PLAYWRIGHT-NATIVE ACTIVE BROWSER ACTION ---
     @staticmethod
-    def os_type_and_submit_in_browser(text: str) -> Dict[str, Any]:
-        """100% Playwright-native typing and submitting in the active web page."""
+    def os_type_and_submit_in_browser(text: str, selector: Optional[str] = None, agent: Optional['SaraInteractiveBrowserAgent'] = None) -> Dict[str, Any]:
+        """
+        [DEPRECATED FOR DIRECT OS AUTOMATION IN WEB CONTEXTS — Ref: Master Technical Reference Section 46.4]
+        Eradicates PyAutoGUI browser fallback in web contexts in favor of 100% Playwright-native execution.
+        Uses page.locator(selector).fill(text) followed by page.locator(selector).press('Enter')
+        with explicit page.wait_for_selector(timeout=5000).
+        OS-level paste (Win32/pyautogui) is strictly preserved ONLY for non-browser desktop applications.
+        """
         global browser_agent
-        try:
-            page = browser_agent._ensure_browser()
-            page.keyboard.type(text)
-            page.keyboard.press("Enter")
-            return {"ok": True, "success": True, "text": text, "submitted": True, "engine": "playwright_native"}
-        except Exception as e:
-            return {"ok": False, "success": False, "error": str(e)}
+        target_agent = agent or browser_agent
+        return target_agent.type_and_submit(text, selector=selector)
 
 
 # Global interactive agent instance

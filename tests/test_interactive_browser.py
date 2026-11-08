@@ -65,7 +65,7 @@ class TestInteractiveBrowserAgent(unittest.TestCase):
         fill_user = self.browser_agent.fill_field("#username", "Muhammad Mubashar")
         self.assertTrue(fill_user["success"])
 
-        fill_email = self.browser_agent.fill_field("#useremail", "pashadev804@gmail.com")
+        fill_email = self.browser_agent.fill_field("#useremail", "mubasharmuhammad790@gmail.com")
         self.assertTrue(fill_email["success"])
 
         fill_msg = self.browser_agent.fill_field("#message", "Testing SARA interactive browser agent")
@@ -113,6 +113,43 @@ class TestInteractiveBrowserAgent(unittest.TestCase):
 
         if temp_html_path.exists():
             temp_html_path.unlink()
+
+    def test_os_type_and_submit_in_browser_playwright_native(self):
+        from sara_interactive_browser import SaraInteractiveBrowserAgent
+        mock_html = """
+        <!DOCTYPE html>
+        <html>
+        <body>
+            <input type="text" id="target-input" value="" />
+            <div id="output">idle</div>
+            <script>
+                document.getElementById('target-input').addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        document.getElementById('output').innerText = 'Submitted: ' + e.target.value;
+                    }
+                });
+            </script>
+        </body>
+        </html>
+        """
+        temp_path = BASE_DIR / "data" / "test_native_submit.html"
+        with open(temp_path, "w", encoding="utf-8") as f:
+            f.write(mock_html)
+
+        url = f"file:///{temp_path.as_posix()}"
+        self.browser_agent.navigate_to(url)
+
+        res = SaraInteractiveBrowserAgent.os_type_and_submit_in_browser("Pasha SARA 3.0", selector="#target-input", agent=self.browser_agent)
+        self.assertTrue(res["ok"])
+        self.assertTrue(res["submitted"])
+        self.assertEqual(res["engine"], "playwright_native")
+        self.assertTrue(res["deprecated_os_fallback"])
+
+        output_text = self.browser_agent.get_element_text("#output")
+        self.assertIn("Submitted: Pasha SARA 3.0", output_text)
+
+        if temp_path.exists():
+            temp_path.unlink()
 
 
 if __name__ == "__main__":

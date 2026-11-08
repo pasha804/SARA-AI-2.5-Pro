@@ -8,7 +8,7 @@ import * as fs from "fs";
 import { randomUUID } from "node:crypto";
 import dns from "node:dns/promises";
 import net from "node:net";
-import { execFileSync, spawn } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
 import { 
   loadMemories, 
   saveMemories, 
@@ -256,6 +256,63 @@ async function captureViaElectron(
   });
 }
 
+function runAsyncSpawn(
+  cmd: string,
+  args: string[],
+  options: { cwd?: string; env?: NodeJS.ProcessEnv; timeout?: number; windowsHide?: boolean } = {}
+): Promise<string> {
+  return new Promise((resolve) => {
+    // Strict 5000ms timeout default to protect <200ms voice latency pipeline (Ref: Section 31.2)
+    const timeoutMs = options.timeout || 5000;
+    try {
+      const proc = spawn(cmd, args, {
+        cwd: options.cwd || process.cwd(),
+        env: options.env || process.env,
+        windowsHide: options.windowsHide ?? true,
+        stdio: ["pipe", "pipe", "pipe"],
+      });
+
+      let stdoutData = "";
+      let stderrData = "";
+      let settled = false;
+
+      const timer = setTimeout(() => {
+        if (!settled) {
+          settled = true;
+          try { proc.kill(); } catch {}
+          resolve(stdoutData || stderrData || "");
+        }
+      }, timeoutMs);
+
+      proc.stdout?.on("data", (chunk: Buffer) => {
+        stdoutData += chunk.toString("utf-8");
+      });
+
+      proc.stderr?.on("data", (chunk: Buffer) => {
+        stderrData += chunk.toString("utf-8");
+      });
+
+      proc.on("error", () => {
+        if (!settled) {
+          settled = true;
+          clearTimeout(timer);
+          resolve("");
+        }
+      });
+
+      proc.on("close", () => {
+        if (!settled) {
+          settled = true;
+          clearTimeout(timer);
+          resolve(stdoutData || stderrData || "");
+        }
+      });
+    } catch {
+      resolve("");
+    }
+  });
+}
+
 function findPythonRuntime(): string | null {
   const candidates = [
     process.env.MYRAA_PYTHON,
@@ -266,8 +323,8 @@ function findPythonRuntime(): string | null {
   ].filter(Boolean) as string[];
   return candidates.find((candidate) => {
     try {
-      execFileSync(candidate, ["--version"], { stdio: "ignore" });
-      return true;
+      const res = spawnSync(candidate, ["--version"], { stdio: "ignore", windowsHide: true });
+      return res.status === 0;
     } catch {
       return false;
     }
@@ -445,8 +502,7 @@ async function ensureDesktopObserver(): Promise<string | null> {
     return null;
   }
   try {
-    execFileSync(python, ["-c", "import uvicorn, fastapi, win32gui, psutil"], {
-      stdio: "ignore",
+    await runAsyncSpawn(python, ["-c", "import uvicorn, fastapi, win32gui, psutil"], {
       timeout: 3_000,
       windowsHide: true,
     });
@@ -557,11 +613,11 @@ try { $application = (Get-Process -Id $foregroundPid -ErrorAction Stop).ProcessN
 }
 
 
-function executeNodeNativeTool(tool: string, args: Record<string, unknown>): { ok: boolean; result?: unknown; error?: string } | null {
+async function executeNodeNativeTool(tool: string, args: Record<string, unknown>): Promise<{ ok: boolean; result?: unknown; error?: string } | null> {
   try {
     const fs = require("fs");
     const path = require("path");
-    const { exec, execFileSync } = require("child_process");
+    const { exec } = require("child_process");
 
     const resolveUserPath = (raw: unknown): string => {
       if (!raw) return process.cwd();
@@ -623,7 +679,8 @@ function executeNodeNativeTool(tool: string, args: Record<string, unknown>): { o
       const rawPath = String(args.path || args.file_path || args.script_path || "");
       if (rawPath) {
         const resolved = path.isAbsolute(rawPath) ? rawPath : path.resolve(process.cwd(), rawPath);
-        const out = execFileSync("python", [resolved], { encoding: "utf-8", timeout: 15000 });
+        // Strict 5000ms async non-blocking spawn (Ref: Section 31.2)
+        const out = await runAsyncSpawn("python", [resolved], { timeout: 5000 });
         return { ok: true, result: { stdout: out || "Script completed successfully." } };
       }
     }
@@ -638,7 +695,7 @@ async function callDesktopAgent(
   args: Record<string, unknown>,
   outerSignal?: AbortSignal,
 ): Promise<{ ok: boolean; result?: unknown; error?: string }> {
-  const nativeFast = executeNodeNativeTool(tool, args);
+  const nativeFast = await executeNodeNativeTool(tool, args);
   if (nativeFast) {
     logCommand(`FAST_PATH_NATIVE_EXECUTION tool=${tool} ok=${nativeFast.ok}`);
     return nativeFast;

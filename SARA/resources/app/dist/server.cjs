@@ -17609,6 +17609,61 @@ async function probeDesktopObserver(url) {
 
 
 
+const { spawn: nodeChildSpawn } = require("child_process");
+
+function runAsyncSpawn(cmd, args, options = {}) {
+  return new Promise((resolve) => {
+    // Strict 5000ms timeout default to protect <200ms voice latency pipeline (Ref: Section 31.2)
+    const timeoutMs = options.timeout || 5000;
+    try {
+      const proc = nodeChildSpawn(cmd, args, {
+        cwd: options.cwd || process.cwd(),
+        env: options.env || process.env,
+        windowsHide: true,
+        stdio: ["pipe", "pipe", "pipe"]
+      });
+
+      let stdoutData = "";
+      let stderrData = "";
+      let settled = false;
+
+      const timer = setTimeout(() => {
+        if (!settled) {
+          settled = true;
+          try { proc.kill(); } catch {}
+          resolve(stdoutData || stderrData || "");
+        }
+      }, timeoutMs);
+
+      proc.stdout?.on("data", (chunk) => {
+        stdoutData += chunk.toString("utf-8");
+      });
+
+      proc.stderr?.on("data", (chunk) => {
+        stderrData += chunk.toString("utf-8");
+      });
+
+      proc.on("error", () => {
+        if (!settled) {
+          settled = true;
+          clearTimeout(timer);
+          resolve("");
+        }
+      });
+
+      proc.on("close", () => {
+        if (!settled) {
+          settled = true;
+          clearTimeout(timer);
+          resolve(stdoutData || stderrData || "");
+        }
+      });
+    } catch (err) {
+      resolve("");
+    }
+  });
+}
+
 async function ensureDesktopObserver() {
 
 
@@ -17689,23 +17744,7 @@ async function ensureDesktopObserver() {
 
 
 
-    (0, import_node_child_process.execFileSync)(python, ["-c", "import uvicorn, fastapi, win32gui, psutil"], {
-
-
-
-      stdio: "ignore",
-
-
-
-      timeout: 3e3,
-
-
-
-      windowsHide: true
-
-
-
-    });
+    await runAsyncSpawn(python, ["-c", "import uvicorn, fastapi, win32gui, psutil"], { timeout: 3000 });
 
 
 
@@ -18142,59 +18181,6 @@ try { $application = (Get-Process -Id $foregroundPid -ErrorAction Stop).ProcessN
 
 
 
-const { spawn: nodeChildSpawn } = require("child_process");
-
-function runAsyncSpawn(cmd, args, options = {}) {
-  return new Promise((resolve) => {
-    const timeoutMs = options.timeout || 30000;
-    try {
-      const proc = nodeChildSpawn(cmd, args, {
-        cwd: options.cwd || process.cwd(),
-        env: options.env || process.env,
-        windowsHide: true,
-        stdio: ["ignore", "pipe", "pipe"]
-      });
-
-      let stdoutData = "";
-      let stderrData = "";
-      let settled = false;
-
-      const timer = setTimeout(() => {
-        if (!settled) {
-          settled = true;
-          try { proc.kill(); } catch {}
-          resolve(stdoutData || stderrData || "");
-        }
-      }, timeoutMs);
-
-      proc.stdout?.on("data", (chunk) => {
-        stdoutData += chunk.toString("utf-8");
-      });
-
-      proc.stderr?.on("data", (chunk) => {
-        stderrData += chunk.toString("utf-8");
-      });
-
-      proc.on("error", () => {
-        if (!settled) {
-          settled = true;
-          clearTimeout(timer);
-          resolve("");
-        }
-      });
-
-      proc.on("close", () => {
-        if (!settled) {
-          settled = true;
-          clearTimeout(timer);
-          resolve(stdoutData || stderrData || "");
-        }
-      });
-    } catch (err) {
-      resolve("");
-    }
-  });
-}
 
 async function executeNodeNativeTool(tool, args) {
 
@@ -18213,7 +18199,7 @@ async function executeNodeNativeTool(tool, args) {
 
 
 
-    const { exec, execFileSync } = require("child_process");
+    const { exec } = require("child_process");
 
 
 
