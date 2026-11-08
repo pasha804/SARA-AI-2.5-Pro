@@ -22117,6 +22117,57 @@ async function startServer() {
 
 
 
+  app.get("/api/onboarding/status", (_req, res) => {
+    try {
+      const s = loadSettingsFile();
+      const hasKey = hasGeminiApiKey();
+      res.json({
+        ok: true,
+        hasApiKey: hasKey,
+        onboardingCompleted: !!s.onboardingCompleted,
+        personality: s.personality || "companion",
+        userProfile: s.userProfile || {
+          name: "Muhammad Mubashar",
+          honorific: "Pasha Jan",
+          role: "Lead Autonomous AI Engineer",
+          language: "Roman Urdu + English"
+        }
+      });
+    } catch (e) {
+      res.json({ ok: false, error: e.message });
+    }
+  });
+
+  app.post("/api/onboarding/complete", async (req, res) => {
+    try {
+      const { apiKey, personality, userProfile } = req.body || {};
+      if (apiKey && apiKey.trim()) {
+        try {
+          setGeminiApiKey(apiKey.trim());
+        } catch (err) {
+          console.error("[SARA] Error saving API key:", err.message);
+        }
+      }
+      const current = loadSettingsFile();
+      const next = {
+        ...current,
+        onboardingCompleted: true,
+        personality: personality || current.personality || "companion",
+        userProfile: userProfile || current.userProfile || {
+          name: "Muhammad Mubashar",
+          honorific: "Pasha Jan",
+          role: "Lead Autonomous AI Engineer",
+          language: "Roman Urdu + English"
+        }
+      };
+      saveSettingsFile(next);
+      logCommand(`ONBOARDING_COMPLETED ${JSON.stringify(next.userProfile)}`);
+      res.json({ ok: true, settings: next });
+    } catch (e) {
+      res.status(500).json({ ok: false, error: e.message });
+    }
+  });
+
   app.get("/api/config", (_req, res) => {
 
 

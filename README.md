@@ -169,28 +169,51 @@ tests\test_advanced_browser.py ....                                      [100%]
 
 - **Self-Upgrade Center HUD**: [`data/hud/self_upgrade_center.html`](file:///D:/MARAA AI/data/hud/self_upgrade_center.html) — Hallmark-grade interface presenting live capabilities, pending proposals, audit history, and system telemetry.
 - **Live HUD Telemetry**: [`data/hud/sara_live_hud.html`](file:///D:/MARAA AI/data/hud/sara_live_hud.html) — Real-time resource gauges and background worker monitors.
+- **Master Architecture Blueprint**: [`architecture.md`](file:///D:/MARAA AI/architecture.md) — Comprehensive 3.0.0-ENTERPRISE PRO engineering specification, call graphs, and subsystem topologies.
 
 ---
 
-## ⚡ Quick Start & Usage
+## 🔮 Cybernetic Onboarding & 4-Personality Matrix (v3.0.0)
 
-### 1. Clone & Set Up
+SARA AI 3.0 introduces a seamless first-run setup experience designed to configure cognition in seconds:
+- **Cyberpunk Intro Bootloader**: High-definition video intro loop (`intro_video.mp4`) with real-time diagnostic stages, scanlines, and hardware telemetry ticker.
+- **Step 1: Quantum API Core**: Step-by-step guidance linking directly to Google AI Studio for zero-latency Gemini / APInex API key activation.
+- **Step 2: 4 Bespoke Personality Matrices**:
+  1. 🌸 **Cyberpunk Living Companion (Default)**: Affectionate, warm, speaks fluent Roman Urdu + English, addresses user as **Pasha Jan**, emotional companion and coding partner.
+  2. ⚡ **Principal Autonomous Engineer**: Razor-sharp, analytical, strict TDD enforcement, zero small talk, deep software architecture focus.
+  3. 🛡️ **Cyber Sentinel & Operations**: Defensive security guard, monitors background tasks, system resources, NEXORA Discord, and automations.
+  4. 💎 **J.A.R.V.I.S. Luxury Executive**: Ultra-formal, polite, predictive intelligence, luxury horology (MUBAR), and executive summaries.
+- **Step 3: User Identity Synchronization**: Customizes call signs, roles, and communication dialects persisted across sessions.
+- **High-Voltage Prominent Mic**: Neon cyan/fuchsia animated breathing ring with live audio-reactive waveform indicators and tactile synthesizer audio feedback.
+
+---
+
+## ⚡ Quick Start & Installation
+
+### 1. Download Windows Setup (.exe)
+Download and run the standalone installer:
+```cmd
+SARA-AI-3.0-Enterprise-Setup.exe
+```
+*Automatically uninstalls any legacy builds, places the new Cyberpunk Neon icon on your desktop, and launches SARA.*
+
+### 2. Manual Clone & Run
 ```bash
 git clone https://github.com/pasha804/SARA-AI-2.5-Pro.git
 cd SARA-AI-2.5-Pro
 ```
 
-### 2. Launch SARA Workstation
+### 3. Launch SARA Workstation
 ```cmd
 launch_sara.bat
 ```
 
-### 3. Run Self-Upgrade CLI Inspection
+### 4. Run Self-Upgrade CLI Inspection
 ```bash
 python sara_neural_brain.py upgrade status
 ```
 
-### 4. Execute Full 45-Test Regression Pass
+### 5. Execute Full 45-Test Regression Pass
 ```bash
 pytest tests/test_self_upgrade_engine.py tests/test_complete_tool_registry.py tests/test_discord_autonomous_manager.py tests/test_self_healing_engine.py tests/test_viral_automations.py tests/test_viral_automations_part2.py tests/test_manus_loop.py tests/test_office_and_browser_suite.py tests/test_interactive_browser.py tests/test_advanced_browser.py
 ```

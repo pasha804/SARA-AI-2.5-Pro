@@ -1126,3 +1126,468 @@ body.sara-modal-open #sara-right-panel,
   font-family: monospace;
 }
 
+
+/* ==========================================================================
+   SARA AI 3.0 ENTERPRISE PRO — CYBERNETIC MIC, ONBOARDING & SETTINGS ENGINE
+   ========================================================================== */
+
+/* 1. PROMINENT GLOWING CYBERNETIC MIC BUTTON */
+.sara-prominent-mic-btn,
+button[title*="Microphone"],
+button[title*="Awake SARA"],
+button[title*="Mute Microphone"] {
+  position: relative !important;
+  width: 58px !important;
+  height: 58px !important;
+  min-width: 58px !important;
+  min-height: 58px !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: radial-gradient(circle at 35% 35%, #0f172a 0%, #030712 100%) !important;
+  border: 2px solid #00f0ff !important;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.8), 0 0 50px rgba(0, 240, 255, 0.4), inset 0 0 16px rgba(0, 240, 255, 0.5) !important;
+  cursor: pointer !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  animation: saraNeonMicPulse 2.8s ease-in-out infinite !important;
+  z-index: 50 !important;
+}
+
+@keyframes saraNeonMicPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.75), inset 0 0 14px rgba(0, 240, 255, 0.4);
+    border-color: #00f0ff;
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 45px rgba(0, 240, 255, 1), 0 0 75px rgba(168, 85, 247, 0.6), inset 0 0 22px rgba(0, 240, 255, 0.8);
+    border-color: #38bdf8;
+  }
+}
+
+.sara-prominent-mic-btn:hover,
+button[title*="Microphone"]:hover,
+button[title*="Awake SARA"]:hover,
+button[title*="Mute Microphone"]:hover {
+  transform: scale(1.15) !important;
+  box-shadow: 0 0 50px rgba(0, 240, 255, 1), 0 0 90px rgba(0, 240, 255, 0.8), inset 0 0 25px rgba(0, 240, 255, 0.9) !important;
+  border-color: #ffffff !important;
+}
+
+/* 2. ONBOARDING & SETTINGS MODALS (FULL SCREEN HOLOGRAPHIC LUXURY GLASS) */
+.sara-full-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(2, 6, 23, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: saraFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.sara-modal-container {
+  width: 100%;
+  max-width: 760px;
+  max-height: 90vh;
+  background: radial-gradient(100% 100% at 50% 0%, #0d1527 0%, #050914 70%, #02040a 100%);
+  border: 1.5px solid rgba(0, 240, 255, 0.5);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.95), 0 0 50px rgba(0, 240, 255, 0.3);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.sara-modal-header {
+  padding: 20px 26px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.sara-modal-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sara-modal-emblem {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+  border: 1px solid rgba(0, 240, 255, 0.6);
+}
+
+.sara-modal-headings h3 {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
+}
+
+.sara-modal-headings p {
+  font-size: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #94a3b8;
+  letter-spacing: 0.08em;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+
+/* Step Wizard Progress Header */
+.sara-wizard-stepper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 26px;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sara-step-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.06em;
+  transition: all 0.2s;
+}
+
+.sara-step-indicator.active {
+  color: #00f0ff;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
+}
+
+.sara-step-indicator.completed {
+  color: #10b981;
+}
+
+.sara-step-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid currentColor;
+  font-size: 10px;
+}
+
+.sara-step-indicator.active .sara-step-circle {
+  background: rgba(0, 240, 255, 0.2);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
+}
+
+.sara-step-sep {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Modal Body & Step Pages */
+.sara-modal-body {
+  padding: 24px 26px;
+  overflow-y: auto;
+  max-height: calc(90vh - 160px);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sara-step-page {
+  display: none;
+  flex-direction: column;
+  gap: 18px;
+  animation: saraFadeIn 0.3s ease;
+}
+
+.sara-step-page.active {
+  display: flex;
+}
+
+/* Step 1: API Key & Guide Card */
+.sara-guide-card {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(15, 23, 42, 0.6) 100%);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sara-guide-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sara-guide-header span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: 0.08em;
+}
+
+.sara-guide-link {
+  font-size: 11px;
+  font-weight: 700;
+  color: #00f0ff;
+  text-decoration: none;
+  background: rgba(0, 240, 255, 0.15);
+  border: 1px solid rgba(0, 240, 255, 0.5);
+  padding: 4px 10px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sara-guide-link:hover {
+  background: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+  color: #ffffff;
+}
+
+.sara-guide-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sara-guide-steps li {
+  font-size: 11px;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sara-guide-num {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(0, 240, 255, 0.2);
+  color: #00f0ff;
+  font-size: 10px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  shrink: 0;
+}
+
+.sara-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sara-input-group label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #e2e8f0;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sara-input-box {
+  display: flex;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 4px 12px;
+  transition: all 0.2s;
+}
+
+.sara-input-box:focus-within {
+  border-color: #00f0ff;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.35);
+}
+
+.sara-input-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  padding: 8px 0;
+}
+
+.sara-input-box input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* Step 2: Personality Selector Cards */
+.sara-personality-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.sara-personality-card {
+  background: rgba(15, 23, 42, 0.65);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 14px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.sara-personality-card:hover {
+  border-color: rgba(0, 240, 255, 0.5);
+  background: rgba(15, 23, 42, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.sara-personality-card.active {
+  border-color: #00f0ff;
+  background: radial-gradient(120% 120% at 50% 10%, rgba(6, 182, 212, 0.25) 0%, rgba(15, 23, 42, 0.95) 100%);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.35);
+}
+
+.sara-personality-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sara-p-title {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sara-p-badge {
+  font-size: 9px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 12px;
+  background: rgba(0, 240, 255, 0.15);
+  color: #00f0ff;
+  border: 1px solid rgba(0, 240, 255, 0.35);
+}
+
+.sara-p-desc {
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.45;
+}
+
+/* Modal Footer Buttons */
+.sara-modal-footer {
+  padding: 16px 26px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.sara-btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sara-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.sara-btn-primary {
+  background: linear-gradient(135deg, #06b6d4 0%, #00f0ff 50%, #3b82f6 100%);
+  border: none;
+  color: #020617;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 10px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.6);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sara-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.9);
+  filter: brightness(1.1);
+}
+
+.sara-btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* Toast Notification */
+.sara-toast-notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #090d16;
+  border: 1.5px solid #00f0ff;
+  border-radius: 12px;
+  padding: 12px 18px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 240, 255, 0.4);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 100000;
+  animation: saraSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes saraFadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes saraSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -262,10 +262,13 @@ function waitForBackend(timeoutMs) {
 // ---------------------------------------------------------------------------
 // Windows
 // ---------------------------------------------------------------------------
+let splashStartTime = Date.now();
+
 function createSplashWindow() {
+  splashStartTime = Date.now();
   splashWindow = new BrowserWindow({
-    width: 420,
-    height: 300,
+    width: 720,
+    height: 440,
     frame: false,
     transparent: true,
     resizable: false,
@@ -315,9 +318,13 @@ function createMainWindow() {
 
   mainWindow.once('ready-to-show', () => {
     debugLog('mainWindow ready-to-show event fired!');
-    if (splashWindow) splashWindow.close();
-    mainWindow?.show();
-    mainWindow?.focus();
+    const elapsed = Date.now() - splashStartTime;
+    const remaining = Math.max(0, 3200 - elapsed);
+    setTimeout(() => {
+      if (splashWindow) splashWindow.close();
+      mainWindow?.show();
+      mainWindow?.focus();
+    }, remaining);
   });
 
   
