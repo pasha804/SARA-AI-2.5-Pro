@@ -1,5 +1,348 @@
 {
-  "active": {},
-  "completed": {},
-  "rejected": {}
+  "pending": {
+    "prop_46142b19ae": {
+      "proposal_id": "prop_46142b19ae",
+      "fingerprint": "46142b19aeac2a49",
+      "created_at": "2026-11-08T14:39:13.764012",
+      "user_request": "Self-Improvement: Automatically address recurring failure in 'github_scraper' (RuntimeError)",
+      "category": "NEW_TOOL",
+      "feature_name": "tool_2852",
+      "planned_changes": [
+        "Diagnose failure context in github_scraper",
+        "Implement corrective handler or dependency patch",
+        "Verify fix passes AST analysis and task regression test"
+      ],
+      "target_files": [
+        "sara_fix.py",
+        "data/audits/tool_registry.json"
+      ],
+      "risk_level": "MEDIUM",
+      "complexity": "Medium",
+      "status": "PENDING_APPROVAL",
+      "formatted_proposal": "I investigated the existing system regarding: \"Self-Improvement: Automatically address recurring failure in 'github_scraper' (RuntimeError)\"\n\nPROPOSED ACTION:\n\nType: New Tool\nFeature: tool_2852\n\nPlanned changes:\n1. Diagnose failure context in github_scraper\n2. Implement corrective handler or dependency patch\n3. Verify fix passes AST analysis and task regression test\n\nFiles expected to change:\n- sara_fix.py\n- data/audits/tool_registry.json\n\nDependencies:\n- Verified local assets and existing dependencies (None additional).\n\nRisks:\n- MEDIUM risk level. Full rollback checkpoint will be captured before applying any change.\n\nEstimated complexity: Medium.\n\nWould you like me to implement this upgrade?",
+      "approval_metadata": null
+    },
+    "prop_2c472c7059": {
+      "proposal_id": "prop_2c472c7059",
+      "fingerprint": "26e2f288624456dc",
+      "created_at": "2026-11-08T14:54:25.537463",
+      "user_request": "database query optimization",
+      "category": "NEW_FEATURE",
+      "feature_name": "DB Optimizer",
+      "planned_changes": [
+        "Only apply read-only index hints",
+        "Do not alter table schemas"
+      ],
+      "target_files": [
+        "data/db_opt.py"
+      ],
+      "risk_level": "MEDIUM",
+      "complexity": "Medium",
+      "status": "PENDING_APPROVAL",
+      "formatted_proposal": "I investigated the existing system regarding: \"database query optimization\"\n\nPROPOSED ACTION:\n\nType: New Feature\nFeature: DB Optimizer\n\nPlanned changes:\n1. Implement core logic in data/db_opt.py\n2. Integrate with SARA neural brain / fast-path dispatcher\n3. Update tool registry and verify zero regressions\n4. Execute automated capability acceptance test\n\nFiles expected to change:\n- data/db_opt.py\n\nDependencies:\n- Verified local assets and existing dependencies (None additional).\n\nRisks:\n- MEDIUM risk level. Full rollback checkpoint will be captured before applying any change.\n\nEstimated complexity: Medium.\n\nWould you like me to implement this upgrade?",
+      "approval_metadata": null,
+      "modified_at": "2026-11-08T14:54:25.538883"
+    }
+  },
+  "approved": {
+    "prop_13fab71404": {
+      "proposal_id": "prop_13fab71404",
+      "fingerprint": "13fab714042fc418",
+      "created_at": "2026-11-08T14:37:36.094071",
+      "user_request": "analyze github repo",
+      "category": "NEW_FEATURE",
+      "feature_name": "GitHub Analyzer",
+      "planned_changes": [
+        "Implement core logic in sara_github_analyzer.py",
+        "Integrate with SARA neural brain / fast-path dispatcher",
+        "Update tool registry and verify zero regressions",
+        "Execute automated capability acceptance test"
+      ],
+      "target_files": [
+        "sara_github_analyzer.py"
+      ],
+      "risk_level": "MEDIUM",
+      "complexity": "Medium",
+      "status": "APPROVED",
+      "formatted_proposal": "I investigated the existing system regarding: \"analyze github repo\"\n\nPROPOSED ACTION:\n\nType: New Feature\nFeature: GitHub Analyzer\n\nPlanned changes:\n1. Implement core logic in sara_github_analyzer.py\n2. Integrate with SARA neural brain / fast-path dispatcher\n3. Update tool registry and verify zero regressions\n4. Execute automated capability acceptance test\n\nFiles expected to change:\n- sara_github_analyzer.py\n\nDependencies:\n- Verified local assets and existing dependencies (None additional).\n\nRisks:\n- MEDIUM risk level. Full rollback checkpoint will be captured before applying any change.\n\nEstimated complexity: Medium.\n\nWould you like me to implement this upgrade?",
+      "approval_metadata": {
+        "approved_by": "Pasha Dev",
+        "approved_at": "2026-11-08T14:37:36.094823",
+        "authorized_fingerprint": "13fab714042fc418"
+      }
+    },
+    "prop_b90ed27bb9": {
+      "proposal_id": "prop_b90ed27bb9",
+      "fingerprint": "b90ed27bb97ce368",
+      "created_at": "2026-11-08T14:54:25.793247",
+      "user_request": "buggy upgrade attempt",
+      "category": "NEW_FEATURE",
+      "feature_name": "Buggy Target",
+      "planned_changes": [
+        "Implement core logic in data/test_rollback_target.py",
+        "Integrate with SARA neural brain / fast-path dispatcher",
+        "Update tool registry and verify zero regressions",
+        "Execute automated capability acceptance test"
+      ],
+      "target_files": [
+        "data/test_rollback_target.py"
+      ],
+      "risk_level": "MEDIUM",
+      "complexity": "Low",
+      "status": "APPROVED",
+      "formatted_proposal": "I investigated the existing system regarding: \"buggy upgrade attempt\"\n\nPROPOSED ACTION:\n\nType: New Feature\nFeature: Buggy Target\n\nPlanned changes:\n1. Implement core logic in data/test_rollback_target.py\n2. Integrate with SARA neural brain / fast-path dispatcher\n3. Update tool registry and verify zero regressions\n4. Execute automated capability acceptance test\n\nFiles expected to change:\n- data/test_rollback_target.py\n\nDependencies:\n- Verified local assets and existing dependencies (None additional).\n\nRisks:\n- MEDIUM risk level. Full rollback checkpoint will be captured before applying any change.\n\nEstimated complexity: Low.\n\nWould you like me to implement this upgrade?",
+      "approval_metadata": {
+        "approved_by": "Pasha Dev",
+        "approved_at": "2026-11-08T14:54:25.794467",
+        "authorized_fingerprint": "b90ed27bb97ce368"
+      }
+    }
+  },
+  "rejected": {
+    "prop_70ff521041": {
+      "proposal_id": "prop_70ff521041",
+      "fingerprint": "70ff521041133f12",
+      "created_at": "2026-11-08T14:54:25.310211",
+      "user_request": "unwanted experimental overhaul",
+      "category": "NEW_FEATURE",
+      "feature_name": "Experimental",
+      "planned_changes": [
+        "Implement core logic in data/unwanted_mod.py",
+        "Integrate with SARA neural brain / fast-path dispatcher",
+        "Update tool registry and verify zero regressions",
+        "Execute automated capability acceptance test"
+      ],
+      "target_files": [
+        "data/unwanted_mod.py"
+      ],
+      "risk_level": "HIGH",
+      "complexity": "High",
+      "status": "REJECTED",
+      "formatted_proposal": "I investigated the existing system regarding: \"unwanted experimental overhaul\"\n\nPROPOSED ACTION:\n\nType: New Feature\nFeature: Experimental\n\nPlanned changes:\n1. Implement core logic in data/unwanted_mod.py\n2. Integrate with SARA neural brain / fast-path dispatcher\n3. Update tool registry and verify zero regressions\n4. Execute automated capability acceptance test\n\nFiles expected to change:\n- data/unwanted_mod.py\n\nDependencies:\n- Verified local assets and existing dependencies (None additional).\n\nRisks:\n- HIGH risk level. Full rollback checkpoint will be captured before applying any change.\n\nEstimated complexity: High.\n\nWould you like me to implement this upgrade?",
+      "approval_metadata": null,
+      "rejection_metadata": {
+        "rejected_at": "2026-11-08T14:54:25.311768",
+        "reason": "User deemed unnecessary"
+      }
+    }
+  },
+  "completed": {
+    "prop_bd8777c044": {
+      "proposal_id": "prop_bd8777c044",
+      "fingerprint": "bd8777c04476b0c3",
+      "created_at": "2026-11-08T14:38:25.651064",
+      "user_request": "test dummy upgrade",
+      "category": "NEW_FEATURE",
+      "feature_name": "Test Dummy Feature",
+      "planned_changes": [
+        "Implement core logic in data/test_dummy.py",
+        "Integrate with SARA neural brain / fast-path dispatcher",
+        "Update tool registry and verify zero regressions",
+        "Execute automated capability acceptance test"
+      ],
+      "target_files": [
+        "data/test_dummy.py"
+      ],
+      "risk_level": "MEDIUM",
+      "complexity": "Medium",
+      "status": "COMPLETED",
+      "formatted_proposal": "I investigated the existing system regarding: \"test dummy upgrade\"\n\nPROPOSED ACTION:\n\nType: New Feature\nFeature: Test Dummy Feature\n\nPlanned changes:\n1. Implement core logic in data/test_dummy.py\n2. Integrate with SARA neural brain / fast-path dispatcher\n3. Update tool registry and verify zero regressions\n4. Execute automated capability acceptance test\n\nFiles expected to change:\n- data/test_dummy.py\n\nDependencies:\n- Verified local assets and existing dependencies (None additional).\n\nRisks:\n- MEDIUM risk level. Full rollback checkpoint will be captured before applying any change.\n\nEstimated complexity: Medium.\n\nWould you like me to implement this upgrade?",
+      "approval_metadata": {
+        "approved_by": "Pasha Dev",
+        "approved_at": "2026-11-08T14:38:25.651819",
+        "authorized_fingerprint": "bd8777c04476b0c3"
+      },
+      "completed_at": "2026-11-08T14:38:25.683559"
+    },
+    "prop_3849d18515": {
+      "proposal_id": "prop_3849d18515",
+      "fingerprint": "3849d18515b92a95",
+      "created_at": "2026-11-08T14:43:15.047828",
+      "user_request": "autonomous quantum algorithmic portfolio balancer",
+      "category": "NEW_FEATURE",
+      "feature_name": "feature_6563",
+      "planned_changes": [
+        "Implement core logic in data/test_quantum_balancer.py",
+        "Integrate with SARA neural brain / fast-path dispatcher",
+        "Update tool registry and verify zero regressions",
+        "Execute automated capability acceptance test"
+      ],
+      "target_files": [
+        "data/test_quantum_balancer.py"
+      ],
+      "risk_level": "MEDIUM",
+      "complexity": "Medium",
+      "status": "COMPLETED",
+      "formatted_proposal": "I investigated the existing system regarding: \"autonomous quantum algorithmic portfolio balancer\"\n\nPROPOSED ACTION:\n\nType: New Feature\nFeature: feature_6563\n\nPlanned changes:\n1. Implement core logic in data/test_quantum_balancer.py\n2. Integrate with SARA neural brain / fast-path dispatcher\n3. Update tool registry and verify zero regressions\n4. Execute automated capability acceptance test\n\nFiles expected to change:\n- data/test_quantum_balancer.py\n\nDependencies:\n- Verified local assets and existing dependencies (None additional).\n\nRisks:\n- MEDIUM risk level. Full rollback checkpoint will be captured before applying any change.\n\nEstimated complexity: Medium.\n\nWould you like me to implement this upgrade?",
+      "approval_metadata": {
+        "approved_by": "Pasha Dev",
+        "approved_at": "2026-11-08T14:43:15.094680",
+        "authorized_fingerprint": "3849d18515b92a95"
+      },
+      "completed_at": "2026-11-08T14:43:15.287893"
+    },
+    "prop_7a73bc298f": {
+      "proposal_id": "prop_7a73bc298f",
+      "fingerprint": "7a73bc298f968ea4",
+      "created_at": "2026-11-08T14:54:26.339336",
+      "user_request": "add high performance cache",
+      "category": "NEW_FEATURE",
+      "feature_name": "High Perf Cache",
+      "planned_changes": [
+        "Implement core logic in data/test_reporting_artifact.py",
+        "Integrate with SARA neural brain / fast-path dispatcher",
+        "Update tool registry and verify zero regressions",
+        "Execute automated capability acceptance test"
+      ],
+      "target_files": [
+        "data/test_reporting_artifact.py"
+      ],
+      "risk_level": "LOW",
+      "complexity": "Low",
+      "status": "COMPLETED",
+      "formatted_proposal": "I investigated the existing system regarding: \"add high performance cache\"\n\nPROPOSED ACTION:\n\nType: New Feature\nFeature: High Perf Cache\n\nPlanned changes:\n1. Implement core logic in data/test_reporting_artifact.py\n2. Integrate with SARA neural brain / fast-path dispatcher\n3. Update tool registry and verify zero regressions\n4. Execute automated capability acceptance test\n\nFiles expected to change:\n- data/test_reporting_artifact.py\n\nDependencies:\n- Verified local assets and existing dependencies (None additional).\n\nRisks:\n- LOW risk level. Full rollback checkpoint will be captured before applying any change.\n\nEstimated complexity: Low.\n\nWould you like me to implement this upgrade?",
+      "approval_metadata": {
+        "approved_by": "Pasha Dev",
+        "approved_at": "2026-11-08T14:54:26.340579",
+        "authorized_fingerprint": "7a73bc298f968ea4"
+      },
+      "completed_at": "2026-11-08T14:54:26.462358"
+    },
+    "prop_f8960d336d": {
+      "proposal_id": "prop_f8960d336d",
+      "fingerprint": "f8960d336d11e1e5",
+      "created_at": "2026-11-08T14:44:58.418896",
+      "user_request": "autonomous quantum algorithmic portfolio balancer",
+      "category": "NEW_FEATURE",
+      "feature_name": "feature_1665",
+      "planned_changes": [
+        "Implement core logic in data/test_quantum_balancer.py",
+        "Integrate with SARA neural brain / fast-path dispatcher",
+        "Update tool registry and verify zero regressions",
+        "Execute automated capability acceptance test"
+      ],
+      "target_files": [
+        "data/test_quantum_balancer.py"
+      ],
+      "risk_level": "MEDIUM",
+      "complexity": "Medium",
+      "status": "COMPLETED",
+      "formatted_proposal": "I investigated the existing system regarding: \"autonomous quantum algorithmic portfolio balancer\"\n\nPROPOSED ACTION:\n\nType: New Feature\nFeature: feature_1665\n\nPlanned changes:\n1. Implement core logic in data/test_quantum_balancer.py\n2. Integrate with SARA neural brain / fast-path dispatcher\n3. Update tool registry and verify zero regressions\n4. Execute automated capability acceptance test\n\nFiles expected to change:\n- data/test_quantum_balancer.py\n\nDependencies:\n- Verified local assets and existing dependencies (None additional).\n\nRisks:\n- MEDIUM risk level. Full rollback checkpoint will be captured before applying any change.\n\nEstimated complexity: Medium.\n\nWould you like me to implement this upgrade?",
+      "approval_metadata": {
+        "approved_by": "Pasha Dev",
+        "approved_at": "2026-11-08T14:44:58.420403",
+        "authorized_fingerprint": "f8960d336d11e1e5"
+      },
+      "completed_at": "2026-11-08T14:44:58.459868"
+    },
+    "prop_f2fbef659f": {
+      "proposal_id": "prop_f2fbef659f",
+      "fingerprint": "f2fbef659fb49784",
+      "created_at": "2026-11-08T14:45:57.651599",
+      "user_request": "autonomous quantum algorithmic portfolio balancer",
+      "category": "NEW_FEATURE",
+      "feature_name": "feature_1027",
+      "planned_changes": [
+        "Implement core logic in data/test_quantum_balancer.py",
+        "Integrate with SARA neural brain / fast-path dispatcher",
+        "Update tool registry and verify zero regressions",
+        "Execute automated capability acceptance test"
+      ],
+      "target_files": [
+        "data/test_quantum_balancer.py"
+      ],
+      "risk_level": "MEDIUM",
+      "complexity": "Medium",
+      "status": "COMPLETED",
+      "formatted_proposal": "I investigated the existing system regarding: \"autonomous quantum algorithmic portfolio balancer\"\n\nPROPOSED ACTION:\n\nType: New Feature\nFeature: feature_1027\n\nPlanned changes:\n1. Implement core logic in data/test_quantum_balancer.py\n2. Integrate with SARA neural brain / fast-path dispatcher\n3. Update tool registry and verify zero regressions\n4. Execute automated capability acceptance test\n\nFiles expected to change:\n- data/test_quantum_balancer.py\n\nDependencies:\n- Verified local assets and existing dependencies (None additional).\n\nRisks:\n- MEDIUM risk level. Full rollback checkpoint will be captured before applying any change.\n\nEstimated complexity: Medium.\n\nWould you like me to implement this upgrade?",
+      "approval_metadata": {
+        "approved_by": "Pasha Dev",
+        "approved_at": "2026-11-08T14:45:57.652683",
+        "authorized_fingerprint": "f2fbef659fb49784"
+      },
+      "completed_at": "2026-11-08T14:45:57.686767"
+    },
+    "prop_f5978c9634": {
+      "proposal_id": "prop_f5978c9634",
+      "fingerprint": "f5978c9634f36c5e",
+      "created_at": "2026-11-08T14:51:04.618396",
+      "user_request": "autonomous quantum algorithmic portfolio balancer",
+      "category": "NEW_FEATURE",
+      "feature_name": "feature_5870",
+      "planned_changes": [
+        "Implement core logic in data/test_quantum_balancer.py",
+        "Integrate with SARA neural brain / fast-path dispatcher",
+        "Update tool registry and verify zero regressions",
+        "Execute automated capability acceptance test"
+      ],
+      "target_files": [
+        "data/test_quantum_balancer.py"
+      ],
+      "risk_level": "MEDIUM",
+      "complexity": "Medium",
+      "status": "COMPLETED",
+      "formatted_proposal": "I investigated the existing system regarding: \"autonomous quantum algorithmic portfolio balancer\"\n\nPROPOSED ACTION:\n\nType: New Feature\nFeature: feature_5870\n\nPlanned changes:\n1. Implement core logic in data/test_quantum_balancer.py\n2. Integrate with SARA neural brain / fast-path dispatcher\n3. Update tool registry and verify zero regressions\n4. Execute automated capability acceptance test\n\nFiles expected to change:\n- data/test_quantum_balancer.py\n\nDependencies:\n- Verified local assets and existing dependencies (None additional).\n\nRisks:\n- MEDIUM risk level. Full rollback checkpoint will be captured before applying any change.\n\nEstimated complexity: Medium.\n\nWould you like me to implement this upgrade?",
+      "approval_metadata": {
+        "approved_by": "Pasha Dev",
+        "approved_at": "2026-11-08T14:51:04.619620",
+        "authorized_fingerprint": "f5978c9634f36c5e"
+      },
+      "completed_at": "2026-11-08T14:51:04.657545"
+    },
+    "prop_301ab3d882": {
+      "proposal_id": "prop_301ab3d882",
+      "fingerprint": "301ab3d8827885c1",
+      "created_at": "2026-11-08T14:53:02.469524",
+      "user_request": "autonomous quantum algorithmic portfolio balancer",
+      "category": "NEW_FEATURE",
+      "feature_name": "feature_9110",
+      "planned_changes": [
+        "Implement core logic in data/test_quantum_balancer.py",
+        "Integrate with SARA neural brain / fast-path dispatcher",
+        "Update tool registry and verify zero regressions",
+        "Execute automated capability acceptance test"
+      ],
+      "target_files": [
+        "data/test_quantum_balancer.py"
+      ],
+      "risk_level": "MEDIUM",
+      "complexity": "Medium",
+      "status": "COMPLETED",
+      "formatted_proposal": "I investigated the existing system regarding: \"autonomous quantum algorithmic portfolio balancer\"\n\nPROPOSED ACTION:\n\nType: New Feature\nFeature: feature_9110\n\nPlanned changes:\n1. Implement core logic in data/test_quantum_balancer.py\n2. Integrate with SARA neural brain / fast-path dispatcher\n3. Update tool registry and verify zero regressions\n4. Execute automated capability acceptance test\n\nFiles expected to change:\n- data/test_quantum_balancer.py\n\nDependencies:\n- Verified local assets and existing dependencies (None additional).\n\nRisks:\n- MEDIUM risk level. Full rollback checkpoint will be captured before applying any change.\n\nEstimated complexity: Medium.\n\nWould you like me to implement this upgrade?",
+      "approval_metadata": {
+        "approved_by": "Pasha Dev",
+        "approved_at": "2026-11-08T14:53:02.471031",
+        "authorized_fingerprint": "301ab3d8827885c1"
+      },
+      "completed_at": "2026-11-08T14:53:02.514003"
+    },
+    "prop_806a7489b0": {
+      "proposal_id": "prop_806a7489b0",
+      "fingerprint": "806a7489b0d79a90",
+      "created_at": "2026-11-08T14:54:24.518271",
+      "user_request": "autonomous quantum algorithmic portfolio balancer",
+      "category": "NEW_FEATURE",
+      "feature_name": "feature_1236",
+      "planned_changes": [
+        "Implement core logic in data/test_quantum_balancer.py",
+        "Integrate with SARA neural brain / fast-path dispatcher",
+        "Update tool registry and verify zero regressions",
+        "Execute automated capability acceptance test"
+      ],
+      "target_files": [
+        "data/test_quantum_balancer.py"
+      ],
+      "risk_level": "MEDIUM",
+      "complexity": "Medium",
+      "status": "COMPLETED",
+      "formatted_proposal": "I investigated the existing system regarding: \"autonomous quantum algorithmic portfolio balancer\"\n\nPROPOSED ACTION:\n\nType: New Feature\nFeature: feature_1236\n\nPlanned changes:\n1. Implement core logic in data/test_quantum_balancer.py\n2. Integrate with SARA neural brain / fast-path dispatcher\n3. Update tool registry and verify zero regressions\n4. Execute automated capability acceptance test\n\nFiles expected to change:\n- data/test_quantum_balancer.py\n\nDependencies:\n- Verified local assets and existing dependencies (None additional).\n\nRisks:\n- MEDIUM risk level. Full rollback checkpoint will be captured before applying any change.\n\nEstimated complexity: Medium.\n\nWould you like me to implement this upgrade?",
+      "approval_metadata": {
+        "approved_by": "Pasha Dev",
+        "approved_at": "2026-11-08T14:54:24.521551",
+        "authorized_fingerprint": "806a7489b0d79a90"
+      },
+      "completed_at": "2026-11-08T14:54:24.676726"
+    }
+  },
+  "active": {}
 }

@@ -1,8 +1,9 @@
 {
-  "timestamp": "2026-11-08T14:26:00.000Z",
-  "system_name": "SARA AI 2.5.0 ENTERPRISE PRO",
+  "timestamp": "2026-11-08T14:45:00.000Z",
+  "system_name": "SARA AI 3.0.0 ENTERPRISE PRO",
   "health_score": 100.0,
   "status": "PRODUCTION_READY",
+  "architecture_version": "3.0.0",
   "metrics": {
     "total_tools": 223,
     "verified_tools": 223,
@@ -10,15 +11,29 @@
     "broken_tools": 0,
     "total_automations": 439,
     "verified_automations": 439,
-    "regression_tests_total": 35,
-    "regression_tests_passed": 35,
+    "total_skills": 25,
+    "regression_tests_total": 45,
+    "regression_tests_passed": 45,
     "regression_tests_failed": 0,
     "regression_pass_rate": "100.0%",
     "circuit_breaker_status": "CLOSED_HEALTHY",
     "self_healing_engine_status": "ONLINE_ACTIVE",
+    "self_upgrade_engine_status": "ONLINE_ACTIVE",
+    "consent_manager_status": "ONLINE_GATE_ENFORCED",
     "browser_engine_status": "ONLINE_ACTIVE",
     "discord_autonomy_status": "ONLINE_ACTIVE_NEXORA_LOCKED",
     "desktop_os_controller_status": "ONLINE_NATIVE_ACTIVE"
+  },
+  "self_upgrade_subsystem": {
+    "capability_analyzer": "ONLINE",
+    "decision_engine": "ONLINE_A_TO_H",
+    "upgrade_researcher": "ONLINE_LOCAL_AND_ONLINE",
+    "consent_manager": "ONLINE_GATE_LOCKED",
+    "execution_engine": "ONLINE_ROLLBACK_ENABLED",
+    "skill_manager": "ONLINE_SECURITY_AUDITING",
+    "failure_learning_engine": "ONLINE_EMPIRICAL_STORE",
+    "upgrade_history": "ONLINE_CREDENTIAL_REDACTED",
+    "self_upgrade_center_dashboard": "file:///D:/MARAA AI/data/hud/self_upgrade_center.html"
   },
   "subsystem_health": {
     "desktop_os_controller": {

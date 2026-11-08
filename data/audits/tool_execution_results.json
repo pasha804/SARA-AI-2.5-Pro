@@ -5958,5 +5958,500 @@
     "telemetry": {
       "cached_from": 1794129789.4678552
     }
+  },
+  {
+    "execution_id": "EXEC-614D3BF8",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "FAILURE",
+    "ok": false,
+    "duration_ms": 0.33,
+    "start_time": 1794131160.9904902,
+    "end_time": 1794131160.9908276,
+    "retries": 0,
+    "result": null,
+    "error": "Synthetic failure for circuit breaker test",
+    "error_type": "RuntimeError",
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "stack": "NoneType: None\n"
+    }
+  },
+  {
+    "execution_id": "EXEC-824C0F89",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "FAILURE",
+    "ok": false,
+    "duration_ms": 0.36,
+    "start_time": 1794131161.0252533,
+    "end_time": 1794131161.0256238,
+    "retries": 0,
+    "result": null,
+    "error": "Synthetic failure for circuit breaker test",
+    "error_type": "RuntimeError",
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "stack": "NoneType: None\n"
+    }
+  },
+  {
+    "execution_id": "EXEC-CFAA570B",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "CIRCUIT_BROKEN",
+    "ok": false,
+    "duration_ms": 0.01,
+    "start_time": 1794131161.1579986,
+    "end_time": 1794131161.1580203,
+    "retries": 0,
+    "result": null,
+    "error": "Circuit breaker is OPEN for tool 'test_failing_circuit_tool' due to repeated failures.",
+    "error_type": "CircuitBreakerOpenException",
+    "idempotency_hit": false,
+    "telemetry": {
+      "circuit_open": true
+    }
+  },
+  {
+    "execution_id": "EXEC-309C6855",
+    "tool_name": "test_idempotent_tool",
+    "category": "TEST",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.05,
+    "start_time": 1794131161.4744725,
+    "end_time": 1794131161.47456,
+    "retries": 0,
+    "result": {
+      "data": "unique_read",
+      "call_count": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-71FFF4DF",
+    "tool_name": "test_idempotent_tool",
+    "category": "TEST",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794131161.5047667,
+    "end_time": 1794131161.5048244,
+    "retries": 0,
+    "result": {
+      "data": "unique_read",
+      "call_count": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": true,
+    "telemetry": {
+      "cached_from": 1794131161.4745476
+    }
+  },
+  {
+    "execution_id": "EXEC-E8340BC0",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "FAILURE",
+    "ok": false,
+    "duration_ms": 0.39,
+    "start_time": 1794131418.3985255,
+    "end_time": 1794131418.3989236,
+    "retries": 0,
+    "result": null,
+    "error": "Synthetic failure for circuit breaker test",
+    "error_type": "RuntimeError",
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "stack": "NoneType: None\n"
+    }
+  },
+  {
+    "execution_id": "EXEC-3F94C5FF",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "FAILURE",
+    "ok": false,
+    "duration_ms": 0.38,
+    "start_time": 1794131418.4288142,
+    "end_time": 1794131418.4292085,
+    "retries": 0,
+    "result": null,
+    "error": "Synthetic failure for circuit breaker test",
+    "error_type": "RuntimeError",
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "stack": "NoneType: None\n"
+    }
+  },
+  {
+    "execution_id": "EXEC-99B7BAD7",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "CIRCUIT_BROKEN",
+    "ok": false,
+    "duration_ms": 0.01,
+    "start_time": 1794131418.4580202,
+    "end_time": 1794131418.458039,
+    "retries": 0,
+    "result": null,
+    "error": "Circuit breaker is OPEN for tool 'test_failing_circuit_tool' due to repeated failures.",
+    "error_type": "CircuitBreakerOpenException",
+    "idempotency_hit": false,
+    "telemetry": {
+      "circuit_open": true
+    }
+  },
+  {
+    "execution_id": "EXEC-4B399A94",
+    "tool_name": "test_idempotent_tool",
+    "category": "TEST",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.06,
+    "start_time": 1794131418.5350966,
+    "end_time": 1794131418.5352066,
+    "retries": 0,
+    "result": {
+      "data": "unique_read",
+      "call_count": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-E1F21456",
+    "tool_name": "test_idempotent_tool",
+    "category": "TEST",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.05,
+    "start_time": 1794131418.6187549,
+    "end_time": 1794131418.618813,
+    "retries": 0,
+    "result": {
+      "data": "unique_read",
+      "call_count": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": true,
+    "telemetry": {
+      "cached_from": 1794131418.5351932
+    }
+  },
+  {
+    "execution_id": "EXEC-7C77686E",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "FAILURE",
+    "ok": false,
+    "duration_ms": 0.28,
+    "start_time": 1794131466.6501443,
+    "end_time": 1794131466.6504395,
+    "retries": 0,
+    "result": null,
+    "error": "Synthetic failure for circuit breaker test",
+    "error_type": "RuntimeError",
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "stack": "NoneType: None\n"
+    }
+  },
+  {
+    "execution_id": "EXEC-ACC86CD2",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "FAILURE",
+    "ok": false,
+    "duration_ms": 0.46,
+    "start_time": 1794131466.6790657,
+    "end_time": 1794131466.6795352,
+    "retries": 0,
+    "result": null,
+    "error": "Synthetic failure for circuit breaker test",
+    "error_type": "RuntimeError",
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "stack": "NoneType: None\n"
+    }
+  },
+  {
+    "execution_id": "EXEC-FCC0372E",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "CIRCUIT_BROKEN",
+    "ok": false,
+    "duration_ms": 0.01,
+    "start_time": 1794131466.7456956,
+    "end_time": 1794131466.7457204,
+    "retries": 0,
+    "result": null,
+    "error": "Circuit breaker is OPEN for tool 'test_failing_circuit_tool' due to repeated failures.",
+    "error_type": "CircuitBreakerOpenException",
+    "idempotency_hit": false,
+    "telemetry": {
+      "circuit_open": true
+    }
+  },
+  {
+    "execution_id": "EXEC-44993C03",
+    "tool_name": "test_idempotent_tool",
+    "category": "TEST",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.05,
+    "start_time": 1794131466.9356534,
+    "end_time": 1794131466.9358354,
+    "retries": 0,
+    "result": {
+      "data": "unique_read",
+      "call_count": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-FEAF5A33",
+    "tool_name": "test_idempotent_tool",
+    "category": "TEST",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.17,
+    "start_time": 1794131466.9706275,
+    "end_time": 1794131466.9708073,
+    "retries": 0,
+    "result": {
+      "data": "unique_read",
+      "call_count": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": true,
+    "telemetry": {
+      "cached_from": 1794131466.9358218
+    }
+  },
+  {
+    "execution_id": "EXEC-3BA83511",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "FAILURE",
+    "ok": false,
+    "duration_ms": 0.31,
+    "start_time": 1794131584.2197368,
+    "end_time": 1794131584.2200558,
+    "retries": 0,
+    "result": null,
+    "error": "Synthetic failure for circuit breaker test",
+    "error_type": "RuntimeError",
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "stack": "NoneType: None\n"
+    }
+  },
+  {
+    "execution_id": "EXEC-62667665",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "FAILURE",
+    "ok": false,
+    "duration_ms": 0.5,
+    "start_time": 1794131584.2637959,
+    "end_time": 1794131584.2643068,
+    "retries": 0,
+    "result": null,
+    "error": "Synthetic failure for circuit breaker test",
+    "error_type": "RuntimeError",
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "stack": "NoneType: None\n"
+    }
+  },
+  {
+    "execution_id": "EXEC-984BB035",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "CIRCUIT_BROKEN",
+    "ok": false,
+    "duration_ms": 0.01,
+    "start_time": 1794131584.3022635,
+    "end_time": 1794131584.3022861,
+    "retries": 0,
+    "result": null,
+    "error": "Circuit breaker is OPEN for tool 'test_failing_circuit_tool' due to repeated failures.",
+    "error_type": "CircuitBreakerOpenException",
+    "idempotency_hit": false,
+    "telemetry": {
+      "circuit_open": true
+    }
+  },
+  {
+    "execution_id": "EXEC-2E30EB86",
+    "tool_name": "test_idempotent_tool",
+    "category": "TEST",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.06,
+    "start_time": 1794131584.4489253,
+    "end_time": 1794131584.4490187,
+    "retries": 0,
+    "result": {
+      "data": "unique_read",
+      "call_count": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-EE1F58B9",
+    "tool_name": "test_idempotent_tool",
+    "category": "TEST",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.35,
+    "start_time": 1794131584.5261042,
+    "end_time": 1794131584.5264668,
+    "retries": 0,
+    "result": {
+      "data": "unique_read",
+      "call_count": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": true,
+    "telemetry": {
+      "cached_from": 1794131584.4490054
+    }
+  },
+  {
+    "execution_id": "EXEC-E59A01DB",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "FAILURE",
+    "ok": false,
+    "duration_ms": 0.32,
+    "start_time": 1794131667.8045032,
+    "end_time": 1794131667.804835,
+    "retries": 0,
+    "result": null,
+    "error": "Synthetic failure for circuit breaker test",
+    "error_type": "RuntimeError",
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "stack": "NoneType: None\n"
+    }
+  },
+  {
+    "execution_id": "EXEC-5FFADC12",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "FAILURE",
+    "ok": false,
+    "duration_ms": 0.4,
+    "start_time": 1794131667.8395865,
+    "end_time": 1794131667.8400025,
+    "retries": 0,
+    "result": null,
+    "error": "Synthetic failure for circuit breaker test",
+    "error_type": "RuntimeError",
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "stack": "NoneType: None\n"
+    }
+  },
+  {
+    "execution_id": "EXEC-1CFFD1DF",
+    "tool_name": "test_failing_circuit_tool",
+    "category": "TEST",
+    "status": "CIRCUIT_BROKEN",
+    "ok": false,
+    "duration_ms": 0.01,
+    "start_time": 1794131667.876914,
+    "end_time": 1794131667.8769355,
+    "retries": 0,
+    "result": null,
+    "error": "Circuit breaker is OPEN for tool 'test_failing_circuit_tool' due to repeated failures.",
+    "error_type": "CircuitBreakerOpenException",
+    "idempotency_hit": false,
+    "telemetry": {
+      "circuit_open": true
+    }
+  },
+  {
+    "execution_id": "EXEC-9AB48B8F",
+    "tool_name": "test_idempotent_tool",
+    "category": "TEST",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.05,
+    "start_time": 1794131668.0866218,
+    "end_time": 1794131668.0867136,
+    "retries": 0,
+    "result": {
+      "data": "unique_read",
+      "call_count": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": false,
+    "telemetry": {
+      "attempts": 1,
+      "timeout_ms": 15000
+    }
+  },
+  {
+    "execution_id": "EXEC-A69E3D25",
+    "tool_name": "test_idempotent_tool",
+    "category": "TEST",
+    "status": "SUCCESS",
+    "ok": true,
+    "duration_ms": 0.04,
+    "start_time": 1794131668.1766295,
+    "end_time": 1794131668.176687,
+    "retries": 0,
+    "result": {
+      "data": "unique_read",
+      "call_count": 1
+    },
+    "error": null,
+    "error_type": null,
+    "idempotency_hit": true,
+    "telemetry": {
+      "cached_from": 1794131668.0867004
+    }
   }
 ]

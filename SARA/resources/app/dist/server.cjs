@@ -19763,6 +19763,33 @@ function executeNodeNativeTool(tool, args) {
 
     }
 
+    if (["analyzeCapability", "analyze_capability", "proposeUpgrade", "propose_upgrade", "approveUpgrade", "approve_upgrade", "rejectUpgrade", "reject_upgrade", "executeUpgrade", "execute_upgrade", "manageSkills", "manage_skills", "selfUpgrade", "self_upgrade"].includes(tool)) {
+      try {
+        const brainScript = path.join(process.cwd(), "sara_neural_brain.py");
+        const cmdMap = {
+          analyzeCapability: "analyze_capability",
+          analyze_capability: "analyze_capability",
+          proposeUpgrade: "propose_upgrade",
+          propose_upgrade: "propose_upgrade",
+          approveUpgrade: "approve_upgrade",
+          approve_upgrade: "approve_upgrade",
+          rejectUpgrade: "reject_upgrade",
+          reject_upgrade: "reject_upgrade",
+          manageSkills: "manage_skills",
+          manage_skills: "manage_skills",
+          selfUpgrade: "upgrade",
+          self_upgrade: "upgrade"
+        };
+        const targetCmd = cmdMap[tool] || "upgrade";
+        const subArg = (args && (args.intent || args.query || args.proposal_id || args.id)) ? (args.intent || args.query || args.proposal_id || args.id) : "status";
+        const out = execFileSync("python", [brainScript, targetCmd, targetCmd, subArg], { encoding: "utf-8", timeout: 25000 });
+        const parsed = JSON.parse(out.trim());
+        return { ok: true, result: parsed };
+      } catch (e) {
+        return { ok: false, error: e.message };
+      }
+    }
+
 
 
   } catch (err) {

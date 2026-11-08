@@ -6498,6 +6498,48 @@ if __name__ == "__main__":
                 print(json.dumps(res, indent=2))
             except Exception as e:
                 print(json.dumps({"ok": False, "error": str(e)}))
+        elif cmd in ["upgrade", "self_upgrade", "analyze_capability", "propose_upgrade", "approve_upgrade", "reject_upgrade", "manage_skills"]:
+            try:
+                sub_cmd = sys.argv[2] if len(sys.argv) > 2 else "status"
+                from sara_capability_analyzer import capability_analyzer
+                from sara_upgrade_decision_engine import upgrade_decision_engine
+                from sara_upgrade_researcher import upgrade_researcher
+                from sara_consent_manager import consent_manager
+                from sara_self_upgrade_engine import self_upgrade_engine
+                from sara_skill_manager import skill_manager
+                from sara_upgrade_history import upgrade_history
+
+                if cmd == "analyze_capability" or sub_cmd == "analyze":
+                    intent = sys.argv[3] if len(sys.argv) > 3 else (sub_cmd if cmd == "analyze_capability" else "general")
+                    res = capability_analyzer.analyze_capability(intent)
+                elif cmd == "propose_upgrade" or sub_cmd == "propose":
+                    intent = sys.argv[3] if len(sys.argv) > 3 else "extend capabilities"
+                    diag = capability_analyzer.analyze_capability(intent)
+                    dec = upgrade_decision_engine.decide_upgrade_path(diag, intent)
+                    res_info = upgrade_researcher.research_solution(intent, dec)
+                    res = consent_manager.create_proposal(intent, diag, dec, res_info)
+                elif cmd == "approve_upgrade" or sub_cmd == "approve":
+                    prop_id = sys.argv[3] if len(sys.argv) > 3 else sub_cmd
+                    app_res = consent_manager.approve_proposal(prop_id)
+                    if app_res.get("success"):
+                        res = self_upgrade_engine.execute_approved_upgrade(prop_id)
+                    else:
+                        res = app_res
+                elif cmd == "reject_upgrade" or sub_cmd == "reject":
+                    prop_id = sys.argv[3] if len(sys.argv) > 3 else sub_cmd
+                    res = consent_manager.reject_proposal(prop_id)
+                elif cmd == "manage_skills" or sub_cmd == "skills":
+                    res = {"skills": skill_manager.discover_skills()}
+                else:
+                    res = {
+                        "status": "SELF_UPGRADE_ENGINE_ACTIVE",
+                        "history_stats": upgrade_history.get_statistics(),
+                        "pending_proposals": list(consent_manager.proposals.get("pending", {}).keys()),
+                        "skills_count": len(skill_manager.skills)
+                    }
+                print(json.dumps(res, indent=2, default=str))
+            except Exception as e:
+                print(json.dumps({"success": False, "error": str(e)}))
     
     else:
 

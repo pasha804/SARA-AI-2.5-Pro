@@ -1743,26 +1743,6 @@
     "timeout_ms": 15000
   },
   {
-    "id": "TOOL-103",
-    "name": "generateStudyPack",
-    "category": "SYSTEM_AUTOMATION",
-    "description": "BSCS Academic Study & PDF Tutor: parses PDFs, Markdown guides, extracts core concepts, formulas, and builds an interactive quiz for Pasha Jan.",
-    "declared_in_gemini_schema": true,
-    "handled_in_server_dispatcher": true,
-    "handled_in_python_brain": false,
-    "execution_type": "Python Bridge (sara_neural_brain.py)",
-    "dispatcher_line": 19408,
-    "required_parameters": [
-      "file_path"
-    ],
-    "optional_parameters": [
-      "topic"
-    ],
-    "operational_status": "VERIFIED_WORKING",
-    "idempotency_safe": false,
-    "timeout_ms": 15000
-  },
-  {
     "id": "TOOL-104",
     "name": "getActiveWindow",
     "category": "DESKTOP_OS_CONTROL",
