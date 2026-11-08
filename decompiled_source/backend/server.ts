@@ -2961,25 +2961,34 @@ async function startServer() {
             const reason = event.reason || "No close reason provided";
             const details = `code=${event.code} reason=${reason}`;
             const authenticationRejected =
-              event.code === 1008 && /authentication|credential|api.?key|unauthenticated/i.test(reason);
+              event.code === 1008 || /authentication|credential|api.?key|unauthenticated|leaked|forbidden|permission_denied/i.test(reason);
+            const isSessionLimit = !authenticationRejected && /GoAway|duration|limit|timeout/i.test(reason);
             console.error("Gemini Live session closed:", details);
             logError(`GEMINI_LIVE_CLOSED ${details}`);
-            if (authenticationRejected) {
-              // Remove an unusable stored key and suppress an invalid .env fallback.
-              // The client reloads so ApiKeyGate can securely request a replacement.
-              clearGeminiApiKey();
-            }
             try {
-              clientWs.send(JSON.stringify(authenticationRejected
-                ? {
-                    type: "error",
-                    code: "INVALID_API_KEY",
-                    error: "Google rejected the saved Gemini API key. Enter a new key to continue.",
-                  }
-                : {
-                    type: "error",
-                    error: `Gemini Live closed (${details}). Open Settings → Voice to verify or replace the API key.`,
-                  }));
+              screenVision?.dispose();
+              forgetScreenVision();
+              screenVision = null;
+            } catch {}
+            try {
+              if (authenticationRejected) {
+                console.warn("[SARA] Gemini API key rejected by Google (leaked/auth error).");
+                clientWs.send(JSON.stringify({
+                  type: "error",
+                  code: "INVALID_API_KEY",
+                  error: "Google rejected the saved Gemini API key. Enter a new key in Cockpit -> Settings to continue.",
+                }));
+              } else if (isSessionLimit) {
+                clientWs.send(JSON.stringify({
+                  type: "session_refresh",
+                  message: "Gemini Live session duration refreshed. Reconnecting automatically...",
+                }));
+              } else {
+                clientWs.send(JSON.stringify({
+                  type: "error",
+                  error: `Gemini Live closed (${details}). Open Settings → Voice to verify or replace the API key.`,
+                }));
+              }
             } catch {
               /* client already disconnected */
             }

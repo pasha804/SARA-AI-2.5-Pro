@@ -1,5 +1,5 @@
 {
-  "id": "study_1794153025",
+  "id": "study_1794160693",
   "title": "Architecture 120 Tools",
   "source": "D:\\MARAA AI\\architecture.md",
   "concepts": [
@@ -44,5 +44,5 @@
       "explanation": "Optimized state machines and lookup tables achieve near O(1) deterministic performance."
     }
   ],
-  "created_at": "2026-11-08 20:50:25"
+  "created_at": "2026-11-08 22:58:13"
 }

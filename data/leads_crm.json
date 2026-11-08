@@ -1423,5 +1423,76 @@
     "campaign_id": "camp_1794153348",
     "offer": "Custom AI Employee Deployment (Save 30+ Dev Hours/Week)",
     "updated_at": "2026-11-08 20:55:48"
+  },
+  {
+    "id": "lead_1794160652",
+    "contact_name": "Client Farhan",
+    "phone": "+923332656733",
+    "message": "We need a custom dashboard built this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-08 22:57:32"
+  },
+  {
+    "id": "lead_1794160652",
+    "contact_name": "Tech Support",
+    "phone": "+923332656733",
+    "message": "How do I configure API keys?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-11-08 22:57:32"
+  },
+  {
+    "id": "lead_1794160700",
+    "contact_name": "Ahmad Client",
+    "phone": "+923332656733",
+    "message": "We need a custom automated CRM developed this week. What is your quote?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-08 22:58:20"
+  },
+  {
+    "id": "lead_1794160700",
+    "contact_name": "Support Query",
+    "phone": "+923332656733",
+    "message": "How do I connect my account?",
+    "intent": "general_inquiry",
+    "urgency": "normal",
+    "tags": [],
+    "suggested_reply": "Walaikum Assalam! Main theek hoon. Aap sunayein, kaisa chal raha hai sab?",
+    "timestamp": "2026-11-08 22:58:20"
+  },
+  {
+    "id": "lead_1794160745",
+    "contact_name": "Farhan Tech",
+    "phone": "+923332656733",
+    "message": "Hey Pasha, we need an automated trading dashboard developed. What is your rate and timeline?",
+    "intent": "sales_lead",
+    "urgency": "high",
+    "tags": [
+      "potential_client"
+    ],
+    "suggested_reply": "Walaikum Assalam! Thank you for reaching out regarding your project. Mubashar (Pasha Dev) will review the requirements and share a detailed roadmap shortly. Could you please share the key features and timeline you have in mind?",
+    "timestamp": "2026-11-08 22:59:05"
+  },
+  {
+    "name": "Sophia Vance",
+    "company": "Hyperion Ventures",
+    "email": "sophia@hyperion.ai",
+    "phone": "+1-415-555-0199",
+    "status": "OUTREACH_GENERATED",
+    "campaign_id": "camp_1794160750",
+    "offer": "Custom AI Employee Deployment (Save 30+ Dev Hours/Week)",
+    "updated_at": "2026-11-08 22:59:10"
   }
 ]

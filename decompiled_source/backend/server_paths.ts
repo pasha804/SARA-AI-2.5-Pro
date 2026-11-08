@@ -114,6 +114,7 @@ export function hasGeminiApiKey(): boolean {
 export function setGeminiApiKey(key: string): void {
   const trimmed = (key || "").trim();
   if (!trimmed) throw new Error("API key must not be empty.");
+  process.env.GEMINI_API_KEY = trimmed;
   const current = readSecrets();
   current.geminiApiKey = trimmed;
   delete current.ignoreEnvironmentApiKey;

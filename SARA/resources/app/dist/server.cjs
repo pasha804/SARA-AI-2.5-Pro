@@ -366,6 +366,7 @@ function setGeminiApiKey(key) {
 
 
   if (!trimmed) throw new Error("API key must not be empty.");
+  process.env.GEMINI_API_KEY = trimmed;
 
 
 
@@ -29804,106 +29805,39 @@ A fresh screenshot is attached. Analyze it and answer the spoken question direct
 
 
 
-            const authenticationRejected = event.code === 1008 && /authentication|credential|api.?key|unauthenticated/i.test(reason);
+            const authenticationRejected = event.code === 1008 || /authentication|credential|api.?key|unauthenticated|leaked|forbidden|permission_denied/i.test(reason);
 
-
-
-            const isSessionLimit = (event.code === 1008 && !authenticationRejected) || /GoAway|duration|limit|timeout/i.test(reason);
-
-
+            const isSessionLimit = !authenticationRejected && /GoAway|duration|limit|timeout/i.test(reason);
 
             console.error("Gemini Live session closed:", details);
 
-
-
             logError(`GEMINI_LIVE_CLOSED ${details}`);
 
-
-
-            if (authenticationRejected) {
-
-
-
-              clearGeminiApiKey();
-
-
-
-            }
-
-
+            try {
+              screenVision?.dispose();
+              forgetScreenVision();
+              screenVision = null;
+            } catch {}
 
             try {
-
-
-
-              if (isSessionLimit || (event.code !== 1000 && !authenticationRejected)) {
-
-
-
-                console.log("[SARA] Gemini Live session limit reached. Auto-refreshing session...");
-
-
-
+              if (authenticationRejected) {
+                console.warn("[SARA] Gemini API key rejected by Google (leaked/auth error).");
                 clientWs.send(JSON.stringify({
-
-
-
-                  type: "session_refresh",
-
-
-
-                  message: "Gemini Live session duration refreshed. Reconnecting automatically..."
-
-
-
-                }));
-
-
-
-              } else if (authenticationRejected) {
-
-
-
-                clientWs.send(JSON.stringify({
-
-
-
                   type: "error",
-
-
-
                   code: "INVALID_API_KEY",
-
-
-
-                  error: "Google rejected the saved Gemini API key. Enter a new key to continue."
-
-
-
+                  error: "Google rejected the saved Gemini API key. Enter a new key in Cockpit -> Settings to continue."
                 }));
-
-
-
-              } else {
-
-
-
+              } else if (isSessionLimit) {
+                console.log("[SARA] Gemini Live session limit reached. Auto-refreshing session...");
                 clientWs.send(JSON.stringify({
-
-
-
-                  type: "error",
-
-
-
-                  error: `Gemini Live closed (${details}).`
-
-
-
+                  type: "session_refresh",
+                  message: "Gemini Live session duration refreshed. Reconnecting automatically..."
                 }));
-
-
-
+              } else {
+                clientWs.send(JSON.stringify({
+                  type: "error",
+                  error: `Gemini Live closed (${details}).`
+                }));
               }
 
 

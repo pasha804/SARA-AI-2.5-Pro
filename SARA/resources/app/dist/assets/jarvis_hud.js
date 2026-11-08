@@ -1137,7 +1137,11 @@
   window.saraSaveAndVerifyGeminiKey = async function () {
     const input = document.getElementById('settings-gemini-key');
     const key = input ? input.value.trim() : '';
-    if (!key) return;
+    if (!key) {
+      window.saraShowToast && window.saraShowToast('Please paste a valid Gemini API key first.', 'error');
+      return;
+    }
+    window.saraShowToast && window.saraShowToast('Verifying key with Google...', 'info');
     try {
       const res = await fetch('/api/config/apikey', {
         method: 'POST',
@@ -1146,9 +1150,17 @@
       });
       const data = await res.json();
       if (data.ok) {
-        window.saraShowToast('Google Gemini API Key Verified & Saved!');
+        window.saraShowToast && window.saraShowToast('Gemini Key Verified & Saved! Reconnecting...', 'success');
+        if (input) input.value = '';
+        setTimeout(() => {
+          window.location.reload();
+        }, 1200);
+      } else {
+        window.saraShowToast && window.saraShowToast('Key Error: ' + (data.error || 'Rejected by Google'), 'error');
       }
-    } catch {}
+    } catch (e) {
+      window.saraShowToast && window.saraShowToast('Connection error while validating key.', 'error');
+    }
   };
 
   window.saraOnboardingStep = async function (dir) {
