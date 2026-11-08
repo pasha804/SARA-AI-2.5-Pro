@@ -2,7 +2,7 @@
   "name": "sara-ai-2.5-pro",
   "productName": "SARA AI 2.5 Pro",
   "description": "SARA AI 2.5 Pro — Neural Living Companion, Three.js 3D Avatar, Autonomous Discord Community Operator & 415+ n8n Automations",
-  "author": "Pasha Dev (Mubashar Jan) <pashadev804@gmail.com>",
+  "author": "pasha804 (Muhammad Mubashar) <mubasharmuhammad790@gmail.com>",
   "version": "2.5.0",
   "type": "module",
   "main": "electron/main.cjs",

@@ -180,10 +180,11 @@ OK (0 failures, 0 errors)
 
 ## 👨‍💻 Author & Maintainer
 
-- **Developer**: Muhammad Mubashar (Pasha Dev / Pasha Jan)
-- **Email**: [pashadev804@gmail.com](mailto:pashadev804@gmail.com)
+- **Developer / GitHub Account**: Muhammad Mubashar ([@pasha804](https://github.com/pasha804))
+- **Primary GitHub Email**: [mubasharmuhammad790@gmail.com](mailto:mubasharmuhammad790@gmail.com)
+- **Dev Contact**: [pashadev804@gmail.com](mailto:pashadev804@gmail.com)
 - **Phone**: `+923332656733`
-- **GitHub**: [@pasha804](https://github.com/pasha804)
+- **GitHub Profile**: [@pasha804](https://github.com/pasha804)
 - **Repository**: [https://github.com/pasha804/SARA-AI-2.5-Pro](https://github.com/pasha804/SARA-AI-2.5-Pro)
 
 ---
