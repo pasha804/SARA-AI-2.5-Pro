@@ -1191,6 +1191,13 @@ button[title*="Mute Microphone"]:hover {
   animation: saraFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+.sara-full-modal-overlay.hidden {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
 .sara-modal-container {
   width: 100%;
   max-width: 760px;

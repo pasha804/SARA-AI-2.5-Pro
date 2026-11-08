@@ -39,7 +39,7 @@ function debugLog(msg) {
 
 // --- Constants -------------------------------------------------------------
 const SERVER_PORT = 3344;
-const SERVER_ORIGIN = `http://localhost:${SERVER_PORT}`;
+const SERVER_ORIGIN = `http://127.0.0.1:${SERVER_PORT}`;
 const SERVER_READY_TIMEOUT_MS = 40_000;
 
 // In development we run from the repo root; when packaged the app files live in
@@ -158,7 +158,14 @@ function startBackend() {
     env.MYRAA_AGENT_EXE = agentExe;
   }
 
-  serverProcess = spawn(process.execPath, [SERVER_ENTRY], {
+  let runtimeExecutable = process.execPath;
+  const preferredNode = 'C:\\Program Files\\nodejs\\node.exe';
+  if (fs.existsSync(preferredNode)) {
+    runtimeExecutable = preferredNode;
+    debugLog(`Using preferred system Node runtime: ${runtimeExecutable}`);
+  }
+
+  serverProcess = spawn(runtimeExecutable, [SERVER_ENTRY], {
     cwd: APP_ROOT,
     env,
     // The private IPC channel is used only for one-shot screen capture. It
@@ -303,8 +310,8 @@ let splashStartTime = Date.now();
 function createSplashWindow() {
   splashStartTime = Date.now();
   splashWindow = new BrowserWindow({
-    width: 960,
-    height: 540,
+    width: 1280,
+    height: 720,
     frame: false,
     transparent: true,
     resizable: false,
@@ -327,13 +334,13 @@ function transitionToMainWindow() {
   if (splashFinished) return;
   splashFinished = true;
   debugLog('transitionToMainWindow executing: showing mainWindow and closing splash');
-  if (splashWindow && !splashWindow.isDestroyed()) {
-    try { splashWindow.close(); } catch {}
-    splashWindow = null;
-  }
   if (mainWindow && !mainWindow.isDestroyed()) {
     mainWindow.show();
     mainWindow.focus();
+  }
+  if (splashWindow && !splashWindow.isDestroyed()) {
+    try { splashWindow.close(); } catch {}
+    splashWindow = null;
   }
 }
 
@@ -391,10 +398,10 @@ function createMainWindow() {
   // Maximum fallback timeout to guarantee main window shows up even if video fails
   setTimeout(() => {
     if (!splashFinished) {
-      debugLog('Splash fallback timer triggered (11s)');
+      debugLog('Splash fallback timer triggered (16s)');
       transitionToMainWindow();
     }
-  }, 11000);
+  }, 16000);
 
   
   mainWindow.webContents.on('did-finish-load', () => debugLog('mainWindow did-finish-load fired!'));
@@ -557,8 +564,10 @@ app.on('activate', () => {
 
 app.on('window-all-closed', () => {
   debugLog('app event: window-all-closed');
-  // Phase 2 introduces close-to-tray; for now quitting when all windows close
-  // is the expected behaviour on Windows.
+  if (!splashFinished || !mainWindowReady) {
+    debugLog('Ignoring window-all-closed because app is still transitioning/initializing');
+    return;
+  }
   if (process.platform !== 'darwin') app.quit();
 });
 

@@ -25,8 +25,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        -webkit-app-region: drag;
-        cursor: pointer;
       }
       video {
         width: 100%;
@@ -35,38 +33,16 @@
         display: block;
         border-radius: 16px;
       }
-      .skip-pill {
-        position: absolute;
-        bottom: 14px;
-        right: 18px;
-        font-family: 'JetBrains Mono', monospace, -apple-system, sans-serif;
-        font-size: 10px;
-        letter-spacing: 0.1em;
-        color: rgba(255, 255, 255, 0.6);
-        background: rgba(0, 0, 0, 0.65);
-        padding: 5px 12px;
-        border-radius: 20px;
-        border: 1px solid rgba(0, 240, 255, 0.3);
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity 0.3s;
-        backdrop-filter: blur(8px);
-      }
-      .card:hover .skip-pill {
-        opacity: 0.9;
-      }
     </style>
   </head>
   <body>
-    <div class="card" id="splash-card" title="Click or press any key to skip">
+    <div class="card" id="splash-card">
       <video id="intro-vid" src="intro_video.mp4" autoplay playsinline></video>
-      <div class="skip-pill">PRESS ANY KEY OR CLICK TO SKIP ⇥</div>
     </div>
 
     <script>
       (function() {
         const vid = document.getElementById('intro-vid');
-        const card = document.getElementById('splash-card');
         let finished = false;
 
         function finish() {
@@ -82,7 +58,6 @@
 
         if (vid) {
           vid.play().catch(function() {
-            // If autoplay with sound is blocked by OS policy, mute and retry
             vid.muted = true;
             vid.play().catch(function() {});
           });
@@ -90,8 +65,12 @@
           vid.addEventListener('error', finish);
         }
 
-        card.addEventListener('click', finish);
-        window.addEventListener('keydown', finish);
+        // Allow skipping only on explicit Escape or Space
+        window.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' || e.code === 'Space') {
+            finish();
+          }
+        });
       })();
     </script>
   </body>

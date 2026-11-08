@@ -1663,7 +1663,7 @@
       let timeGreeting = 'GOOD EVENING';
       if (rawH >= 5 && rawH < 12) timeGreeting = 'GOOD MORNING';
       else if (rawH >= 12 && rawH < 17) timeGreeting = 'GOOD AFTERNOON';
-      greetingEl.innerText = ${timeGreeting}, PASHA JAN;
+      greetingEl.innerText = `${timeGreeting}, PASHA JAN`;
     }
     return;
     const completed = localStorage.getItem('sara_onboarding_completed');
