@@ -59,7 +59,7 @@ class UpgradeHistory:
         # Raw API tokens (Google AIza, GitHub ghp, OpenAI sk)
         sanitized = re.sub(r"AIza[0-9A-Za-z\-_]{35}", "***REDACTED_API_KEY***", sanitized)
         sanitized = re.sub(r"ghp_[0-9a-zA-Z]{36}", "***REDACTED_GITHUB_TOKEN***", sanitized)
-        sanitized = re.sub(r"sk-[0-9a-zA-Z]{32,}", "***REDACTED_KEY***", sanitized)
+        sanitized = re.sub(r"sk-[0-9a-zA-Z_\-]{20,}", "***REDACTED_KEY***", sanitized)
         return sanitized
 
     def record_upgrade(

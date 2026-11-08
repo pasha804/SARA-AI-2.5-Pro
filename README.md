@@ -7,6 +7,7 @@
 <p align="center">
   <a href="https://github.com/pasha804/SARA-AI-2.5-Pro"><img src="https://img.shields.io/badge/Version-3.0_Enterprise_Pro-8b5cf6?style=for-the-badge&logo=electron" alt="Version 3.0 Enterprise Pro" /></a>
   <img src="https://img.shields.io/badge/Python-3.14%20%7C%203.12-38bdf8?style=for-the-badge&logo=python" alt="Python 3.14" />
+  <img src="https://img.shields.io/badge/Tests-47%2F47%20Green-10b981?style=for-the-badge&logo=pytest" alt="47/47 Tests Passed" />
   <img src="https://img.shields.io/badge/System%20Health-100.0%25%20Verified-10b981?style=for-the-badge&logo=checkmarx" alt="System Health 100%" />
   <img src="https://img.shields.io/badge/Core%20Tools-223%20Verified-06b6d4?style=for-the-badge" alt="223 Verified Tools" />
   <img src="https://img.shields.io/badge/Automations-439%20Cataloged-f59e0b?style=for-the-badge&logo=n8n" alt="439 Automations" />
@@ -138,7 +139,7 @@ flowchart LR
 
 ---
 
-## 🧪 Comprehensive Verification Suite (45 / 45 Tests Passing)
+## 🧪 Comprehensive Verification Suite (47 / 47 Tests Passing)
 
 SARA AI 3.0 enforces strict Test-Driven Development (TDD). Every subsystem is validated by automated regression suites:
 
@@ -147,29 +148,29 @@ SARA AI 3.0 enforces strict Test-Driven Development (TDD). Every subsystem is va
 platform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0
 rootdir: D:\MARAA AI
 plugins: anyio-4.12.1, asyncio-1.4.0, cov-7.1.0
-collected 45 items
+collected 47 items
 
-tests\test_self_upgrade_engine.py ..........                             [ 22%]
-tests\test_complete_tool_registry.py ......                              [ 35%]
-tests\test_discord_autonomous_manager.py ....                            [ 44%]
-tests\test_self_healing_engine.py ....                                   [ 53%]
-tests\test_viral_automations.py ....                                     [ 62%]
-tests\test_viral_automations_part2.py ......                             [ 75%]
-tests\test_manus_loop.py ..                                              [ 80%]
-tests\test_office_and_browser_suite.py ...                               [ 86%]
-tests\test_interactive_browser.py ..                                     [ 91%]
+tests\test_self_upgrade_engine.py ..........                             [ 21%]
+tests\test_complete_tool_registry.py ......                              [ 34%]
+tests\test_discord_autonomous_manager.py ....                            [ 42%]
+tests\test_self_healing_engine.py ....                                   [ 51%]
+tests\test_viral_automations.py .....                                    [ 61%]
+tests\test_viral_automations_part2.py ......                             [ 74%]
+tests\test_manus_loop.py ..                                              [ 78%]
+tests\test_office_and_browser_suite.py ...                               [ 85%]
+tests\test_interactive_browser.py ...                                    [ 91%]
 tests\test_advanced_browser.py ....                                      [100%]
 
-======================= 45 passed in 239.97s (0:03:59) ========================
+============================= 47 passed in 35.76s =============================
 ```
 
 ---
 
-## 📊 Live Interactive Dashboards
+## 📊 Live Interactive Dashboards & Architecture Blueprints
 
+- **Master Architecture Blueprint**: [`architecture.md`](file:///D:/MARAA AI/architecture.md) — Comprehensive 3.0.0-ENTERPRISE PRO engineering specification, call graphs, AAA-studio micro-flaw eradication, and subsystem topologies.
 - **Self-Upgrade Center HUD**: [`data/hud/self_upgrade_center.html`](file:///D:/MARAA AI/data/hud/self_upgrade_center.html) — Hallmark-grade interface presenting live capabilities, pending proposals, audit history, and system telemetry.
 - **Live HUD Telemetry**: [`data/hud/sara_live_hud.html`](file:///D:/MARAA AI/data/hud/sara_live_hud.html) — Real-time resource gauges and background worker monitors.
-- **Master Architecture Blueprint**: [`architecture.md`](file:///D:/MARAA AI/architecture.md) — Comprehensive 3.0.0-ENTERPRISE PRO engineering specification, call graphs, and subsystem topologies.
 
 ---
 
@@ -177,7 +178,9 @@ tests\test_advanced_browser.py ....                                      [100%]
 
 SARA AI 3.0 introduces a seamless first-run setup experience designed to configure cognition in seconds:
 - **Cyberpunk Intro Bootloader**: High-definition video intro loop (`intro_video.mp4`) with real-time diagnostic stages, scanlines, and hardware telemetry ticker.
-- **Step 1: Quantum API Core**: Step-by-step guidance linking directly to Google AI Studio for zero-latency Gemini / APInex API key activation.
+- **Step 1: Dual Quantum API Gateway**:
+  - ⚡ **APInex Multi-Model Key**: Full support for `sk-apx...` tokens powering GLM-5.3, DeepSeek-V4, and Kimi-K3 with live inline latency verification.
+  - 🔑 **Google Gemini Key**: Direct link to Google AI Studio for zero-latency Gemini 3.8 / 2.5 Flash activation.
 - **Step 2: 4 Bespoke Personality Matrices**:
   1. 🌸 **Cyberpunk Living Companion (Default)**: Affectionate, warm, speaks fluent Roman Urdu + English, addresses user as **Pasha Jan**, emotional companion and coding partner.
   2. ⚡ **Principal Autonomous Engineer**: Razor-sharp, analytical, strict TDD enforcement, zero small talk, deep software architecture focus.
