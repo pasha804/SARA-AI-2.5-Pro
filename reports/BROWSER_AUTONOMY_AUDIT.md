@@ -120,3 +120,4 @@ The automated test suite in [test_advanced_browser.py](file:///D:/MARAA%20AI/tes
 
 ---
 *Report certified by Browser Automation Lead & Principal QA Specialist.*
+
