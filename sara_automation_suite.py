@@ -531,6 +531,486 @@ social_discord_publisher = SocialMediaDiscordPublisher()
 # ============================================================================
 # Pipeline 6: Discord Autonomous Community Manager (NEXORA Locked)
 # ============================================================================
+import datetime
+import json
+from pathlib import Path
+from typing import Dict, Any, List, Optional
+
+class DiscordAutonomousDailyPublisher:
+    """
+    Autonomous Multi-Channel Daily Engagement Engine for Discord (strictly NEXORA).
+    Generates dynamic, channel-relevant, non-repeating daily updates across all 54 text channels.
+    """
+
+    DAY_THEMES = {
+        0: {"name": "Monday Momentum", "emoji": "🚀", "tagline": "Kickstart your week with velocity"},
+        1: {"name": "Tech Deep-Dive Tuesday", "emoji": "💡", "tagline": "Mastering the fundamentals & new paradigms"},
+        2: {"name": "Midweek Architecture & Polish", "emoji": "⚡", "tagline": "Zero bottlenecks, clean systems"},
+        3: {"name": "Tooling & Best Practices Thursday", "emoji": "🛠️", "tagline": "Sharpening our developer toolchains"},
+        4: {"name": "Feature Ship Friday", "emoji": "🔥", "tagline": "Deploying code, shipping products, closing PRs"},
+        5: {"name": "Weekend Hackathon & Side Hustles", "emoji": "🎯", "tagline": "Building passion projects & MVP experiments"},
+        6: {"name": "Reflection & Weekly Strategic Vision", "emoji": "🌱", "tagline": "Reviewing wins, learning from bugs, planning ahead"}
+    }
+
+    CHANNEL_TOPICS = {
+        # --- INFORMATION ---
+        "rules": [
+            "Welcome developers! NEXORA is built on mutual respect, high-signal technical discussions, and collaborative growth. Let's keep our chats productive and positive!",
+            "Reminder: Keep all code discussions respectful, constructive, and clean. Share knowledge freely, credit sources, and uplift fellow creators in NEXORA!",
+            "Community Integrity: Zero tolerance for unsolicited promotional spam or toxic behavior. We are a family of ambitious engineers building great software together."
+        ],
+        "announcements": [
+            "📢 NEXORA Update: SARA AI 2.5 Pro autonomous systems are live! Stay tuned for upcoming community pair-programming sprints and coding challenges.",
+            "📢 Milestone Announcement: NEXORA's community is rapidly expanding! Check out the development channels to collaborate on exciting open-source repositories.",
+            "📢 Notice: Pasha Dev's development streams and live Q&A sessions are being scheduled. Drop your suggested topics in -general-chat!"
+        ],
+        "introductions": [
+            "👋 Welcome to all new members who recently joined NEXORA! Introduce yourself: What's your primary tech stack, and what cool project are you building right now?",
+            "✨ New in NEXORA? Tell us your background! Are you into AI/ML, Full-Stack, Game Dev, Mobile, or Systems Engineering? We'd love to connect!",
+            "🚀 First time here? Drop a hello! Share your GitHub profile, favorite programming language, and the dream app you are aiming to ship this year."
+        ],
+        "server-goals": [
+            "🎯 Weekly Server Milestone: Our goal this week is for every developer to ship at least 1 commit to a public repo and share it in -project-showcase!",
+            "🎯 NEXORA Vision: Becoming Lahore & Pakistan's premier elite tech guild. Let's hit 500+ active code reviews, peer mentorships, and live pair-programming sessions!",
+            "🎯 Goal Check-in: Track your quarterly programming targets. What new framework or skill have you conquered this month?"
+        ],
+
+        # --- COMMUNITY ---
+        "general-chat": [
+            "Salam developers! ☕ How is everyone's coding velocity today? Drop your current task, tough bug, or breakthrough of the morning!",
+            "Good morning NEXORA! ⚡ SARA is active alongside Pasha Dev. What exciting features or architectures are you architecting today?",
+            "Daily Community Pulse: What is the single most valuable productivity hack or terminal trick you discovered recently? Let's discuss!",
+            "Coding check-in! Who is pushing code to production today? Share your thoughts, blockers, or quick questions right here."
+        ],
+        "random-chat": [
+            "Casual debate time: Mechanical keyboard switch preference — tactile browns, clicky blues, or buttery smooth linear reds? ⌨️",
+            "Desk setup check! Dual monitor landscape, ultrawide curved, or vertical secondary for reading code and terminal logs? 🖥️",
+            "Developer fuel of choice: Espresso, Karak Chai, Matcha, or pure cold brew during 2:00 AM coding marathons? ☕",
+            "Fun tech thought: If you could time-travel back to the 1970s and introduce one modern tech concept to Dennis Ritchie, what would it be?"
+        ],
+        "daily-wins": [
+            "🔥 Daily Wins Celebration: Did you squash a nasty memory leak, merge an important PR, or pass all unit tests today? Share your win no matter how small!",
+            "🎉 Celebrate Progress: Even a single refactored function or a resolved merge conflict is a step forward. What did you conquer today?",
+            "💪 Win of the Day: Hard work always compounds. Celebrate your coding milestones here and inspire fellow developers in NEXORA!",
+            "✨ Drop your daily accomplishment! Whether it was learning a new API or shipping a major update, you made it happen!"
+        ],
+        "help-and-support": [
+            "Stuck on a tricky bug or cryptic stack trace? ❓ Remember: Always isolate with minimal reproducible examples and check your logs. Ask for help here!",
+            "Developer Support Hub: Never struggle in silence. If an error is halting your progress, describe the expected vs actual behavior and let's solve it together.",
+            "Debugging Pro-Tip: When faced with an elusive issue, explain it out loud (rubber duck debugging) or paste the traceback here for collaborative review!"
+        ],
+
+        # --- DEVELOPMENT ---
+        "python": [
+            "🐍 Python Insight: In Python 3.10+, utilize structural pattern matching (`match/case`) with guard clauses for clean, expressive state machine workflows.",
+            "🐍 Python Tip: Prefer `pathlib.Path` over `os.path` for robust, cross-platform filesystem handling. It makes your code cleaner and object-oriented!",
+            "🐍 High-Performance Python: Have you tried `uv` by Astral for blazingly fast dependency management? It replaces `pip` with 10x-100x speedups!",
+            "🐍 Pythonic Architecture: Always use `typing.TypedDict` or `pydantic.BaseModel` to enforce strict schema boundaries on JSON payloads and external APIs."
+        ],
+        "java": [
+            "☕ Modern Java 21+: Embrace Virtual Threads (`Project Loom`) to achieve high-throughput concurrency with millions of lightweight threads without reactive complexity!",
+            "☕ Java Pro-Tip: Leverage Java records and sealed interfaces for domain-driven modeling. Immutability by default leads to cleaner, thread-safe architectures.",
+            "☕ Spring Boot 3 Performance: Explore Native Image compilation with GraalVM for instantaneous sub-100ms cold starts and drastically reduced memory footprints."
+        ],
+        "javascript": [
+            "⚡ JavaScript Core: Always understand the distinction between Microtasks (`Promise.then`, `queueMicrotask`) and Macrotasks (`setTimeout`, `setImmediate`) in the V8 event loop!",
+            "⚡ Modern JS Tip: Use `structuredClone()` for native, deep object cloning instead of the hacky `JSON.parse(JSON.stringify())` that loses dates and symbols.",
+            "⚡ Clean Code JS: Leverage optional chaining `?.` with nullish coalescing `??` for bulletproof property access without undefined errors."
+        ],
+        "typescript": [
+            "🔷 TypeScript Mastery: Use the `satisfies` operator to validate that an expression matches a type without widening or losing its specific literal inferred type!",
+            "🔷 Advanced TS: Conditional types and template literal types like `type EventName = `on${Capitalize<string>}`;` enable compile-time type safety for event buses.",
+            "🔷 Strict TS Tip: Never use `any`! Prefer `unknown` when input is unvalidated, forcing explicit type narrowing and runtime guards before usage."
+        ],
+        "react": [
+            "⚛️ React 19 Paradigms: Server Actions and `useActionState` simplify form handling and asynchronous state management without boilerplate reducers.",
+            "⚛️ React Performance: Avoid premature `useMemo` / `useCallback`. Focus on proper component composition and lifting state down to eliminate unnecessary re-renders!",
+            "⚛️ Modern React Animation: Always import Motion bindings from `motion/react` (not deprecated `framer-motion`) for smooth 120 FPS physics spring transitions."
+        ],
+        "nodejs": [
+            "🟢 Node.js 22+: Take advantage of built-in WebSocket clients, native test runner (`node --test`), and `.env` file support (`node --env-file=.env`) without external packages!",
+            "🟢 Node Stream Tip: When piping large files or network payloads, use `stream.promises.pipeline` to prevent memory blowups and ensure safe error handling.",
+            "🟢 Node Concurrency: For heavy CPU tasks (crypto, image processing), delegate to `worker_threads` to keep the primary event loop completely responsive."
+        ],
+        "web-development": [
+            "🌐 Modern CSS: CSS Grid `subgrid` allows nested child components to effortlessly inherit their parent grid tracks. Say goodbye to alignment hacks!",
+            "🌐 Web Vitals: Optimize Largest Contentful Paint (LCP) by preloading your hero images (`<link rel='preload'>`) and eliminating render-blocking CSS/JS.",
+            "🌐 Semantic HTML: Using `<main>`, `<article>`, `<header>`, and `<nav>` with proper ARIA attributes enhances SEO and guarantees accessibility (a11y) compliance."
+        ],
+        "app-development": [
+            "📱 Mobile Engineering: Offline-first architecture with local SQLite/WatermelonDB sync guarantees silky smooth UX even on unstable cellular networks.",
+            "📱 Mobile UI Tip: Ensure all touch targets meet the minimum 48x48 dp standard and implement haptic feedback for satisfying tactile micro-interactions!",
+            "📱 Performance: Profile your frame render times using Android Studio Profiler or Xcode Instruments to eliminate dropped frames and maintain steady 120Hz."
+        ],
+        "ai-ml": [
+            "🤖 AI/ML Architecture: Quantization (e.g. AWQ, GGUF 4-bit) combined with speculative decoding allows running high-parameter LLMs locally with blazing throughput.",
+            "🤖 RAG Best Practice: Hybrid search combining BM25 keyword matching with dense vector embeddings delivers significantly higher retrieval precision than vector alone.",
+            "🤖 Agentic Engineering: Multi-turn reasoning loops with strict JSON schema verification prevent hallucinations and ensure deterministic tool executions."
+        ],
+        "data-science": [
+            "📊 Data Science Pro-Tip: Switch from Pandas to `Polars` for lightning-fast multi-threaded DataFrame queries with lazy evaluation and zero memory copying!",
+            "📊 Feature Engineering: Always handle outliers and missing values before feature scaling. Normalize numerical features using RobustScaler when data has heavy skew.",
+            "📊 Visualization: Use interactive libraries like Plotly or Altair to build exploratory dashboards that uncover multi-dimensional correlations at a glance."
+        ],
+        "database": [
+            "🗄️ Database Optimization: Always run `EXPLAIN (ANALYZE, BUFFERS)` on slow queries. Check for sequential scans on large tables and add targeted composite or partial indexes!",
+            "🗄️ Indexing Wisdom: B-tree indexes excel at range queries and equality, while GIN indexes are essential for full-text search and JSONB containment operators.",
+            "🗄️ Connection Pooling: Use PgBouncer or built-in pooling to avoid connection exhaustion overhead and maintain steady query throughput under peak load."
+        ],
+        "backend": [
+            "⚙️ Backend Architecture: Implement Idempotency Keys on mutating HTTP endpoints (e.g. payments, orders) to guarantee safe retries without duplicate side effects.",
+            "⚙️ Microservices Pattern: Use Event-Driven Architecture with message queues (Kafka, RabbitMQ) to decouple heavy processing from synchronous client-facing APIs.",
+            "⚙️ API Resilience: Enforce rate limiting with token-bucket algorithms and integrate circuit breakers to prevent cascading failures across downstream microservices."
+        ],
+        "frontend": [
+            "💻 Frontend Polish: Eliminate layout shifts (CLS) by always specifying explicit `width` and `height` (or aspect-ratio) on all images, videos, and dynamic containers.",
+            "💻 Visual Design: Follow Hallmark zero-slop aesthetics: bespoke visual tokens, purposeful typography scales, and clean micro-interactions over generic gradients.",
+            "💻 Performance: Code-split routes dynamically with `React.lazy` or dynamic imports to keep initial bundle sizes strictly under 150KB gzip."
+        ],
+        "devops": [
+            "🚀 DevOps Insight: Multi-stage Docker builds dramatically shrink container attack surfaces and produce ultra-lean production images under 50MB.",
+            "🚀 CI/CD Pipeline: Automate test execution, linting, and security vulnerability scans on every pull request before artifacts reach staging environments.",
+            "🚀 Kubernetes Pro-Tip: Always configure explicit resource requests and limits on pods to prevent noisy neighbors from exhausting node memory and CPU."
+        ],
+        "linux": [
+            "🐧 Linux Mastery: Combine `find`, `xargs`, and `grep -rn` for lightning-fast recursive code audits across massive source trees without memory overhead.",
+            "🐧 System Administration: Learn `systemd` unit files to manage background daemons with automatic restarts, logging, and sandbox security isolation.",
+            "🐧 Shell Magic: Use `awk` and `jq` to parse structured server logs on the fly during live incident responses right inside your SSH terminal."
+        ],
+        "cybersecurity": [
+            "🔒 Security Protocol: Never commit `.env` files or API secrets to version control! Enforce pre-commit git hooks with git-secrets or TruffleHog.",
+            "🔒 Web Defense: Protect against XSS and CSRF by configuring Content-Security-Policy (CSP) headers and utilizing HttpOnly, SameSite=Strict cookies.",
+            "🔒 Cryptography: Always use modern password hashing algorithms like Argon2id or bcrypt with high work factors rather than outdated SHA-256."
+        ],
+        "game-development": [
+            "🎮 Game Dev Tip: Maintain deterministic fixed-timestep updates for physics calculations while using variable delta-time interpolation for silky rendering.",
+            "🎮 Optimization: Utilize spatial partitioning (quadtrees/octrees) for collision detection to avoid O(N²) comparisons across thousands of game entities.",
+            "🎮 Shader Magic: Experiment with GLSL fragment shaders to create stunning visual effects, fluid water reflections, and dynamic lighting on GPU cores."
+        ],
+        "c-language": [
+            "🔧 Low-Level C: Always verify `malloc()` return values for NULL and pair every allocation with an explicit `free()` to prevent silent memory exhaustion.",
+            "🔧 C Debugging: Compile with `-Wall -Wextra -Werror` and run with `valgrind --leak-check=full` to catch undefined behavior and buffer overflows early.",
+            "🔧 Pointer Precision: Master pointer arithmetic and structure padding rules to write high-throughput systems software with minimal memory footprint."
+        ],
+        "cpp": [
+            "⚙️ Modern C++20/23: Utilize Concepts to define compile-time constraints on template parameters, giving crystal-clear compiler error diagnostics.",
+            "⚙️ RAII Principle: Wrap all system resources, file handles, and sockets in RAII classes or smart pointers (`std::unique_ptr`) for exception-safe cleanup.",
+            "⚙️ Move Semantics: Leverage `std::move` and rvalue references to transfer ownership of expensive heap allocations with zero copying overhead."
+        ],
+        "csharp": [
+            "💎 C# 12 & .NET 8: Use Primary Constructors on classes and structs for concise dependency injection syntax and clean domain entities.",
+            "💎 High-Performance .NET: Explore Native AOT (Ahead-Of-Time) compilation to produce lightweight, standalone binaries with instant startup.",
+            "💎 LINQ Optimization: Prefer concrete `foreach` loops over chained LINQ queries in ultra-hot code paths to eliminate unnecessary enumerator heap allocations."
+        ],
+        "swift-ios": [
+            "🍎 Swift Concurrency: Adopt Actors and `@MainActor` to eliminate data races and guarantee UI updates execute strictly on the main thread.",
+            "🍎 SwiftUI Architecture: Build modular views with `@Observable` (iOS 17+) for granular observation without superfluous view invalidations.",
+            "🍎 Apple Ecosystem: Optimize for Apple Silicon neural engines using CoreML for lightning-fast on-device computer vision and NLP models."
+        ],
+        "android-development": [
+            "🤖 Android Modern Tech: Build dynamic reactive UIs with Jetpack Compose, decoupling state hoisting from declarative composable rendering.",
+            "🤖 Kotlin Coroutines: Leverage `StateFlow` and `SharedFlow` with `repeatOnLifecycle` to collect emissions safely without leaking resources in paused activities.",
+            "🤖 Architecture: Enforce clean MVI / MVVM patterns with unidirectional data flow (UDF) for predictable, easily testable Android applications."
+        ],
+        "cloud-computing": [
+            "☁️ Cloud Architecture: Design multi-region failover and decouple stateless compute from stateful managed databases for 99.99% high availability.",
+            "☁️ Serverless Optimization: Minimize function package sizes and provision concurrency to eliminate cold start latency spikes on serverless lambdas.",
+            "☁️ FinOps Wisdom: Tag all cloud infrastructure resources and automate shutdown schedules for non-production environments to slash monthly cloud bills."
+        ],
+        "api-development": [
+            "🔌 API Design: Design RESTful APIs following OpenAPI 3.1 specifications. Auto-generate client SDKs and interactive Swagger documentation effortlessly.",
+            "🔌 Pagination Best Practice: Prefer Cursor-Based pagination over offset/limit for large datasets to maintain consistent ordering and prevent skipped records.",
+            "🔌 Webhook Reliability: Always verify webhook signatures (HMAC SHA-256) and use exponential backoff retries with dead-letter queues for unhandled events."
+        ],
+        "testing-qa": [
+            "🧪 Strict TDD Discipline: Follow the Red-Green-Refactor cycle religiously! Write a failing test first, make it pass with minimal code, then refactor cleanly.",
+            "🧪 End-to-End Testing: Use Playwright with locator-based assertions and auto-waiting instead of brittle sleep timeouts for rock-solid UI test suites.",
+            "🧪 Test Coverage: Focus on high-value boundary value tests and critical business paths rather than chasing vanity 100% line coverage on trivial getters."
+        ],
+        "tools-and-tech": [
+            "🛠️ Tooling Productivity: Master interactive Git rebasing (`git rebase -i`) to squash messy commits and maintain a clean, linear git history before merging.",
+            "🛠️ Terminal Setup: Turbocharge your terminal with `zsh`, `starship` prompt, and `fzf` fuzzy finder for instant directory navigation and command history search.",
+            "🛠️ Editor Power: Learn keyboard shortcuts to navigate code by AST symbols rather than scrolling. Speed compounds over thousands of daily edits!"
+        ],
+
+        # --- PROJECTS ---
+        "project-showcase": [
+            "🚀 Project Showcase Alert: Have you deployed a new web app, microservice, mobile tool, or open-source package? Drop your demo links and screenshots here!",
+            "✨ Spotlight Saturday: We want to see what you've created! Share your GitHub repository, architecture overview, and live preview with the NEXORA community.",
+            "🌟 Maker Stage: Built something cool with React, Python, or AI? Share your project story, obstacles overcome, and lessons learned along the way!"
+        ],
+        "portfolio-review": [
+            "💼 Portfolio Review: Want actionable feedback on your personal website or developer portfolio? Post your link here for constructive UX and design critique!",
+            "💼 Showcase Quality: Highlight real deployed full-stack products over simple clones. Make sure your GitHub README features clear setup guides and live demos!",
+            "💼 Presentation Matters: Review your case studies: Did you clearly articulate the problem, technical architecture, and measurable outcomes of your projects?"
+        ],
+        "open-source": [
+            "📁 Open Source Journey: Looking for 'Good First Issues'? Check repositories tagged with Hacktoberfest or good-first-issue to start your OSS contribution streak!",
+            "📁 OSS Etiquette: Always read the `CONTRIBUTING.md`, run tests locally, and open an issue before submitting large PRs to open-source codebases.",
+            "📁 Open Source Impact: Contributing to developer tools and libraries builds deep credibility and connects you with world-class engineers across the globe."
+        ],
+        "build-in-public": [
+            "❇️ Build in Public Check-in: Share your daily progress, commit count, user feedback, or hard-earned technical lessons with the NEXORA builders!",
+            "❇️ Transparency Wins: Share the raw journey — the bugs that took 4 hours to solve, the architecture shifts, and the milestone wins.",
+            "❇️ Daily Builder Log: What feature did you design or ship today? Drop a screenshot or snippet of your work-in-progress!"
+        ],
+
+        # --- COLLABORATION ---
+        "find-teammates": [
+            "🤝 Teammate Matching: Are you building a startup MVP, hackathon submission, or open-source library? Post what skills you have and what collaborator you need!",
+            "🤝 Pair Programming: Looking for a peer to pair-program on algorithmic challenges or review each other's code? Connect right here in NEXORA!",
+            "🤝 Team Formation: Great software is built by great teams. Match with frontend experts, backend wizards, and UI designers to ship something remarkable."
+        ],
+        "freelancing": [
+            "💼 Freelancing Insights: When bidding on projects, focus on business value and ROI rather than hourly rates. Position yourself as a problem solver, not just a coder!",
+            "💼 Client Communication: Always document project scope clearly in written milestone agreements to prevent scope creep and ensure smooth delivery.",
+            "💼 Freelancing Tip: Build long-term retainers with clients by providing proactive code maintenance, speed optimizations, and exceptional reliability."
+        ],
+        "hackathons": [
+            "🎯 Hackathon Velocity: In 48-hour hackathons, prioritize a working end-to-end MVP with a polished demo script over complex premature architectures!",
+            "🎯 Winning Strategy: Focus 70% on a killer problem statement and clear live demo, and 30% on tech stack complexity. Judges remember solutions that work smoothly.",
+            "🎯 Hackathon Alert: Are there upcoming global online hackathons? Drop registration links and assemble your NEXORA dream team here!"
+        ],
+        "looking-for-help": [
+            "📢 Seeking Collaboration or Advice? If you need architectural feedback on your database schema or cloud setup, describe your problem here!",
+            "📢 Code Review Exchange: Want a senior developer to inspect your PR or suggest performance optimizations? Share your branch for friendly community feedback.",
+            "📢 Help Desk: When asking for assistance, include your environment, framework versions, error logs, and what you've already attempted."
+        ],
+
+        # --- LEARNING HUB ---
+        "study-resources": [
+            "📖 Curated Study Gems: What is the single best programming book or documentation site you've ever read? Drop your top recommendations here!",
+            "📖 Free Learning Resources: Check out roadmap.sh, system-design-primer on GitHub, and MDN Web Docs for world-class developer knowledge.",
+            "📖 Deep Reading: Allocate 30 minutes every morning to read official framework documentation or RFCs. Understanding design rationale transforms your coding depth."
+        ],
+        "learning-roadmaps": [
+            "🗺️ Developer Roadmap: Modern Full-Stack mastery starts with Git -> TypeScript -> Next.js / FastAPI -> Docker -> PostgreSQL -> CI/CD. Build projects at each stage!",
+            "🗺️ Avoid Tutorial Hell: The cure for tutorial hell is building original projects without following step-by-step video guides. Embrace the struggle of debugging!",
+            "🗺️ Step-by-Step Growth: Master one layer of the tech stack deeply before jumping into three new frameworks simultaneously. Depth beats breadth early on."
+        ],
+        "coding-challenges": [
+            "🎯 Daily Coding Challenge: Can you solve today's challenge using optimal time and space complexity? Share your approaches and discussions here!",
+            "🎯 Algorithmic Thinking: Practice recognizing core patterns: Two Pointers, Sliding Window, Monotonic Stack, and Topological Sort solve 80% of problems.",
+            "🎯 Challenge Check: Solve one LeetCode medium today or implement a foundational data structure (Trie, LRU Cache) from scratch in your language of choice!"
+        ],
+        "interview-prep": [
+            "📄 System Design Interview Prep: When designing scalable systems, always clarify requirements -> calculate back-of-the-envelope capacity -> define APIs -> sketch high-level diagram -> deep-dive bottlenecks!",
+            "📄 Behavioral STAR Technique: Frame your interview stories with Situation, Task, Action, and measurable Result. Highlight your problem-solving impact!",
+            "📄 Technical Interview Tip: Always communicate your thought process out loud to the interviewer before writing code. Collaboration is tested as much as syntax."
+        ],
+        "certifications": [
+            "🏆 Tech Certifications: Are you studying for AWS Certified Solutions Architect, CKA (Kubernetes), or Google Cloud Professional? Connect with study partners here!",
+            "🏆 Hands-on Practice: Certifications validate theory, but hands-on sandbox labs solidify real capability. Always build real infrastructure alongside study guides.",
+            "🏆 Study Group: Share your exam notes, mock practice tests, and test-taking tips with fellow candidates in NEXORA!"
+        ],
+        "ask-a-mentor": [
+            "❓ Mentor Q&A: Have questions about career transitions, senior engineer expectations, or software architecture decisions? Ask our senior community mentors!",
+            "❓ Career Guidance: How do you choose between generalist full-stack vs deep specialized systems engineering? Drop your questions for experienced perspectives.",
+            "❓ Code Review Mentorship: Ask for feedback on software design patterns, clean code principles, and how to write production-grade maintainable code."
+        ],
+
+        # --- CAREERS ---
+        "job-opportunities": [
+            "💼 Career Opportunities: The market rewards engineers who can build autonomous systems, ship reliable code, and solve actual business bottlenecks. Keep building!",
+            "💼 Tech Hiring Pulse: Share verified job openings, hiring announcements, and career opportunities for software engineers across Pakistan and globally.",
+            "💼 Job Search Strategy: Instead of mass-submitting easy-apply resumes, reach out directly to engineering leads with tailored portfolio proofs of work!"
+        ],
+        "remote-jobs": [
+            "🌐 Remote Work Excellence: Working remotely requires stellar written async communication, proactive status updates, and relentless self-discipline.",
+            "🌐 Global Remote Platforms: Check Wellfound (AngelList), RemoteOK, and GitHub Jobs for worldwide remote software engineering positions with competitive compensation.",
+            "🌐 Remote Culture Tip: Over-communicate early. When handing off work across time zones, provide clear context, reproduction steps, and PR walkthroughs."
+        ],
+        "internships": [
+            "👨‍💼 Tech Internships: Breaking into your first tech role? An impressive GitHub with 2 polished, deployed projects stands out far more than GPA alone!",
+            "👨‍💼 Internship Prep: Practice core data structures, build a personal website, and contribute to open-source issues to showcase real-world initiative.",
+            "👨‍💼 Opportunities Hub: Share verified internship postings, software apprentice programs, and summer fellowship opportunities here!"
+        ],
+        "resume-review": [
+            "📄 Resume Polish: Quantify your bullet points using the XYZ formula: 'Accomplished [X], as measured by [Y], by doing [Z]'. Show tangible impact!",
+            "📄 ATS Best Practice: Keep your resume clean, single-column, with standard section headings and machine-readable text without complex nested graphics.",
+            "📄 Resume Clinic: Drop your anonymized CV for constructive community feedback on clarity, technical keywords, and project presentation."
+        ],
+        "mock-interviews": [
+            "🎤 Mock Interview Prep: Pair up with a peer for a 45-minute simulated live technical interview. Practicing under timed conditions builds unmatched confidence!",
+            "🎤 Live Coding Practice: Get comfortable explaining edge cases, complexity trade-offs, and refactoring decisions while writing code in real time.",
+            "🎤 Feedback Exchange: After every mock interview, provide concrete feedback on communication clarity, pacing, and code correctness."
+        ],
+        "freelancing-tips": [
+            "💰 Freelancing Mastery: Never compete on price in a race to the bottom. Compete on reliability, speed of execution, and pristine code quality!",
+            "💰 Retainers & Contracts: Structure client engagements with 50% upfront deposits and clear acceptance criteria before writing the first line of code.",
+            "💰 Client Retention: After shipping a project, provide a 14-day warranty period and suggest future roadmap enhancements to turn one-off gigs into recurring revenue."
+        ]
+    }
+
+    def __init__(self, manager: Any):
+        self.manager = manager
+        self.state_file = Path(r"D:\MARAA AI\data\discord_daily_state.json")
+        self._ensure_state()
+
+    def _ensure_state(self):
+        if not self.state_file.exists():
+            self.state_file.parent.mkdir(parents=True, exist_ok=True)
+            with open(self.state_file, "w", encoding="utf-8") as f:
+                json.dump({"last_daily_run": None, "posted_history": {}}, f, indent=2)
+
+    def _load_state(self) -> Dict[str, Any]:
+        try:
+            with open(self.state_file, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return {"last_daily_run": None, "posted_history": {}}
+
+    def _save_state(self, state: Dict[str, Any]):
+        try:
+            with open(self.state_file, "w", encoding="utf-8") as f:
+                json.dump(state, f, indent=2)
+        except Exception as e:
+            print(f"[DiscordPublisher] Error saving state: {e}")
+
+    def generate_daily_message(self, channel_slug: str, date_obj: Optional[datetime.date] = None) -> str:
+        """
+        Dynamically generates a fresh, channel-relevant daily message.
+        Uses day-of-week context + day-of-year rotation across the topic knowledge bank.
+        """
+        date_obj = date_obj or datetime.date.today()
+        clean_slug = channel_slug.lstrip("-").strip().lower()
+
+        # Day theme
+        weekday = date_obj.weekday()
+        day_theme = self.DAY_THEMES.get(weekday, self.DAY_THEMES[0])
+
+        # Topics for channel
+        topics = self.CHANNEL_TOPICS.get(clean_slug)
+        if not topics:
+            # Fallback for unmapped channel
+            topics = [
+                f"Happy {day_theme['name']}! Let's keep our development velocity high in #{clean_slug}. What are you working on today?",
+                f"NEXORA Daily Pulse for #{clean_slug}: Share your ideas, questions, and progress with the community today! ✨"
+            ]
+
+        # Rotate topic index based on day of year + slug hash so every day is distinct
+        day_of_year = date_obj.timetuple().tm_yday
+        slug_hash = sum(ord(c) for c in clean_slug)
+        topic_index = (day_of_year + slug_hash) % len(topics)
+        core_message = topics[topic_index]
+
+        # Build message
+        header = f"{day_theme['emoji']} **[{day_theme['name'].upper()}]** // *{day_theme['tagline']}*"
+        footer = f"— *SARA AI 2.5 Pro & Pasha Dev @ NEXORA* ⚡"
+
+        return f"{header}\n\n{core_message}\n\n{footer}"
+
+    def post_daily_to_channel(self, channel_slug: str, simulate: bool = False, force: bool = False) -> Dict[str, Any]:
+        """Posts fresh daily message to a specific channel with dedup protection."""
+        date_str = datetime.date.today().isoformat()
+        state = self._load_state()
+        history = state.setdefault("posted_history", {}).setdefault(date_str, {})
+
+        clean_slug = channel_slug.lstrip("-").strip().lower()
+        if clean_slug in history and not force:
+            return {
+                "success": True,
+                "skipped": True,
+                "channel": channel_slug,
+                "reason": f"Already posted to '{channel_slug}' on {date_str}. Use force=True to overwrite.",
+                "previous_post": history[clean_slug]
+            }
+
+        msg = self.generate_daily_message(clean_slug)
+        send_res = self.manager.send_channel_message(
+            target=channel_slug,
+            message=msg,
+            server_name="NEXORA",
+            simulate=simulate
+        )
+
+        if send_res.get("success", False):
+            history[clean_slug] = {
+                "timestamp": datetime.datetime.now().isoformat(),
+                "message": msg,
+                "simulated": simulate
+            }
+            self._save_state(state)
+
+        return {
+            "success": send_res.get("success", False),
+            "skipped": False,
+            "channel": channel_slug,
+            "date": date_str,
+            "message": msg,
+            "simulated": simulate,
+            "details": send_res
+        }
+
+    def run_daily_all_channels_engagement(
+        self,
+        category: Optional[str] = None,
+        simulate: bool = False,
+        force: bool = False,
+        delay_seconds: float = 0.5
+    ) -> Dict[str, Any]:
+        """
+        Executes autonomous daily engagement routine across all text channels in NEXORA.
+        """
+        date_str = datetime.date.today().isoformat()
+        state = self._load_state()
+        state["last_daily_run"] = date_str
+        self._save_state(state)
+
+        text_channels = []
+        for cat_name, cat_data in self.manager.NEXORA_CATEGORIES.items():
+            if cat_data["type"] == "text":
+                if category and category.strip().upper() != cat_name.upper():
+                    continue
+                for ch in cat_data["channels"]:
+                    text_channels.append({"category": cat_name, "slug": ch["slug"], "name": ch["name"]})
+
+        results = []
+        success_count = 0
+        skipped_count = 0
+        fail_count = 0
+
+        import time
+        for ch_info in text_channels:
+            slug = ch_info["slug"]
+            res = self.post_daily_to_channel(slug, simulate=simulate, force=force)
+            if res.get("skipped", False):
+                skipped_count += 1
+            elif res.get("success", False):
+                success_count += 1
+            else:
+                fail_count += 1
+
+            results.append({
+                "channel": slug,
+                "category": ch_info["category"],
+                "success": res.get("success", False),
+                "skipped": res.get("skipped", False),
+                "message": res.get("message", "")[:60] + "..." if res.get("message") else ""
+            })
+
+            if not simulate and not res.get("skipped", False):
+                time.sleep(delay_seconds)
+
+        spoken = (
+            f"Pasha Jan, aapke authorized Discord server NEXORA ke {len(text_channels)} channels me "
+            f"aaj ke fresh daily engagement messages distribute ho gaye hain! "
+            f"({success_count} posted, {skipped_count} already active)."
+        )
+
+        return {
+            "success": True,
+            "server": "NEXORA",
+            "date": date_str,
+            "total_channels": len(text_channels),
+            "posted_count": success_count,
+            "skipped_count": skipped_count,
+            "failed_count": fail_count,
+            "channels_summary": results,
+            "spoken_reply": spoken
+        }
+
+
 class DiscordAutonomousManager:
     """Controls Discord autonomously, strictly locked to the user's authorized server NEXORA.
     Distinguishes categories, voice channels, text channels, and executes autonomous lively engagement routines."""
@@ -646,6 +1126,7 @@ class DiscordAutonomousManager:
         import ctypes
         self.user32 = ctypes.windll.user32
         self._build_channel_cache()
+        self.publisher = DiscordAutonomousDailyPublisher(self)
 
     @classmethod
     def _build_channel_cache(cls):
@@ -1033,16 +1514,19 @@ class DiscordAutonomousManager:
             posted.append({"channel": r["channel"], "category": r.get("category"), "success": res.get("success", False)})
             time.sleep(1.0)
 
-        spoken = f"Pasha Jan, aapke authorized Discord server NEXORA par lively daily updates aur developer engagement posts broadcast kar diye gaye hain!"
-        return {
-            "success": True,
-            "server": self.AUTHORIZED_SERVER,
-            "routine": routine_type,
-            "actions": posted,
-            "total_broadcasts": len(posted),
-            "details": posted,
-            "spoken_reply": spoken
-        }
+        return self.publisher.run_daily_all_channels_engagement(simulate=False, force=False)
+
+    def generate_daily_message(self, channel_slug: str, date_obj=None) -> str:
+        """Dynamically generates fresh, channel-specific daily message."""
+        return self.publisher.generate_daily_message(channel_slug, date_obj=date_obj)
+
+    def post_daily_to_channel(self, channel_slug: str, simulate: bool = False, force: bool = False) -> dict:
+        """Posts a fresh daily message to a specific channel with dedup protection."""
+        return self.publisher.post_daily_to_channel(channel_slug, simulate=simulate, force=force)
+
+    def run_daily_all_channels_engagement(self, category: str = None, simulate: bool = False, force: bool = False, delay_seconds: float = 0.5) -> dict:
+        """Executes autonomous daily engagement routine across all text channels in NEXORA."""
+        return self.publisher.run_daily_all_channels_engagement(category=category, simulate=simulate, force=force, delay_seconds=delay_seconds)
 
 
 # ============================================================================

@@ -104,6 +104,57 @@ class TestDiscordAutonomousManager(unittest.TestCase):
         self.assertEqual(res["target"], "-general-chat")
         self.assertEqual(res["server"], "NEXORA")
 
+    def test_dynamic_daily_topic_relevance(self):
+        """Verifies that each channel produces specialized, topic-relevant daily content."""
+        # Python
+        msg_py = self.discord_mgr.generate_daily_message("python")
+        self.assertTrue(any(kw in msg_py for kw in ["Python", "uv", "typing", "match/case", "pathlib"]))
+        self.assertIn("NEXORA", msg_py)
+
+        # React
+        msg_react = self.discord_mgr.generate_daily_message("react")
+        self.assertTrue(any(kw in msg_react for kw in ["React", "useMemo", "motion", "Server Actions"]))
+
+        # Cybersecurity
+        msg_sec = self.discord_mgr.generate_daily_message("cybersecurity")
+        self.assertTrue(any(kw in msg_sec for kw in ["Security", "CSP", "Argon2", "TruffleHog"]))
+
+        # Daily Wins
+        msg_wins = self.discord_mgr.generate_daily_message("daily-wins")
+        self.assertTrue(any(kw in msg_wins for kw in ["Win", "Celebrate", "Progress", "accomplishment"]))
+
+    def test_daily_message_cross_date_uniqueness(self):
+        """Ensures that messages across consecutive days rotate and do not repeat."""
+        import datetime
+        d1 = datetime.date(2026, 11, 9)
+        d2 = datetime.date(2026, 11, 10)
+        msg1 = self.discord_mgr.generate_daily_message("python", date_obj=d1)
+        msg2 = self.discord_mgr.generate_daily_message("python", date_obj=d2)
+        self.assertNotEqual(msg1, msg2)
+
+    def test_run_daily_all_channels_engagement_simulated(self):
+        """Verifies full batch execution across all 54 text channels on NEXORA."""
+        res = self.discord_mgr.run_daily_all_channels_engagement(simulate=True, force=True)
+        self.assertTrue(res["success"])
+        self.assertEqual(res["server"], "NEXORA")
+        self.assertEqual(res["total_channels"], 54)
+        self.assertEqual(res["posted_count"], 54)
+        self.assertEqual(res["failed_count"], 0)
+        self.assertIn("54 channels", res["spoken_reply"])
+
+    def test_deduplication_ledger_skips_duplicates(self):
+        """Ensures that duplicate posts on the same date are skipped unless force=True."""
+        # First post succeeds
+        res1 = self.discord_mgr.post_daily_to_channel("python", simulate=True, force=True)
+        self.assertTrue(res1["success"])
+        self.assertFalse(res1["skipped"])
+
+        # Second post on same day without force is skipped
+        res2 = self.discord_mgr.post_daily_to_channel("python", simulate=True, force=False)
+        self.assertTrue(res2["success"])
+        self.assertTrue(res2["skipped"])
+        self.assertIn("Already posted", res2["reason"])
+
 
 if __name__ == "__main__":
     unittest.main()

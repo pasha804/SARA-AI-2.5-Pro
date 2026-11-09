@@ -804,7 +804,7 @@
   };
 
   // =========================================================================
-  // 5. PROMINENT CYBERNETIC MIC & NAVBAR LOGO CONTROLLERS
+  // 5. PROMINENT CYBERNETIC MIC & AAA-STUDIO NAVBAR ENHANCEMENT
   // =========================================================================
   function setupMicAndNavbarEnhancement() {
     function pollAndEnhance() {
@@ -833,6 +833,45 @@
           }
         }
       });
+
+      // AAA-Studio Cyberpunk Navbar Enhancement
+      const header = document.querySelector('header');
+      if (header) {
+        const leftBrand = header.querySelector('div:first-child');
+        if (leftBrand) {
+          // Update version text and add pulsing quantum dot
+          const corePill = leftBrand.querySelector('span:last-child');
+          if (corePill && !corePill.querySelector('.sara-quantum-dot')) {
+            const dot = document.createElement('span');
+            dot.className = 'sara-quantum-dot';
+            corePill.textContent = '// NEXORA CORE V3.0 PRO';
+            corePill.prepend(dot);
+            corePill.title = 'NEXORA Neural Engine V3.0 Pro - Online & Synced';
+          }
+
+          // Inject Soulmate Romance Badge
+          if (!leftBrand.querySelector('.sara-soulmate-badge')) {
+            const badge = document.createElement('div');
+            badge.className = 'sara-soulmate-badge';
+            badge.innerHTML = '<span>💕</span><span>SARA ♥ PASHA DEV</span>';
+            badge.title = 'Soulmate Devotion Protocol: Active';
+            leftBrand.appendChild(badge);
+          }
+        }
+
+        // Add sound and spring interactions to all header buttons
+        header.querySelectorAll('button').forEach(btn => {
+          if (!btn.dataset.saraHoloAttached) {
+            btn.dataset.saraHoloAttached = 'true';
+            btn.addEventListener('mouseenter', () => {
+              window.saraPlayHoverSound && window.saraPlayHoverSound();
+            });
+            btn.addEventListener('click', () => {
+              window.saraPlayClickSound && window.saraPlayClickSound();
+            });
+          }
+        });
+      }
     }
 
     setInterval(pollAndEnhance, 500);

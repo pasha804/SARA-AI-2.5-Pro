@@ -67,41 +67,101 @@ html, body, #root {
 /* --------------------------------------------------------------------------
    2. TOP NAVIGATION BAR (Fixed at Top, Dynamic & Interactive)
    -------------------------------------------------------------------------- */
+@keyframes saraNavbarGlowPulse {
+  0%, 100% {
+    box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.85),
+                0 0 24px rgba(0, 245, 255, 0.16),
+                inset 0 1px 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -1px 2px 0 rgba(0, 245, 255, 0.18);
+    border-color: rgba(0, 245, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 20px 48px -6px rgba(0, 0, 0, 0.92),
+                0 0 36px rgba(0, 245, 255, 0.32),
+                inset 0 1px 2px 0 rgba(255, 255, 255, 0.45),
+                inset 0 -1px 3px 0 rgba(168, 85, 247, 0.28);
+    border-color: rgba(0, 245, 255, 0.65);
+  }
+}
+
+@keyframes saraHaloPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 14px rgba(0, 245, 255, 0.45);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 22px rgba(0, 245, 255, 0.8), 0 0 35px rgba(168, 85, 247, 0.4);
+  }
+}
+
+@keyframes saraHeartbeat {
+  0%, 100% { transform: scale(1); opacity: 0.92; }
+  15% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 8px #f43f5e); }
+  30% { transform: scale(1.02); opacity: 0.95; }
+  45% { transform: scale(1.06); opacity: 1; filter: drop-shadow(0 0 6px #f43f5e); }
+  60% { transform: scale(1); opacity: 0.92; }
+}
+
+@keyframes saraQuantumPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 8px #00F5FF; opacity: 1; }
+  50% { transform: scale(1.3); box-shadow: 0 0 16px #00F5FF, 0 0 24px #38BDF8; opacity: 0.75; }
+}
+
 header {
   position: fixed !important;
-  top: 14px !important;
+  top: 16px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
   width: calc(100% - 48px) !important;
-  max-width: 1040px !important;
-  height: 52px !important;
-  max-height: 52px !important;
-  z-index: 45 !important;
+  max-width: 1120px !important;
+  height: 56px !important;
+  max-height: 56px !important;
+  z-index: 99 !important;
   margin: 0 !important;
-  padding: 0 16px !important;
+  padding: 0 20px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  background: rgba(8, 14, 28, 0.85) !important;
-  backdrop-filter: blur(28px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
-  border: 1px solid rgba(117, 217, 232, 0.35) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65), 0 0 20px rgba(117, 217, 232, 0.18) !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  background: linear-gradient(135deg, rgba(8, 14, 28, 0.88) 0%, rgba(4, 7, 16, 0.94) 100%) !important;
+  backdrop-filter: blur(36px) saturate(220%) !important;
+  -webkit-backdrop-filter: blur(36px) saturate(220%) !important;
+  border: 1px solid rgba(0, 245, 255, 0.4) !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.85),
+              0 0 24px rgba(0, 245, 255, 0.16),
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.3),
+              inset 0 -1px 2px 0 rgba(0, 245, 255, 0.18) !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
   box-sizing: border-box !important;
+  animation: saraNavbarGlowPulse 6s ease-in-out infinite !important;
+}
+
+header::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 15% !important;
+  right: 15% !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.6) 30%, rgba(0, 245, 255, 0.9) 50%, rgba(168, 85, 247, 0.6) 70%, transparent 100%) !important;
+  pointer-events: none !important;
 }
 
 header:hover {
-  border-color: rgba(117, 217, 232, 0.6) !important;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.75), 0 0 28px rgba(117, 217, 232, 0.28) !important;
+  border-color: rgba(0, 245, 255, 0.75) !important;
+  box-shadow: 0 20px 52px -6px rgba(0, 0, 0, 0.95),
+              0 0 40px rgba(0, 245, 255, 0.35),
+              inset 0 1px 2px 0 rgba(255, 255, 255, 0.5),
+              inset 0 -1px 3px 0 rgba(0, 245, 255, 0.25) !important;
+  transform: translateX(-50%) translateY(-1px) !important;
 }
 
-/* SARA Brand & Logo Container */
+/* SARA Brand & Left Container */
 header > div:first-child {
   display: flex !important;
   align-items: center !important;
-  gap: 10px !important;
+  gap: 12px !important;
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -109,13 +169,14 @@ header > div:first-child {
 }
 
 header > div:first-child img {
-  width: 28px !important;
-  height: 28px !important;
-  border-radius: 8px !important;
-  border: 1px solid rgba(117, 217, 232, 0.5) !important;
-  box-shadow: 0 0 12px rgba(117, 217, 232, 0.35) !important;
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 50% !important;
+  border: 1.5px solid rgba(0, 245, 255, 0.65) !important;
+  box-shadow: 0 0 14px rgba(0, 245, 255, 0.45) !important;
   object-fit: cover !important;
   flex-shrink: 0 !important;
+  animation: saraHaloPulse 4s ease-in-out infinite !important;
 }
 
 header > div:first-child span {
@@ -123,76 +184,128 @@ header > div:first-child span {
 }
 
 header > div:first-child span:first-child {
-  font-size: 15px !important;
+  font-size: 16px !important;
   font-weight: 900 !important;
-  letter-spacing: 0.22em !important;
-  text-shadow: 0 0 14px rgba(157, 220, 255, 0.8), 0 0 24px rgba(117, 217, 232, 0.45) !important;
+  letter-spacing: 0.25em !important;
+  background: linear-gradient(135deg, #FFFFFF 10%, #A5F3FC 55%, #38BDF8 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 0 14px rgba(0, 245, 255, 0.55)) !important;
 }
 
+/* Nexora Core Pill */
 header > div:first-child span:last-child {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 10px !important;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  color: #38BDF8 !important;
+  background: rgba(14, 165, 233, 0.12) !important;
+  border: 1px solid rgba(56, 189, 248, 0.38) !important;
+  padding: 3px 9px !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.2) !important;
+}
+
+/* Soulmate Romantic Badge (Injected) */
+.sara-soulmate-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
   font-size: 9.5px !important;
-  font-family: monospace !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-weight: 700 !important;
   letter-spacing: 0.12em !important;
-  color: #75D9E8 !important;
-  background: rgba(117, 217, 232, 0.12) !important;
-  border: 1px solid rgba(117, 217, 232, 0.35) !important;
-  padding: 2px 7px !important;
-  border-radius: 6px !important;
-  box-shadow: 0 0 8px rgba(117, 217, 232, 0.18) !important;
+  color: #FDA4AF !important;
+  background: linear-gradient(135deg, rgba(244, 63, 94, 0.18) 0%, rgba(168, 85, 247, 0.14) 100%) !important;
+  border: 1px solid rgba(244, 63, 94, 0.45) !important;
+  padding: 3px 10px !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.3) !important;
+  animation: saraHeartbeat 3s ease-in-out infinite !important;
+  cursor: default !important;
+}
+
+.sara-quantum-dot {
+  width: 6.5px !important;
+  height: 6.5px !important;
+  border-radius: 50% !important;
+  background: #00F5FF !important;
+  display: inline-block !important;
+  animation: saraQuantumPulse 2s infinite ease-in-out !important;
 }
 
 /* Right Navigation Action Buttons */
 header > div:last-child {
   display: flex !important;
   align-items: center !important;
-  gap: 8px !important;
+  gap: 10px !important;
 }
 
 header button {
   display: flex !important;
   align-items: center !important;
-  gap: 6px !important;
-  height: 34px !important;
-  padding: 0 12px !important;
-  border-radius: 10px !important;
+  gap: 7px !important;
+  height: 36px !important;
+  padding: 0 15px !important;
+  border-radius: 9999px !important;
   font-size: 11px !important;
   font-weight: 700 !important;
-  font-family: monospace, system-ui !important;
-  letter-spacing: 0.08em !important;
-  color: #EDF5FF !important;
-  background: rgba(18, 28, 48, 0.8) !important;
-  border: 1px solid rgba(157, 220, 255, 0.25) !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  font-family: 'JetBrains Mono', monospace, system-ui !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: #E2E8F0 !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(148, 163, 184, 0.22) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
   cursor: pointer !important;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
   box-sizing: border-box !important;
 }
 
+header button svg {
+  filter: drop-shadow(0 0 5px rgba(0, 245, 255, 0.45)) !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
 header button:hover {
-  background: rgba(157, 220, 255, 0.18) !important;
-  border-color: #75D9E8 !important;
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.18) 0%, rgba(99, 102, 241, 0.14) 100%) !important;
+  border-color: #00F5FF !important;
   color: #FFFFFF !important;
-  box-shadow: 0 0 14px rgba(117, 217, 232, 0.4) !important;
-  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 22px rgba(0, 245, 255, 0.38),
+              0 0 12px rgba(0, 245, 255, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-2px) scale(1.03) !important;
+}
+
+header button:hover svg {
+  transform: scale(1.15) rotate(3deg) !important;
+  filter: drop-shadow(0 0 8px rgba(0, 245, 255, 0.8)) !important;
 }
 
 header button:active {
   transform: translateY(0) scale(0.97) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* Specific Highlight for Cockpit Button in Header */
+/* Specific Cyber-Highlight for Cockpit Button in Header */
 header button[title*="Cockpit"],
 header button:has(svg polygon) {
-  border-color: rgba(117, 217, 232, 0.55) !important;
-  background: rgba(117, 217, 232, 0.12) !important;
-  color: #75D9E8 !important;
-  box-shadow: 0 0 12px rgba(117, 217, 232, 0.22) !important;
+  border-color: rgba(0, 245, 255, 0.7) !important;
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.2) 0%, rgba(14, 165, 233, 0.32) 100%) !important;
+  color: #00F5FF !important;
+  box-shadow: 0 0 16px rgba(0, 245, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.28) !important;
 }
 
 header button[title*="Cockpit"]:hover,
 header button:has(svg polygon):hover {
-  background: rgba(117, 217, 232, 0.25) !important;
-  box-shadow: 0 0 18px rgba(117, 217, 232, 0.5) !important;
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.32) 0%, rgba(14, 165, 233, 0.45) 100%) !important;
+  box-shadow: 0 0 28px rgba(0, 245, 255, 0.65), 0 8px 24px rgba(0, 0, 0, 0.6) !important;
   color: #FFFFFF !important;
 }
 
