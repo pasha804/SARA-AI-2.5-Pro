@@ -1,4 +1,4 @@
-﻿{
+{
   "autoStart": false,
   "wakeWordEnabled": true,
   "wakePhrase": "sara",
@@ -6,7 +6,7 @@
   "sensitivity": 60,
   "animations": true,
   "characterShine": 50,
-  "voiceName": "Kore",
+  "voiceName": "Aoede",
   "personality": "companion",
   "onboardingCompleted": true,
   "hasApiKey": true,
@@ -16,5 +16,6 @@
     "name": "Muhammad Mubashar",
     "honorific": "Pasha Jan",
     "role": "Lead Autonomous AI Engineer & Workstation Architect"
-  }
+  },
+  "voice": "Aoede"
 }
