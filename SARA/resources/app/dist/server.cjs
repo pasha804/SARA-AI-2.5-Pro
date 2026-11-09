@@ -22095,6 +22095,7 @@ async function startServer() {
     }
     return s;
   }
+  const readSettingsFile = loadSettingsFile;
 
 
 
@@ -25136,7 +25137,7 @@ ${interceptorScript}`);
 
 
 
-            voiceConfig: { prebuiltVoiceConfig: { voiceName: (readSettingsFile().voiceName || process.env.SARA_VOICE_NAME || "Aoede") } }
+            voiceConfig: { prebuiltVoiceConfig: { voiceName: ((typeof loadSettingsFile === "function" ? loadSettingsFile().voiceName : null) || process.env.SARA_VOICE_NAME || "Aoede") } }
 
 
 
