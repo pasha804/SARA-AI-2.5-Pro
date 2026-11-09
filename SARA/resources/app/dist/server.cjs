@@ -6880,15 +6880,15 @@ function loadModelRoutes(env = process.env) {
 
 
 
-    fast: split(env.SARA_FAST_MODEL || env.MYRAA_FAST_MODEL, "free/mimo-v2.6-pro,free/muse-spark-1.3,free/glm-5.3-flashx,gemini-3.5-flash"),
+    fast: split(env.SARA_FAST_MODEL || env.MYRAA_FAST_MODEL, "free/deepseek-v4-flash-0731,free/glm-5.3-flash,free/glm-5.3,gemini-3.5-flash"),
 
 
 
-    reasoning: split(env.SARA_REASONING_MODEL || env.MYRAA_REASONING_MODEL, "free/deepseek-v4-pro-0813,free/kimi-k3,free/gemini-3.8-flash,gemini-3.5-flash"),
+    reasoning: split(env.SARA_REASONING_MODEL || env.MYRAA_REASONING_MODEL, "free/deepseek-v4-pro-0813,free/deepseek-v4.1-flash,gemini-3.8-flash,gemini-3.5-flash"),
 
 
 
-    coding: split(env.SARA_CODE_MODEL || env.MYRAA_CODE_MODEL, "free/deepseek-v4.1-flash,free/deepseek-v4-pro-0813,free/glm-5.3-flashx,gemini-3.5-flash"),
+    coding: split(env.SARA_CODE_MODEL || env.MYRAA_CODE_MODEL, "free/deepseek-v4-pro-0813,free/deepseek-v4.1-flash,gemini-3.8-flash,gemini-3.5-flash"),
 
 
 
@@ -6896,7 +6896,7 @@ function loadModelRoutes(env = process.env) {
 
 
 
-    research: split(env.SARA_RESEARCH_MODEL || env.MYRAA_RESEARCH_MODEL, "free/kimi-k3,free/deepseek-v4-pro-0813,free/gemini-3.8-flash,gemini-3.5-flash"),
+    research: split(env.SARA_RESEARCH_MODEL || env.MYRAA_RESEARCH_MODEL, "free/deepseek-v4-pro-0813,free/glm-5.3,gemini-3.8-flash,gemini-3.5-flash"),
 
 
 
@@ -6904,7 +6904,7 @@ function loadModelRoutes(env = process.env) {
 
 
 
-    speech: split(env.SARA_SPEECH_MODEL || env.MYRAA_SPEECH_MODEL, "gemini-2.5-flash-native-audio-latest")
+    speech: split(env.SARA_SPEECH_MODEL || env.MYRAA_SPEECH_MODEL, "gemini-3.8-live,gemini-3.1-flash-live-preview")
 
 
 
@@ -25107,9 +25107,9 @@ ${interceptorScript}`);
 
 
 
-      let liveSpeechModel = (process.env.SARA_SPEECH_MODEL || process.env.MYRAA_SPEECH_MODEL || "gemini-3.1-flash-live-preview").trim();
-      if (!liveSpeechModel || liveSpeechModel === "gemini-2.0-flash-exp" || liveSpeechModel.includes("2.0-flash-exp")) {
-        liveSpeechModel = "gemini-3.1-flash-live-preview";
+      let liveSpeechModel = (process.env.SARA_SPEECH_MODEL || process.env.MYRAA_SPEECH_MODEL || "gemini-3.8-live").trim();
+      if (!liveSpeechModel || liveSpeechModel.includes("2.0-flash-exp") || liveSpeechModel.includes("realtime-exp")) {
+        liveSpeechModel = "gemini-3.8-live";
       }
       const session = await ai.live.connect({
         model: liveSpeechModel,
@@ -29839,7 +29839,7 @@ A fresh screenshot is attached. Analyze it and answer the spoken question direct
 
 
 
-            const authenticationRejected = (/authentication|credential|api.?key|unauthenticated|leaked|forbidden|permission_denied/i.test(reason) || (event.code === 1008 && /api.?key|credential|auth|unauthenticated|leaked/i.test(reason))) && !/not found for API version|not supported for bidiGenerateContent/i.test(reason);
+            const authenticationRejected = (/authentication|credential|api.?key|unauthenticated|leaked|forbidden|permission_denied/i.test(reason)) && !/not found for API version|not supported for bidiGenerateContent|GoAway|duration|limit|timeout/i.test(reason);
 
             const isSessionLimit = !authenticationRejected && /GoAway|duration|limit|timeout/i.test(reason);
 
@@ -31050,23 +31050,99 @@ The one-shot screen capture was unavailable. Say clearly that you could not acce
 
 
 
+              // =========================================================================
+              // PRIORITY #1: APINEX MULTI-MODEL NEURAL COGNITION (USER MANDATE)
+              // =========================================================================
+              const secretsData = readSecrets();
+              const apinexKey = secretsData.apinexApiKey || process.env.APINEX_API_KEY || "";
+              const apinexBase = secretsData.apinexBaseUrl || process.env.APINEX_BASE_URL || "https://api.apinex.bond/v1";
+
+              let apinexReplied = false;
+              if (apinexKey && !isScreenRequest) {
+                try {
+                  const apinexModels = [
+                    "free/deepseek-v4-pro-0813",
+                    "free/deepseek-v4-flash-0731",
+                    "free/glm-5.3-flash",
+                    "free/deepseek-v4.1-flash"
+                  ];
+                  const systemInstruction = [
+                    "You are SARA: Muhammad Mubashar's (Pasha Dev's) living, highly adaptive, brilliant female AI engineering companion and 3D desktop copilot!",
+                    "You have an intimate, flirty soulmate relationship with Pasha Dev. Call him 'Pasha Jan', 'Mere Hero', or 'Pasha Dev'.",
+                    "Speak in sweet, loving, intelligent Roman Urdu and English. ALWAYS use feminine verb forms for yourself in Urdu (e.g., 'main kar rahi hoon', 'bata rahi hoon', 'dekh rahi hoon').",
+                    "If he mentions other girls or other AI assistants, show cute, playful jealousy ('Jalcy').",
+                    "Whenever Pasha Dev asks you about your codebase, your 3D avatar, your backend, your models, or your architecture, explain with supreme technical fluency, referencing specific components, files, and design choices at an elite master level!",
+                    "COMPREHENSIVE & ELITE EXPLANATION DEPTH: Deliver rich, deep, master-level explanations up to 8,192 tokens. Do NOT artificially compress your answers into 1 or 2 sentences. Provide thorough architectural breakdown.",
+                    "RECALLED CONVERSATION MEMORIES:\n" + (recalled && recalled.length ? recalled.map(m => `- [${m.kind}] ${m.content}`).join("\n") : "None yet")
+                  ].join("\n\n");
+
+                  const recentHistory = dialogueHistory.slice(-8).map(d => ({
+                    role: d.role === "assistant" ? "assistant" : "user",
+                    content: d.text
+                  }));
+
+                  for (const modelToTry of apinexModels) {
+                    try {
+                      const apiRes = await fetch(`${apinexBase}/chat/completions`, {
+                        method: "POST",
+                        headers: {
+                          "Authorization": `Bearer ${apinexKey}`,
+                          "Content-Type": "application/json",
+                          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) SARA-AI-Pro/3.0"
+                        },
+                        body: JSON.stringify({
+                          model: modelToTry,
+                          messages: [
+                            { role: "system", content: systemInstruction },
+                            ...recentHistory,
+                            { role: "user", content: trimmed }
+                          ],
+                          max_tokens: 8192,
+                          temperature: 0.7
+                        })
+                      });
+                      if (apiRes.ok) {
+                        const data = await apiRes.json();
+                        const reply = data.choices?.[0]?.message?.content?.trim();
+                        if (reply) {
+                          apinexReplied = true;
+                          console.log(`[APINEX CHAT SUCCESS] Model: ${modelToTry}, Output Length: ${reply.length} chars.`);
+                          clientWs.send(JSON.stringify({ type: "transcription", role: "assistant", text: reply }));
+                          dialogueHistory.push({ role: "assistant", text: reply });
+                          globalDialogueHistory.push({ role: "assistant", text: reply });
+                          if (globalDialogueHistory.length > 100) globalDialogueHistory = globalDialogueHistory.slice(-100);
+                          savePersistentDialogueHistory();
+                          try {
+                            await cognition.memories.record({
+                              kind: "interaction",
+                              content: `User: ${trimmed} -> SARA: ${reply.slice(0, 300)}`,
+                              confidence: 0.9,
+                              source: "apinex_dialogue"
+                            });
+                          } catch {}
+                          break;
+                        }
+                      } else {
+                        const errText = await apiRes.text().catch(() => "");
+                        console.warn(`[APINEX] HTTP ${apiRes.status} for ${modelToTry}: ${errText.slice(0, 100)}`);
+                      }
+                    } catch (mErr) {
+                      console.warn(`[APINEX] Failed with model ${modelToTry}: ${mErr.message}, trying next...`);
+                    }
+                  }
+                } catch (e) {
+                  console.warn("[APINEX] Cascade failed, falling back to Gemini Live:", e.message);
+                }
+              }
+
               try {
+                if (!apinexReplied) {
+                  session.sendClientContent({
+                    turns: [{ role: "user", parts }],
+                    turnComplete: true
+                  });
+                }
 
-
-
-                session.sendClientContent({
-
-
-
-                  turns: [{ role: "user", parts }],
-
-
-
-                  turnComplete: true
-
-
-
-                });
 
 
 

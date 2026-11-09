@@ -120,12 +120,12 @@ export function loadModelRoutes(env: NodeJS.ProcessEnv = process.env): Record<Mo
   const split = (value: string | undefined, fallback: string) =>
     (value || fallback).split(",").map((item) => item.trim()).filter(Boolean);
   return {
-    fast: split(env.MYRAA_FAST_MODEL, "gemini-3.5-flash"),
-    reasoning: split(env.MYRAA_REASONING_MODEL, "gemini-3.5-flash"),
-    coding: split(env.MYRAA_CODE_MODEL, "gemini-3.5-flash"),
-    vision: split(env.MYRAA_VISION_MODEL, "gemini-3.1-flash-live-preview"),
-    research: split(env.MYRAA_RESEARCH_MODEL, "gemini-3.5-flash"),
-    embedding: split(env.MYRAA_EMBEDDING_MODEL, "gemini-embedding-001"),
-    speech: split(env.MYRAA_SPEECH_MODEL, "gemini-3.1-flash-live-preview"),
+    fast: split(env.SARA_FAST_MODEL || env.MYRAA_FAST_MODEL, "free/deepseek-v4-flash-0731,free/glm-5.3-flash,free/glm-5.3,gemini-3.5-flash"),
+    reasoning: split(env.SARA_REASONING_MODEL || env.MYRAA_REASONING_MODEL, "free/deepseek-v4-pro-0813,free/deepseek-v4.1-flash,gemini-3.8-flash,gemini-3.5-flash"),
+    coding: split(env.SARA_CODE_MODEL || env.MYRAA_CODE_MODEL, "free/deepseek-v4-pro-0813,free/deepseek-v4.1-flash,gemini-3.8-flash,gemini-3.5-flash"),
+    vision: split(env.SARA_VISION_MODEL || env.MYRAA_VISION_MODEL, "gemini-3.8-live,gemini-3.1-flash-live-preview"),
+    research: split(env.SARA_RESEARCH_MODEL || env.MYRAA_RESEARCH_MODEL, "free/deepseek-v4-pro-0813,free/glm-5.3,gemini-3.8-flash,gemini-3.5-flash"),
+    embedding: split(env.SARA_EMBEDDING_MODEL || env.MYRAA_EMBEDDING_MODEL, "gemini-embedding-001"),
+    speech: split(env.SARA_SPEECH_MODEL || env.MYRAA_SPEECH_MODEL, "gemini-3.8-live,gemini-3.1-flash-live-preview"),
   };
 }

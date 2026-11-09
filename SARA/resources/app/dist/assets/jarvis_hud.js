@@ -1,4 +1,4 @@
-// SARA AI 2.5 Pro — JARVIS Intelligence HUD, Companion Dashboard & Telemetry
+// SARA AI 3.0 Pro — JARVIS Intelligence HUD, Companion Dashboard & Telemetry
 (function () {
   // =========================================================================
   // 0. HIGH-TECH WEB AUDIO SYNTHESIZER (MICRO-INTERACTION SOUND EFFECTS)
@@ -269,7 +269,7 @@
     footerLeft.id = 'sara-footer-left';
     footerLeft.innerHTML = `
       <div class="sara-quote-serif">Always with you</div>
-      <div>SARA AI 2.5 Pro 💖</div>
+      <div>SARA AI 3.0 Pro 💖</div>
     `;
     document.body.appendChild(footerLeft);
 
@@ -421,7 +421,7 @@
     modal.className = 'hidden';
     modal.innerHTML = `
       <div class="dash-header">
-        <div class="dash-title">📊 SARA 2.5 PRO // AUTONOMOUS COMMAND COCKPIT</div>
+        <div class="dash-title">📊 SARA 3.0 PRO // AUTONOMOUS COMMAND COCKPIT</div>
         <button id="sara-dash-close-btn" class="jarvis-close-btn">✕ CLOSE</button>
       </div>
 
@@ -467,7 +467,7 @@
           <div class="dash-card">
             <div class="dash-card-header">
               <span>🌌 CORE SYSTEM: D:\\MARAA AI</span>
-              <span class="dash-score-badge" style="background: rgba(117,217,232,0.25); border-color:#75D9E8; color:#75D9E8;">SARA 2.5 PRO</span>
+              <span class="dash-score-badge" style="background: rgba(117,217,232,0.25); border-color:#75D9E8; color:#75D9E8;">SARA 3.0 PRO</span>
             </div>
             <div class="dash-desc">
               Stack: Electron + Three.js 60FPS + 244 Unit Tests Verified (100% OK)
@@ -543,7 +543,7 @@
           <div class="dash-actions" style="flex-direction:column; gap:6px; margin-top:12px;">
             <button class="dash-btn" onclick="window.saraPostDiscord('daily_tip')">📢 Broadcast Daily Developer Tip to NEXORA</button>
             <button class="dash-btn" onclick="window.saraPostDiscord('coding_challenge')">🎯 Post Daily Coding Challenge to NEXORA</button>
-            <button class="dash-btn" onclick="window.saraPostDiscord('announcement')">🚀 Post SARA AI 2.5 Pro Update to -announcements</button>
+            <button class="dash-btn" onclick="window.saraPostDiscord('announcement')">🚀 Post SARA AI 3.0 Pro Update to -announcements</button>
           </div>
         </div>
 
