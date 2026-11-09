@@ -86,6 +86,39 @@ class TestAPInexProvider(unittest.TestCase):
         self.assertIn("+923332656733", sys_prompt)
         self.assertIn("NEXORA", sys_prompt)
 
+    def test_high_capacity_max_tokens_and_codebase_knowledge(self):
+        """Verifies expanded max_tokens resolution (up to 8192) and authoritative codebase knowledge."""
+        from sara_apinex_provider import TASK_MAX_TOKENS
+        provider = self.provider_cls(api_key="mock_test_key_12345")
+        sys_prompt = provider.build_system_prompt()
+
+        # Codebase knowledge assertions
+        self.assertIn("Three.js", sys_prompt)
+        self.assertIn("Evelyn", sys_prompt)
+        self.assertIn("ScreenVision", sys_prompt)
+        self.assertIn("Playwright", sys_prompt)
+        self.assertIn("DiscordAutonomousDailyPublisher", sys_prompt)
+        self.assertIn("54 text channels", sys_prompt)
+
+        # Max token capacity assertions
+        self.assertEqual(TASK_MAX_TOKENS["coding_architecture"], 8192)
+        self.assertEqual(TASK_MAX_TOKENS["codebase_explanation"], 8192)
+        self.assertEqual(TASK_MAX_TOKENS["deep_research"], 8192)
+
+        # Mock call with explain prompt to verify 8192 token payload
+        mock_response = MagicMock()
+        mock_response.read.return_value = b'{"choices": [{"message": {"content": "Detailed explanation"}}]}'
+        mock_response.__enter__.return_value = mock_response
+
+        with patch("urllib.request.urlopen", return_value=mock_response) as mock_url:
+            res = provider.generate_chat("SARA, explain how your 3D avatar and backend work in detail", task_type="fast_chat")
+            self.assertTrue(res["success"])
+            # Inspect payload passed to urlopen
+            req_call = mock_url.call_args[0][0]
+            import json
+            sent_data = json.loads(req_call.data.decode("utf-8"))
+            self.assertEqual(sent_data["max_tokens"], 8192)
+
 
 if __name__ == "__main__":
     unittest.main()

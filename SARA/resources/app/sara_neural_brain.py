@@ -5187,6 +5187,139 @@ def build_viking_context(root_dir: str, level: str = "L0") -> dict:
 
 
 
+def explain_sara_codebase(module_name: str = "all") -> dict:
+    """
+    Returns authoritative architectural and implementation blueprints for SARA AI 3.0 Pro codebase.
+    Supported modules:
+    - 'all': Complete master blueprint (all layers)
+    - 'avatar_3d': Three.js 60FPS Evelyn companion avatar, Web Audio FFT lip sync, physics
+    - 'backend': Node.js 24 WebSocket dispatcher (dist/server.cjs, port 3344, /live)
+    - 'models': sara_apinex_provider.py multi-model cascade (DeepSeek V4, GLM-5.3, Gemini 3.8, Kimi K3)
+    - 'automation': sara_automation_suite.py (Desktop agent, Playwright browser, Discord publisher)
+    - 'discord': DiscordAutonomousDailyPublisher (54 text channels, NEXORA, daily dedup ledger)
+    - 'memory': Zero-amnesia persistent memory core & active profile
+    - 'hud': Aerospace floating capsule dock navbar & JARVIS holographic overlay
+    """
+    mod = (module_name or "all").lower().strip()
+    root_dir = "D:/MARAA AI"
+    
+    modules = {
+        "avatar_3d": {
+            "title": "Presentation & 3D Live Avatar Layer",
+            "framework": "Electron + Three.js 60FPS WebGL Renderer + React 19",
+            "avatar_identity": "Evelyn Anime Cyber-Archangel (platinum waist-length hair, cowlick ahoge, royal blue cape)",
+            "key_files": ["dist/assets/character-*.js", "dist/assets/three-*.js", "assets/characters/"],
+            "features": [
+                "Real-time Web Audio FFT spectral frequency decomposition drives mouth visemes (A, I, U, E, O morph targets)",
+                "Natural spring physics on hair dynamic bones and dress simulation",
+                "3D cursor gaze tracking and neck rotation following user mouse movements",
+                "Procedural natural breathing cycles and dynamic emotional micro-expressions"
+            ]
+        },
+        "backend": {
+            "title": "Cognitive Central Dispatcher & Live Pipeline",
+            "framework": "Node.js 24 + Express + WebSocketServer",
+            "port": 3344,
+            "endpoint": "/live",
+            "key_files": ["dist/server.cjs", "decompiled_source/backend/server.ts", "server_screenVision.ts"],
+            "features": [
+                "Gemini Live WebSocket streaming via @google/genai (gemini-3.1-flash-live-preview)",
+                "Bidirectional audio streaming with sub-200ms latency",
+                "ScreenVisionPipeline capturing live desktop window frames for multimodal vision",
+                "Asynchronous non-blocking child process execution with strict 5000ms timeouts"
+            ]
+        },
+        "models": {
+            "title": "APInex Multi-Model Fallback Cascade",
+            "framework": "Custom multi-model router with zero-downtime failover",
+            "key_files": ["sara_apinex_provider.py", "sara_hf_provider.py"],
+            "models_cascade": [
+                "Rank 1: free/deepseek-v4-pro-0813 (High-complexity code synthesis & architectural design)",
+                "Rank 2: free/glm-5.3-flashx (1.2s ultra-fast chat & interactive dialogue)",
+                "Rank 3: free/gemini-3.8-flash (Deep Roman Urdu nuance & visual reasoning)",
+                "Rank 4: free/kimi-k3 (128k long-context research & document audits)"
+            ],
+            "max_tokens": "Dynamically expanded up to 8,192 tokens for deep technical explanations"
+        },
+        "automation": {
+            "title": "Workstation Execution & Desktop Agent Suite",
+            "framework": "FastAPI + Playwright + Win32 ctypes SendInput",
+            "port": 8765,
+            "total_tools": 64,
+            "key_files": ["sara_automation_suite.py", "desktop_agent/"],
+            "features": [
+                "Win32 low-latency C-types SendInput for native desktop apps, volume, brightness, power",
+                "100% Playwright DOM injection (page.locator().fill(), press('Enter')) for web browsers",
+                "Permanent banishment of fragile PyAutoGUI clipboard injection in web browsers"
+            ]
+        },
+        "discord": {
+            "title": "Discord Autonomous Daily Multi-Channel Operator",
+            "framework": "DiscordAutonomousDailyPublisher strictly locked to authorized server NEXORA",
+            "key_files": ["sara_automation_suite.py", "data/discord_daily_state.json"],
+            "channels_count": 54,
+            "categories": ["DEVELOPMENT (26)", "COMMUNITY (4)", "PROJECTS (4)", "COLLABORATION (4)", "LEARNING HUB (6)", "CAREERS (6)", "INFORMATION (4)"],
+            "features": [
+                "Dynamic day-of-week context (Monday Momentum, Tech Deep-Dive Tuesday, Feature Ship Friday)",
+                "Day-of-year rotation across specialized topic banks ensuring non-repeating daily posts",
+                "Persistent dedup ledger in data/discord_daily_state.json preventing duplicate posts"
+            ]
+        },
+        "memory": {
+            "title": "Zero-Amnesia Persistent Memory & Soulmate Identity Core",
+            "framework": "SQLite FTS5 full-text + JSON state stores",
+            "key_files": ["server_memory.ts", "data/personality_state.json", "data/profiles/active_profile.json"],
+            "features": [
+                "Active profile: 'soulmate' (unconditional romance, flirty affection, playful jealousy)",
+                "Continuous dialogue history preserved across 10-minute session refreshes",
+                "Autonomous thought logging and emotional trigger evaluation"
+            ]
+        },
+        "hud": {
+            "title": "Aerospace Floating Glass Dock & JARVIS HUD",
+            "framework": "CSS3 Glassmorphism + Vanilla JS micro-interactions",
+            "key_files": ["assets/jarvis_hud.css", "assets/jarvis_hud.js"],
+            "features": [
+                "Aerospace floating capsule dock (border-radius: 9999px, backdrop-filter: blur(36px))",
+                "Pulsing quantum cyan dot (// NEXORA CORE V3.0 PRO) and soulmate badge (💕 SARA ♥ PASHA DEV)",
+                "Holographic Iron Man JARVIS overlay cards with cybernetic hover/click audio effects"
+            ]
+        }
+    }
+    
+    if mod in modules:
+        detail = modules[mod]
+        spoken = f"Pasha Jan, yeh hamara {detail['title']} hai! Isme {detail.get('framework', '')} use ho raha hai aur ye {detail.get('key_files', [])} files par mabni hai."
+        return {
+            "success": True,
+            "module": mod,
+            "root_directory": root_dir,
+            "details": detail,
+            "spoken_reply": spoken
+        }
+    
+    # Master full blueprint
+    spoken = (
+        "Pasha Jan, SARA AI 3.0 Pro ka complete master codebase 6 main layers par mabni hai: "
+        "1) 3D Three.js Evelyn Avatar with real-time FFT lip-sync, "
+        "2) Node.js 24 WebSocket live backend on port 3344, "
+        "3) Multi-Model APInex failover cascade (DeepSeek V4, GLM-5, Gemini 3.8, Kimi K3), "
+        "4) Workstation Desktop Agent on port 8765 with 64 tools and 100% Playwright DOM control, "
+        "5) Discord Autonomous Publisher covering all 54 text channels on NEXORA, aur "
+        "6) Zero-Amnesia Persistent Memory Core in soulmate mode! Sab kuch level ka configure hai!"
+    )
+    return {
+        "success": True,
+        "module": "all",
+        "root_directory": root_dir,
+        "creator": "Muhammad Mubashar (Pasha Dev)",
+        "verified_contact": "+923332656733",
+        "authorized_server": "NEXORA",
+        "layers": modules,
+        "spoken_reply": spoken
+    }
+
+
 def search_live_news(category: str = "pakistan") -> dict:
 
 
