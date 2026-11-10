@@ -12,7 +12,7 @@
       "has_python": true,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-09T12:57:01.583602"
+      "discovered_at": "2026-11-10T21:02:20.019654"
     },
     "game": {
       "name": "game",
@@ -42,7 +42,7 @@
       "skills": [
         "live-avatar-3d-video"
       ],
-      "discovered_at": "2026-11-09T12:57:01.566892"
+      "discovered_at": "2026-11-10T21:02:19.905411"
     },
     "tests": {
       "name": "tests",
@@ -58,7 +58,7 @@
       "has_python": true,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-09T12:57:01.586284"
+      "discovered_at": "2026-11-10T21:02:20.034258"
     },
     "data": {
       "name": "data",
@@ -74,7 +74,7 @@
       "has_python": true,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-09T12:57:01.569713"
+      "discovered_at": "2026-11-10T21:02:19.949181"
     },
     "birthday cook 13": {
       "name": "birthday cook 13",
@@ -665,7 +665,7 @@
         "warm-hug-react-engineering",
         "warm-hug-svg-assets"
       ],
-      "discovered_at": "2026-11-09T12:57:01.618996"
+      "discovered_at": "2026-11-10T21:02:20.160698"
     },
     "only study": {
       "name": "only study",
@@ -715,7 +715,7 @@
       "has_python": false,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-09T12:57:01.621499"
+      "discovered_at": "2026-11-10T21:02:20.186518"
     },
     "Pasha-devpolit": {
       "name": "Pasha-devpolit",
@@ -742,7 +742,7 @@
       "skills": [
         "railway-config"
       ],
-      "discovered_at": "2026-11-09T12:57:01.624182"
+      "discovered_at": "2026-11-10T21:02:20.189595"
     },
     "Projects-2": {
       "name": "Projects-2",
@@ -784,7 +784,7 @@
       "has_python": false,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-09T12:57:01.637319"
+      "discovered_at": "2026-11-10T21:02:20.222164"
     },
     "template-weaver-main": {
       "name": "template-weaver-main",
@@ -819,7 +819,7 @@
       "has_python": true,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-09T12:57:01.640902"
+      "discovered_at": "2026-11-10T21:02:20.228413"
     },
     "Trading": {
       "name": "Trading",
@@ -839,7 +839,7 @@
         "market-analyzer",
         "trend-and-structure"
       ],
-      "discovered_at": "2026-11-09T12:57:01.642482"
+      "discovered_at": "2026-11-10T21:02:20.235548"
     },
     "weadding template1": {
       "name": "weadding template1",
@@ -924,7 +924,7 @@
       "has_python": true,
       "has_agents": true,
       "skills": [],
-      "discovered_at": "2026-11-09T12:57:01.596439"
+      "discovered_at": "2026-11-10T21:02:20.083562"
     },
     "pasha_unit_test_proj": {
       "name": "pasha_unit_test_proj",
@@ -943,7 +943,7 @@
       "has_python": true,
       "has_agents": true,
       "skills": [],
-      "discovered_at": "2026-11-09T12:57:01.599254"
+      "discovered_at": "2026-11-10T21:02:20.089390"
     },
     "pasha_tool_unit_test": {
       "name": "pasha_tool_unit_test",
@@ -962,7 +962,7 @@
       "has_python": true,
       "has_agents": true,
       "skills": [],
-      "discovered_at": "2026-11-09T12:57:01.374178"
+      "discovered_at": "2026-11-10T21:02:19.454022"
     },
     "Hisab-app": {
       "name": "Hisab-app",
@@ -987,7 +987,7 @@
       "has_python": true,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-09T12:57:01.612861"
+      "discovered_at": "2026-11-10T21:02:20.137462"
     },
     "pasha_unit_live_120": {
       "name": "pasha_unit_live_120",
@@ -1006,7 +1006,7 @@
       "has_python": true,
       "has_agents": true,
       "skills": [],
-      "discovered_at": "2026-11-09T12:55:09.021750"
+      "discovered_at": "2026-11-10T20:54:30.154826"
     },
     "Postmotam": {
       "name": "Postmotam",
@@ -1027,7 +1027,7 @@
       "has_python": false,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-09T12:57:01.630972"
+      "discovered_at": "2026-11-10T21:02:20.204924"
     },
     "3D-birthday": {
       "name": "3D-birthday",
@@ -1073,7 +1073,7 @@
       "has_python": false,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-09T12:57:01.604927"
+      "discovered_at": "2026-11-10T21:02:20.118147"
     },
     "Job Hunt": {
       "name": "Job Hunt",
@@ -1089,9 +1089,45 @@
       "has_python": true,
       "has_agents": false,
       "skills": [],
-      "discovered_at": "2026-11-09T12:57:01.614866"
+      "discovered_at": "2026-11-10T21:02:20.145291"
+    },
+    "scratch": {
+      "name": "scratch",
+      "path": "D:\\MARAA AI\\scratch",
+      "type": "Python Script Suite / Application",
+      "entry_points": [
+        "apply_comprehensive_sara_fixes.py",
+        "check_desktop_tools_set.py",
+        "check_desktop_tools_set2.py"
+      ],
+      "scripts": {},
+      "has_package_json": false,
+      "has_python": true,
+      "has_agents": false,
+      "skills": [],
+      "discovered_at": "2026-11-10T21:02:20.025063"
+    },
+    "Antigravity Skills from repos": {
+      "name": "Antigravity Skills from repos",
+      "path": "E:\\Antigravity Skills from repos",
+      "type": "Antigravity Multi-Agent Workspace",
+      "entry_points": [],
+      "scripts": {},
+      "has_package_json": false,
+      "has_python": false,
+      "has_agents": true,
+      "skills": [
+        "banner-design",
+        "brand",
+        "design",
+        "design-system",
+        "slides",
+        "ui-styling",
+        "ui-ux-pro-max"
+      ],
+      "discovered_at": "2026-11-10T21:02:20.115913"
     }
   },
-  "last_scanned_at": "2026-11-09T12:57:01.646645",
-  "total_projects": 37
+  "last_scanned_at": "2026-11-10T21:02:20.239106",
+  "total_projects": 39
 }

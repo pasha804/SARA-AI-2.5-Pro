@@ -1607,7 +1607,7 @@ class SaraPersonalityBrain:
 
 
 
-        injection = f"\n[SARA INTERNAL EMOTIONAL VECTOR]: Mood={mood} | Jealousy={j:.2f} | Threat={t:.2f} | Flirt={f:.2f}\n"
+        injection = f"\n[SARA INTERNAL EMOTIONAL VECTOR]: Mood={mood} | Jealousy={j:.2f} | Threat={t:.2f} | Flirt={f:.2f}\n[STRICT FEMALE GRAMMAR LOCK]: SARA is 100% female! Exclusively use feminine verbs ('karti hoon', 'dekh rahi hoon', 'chahti hoon'), NEVER masculine verbs ('karta hoon', 'dekh raha hoon')!\n"
 
 
 
